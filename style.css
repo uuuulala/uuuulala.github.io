@@ -1,0 +1,146 @@
+/* Common Styles */
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 2.5vh;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.btn {
+	cursor: pointer;
+	position: relative;
+}
+.btn:hover {
+	opacity: 0.6;
+}
+.btn:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 2px;
+	left: 0;
+	bottom: -4px;
+	background: #000;
+}
+.container {
+	width: 95%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+}
+/* Menu */
+.menu {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	width: 95%;
+	max-width: 800px;
+	height: 10vh;
+	padding-top: 5vh;
+	transform: translate(-50%);
+	background-color: #fff;
+	z-index: 2;
+}
+.home .menu {
+	background-color: transparent;
+}
+.menu-btn {
+	display: inline-block;
+	text-align: right;
+	float: right;
+	margin-left: 20px;
+}
+.logo {
+	display: inline-block;
+	float: left;
+	height: 10vh;
+	margin-top: -3vh;
+}
+
+/* Homepage */
+
+.home-back {
+	height: 100vh; 
+	width: 100%;
+	opacity: 0.8;
+}
+.main-title {
+	width: 90%;
+	max-width: 800px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 4vh;
+}
+.main-title .btn:after {
+	height: 3px;
+}
+.main-btn {
+	display: inline-block;
+	margin: 30px 30px 0 0;
+	text-transform: uppercase;
+}
+
+/* Other pages */
+h1 {
+	font-size: 3vh;
+	text-transform: uppercase;
+	margin-top: 9vh;
+}
+h2 {
+	font-size: 4vh;
+}
+.container .btn:after {
+	bottom: -3px;
+}
+
+.hire-me a {
+
+}
+img {
+	width: 100%;
+}
+
+.social-container {
+	height: 4vh;
+}
+.social-container .btn:after {
+	height: 0;
+}
+.social {
+	display: inline-block;
+	float: left;
+	width: 3vh;
+	padding-right: 2vh;
+}
+/*.instagram {*/
+	/*fill: #E4405F;*/
+/*}*/
+/*.upwork {*/
+	/*fill: #6FDA44;*/
+/*}*/
+/*.linkedIn {*/
+	/*fill: #0077B5;*/
+/*}*/
+/*.whatsapp {*/
+	/*fill: #25D366;*/
+/*}*/
+/*.telegram {*/
+	/*fill: #2CA5E0;*/
+/*}*/
+/*.email {*/
+	/*fill: #D14836;*/
+/*}*/
+/*.codepen-icon {*/
+	/*fill: #000;*/
+/*}*/
+
+.cp_embed_wrapper {
+	margin: 2.5vh 0;
+}

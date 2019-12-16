@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head></head>
+<html lang="en-US" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name=”description” content="Hi, I'm Ksenia. I make animations and data visualisations for web">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <title>Ksenia Kondrashova</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body class="home">
+  <canvas class="home-back"></canvas>
 
-<body>
+  <div class="main-title">
+    <div>
+      Hi, I'm Ksenia.</br>
+      I make animations and visualisations for web
+    </div>
+    <div class="btn main-btn what-I-do">
+      what I do
+    </div>
+    <div class="btn main-btn who-I-am">
+      who I am
+    </div>
+  </div>
 
-<div id="scene-container">
-    <!-- SVG will be placed here -->
-</div>
+  <div class="menu">
+    <a class="btn menu-btn hire-me">
+      hire me!
+    </a>
+  </div>
 
-<button style="margin-top: 100px" onclick="start()">start</button>
-<button style="margin-top: 100px" onclick="stop()">stop</button>
+  <script src="js/home-back-animation.js"></script>
+  <script src="js/home-page.js"></script>
 
 </body>
-
-<!-- GSAP library -->
-<!--<script src="js/TweenMax.min.js"></script>-->
-<!--<script src="js/TimelineMax.min.js"></script>-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-
-<!-- Animations API -->
-<script src="js/bacteria.js"></script>
-<script src="js/truck.js"></script>
-<script src="js/bubbles.js"></script>
-<script src="js/blower.js"></script>
-<script src="js/flame.js"></script>
-<script src="js/electricity.js"></script>
-<script src="js/heat-exchanger.js"></script>
-
-<!-- SVG file loading -->
-<script src="js/loading.js"></script>
-
-<!-- Start the animation -->
-<script src="js/main.js"></script>
-
 </html>
