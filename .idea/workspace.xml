@@ -53,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/favicon/site.webmanifest">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="36" selection-start-column="36" selection-end-column="36" />
+              <caret column="26" selection-start-column="26" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -87,6 +87,7 @@
       <find>clie</find>
       <find>src</find>
       <find>android-chrome</find>
+      <find>192x192</find>
     </findStrings>
     <replaceStrings>
       <replace>href=&quot;/</replace>
@@ -292,12 +293,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576535761083</updated>
-      <workItem from="1576535762335" duration="2105000" />
+      <workItem from="1576535762335" duration="2161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2105000" />
+    <option name="totallyTimeSpent" value="2161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="788" extended-state="0" />
@@ -383,7 +384,7 @@
     <entry file="file://$PROJECT_DIR$/favicon/site.webmanifest">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
         </state>
       </provider>
     </entry>
