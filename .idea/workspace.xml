@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hire-me.html" beforeDir="false" afterPath="$PROJECT_DIR$/hire-me.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/what-I-do.html" beforeDir="false" afterPath="$PROJECT_DIR$/what-I-do.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/who-I-am.html" beforeDir="false" afterPath="$PROJECT_DIR$/who-I-am.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/home-back-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home-back-animation.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home-back-animation.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home-back-animation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/home-back-animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret column="16192" lean-forward="true" selection-start-column="16192" selection-end-column="16192" />
+            <state relative-caret-position="120">
+              <caret column="15788" selection-start-column="15788" selection-end-column="15788" />
             </state>
           </provider>
         </entry>
@@ -71,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hire-me.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hire-me.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hire-me.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
@@ -87,11 +83,11 @@
       <find>my</find>
       <find>href=&quot;../../my-site</find>
       <find>&quot;../../my-site</find>
-      <find>crea</find>
       <find>src</find>
       <find>192x192</find>
       <find>clie</find>
       <find>android-chrome</find>
+      <find>crea</find>
     </findStrings>
     <replaceStrings>
       <replace>href=&quot;/</replace>
@@ -108,12 +104,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/js/home-back-animation.js" />
         <option value="$PROJECT_DIR$/favicon/site.webmanifest" />
         <option value="$PROJECT_DIR$/who-I-am.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/what-I-do.html" />
         <option value="$PROJECT_DIR$/hire-me.html" />
+        <option value="$PROJECT_DIR$/js/home-back-animation.js" />
       </list>
     </option>
   </component>
@@ -297,12 +293,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576535761083</updated>
-      <workItem from="1576535762335" duration="2214000" />
+      <workItem from="1576535762335" duration="2267000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2214000" />
+    <option name="totallyTimeSpent" value="2267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="788" extended-state="0" />
@@ -350,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/home-back-animation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret column="16192" lean-forward="true" selection-start-column="16192" selection-end-column="16192" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/favicon/site.webmanifest">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -389,6 +378,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/home-back-animation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret column="15788" selection-start-column="15788" selection-end-column="15788" />
         </state>
       </provider>
     </entry>
