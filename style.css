@@ -63,7 +63,12 @@ a {
 }
 
 /* Homepage */
-
+.main-header {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	font-size: 0.4em;
+}
 .home-back {
 	height: 100vh; 
 	width: 100%;
@@ -77,6 +82,11 @@ a {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 4vh;
+}
+.main-title h2 {
+	font-size: 4.5vh;
+	font-weight: normal;
+	margin: 0;
 }
 .main-title .btn:after {
 	height: 3px;
