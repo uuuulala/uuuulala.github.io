@@ -3,7 +3,7 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-family: sans-serif;
+	font-family: Arial, sans-serif;
 	font-size: 2.5vh;
 }
 a {
@@ -115,6 +115,9 @@ h2 {
 }
 img {
 	width: 100%;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
 }
 
 .social-container {
