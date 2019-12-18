@@ -4,7 +4,7 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: Arial, sans-serif;
-	font-size: 2.5vh;
+	font-size: 17px;
 }
 a {
 	color: inherit;
@@ -31,7 +31,6 @@ a {
 	max-width: 800px;
 	margin: 0 auto;
 	padding-top: 20vh;
-	padding-bottom: 20vh;
 }
 /* Menu */
 .menu {
@@ -40,8 +39,8 @@ a {
 	left: 50%;
 	width: 95%;
 	max-width: 800px;
-	height: 10vh;
-	padding-top: 5vh;
+	height: 70px;
+	padding-top: 30px;
 	transform: translate(-50%);
 	background-color: #fff;
 	z-index: 2;
@@ -58,15 +57,16 @@ a {
 .logo {
 	display: inline-block;
 	float: left;
-	height: 10vh;
-	margin-top: -3vh;
+	height: 70px;
+	/*margin-top: -3vh;*/
 }
 
 /* Homepage */
+
 .main-header {
 	position: absolute;
 	bottom: 5px;
-	right: 5px;
+	right: 0;
 	font-size: 0.4em;
 }
 .home-back {
@@ -81,30 +81,45 @@ a {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 4vh;
+	/*font-size: 4vh;*/
 }
 .main-title h2 {
-	font-size: 4.5vh;
+	/*font-size: 4.5vh;*/
 	font-weight: normal;
 	margin: 0;
 }
 .main-title .btn:after {
 	height: 3px;
 }
+.main-title .social {
+	float: right;
+}
 .main-btn {
+	font-size: 1.3em;
 	display: inline-block;
 	margin: 30px 30px 0 0;
 	text-transform: uppercase;
 }
-
+.footer {
+	width: 90%;
+	max-width: 800px;
+	bottom: 0;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.footer .social {
+	float: right;
+	padding: 0 0 25px 10px;
+}
 /* Other pages */
 h1 {
-	font-size: 3vh;
+	font-size: 1.5em;
 	text-transform: uppercase;
-	margin-top: 9vh;
+	margin-top: 1em;
 }
 h2 {
-	font-size: 4vh;
+	/*font-size: 4vh;*/
 }
 .container .btn:after {
 	bottom: -3px;
@@ -115,13 +130,11 @@ h2 {
 }
 img {
 	width: 100%;
-	border: 1px solid #ddd;
 	border-radius: 4px;
-	padding: 5px;
 }
 
 .social-container {
-	height: 4vh;
+	height: 1.5em;
 }
 .social-container .btn:after {
 	height: 0;
@@ -129,31 +142,10 @@ img {
 .social {
 	display: inline-block;
 	float: left;
-	width: 3vh;
-	padding-right: 2vh;
+	width: 20px;
+	padding-right: 10px;
 }
-/*.instagram {*/
-	/*fill: #E4405F;*/
-/*}*/
-/*.upwork {*/
-	/*fill: #6FDA44;*/
-/*}*/
-/*.linkedIn {*/
-	/*fill: #0077B5;*/
-/*}*/
-/*.whatsapp {*/
-	/*fill: #25D366;*/
-/*}*/
-/*.telegram {*/
-	/*fill: #2CA5E0;*/
-/*}*/
-/*.email {*/
-	/*fill: #D14836;*/
-/*}*/
-/*.codepen-icon {*/
-	/*fill: #000;*/
-/*}*/
 
 .cp_embed_wrapper {
-	margin: 2.5vh 0;
+	margin: 20px 0;
 }
