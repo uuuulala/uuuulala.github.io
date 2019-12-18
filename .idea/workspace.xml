@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/hire-me.html" beforeDir="false" afterPath="$PROJECT_DIR$/hire-me.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/what-I-do.html" beforeDir="false" afterPath="$PROJECT_DIR$/what-I-do.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/who-I-am.html" beforeDir="false" afterPath="$PROJECT_DIR$/who-I-am.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="who-I-am.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="who-I-am.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/who-I-am.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="53" column="186" selection-start-line="53" selection-start-column="186" selection-end-line="53" selection-end-column="186" />
+            <state relative-caret-position="236">
+              <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -48,8 +50,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+            <state relative-caret-position="-252">
+              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -66,8 +68,8 @@
       <file leaf-file-name="what-I-do.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/what-I-do.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-73">
-              <caret line="178" column="193" selection-start-line="178" selection-start-column="193" selection-end-line="178" selection-end-column="193" />
+            <state relative-caret-position="310">
+              <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
               <folding>
                 <element signature="n#style#0;n#p#26;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#13563#13568#0" expanded="true" />
@@ -76,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hire-me.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hire-me.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hire-me.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+            <state relative-caret-position="159">
+              <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -111,6 +113,8 @@
       <find>Since then, I’m working on various projects for people from all around the world. Please check out</find>
       <find>main-btn</find>
       <find>logo</find>
+      <find>required</find>
+      <find>here</find>
     </findStrings>
     <replaceStrings>
       <replace>href=&quot;/</replace>
@@ -131,9 +135,9 @@
         <option value="$PROJECT_DIR$/js/home-page.js" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/hire-me.html" />
-        <option value="$PROJECT_DIR$/what-I-do.html" />
         <option value="$PROJECT_DIR$/who-I-am.html" />
+        <option value="$PROJECT_DIR$/what-I-do.html" />
+        <option value="$PROJECT_DIR$/hire-me.html" />
       </list>
     </option>
   </component>
@@ -213,27 +217,28 @@
       <option name="presentableId" value="Default" />
       <updated>1576535761083</updated>
       <workItem from="1576535762335" duration="6293000" />
-      <workItem from="1576635128353" duration="2940000" />
+      <workItem from="1576635128353" duration="3282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9233000" />
+    <option name="totallyTimeSpent" value="9575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3299566" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -242,7 +247,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,22 +345,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hire-me.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+        <state relative-caret-position="-252">
+          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/what-I-do.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-73">
-          <caret line="178" column="193" selection-start-line="178" selection-start-column="193" selection-end-line="178" selection-end-column="193" />
+        <state relative-caret-position="310">
+          <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#p#26;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#13563#13568#0" expanded="true" />
@@ -366,8 +363,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/who-I-am.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="53" column="186" selection-start-line="53" selection-start-column="186" selection-end-line="53" selection-end-column="186" />
+        <state relative-caret-position="236">
+          <caret line="67" column="14" lean-forward="true" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hire-me.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
         </state>
       </provider>
     </entry>
