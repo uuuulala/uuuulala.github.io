@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hire-me.html" beforeDir="false" afterPath="$PROJECT_DIR$/hire-me.html" afterDir="false" />
-    </list>
+    <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +14,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="495">
               <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
             </state>
           </provider>
@@ -49,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" selection-start-line="17" selection-end-line="26" />
+            <state relative-caret-position="217">
+              <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -79,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hire-me.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hire-me.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hire-me.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="75" selection-start-line="75" selection-end-line="82" selection-end-column="14" />
+            <state relative-caret-position="1185">
+              <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -138,11 +135,11 @@
         <option value="$PROJECT_DIR$/favicon/site.webmanifest" />
         <option value="$PROJECT_DIR$/js/home-back-animation.js" />
         <option value="$PROJECT_DIR$/js/home-page.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/who-I-am.html" />
         <option value="$PROJECT_DIR$/what-I-do.html" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/hire-me.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -228,29 +225,30 @@
       <workItem from="1576881190382" duration="698000" />
       <workItem from="1576986370642" duration="596000" />
       <workItem from="1577306461704" duration="1975000" />
-      <workItem from="1577685730768" duration="247000" />
+      <workItem from="1577685730768" duration="2178000" />
+      <workItem from="1578955152041" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15631000" />
+    <option name="totallyTimeSpent" value="17570000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="40" width="1440" height="694" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2746781" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3283082" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32663316" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -598,13 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="17" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/who-I-am.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -627,15 +618,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="495">
           <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hire-me.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="75" selection-start-line="75" selection-end-line="82" selection-end-column="14" />
+        <state relative-caret-position="1185">
+          <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
         </state>
       </provider>
     </entry>
