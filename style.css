@@ -37,10 +37,10 @@ a {
 	position: fixed;
 	top: 0;
 	left: 50%;
-	width: calc(100% - 10px);
+	width: 95%;
 	max-width: 800px;
 	height: 70px;
-	padding: 30px 5px 0 5px;
+	padding-top: 30px;
 	transform: translate(-50%);
 	background-color: #fff;
 	z-index: 2;
