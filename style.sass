@@ -1,0 +1,288 @@
+@import 'mixins'
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap')
+
+html, body
+  margin: 0
+  width: 100%
+  overscroll-behavior: none
+  font-family: sans-serif
+  color: #000
+  line-height: 1.7em
+a
+  color: inherit
+  text-decoration: none
+h2
+  width: 100%
+.btn
+  cursor: pointer
+  position: relative
+.btn:hover
+  opacity: 0.6
+.btn:after
+  position: absolute
+  content: ''
+  width: 100%
+  height: 2px
+  left: 0
+  bottom: -4px
+  background: #222
+
+.contacts
+  position: fixed
+  bottom: 25px
+  right: 16px
+  z-index: 2
+  @media (max-width: 888px)
+    display: none
+
+.mobile-padding
+  padding-bottom: 10px
+  @media (max-width: 888px)
+    width: calc(100% - 20px)
+    margin: 0 auto
+
+.social
+  width: 20px
+.social-container
+  height: 25px
+  .btn:after
+    height: 0
+
+.banner
+  width: 100%
+  height: 100vh
+  @include flexbox
+  @include flex-direction(column)
+  @include justify-content(center)
+  .banner-content
+    width: 95%
+    max-width: 800px
+    margin: 0 auto
+    position: relative
+    z-index: 1
+    h2
+      font-size: 31px
+      line-height: 42px
+      font-weight: normal
+      margin: 0
+    .main-btn
+      font-size: 27px
+      display: inline-block
+      margin: 30px 30px 0 0
+      text-transform: uppercase
+    .btn:after
+      height: 3px
+  .banner-back
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+
+.what-I-do, .who-I-am
+  max-width: 800px
+  margin: 0 auto
+  padding-top: 30px
+
+.who-I-am
+  padding-bottom: 25px
+  ul
+    list-style: none
+    padding: 0 0 0 10px
+  li
+    line-height: 1.5em
+    &:before
+      content: ''
+      display: inline-block
+      height: 0.8em
+      width: 0.8em
+      background-image: url('./img/rect.svg')
+      background-size: contain
+      background-repeat: no-repeat
+      margin-right: 10px
+      margin-bottom: -2px
+  img
+    width: 100%
+  .social-container
+    height: 1.5em
+    .btn
+      height: 1.5em
+      svg, span
+        display: inline-block
+        float: left
+      svg
+        height: 100%
+      span
+        line-height: 1.5em
+        padding-left: 8px
+
+.what-I-do
+  @include flexbox
+  flex-wrap: wrap
+  @include justify-content(space-between)
+  .animation
+    width: 100%
+    margin: 20px 0
+    .animation-wrapper
+      position: relative
+      @include flexbox
+      @include justify-content(center)
+      width: 100%
+      background-color: #f7f7f7
+    svg, canvas, img
+      display: block
+      width: 100%
+    a
+      padding: 0 10px
+      float: right
+      background-color: #4BC0C8
+    &.mariane
+      .animation-wrapper
+        height: 250px
+        background-color: #eee
+      svg
+        width: 80%
+        max-width: 500px
+    &.wings
+      .animation-wrapper
+        height: 250px
+      svg
+        width: 300px
+    &.wave
+      .animation-wrapper
+        height: 150px
+        background-color: #243832
+    &.fire
+      .animation-wrapper
+        height: 250px
+        background-color: #eee
+      svg
+        width: 70px
+    &.heart
+      .animation-wrapper
+        height: 250px
+        background-color: #eee
+      img
+        margin: 0 auto
+        width: 100px
+    &.wavy-back
+      .animation-wrapper
+        height: 300px
+    &.dude
+      svg
+        width: 90%
+        max-width: 400px
+    &.coin
+      .animation-wrapper
+        height: 300px
+      svg
+        font-family: 'Varela Round', sans-serif
+        width: 90%
+        max-width: 250px
+    &.balloons
+      .animation-wrapper
+        display: block
+        overflow: hidden
+        height: 350px
+        background-color: #BBDFFF
+      .tip
+        position: absolute
+        top: 50%
+        left: 50%
+        @include transform(translate(-50%, -50%))
+        text-align: center
+      .balloon
+        position: absolute
+        top: 0
+        left: 0
+        width: 15%
+        .balloon-swing
+          pointer-events: none
+        circle
+          pointer-events: auto
+    &.plane
+      svg
+        background-color: rgba(110, 81, 161, 0.9)
+    &.rate
+      .animation-wrapper
+        display: block
+        height: auto
+        background-color: #eee
+      .tip
+        text-align: center
+        padding-top: 10px
+      svg
+        max-width: 450px
+        margin: 0 auto
+        padding: 15px 0 25px 0
+      .card
+        cursor: pointer
+        user-select: none
+      & > text, .card path
+        fill: #95B0B6
+        @include transition(all 0.2s ease-in-out)
+      .card--selected path
+        fill: #000
+    &.d3-groups
+      .animation-wrapper
+        display: block
+      .title
+        display: inline-block
+        float: left
+        text-align: center
+        width: 50%
+        opacity: 0
+        padding-top: 15px
+      .tip
+        text-align: center
+        padding-bottom: 15px
+      svg
+        height: 200px
+        max-width: 100%
+    &.d3-bars
+      .x.axis .tick line
+        display: none
+      .tick text
+        font-size: 20px
+      .grid path
+        stroke-width: 0
+      svg
+        height: 300px
+        max-width: 100%
+    &.d3-scatterplot
+      svg
+        height: 300px
+        max-width: 100%
+      text
+        font-size: 20px
+      .btn
+        cursor: pointer
+        opacity: 0.9
+        @include transition(all .3s)
+        &.disabled
+          cursor: default
+          opacity: 0.3
+      .dot
+        fill: #336B00
+        opacity: 0.6
+        &.selected
+          fill: #ff5252
+          opacity: 1
+    &.confetti
+      .tip
+        position: absolute
+        top: 50%
+        left: 50%
+        @include transform(translate(-50%, -50%))
+      canvas
+        background-color: #eee
+        height: 250px
+    &.stars
+      .slider
+        position: absolute
+        top: 10px
+        right: 10px
+        color: #ffffff
+      canvas
+        height: 250px

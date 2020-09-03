@@ -1,151 +1,324 @@
-/* Common Styles */
+@import url("https://fonts.googleapis.com/css?family=Varela+Round&display=swap");
+html, body {
+  margin: 0;
+  width: 100%;
+  overscroll-behavior: none;
+  font-family: sans-serif;
+  color: #000;
+  line-height: 1.7em; }
 
-body {
-	padding: 0;
-	margin: 0;
-	font-family: Arial, sans-serif;
-	font-size: 17px;
-}
 a {
-	color: inherit;
-	text-decoration: none;
-}
-.btn {
-	cursor: pointer;
-	position: relative;
-}
-.btn:hover {
-	opacity: 0.6;
-}
-.btn:after {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 2px;
-	left: 0;
-	bottom: -4px;
-	background: #000;
-}
-.container {
-	width: 95%;
-	max-width: 800px;
-	margin: 0 auto;
-	padding-top: 20vh;
-}
-/* Menu */
-.menu {
-	position: fixed;
-	top: 0;
-	left: 50%;
-	width: 95%;
-	max-width: 800px;
-	height: 70px;
-	padding-top: 30px;
-	transform: translate(-50%);
-	background-color: #fff;
-	z-index: 2;
-}
-.home .menu {
-	background-color: transparent;
-}
-.menu-btn {
-	display: inline-block;
-	text-align: right;
-	float: right;
-	margin-left: 20px;
-}
-.logo {
-	display: inline-block;
-	float: left;
-	height: 70px;
-	margin-top: -22px;
-}
+  color: inherit;
+  text-decoration: none; }
 
-/* Homepage */
-
-.main-header {
-	position: absolute;
-	bottom: 5px;
-	right: 0;
-	font-size: 0.4em;
-}
-.home-back {
-	height: 100vh; 
-	width: 100%;
-	opacity: 0.8;
-}
-.main-title {
-	width: 90%;
-	max-width: 800px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	/*font-size: 4vh;*/
-}
-.main-title h2 {
-	/*font-size: 4.5vh;*/
-	font-weight: normal;
-	margin: 0;
-}
-.main-title .btn:after {
-	height: 3px;
-}
-.main-title .social {
-	float: right;
-}
-.main-btn {
-	font-size: 1.3em;
-	display: inline-block;
-	margin: 30px 30px 0 0;
-	text-transform: uppercase;
-}
-.footer {
-	width: 90%;
-	max-width: 800px;
-	bottom: 0;
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-.footer .social {
-	float: right;
-	padding: 0 0 25px 10px;
-}
-/* Other pages */
-h1 {
-	font-size: 1.5em;
-	text-transform: uppercase;
-	margin-top: 1em;
-}
 h2 {
-	/*font-size: 4vh;*/
-}
-.container .btn:after {
-	bottom: -3px;
-}
+  width: 100%; }
 
-.hire-me a {
+.btn {
+  cursor: pointer;
+  position: relative; }
 
-}
-img {
-	width: 100%;
-	border-radius: 4px;
-}
+.btn:hover {
+  opacity: 0.6; }
+
+.btn:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #222; }
+
+.contacts {
+  position: fixed;
+  bottom: 25px;
+  right: 16px;
+  z-index: 2; }
+  @media (max-width: 888px) {
+    .contacts {
+      display: none; } }
+
+.mobile-padding {
+  padding-bottom: 10px; }
+  @media (max-width: 888px) {
+    .mobile-padding {
+      width: calc(100% - 20px);
+      margin: 0 auto; } }
+
+.social {
+  width: 20px; }
 
 .social-container {
-	height: 1.5em;
-}
-.social-container .btn:after {
-	height: 0;
-}
-.social {
-	display: inline-block;
-	float: left;
-	width: 20px;
-	padding-right: 10px;
-}
+  height: 25px; }
+  .social-container .btn:after {
+    height: 0; }
 
-.cp_embed_wrapper {
-	margin: 20px 0;
-}
+.banner {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+  .banner .banner-content {
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; }
+    .banner .banner-content h2 {
+      font-size: 31px;
+      line-height: 42px;
+      font-weight: normal;
+      margin: 0; }
+    .banner .banner-content .main-btn {
+      font-size: 27px;
+      display: inline-block;
+      margin: 30px 30px 0 0;
+      text-transform: uppercase; }
+    .banner .banner-content .btn:after {
+      height: 3px; }
+  .banner .banner-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+
+.what-I-do, .who-I-am {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 30px; }
+
+.who-I-am {
+  padding-bottom: 25px; }
+  .who-I-am ul {
+    list-style: none;
+    padding: 0 0 0 10px; }
+  .who-I-am li {
+    line-height: 1.5em; }
+    .who-I-am li:before {
+      content: "";
+      display: inline-block;
+      height: 0.8em;
+      width: 0.8em;
+      background-image: url("./img/rect.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+      margin-bottom: -2px; }
+  .who-I-am img {
+    width: 100%; }
+  .who-I-am .social-container {
+    height: 1.5em; }
+    .who-I-am .social-container .btn {
+      height: 1.5em; }
+      .who-I-am .social-container .btn svg, .who-I-am .social-container .btn span {
+        display: inline-block;
+        float: left; }
+      .who-I-am .social-container .btn svg {
+        height: 100%; }
+      .who-I-am .social-container .btn span {
+        line-height: 1.5em;
+        padding-left: 8px; }
+
+.what-I-do {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between; }
+  .what-I-do .animation {
+    width: 100%;
+    margin: 20px 0; }
+    .what-I-do .animation .animation-wrapper {
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      justify-content: center;
+      width: 100%;
+      background-color: #f7f7f7; }
+    .what-I-do .animation svg, .what-I-do .animation canvas, .what-I-do .animation img {
+      display: block;
+      width: 100%; }
+    .what-I-do .animation a {
+      padding: 0 10px;
+      float: right;
+      background-color: #4BC0C8; }
+    .what-I-do .animation.mariane .animation-wrapper {
+      height: 250px;
+      background-color: #eee; }
+    .what-I-do .animation.mariane svg {
+      width: 80%;
+      max-width: 500px; }
+    .what-I-do .animation.wings .animation-wrapper {
+      height: 250px; }
+    .what-I-do .animation.wings svg {
+      width: 300px; }
+    .what-I-do .animation.wave .animation-wrapper {
+      height: 150px;
+      background-color: #243832; }
+    .what-I-do .animation.fire .animation-wrapper {
+      height: 250px;
+      background-color: #eee; }
+    .what-I-do .animation.fire svg {
+      width: 70px; }
+    .what-I-do .animation.heart .animation-wrapper {
+      height: 250px;
+      background-color: #eee; }
+    .what-I-do .animation.heart img {
+      margin: 0 auto;
+      width: 100px; }
+    .what-I-do .animation.wavy-back .animation-wrapper {
+      height: 300px; }
+    .what-I-do .animation.dude svg {
+      width: 90%;
+      max-width: 400px; }
+    .what-I-do .animation.coin .animation-wrapper {
+      height: 300px; }
+    .what-I-do .animation.coin svg {
+      font-family: "Varela Round", sans-serif;
+      width: 90%;
+      max-width: 250px; }
+    .what-I-do .animation.balloons .animation-wrapper {
+      display: block;
+      overflow: hidden;
+      height: 350px;
+      background-color: #BBDFFF; }
+    .what-I-do .animation.balloons .tip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center; }
+    .what-I-do .animation.balloons .balloon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15%; }
+      .what-I-do .animation.balloons .balloon .balloon-swing {
+        pointer-events: none; }
+      .what-I-do .animation.balloons .balloon circle {
+        pointer-events: auto; }
+    .what-I-do .animation.plane svg {
+      background-color: rgba(110, 81, 161, 0.9); }
+    .what-I-do .animation.rate .animation-wrapper {
+      display: block;
+      height: auto;
+      background-color: #eee; }
+    .what-I-do .animation.rate .tip {
+      text-align: center;
+      padding-top: 10px; }
+    .what-I-do .animation.rate svg {
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 15px 0 25px 0; }
+    .what-I-do .animation.rate .card {
+      cursor: pointer;
+      user-select: none; }
+    .what-I-do .animation.rate > text, .what-I-do .animation.rate .card path {
+      fill: #95B0B6;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .what-I-do .animation.rate .card--selected path {
+      fill: #000; }
+    .what-I-do .animation.d3-groups .animation-wrapper {
+      display: block; }
+    .what-I-do .animation.d3-groups .title {
+      display: inline-block;
+      float: left;
+      text-align: center;
+      width: 50%;
+      opacity: 0;
+      padding-top: 15px; }
+    .what-I-do .animation.d3-groups .tip {
+      text-align: center;
+      padding-bottom: 15px; }
+    .what-I-do .animation.d3-groups svg {
+      height: 200px;
+      max-width: 100%; }
+    .what-I-do .animation.d3-bars .x.axis .tick line {
+      display: none; }
+    .what-I-do .animation.d3-bars .tick text {
+      font-size: 20px; }
+    .what-I-do .animation.d3-bars .grid path {
+      stroke-width: 0; }
+    .what-I-do .animation.d3-bars svg {
+      height: 300px;
+      max-width: 100%; }
+    .what-I-do .animation.d3-scatterplot svg {
+      height: 300px;
+      max-width: 100%; }
+    .what-I-do .animation.d3-scatterplot text {
+      font-size: 20px; }
+    .what-I-do .animation.d3-scatterplot .btn {
+      cursor: pointer;
+      opacity: 0.9;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      .what-I-do .animation.d3-scatterplot .btn.disabled {
+        cursor: default;
+        opacity: 0.3; }
+    .what-I-do .animation.d3-scatterplot .dot {
+      fill: #336B00;
+      opacity: 0.6; }
+      .what-I-do .animation.d3-scatterplot .dot.selected {
+        fill: #ff5252;
+        opacity: 1; }
+    .what-I-do .animation.confetti .tip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+    .what-I-do .animation.confetti canvas {
+      background-color: #eee;
+      height: 250px; }
+    .what-I-do .animation.stars .slider {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #ffffff; }
+    .what-I-do .animation.stars canvas {
+      height: 250px; }
+
+/*# sourceMappingURL=style-update.css.map */
