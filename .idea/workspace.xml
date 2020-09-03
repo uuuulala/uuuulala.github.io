@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/img/heart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/wave.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/back-animation--fun.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/back-animation-CURL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/back-animation-dddd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/back-animation-funfun.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/back-animation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/balloons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/coin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/confetti.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/d3-bars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/d3-groups.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/d3-scatterplot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/dude.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/fire.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/CustomEase.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/EasePack.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/MorphSVGPlugin.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/MotionPathPlugin.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/ScrollToPlugin.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/ScrollTrigger.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/gsap/gsap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/mariane.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/plane.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/rate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/stars.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/update.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/wave.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/wings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mixins.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon/android-chrome-192x192.png" beforeDir="false" afterPath="$PROJECT_DIR$/favicon/android-chrome-192x192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon/android-chrome-512x512.png" beforeDir="false" afterPath="$PROJECT_DIR$/favicon/android-chrome-512x512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/favicon/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/favicon/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/favicon/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/favicon/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hire-me.html" beforeDir="false" afterPath="$PROJECT_DIR$/hire-me.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/home-back-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/home-back-animation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/what-I-do.html" beforeDir="false" afterPath="$PROJECT_DIR$/what-I-do.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/who-I-am.html" beforeDir="false" afterPath="$PROJECT_DIR$/who-I-am.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,8 +25,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="n#svg#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -90,6 +46,15 @@
                 <element signature="n#div#18;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -132,11 +97,6 @@
       </file>
       <file leaf-file-name="ksenia-kondrashova.jpeg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova.jpeg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="heart.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/heart.svg">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -313,6 +273,16 @@
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="style.sass" type="620a8d5e:NestingTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -392,12 +362,12 @@
       <workItem from="1598305257964" duration="17386000" />
       <workItem from="1598653253279" duration="23395000" />
       <workItem from="1598727183460" duration="3022000" />
-      <workItem from="1598737625573" duration="24057000" />
+      <workItem from="1598737625573" duration="24200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192064000" />
+    <option name="totallyTimeSpent" value="192207000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="781" extended-state="0" />
@@ -408,11 +378,11 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32748538" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.23976608" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2067239" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.34210527" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2067239" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -468,13 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="7" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1063">
-          <caret line="43" column="31" lean-forward="true" selection-end-line="150" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -738,10 +701,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="n#svg#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
