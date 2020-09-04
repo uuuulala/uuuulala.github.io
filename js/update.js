@@ -16,5 +16,15 @@ whoIamLink.addEventListener('click', () => {
     })
 });
 
+const hash = window.location.hash;
+if (hash === "#who-I-am") {
+    gsap.to(window, {
+        duration: 0.4,
+        scrollTo: whoIam
+    })
+} else if (hash === "#who-I-am") {
+    //select tab 3 etc
+}
+
 const heroAnimation = document.querySelector('.banner-back');
 initHeroAnimation(heroAnimation);

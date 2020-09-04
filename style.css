@@ -270,7 +270,8 @@ h2 {
       padding-bottom: 15px; }
     .what-I-do .animation.d3-groups svg {
       height: 200px;
-      max-width: 100%; }
+      max-width: 90%;
+      margin: 0 auto; }
     .what-I-do .animation.d3-bars .x.axis .tick line {
       display: none; }
     .what-I-do .animation.d3-bars .tick text {
@@ -279,10 +280,12 @@ h2 {
       stroke-width: 0; }
     .what-I-do .animation.d3-bars svg {
       height: 300px;
-      max-width: 100%; }
+      max-width: 90%;
+      margin: 0 auto; }
     .what-I-do .animation.d3-scatterplot svg {
       height: 300px;
-      max-width: 100%; }
+      max-width: 90%;
+      margin: 0 auto; }
     .what-I-do .animation.d3-scatterplot text {
       font-size: 20px; }
     .what-I-do .animation.d3-scatterplot .btn {
@@ -321,4 +324,4 @@ h2 {
     .what-I-do .animation.stars canvas {
       height: 250px; }
 
-/*# sourceMappingURL=style-update.css.map */
+/*# sourceMappingURL=style.css.map */
