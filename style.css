@@ -208,29 +208,6 @@ h2 {
       font-family: "Varela Round", sans-serif;
       width: 90%;
       max-width: 250px; }
-    .what-I-do .animation.balloons .animation-wrapper {
-      display: block;
-      overflow: hidden;
-      height: 350px;
-      background-color: #BBDFFF; }
-    .what-I-do .animation.balloons .tip {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center; }
-    .what-I-do .animation.balloons .balloon {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 130px; }
-      .what-I-do .animation.balloons .balloon .balloon-swing {
-        pointer-events: none; }
-      .what-I-do .animation.balloons .balloon circle {
-        pointer-events: auto; }
     .what-I-do .animation.plane svg {
       background-color: rgba(110, 81, 161, 0.9); }
     .what-I-do .animation.rate .animation-wrapper {
