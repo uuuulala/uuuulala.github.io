@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/img/ksenia-kondrashova.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/ksenia-kondrashova.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +39,6 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="ksenia-kondrashova-logo-big.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
       <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/back-animation.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,10 +51,15 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="515" column="24" selection-start-line="515" selection-start-column="24" selection-end-line="515" selection-end-column="24" />
+            <state relative-caret-position="128">
+              <caret line="513" column="17" lean-forward="true" selection-start-line="513" selection-start-column="17" selection-end-line="513" selection-end-column="17" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ksenia-kondrashova-logo-big.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="mixins.sass" pinned="false" current-in-tab="false">
@@ -358,24 +353,23 @@
       <workItem from="1600047218364" duration="11000" />
       <workItem from="1600203726817" duration="678000" />
       <workItem from="1600282213245" duration="542000" />
-      <workItem from="1600299242799" duration="250000" />
+      <workItem from="1600299242799" duration="370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205713000" />
+    <option name="totallyTimeSpent" value="205833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="773" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32748538" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22928993" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25250357" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22928993" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25250357" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
@@ -423,9 +417,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/wave.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/d3-bars.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -657,10 +648,13 @@
     <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="515" column="24" selection-start-line="515" selection-start-column="24" selection-end-line="515" selection-end-column="24" />
+        <state relative-caret-position="128">
+          <caret line="513" column="17" lean-forward="true" selection-start-line="513" selection-start-column="17" selection-end-line="513" selection-end-column="17" />
         </state>
       </provider>
     </entry>
