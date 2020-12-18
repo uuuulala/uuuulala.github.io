@@ -44,3 +44,7 @@ if (hash === "#who-I-am") {
 
 const heroAnimation = document.querySelector('.banner-back');
 initHeroAnimation(heroAnimation);
+
+window.addEventListener('touchstart', () => {
+    whatIdo.classList.add('mobile');
+});
