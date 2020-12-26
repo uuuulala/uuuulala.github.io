@@ -69,9 +69,6 @@ Draggable.create(jellyfishBody, {
     edgeResistance: 0.2,
     bounds: jellyfish,
     inertia: true,
-    // onDragStart: () => {
-    //     tl.paused()
-    // },
     onDrag: () => {
         adjustTentacles();
     },
