@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/back-animation--fun.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/back-animation-CURL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/back-animation-dddd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/back-animation-funfun.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/back-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/back-animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.sass" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+            <state relative-caret-position="945">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -69,11 +65,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+            <state relative-caret-position="109">
+              <caret line="547" column="185" selection-start-line="547" selection-start-column="185" selection-end-line="547" selection-end-column="185" />
               <folding>
                 <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -84,8 +80,8 @@
       <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/back-animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="530" column="29" lean-forward="true" selection-start-line="530" selection-start-column="29" selection-end-line="530" selection-end-column="29" />
+            <state relative-caret-position="7950">
+              <caret line="530" column="29" selection-start-line="530" selection-start-column="29" selection-end-line="530" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -120,8 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>float</find>
-      <find>radius</find>
       <find>balloon</find>
       <find>ball</find>
       <find>max-width</find>
@@ -150,6 +144,8 @@
       <find>visual</find>
       <find>banner-back</find>
       <find>resizeCanvas</find>
+      <find>vh</find>
+      <find>scrollT</find>
     </findStrings>
     <replaceStrings>
       <replace>compileShader</replace>
@@ -241,9 +237,9 @@
         <option value="$PROJECT_DIR$/js/confetti.js" />
         <option value="$PROJECT_DIR$/js/update.js" />
         <option value="$PROJECT_DIR$/js/jellyfish.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/back-animation.js" />
         <option value="$PROJECT_DIR$/style.sass" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -266,6 +262,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,7 +279,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,54 +381,57 @@
       <workItem from="1608739086674" duration="831000" />
       <workItem from="1608994926880" duration="1282000" />
       <workItem from="1609948831835" duration="588000" />
-      <workItem from="1610479826343" duration="86000" />
+      <workItem from="1610479826343" duration="1129000" />
+      <workItem from="1610798943144" duration="1153000" />
+      <workItem from="1610810301285" duration="358000" />
+      <workItem from="1611594138563" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214544000" />
+    <option name="totallyTimeSpent" value="217127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="776" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18884121" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32748538" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22091311" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28826895" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32748538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22091311" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25894135" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32842416" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.28111273" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -450,21 +449,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/back-animation-dddd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5415">
-          <caret line="361" column="35" lean-forward="true" selection-start-line="361" selection-start-column="35" selection-end-line="361" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/back-animation-dddd.js" />
     <entry file="file://$PROJECT_DIR$/js/update-copy.js" />
-    <entry file="file://$PROJECT_DIR$/js/back-animation--fun.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2595">
-          <caret line="173" column="8" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/back-animation--fun.js" />
     <entry file="file://$PROJECT_DIR$/e.svg" />
     <entry file="file://$PROJECT_DIR$/js/d3-scatterplot.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -495,13 +482,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/back-animation-last.js" />
-    <entry file="file://$PROJECT_DIR$/js/back-animation-funfun.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="588" column="50" lean-forward="true" selection-start-line="588" selection-start-column="50" selection-end-line="588" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/back-animation-funfun.js" />
     <entry file="file://$PROJECT_DIR$/js/wave.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -666,27 +647,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/back-animation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="530" column="29" lean-forward="true" selection-start-line="530" selection-start-column="29" selection-end-line="530" selection-end-column="29" />
+        <state relative-caret-position="7950">
+          <caret line="530" column="29" selection-start-line="530" selection-start-column="29" selection-end-line="530" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        <state relative-caret-position="945">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="547" column="185" selection-start-line="547" selection-start-column="185" selection-end-line="547" selection-end-column="185" />
+          <folding>
+            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
