@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/experiments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+            <state relative-caret-position="1215">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -65,11 +65,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="547" column="185" selection-start-line="547" selection-start-column="185" selection-end-line="547" selection-end-column="185" />
+            <state relative-caret-position="10350">
+              <caret line="638" column="468" lean-forward="true" selection-start-line="638" selection-start-column="468" selection-end-line="638" selection-end-column="468" />
               <folding>
                 <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -80,8 +80,8 @@
       <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/back-animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7950">
-              <caret line="530" column="29" selection-start-line="530" selection-start-column="29" selection-end-line="530" selection-end-column="29" />
+            <state relative-caret-position="9015">
+              <caret line="601" column="28" lean-forward="true" selection-start-line="601" selection-start-column="28" selection-end-line="601" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -98,8 +98,17 @@
       <file leaf-file-name="jellyfish.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+            <state relative-caret-position="15">
+              <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="experiments.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/experiments.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -109,15 +118,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>balloon</find>
-      <find>ball</find>
       <find>max-width</find>
       <find>ksenia-kond</find>
       <find>timeline</find>
@@ -146,6 +153,8 @@
       <find>resizeCanvas</find>
       <find>vh</find>
       <find>scrollT</find>
+      <find>initHeroAnimation</find>
+      <find>draggable</find>
     </findStrings>
     <replaceStrings>
       <replace>compileShader</replace>
@@ -236,10 +245,11 @@
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/js/confetti.js" />
         <option value="$PROJECT_DIR$/js/update.js" />
-        <option value="$PROJECT_DIR$/js/jellyfish.js" />
         <option value="$PROJECT_DIR$/js/back-animation.js" />
         <option value="$PROJECT_DIR$/style.sass" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/jellyfish.js" />
+        <option value="$PROJECT_DIR$/experiments.html" />
       </list>
     </option>
   </component>
@@ -262,7 +272,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,15 +279,11 @@
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,18 +389,22 @@
       <workItem from="1610479826343" duration="1129000" />
       <workItem from="1610798943144" duration="1153000" />
       <workItem from="1610810301285" duration="358000" />
-      <workItem from="1611594138563" duration="29000" />
+      <workItem from="1611594138563" duration="659000" />
+      <workItem from="1614440639920" duration="824000" />
+      <workItem from="1615279038074" duration="550000" />
+      <workItem from="1615395120363" duration="142000" />
+      <workItem from="1615395909532" duration="93000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217127000" />
+    <option name="totallyTimeSpent" value="219366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="776" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18884121" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19957082" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -404,7 +413,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32748538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22091311" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.010309278" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -449,7 +458,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/back-animation-dddd.js" />
     <entry file="file://$PROJECT_DIR$/js/update-copy.js" />
     <entry file="file://$PROJECT_DIR$/js/back-animation--fun.js" />
     <entry file="file://$PROJECT_DIR$/e.svg" />
@@ -633,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -647,27 +648,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/back-animation.js">
+    <entry file="file://$PROJECT_DIR$/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7950">
-          <caret line="530" column="29" selection-start-line="530" selection-start-column="29" selection-end-line="530" selection-end-column="29" />
+        <state relative-caret-position="1215">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.sass">
+    <entry file="file://$PROJECT_DIR$/js/back-animation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+        <state relative-caret-position="9015">
+          <caret line="601" column="28" lean-forward="true" selection-start-line="601" selection-start-column="28" selection-end-line="601" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="547" column="185" selection-start-line="547" selection-start-column="185" selection-end-line="547" selection-end-column="185" />
+        <state relative-caret-position="10350">
+          <caret line="638" column="468" lean-forward="true" selection-start-line="638" selection-start-column="468" selection-end-line="638" selection-end-column="468" />
           <folding>
             <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="98" column="1" lean-forward="true" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>

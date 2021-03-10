@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sketch-container"></div>
+
+
+<script type="x-shader/x-fragment" id="fragmentShader">
+
+    precision highp float;
+
+    #define PI 3.14159265359
+
+    uniform float u_ratio;
+    uniform float u_moving;
+    uniform float u_time;
+    uniform vec2 u_point;
+
+    uniform sampler2D u_texture;
+    varying vec2 vUv;
+
+    void main() {
+
+        float disappearing = 1. - u_moving * 0.02;
+        vec3 stem_color = vec3(70./255.,130./255.,127./255.);
+        vec3 flower_color = vec3(.7, .005, 0.01);
+
+        vec2 p = vUv - u_point.xy;
+        p.x *= u_ratio;
+
+        float stem_radius = 0.0001 * u_moving;
+        vec3 stem = exp(-dot(p, p) / stem_radius) * stem_color;
+        //    vec3 stem = (1. - step(stem_radius, dot(p, p))) * stem_color;
+
+        float r = length(p) * 6.;
+        float a = atan(p.y, p.x) + sin(u_time * 5.) * 0.05;
+        float f = abs(sin(a * 3.)) + 0.3;
+        vec3 flower = (1. - u_moving) * vec3(1. - smoothstep(0., f, r)) * flower_color;
+
+        vec3 base = texture2D(u_texture, vUv).xyz;
+        gl_FragColor = vec4(disappearing * base + flower + stem, 1.0);
+    }
+
+</script>
+
+
+
+<script type="x-shader/x-vertex" id="vertexShader">
+
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 1.0);
+    }
+
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js'></script>
+<script>
+
+    var renderer, container, renderTarget1, renderTarget2, sceneShader, sceneBasic, camera, size, clock, uniforms,
+        basicMaterial, shaderMaterial;
+    let pointer = {
+        x: -1.5,
+        y: -1.5,
+        dx: 0,
+        dy: 0,
+        moved: false,
+        down: true
+    };
+
+    // Initialize the WebGL renderer
+    renderer = new THREE.WebGLRenderer();
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container = document.getElementById("sketch-container");
+    container.appendChild(renderer.domElement);
+    sceneShader = new THREE.Scene();
+    sceneBasic = new THREE.Scene();
+    camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+    size = renderer.getDrawingBufferSize();
+    renderTarget1 = new THREE.WebGLRenderTarget(size.width, size.height);
+    renderTarget2 = new THREE.WebGLRenderTarget(size.width, size.height);
+
+    clock = new THREE.Clock(true);
+
+    createPlane();
+    animate();
+
+    function createPlane() {
+        shaderMaterial = new THREE.ShaderMaterial({
+            uniforms: {
+                u_time: {
+                    type: "f",
+                    value: 0.0
+                },
+                u_point: {
+                    type: "v2",
+                    value: new THREE.Vector2(pointer.x, pointer.y)
+                },
+                u_moving: {
+                    type: "f",
+                    value: 0.0
+                },
+                u_ratio: {
+                    type: "f",
+                    value: size.width / size.height
+                },
+                u_texture: {
+                    type: "t",
+                    value: null
+                }
+            },
+            vertexShader: document.getElementById("vertexShader").textContent,
+            fragmentShader: document.getElementById("fragmentShader").textContent
+        });
+        basicMaterial = new THREE.MeshBasicMaterial();
+
+        var geometry = new THREE.PlaneBufferGeometry(2, 2);
+
+        var meshShader = new THREE.Mesh(geometry, shaderMaterial);
+        var meshScreen = new THREE.Mesh(geometry, basicMaterial);
+        sceneShader.add(meshShader);
+        sceneBasic.add(meshScreen);
+
+    }
+
+    function render() {
+
+        shaderMaterial.uniforms.u_point.value = new THREE.Vector2(pointer.x, 1 - pointer.y);
+        shaderMaterial.uniforms.u_texture.value = renderTarget1.texture;
+        shaderMaterial.uniforms.u_ratio.value = size.width / size.height;
+
+        if (pointer.moved) {
+            pointer.moved = false;
+            shaderMaterial.uniforms.u_moving.value = 1.;
+            shaderMaterial.uniforms.u_time.value = 0.;
+        } else {
+            shaderMaterial.uniforms.u_moving.value = 0.;
+            shaderMaterial.uniforms.u_time.value += 0.02;
+        }
+
+        renderer.render(sceneShader, camera, renderTarget2);
+        basicMaterial.map = renderTarget2.texture;
+        renderer.render(sceneBasic, camera);
+        let tmp = renderTarget1;
+        renderTarget1 = renderTarget2;
+        renderTarget2 = tmp;
+    }
+
+
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+    }
+
+    window.addEventListener("mousemove", function (e) {
+        pointer.moved = pointer.down;
+        pointer.dx = 5 * (e.pageX / window.innerWidth - pointer.x);
+        pointer.dy = 5 * (e.pageY / window.innerHeight - pointer.y);
+        pointer.x = e.pageX / window.innerWidth;
+        pointer.y = e.pageY / window.innerHeight;
+        pointer.moved = Math.abs(pointer.dx) > 0 || Math.abs(pointer.dy) > 0;
+    });
+
+
+    window.addEventListener("touchstart", function (e) {
+        pointer.down = true;
+        pointer.x = e.targetTouches[0].pageX / window.innerWidth;
+        pointer.y = e.targetTouches[0].pageY / window.innerHeight;
+    });
+    window.addEventListener("touchmove", function (e) {
+        pointer.moved = pointer.down;
+        pointer.dx = 8 * (e.targetTouches[0].pageX / window.innerWidth - pointer.x);
+        pointer.dy = 8 * (e.targetTouches[0].pageY / window.innerHeight - pointer.y);
+        pointer.x = e.targetTouches[0].pageX / window.innerWidth;
+        pointer.y = e.targetTouches[0].pageY / window.innerHeight;
+    }, false);
+    window.addEventListener("touchend", function () {
+        pointer.down = false;
+    });
+
+</script>
+
+</body>
+</html>
