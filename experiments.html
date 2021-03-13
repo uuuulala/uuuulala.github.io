@@ -19,7 +19,6 @@
 
 
 <script type="x-shader/x-fragment" id="fragmentShader">
-
     precision highp float;
 
     #define PI 3.14159265359
@@ -34,26 +33,38 @@
 
     void main() {
 
-        float disappearing = 1. - u_moving * 0.02;
-        vec3 stem_color = vec3(70./255.,130./255.,127./255.);
-        vec3 flower_color = vec3(.7, .005, 0.01);
-
-        vec2 p = vUv - u_point.xy;
-        p.x *= u_ratio;
-
-        float stem_radius = 0.0001 * u_moving;
-        vec3 stem = exp(-dot(p, p) / stem_radius) * stem_color;
-        //    vec3 stem = (1. - step(stem_radius, dot(p, p))) * stem_color;
-
-        float r = length(p) * 6.;
-        float a = atan(p.y, p.x) + sin(u_time * 5.) * 0.05;
-        float f = abs(sin(a * 3.)) + 0.3;
-        vec3 flower = (1. - u_moving) * vec3(1. - smoothstep(0., f, r)) * flower_color;
-
         vec3 base = texture2D(u_texture, vUv).xyz;
-        gl_FragColor = vec4(disappearing * base + flower + stem, 1.0);
-    }
 
+        vec2 mouse = vUv - u_point.xy;
+        mouse.x *= u_ratio;
+
+        vec3 stem_color = vec3(.3, .5, .5);
+        float stem_radius = 0.0001 * u_moving;
+        vec3 stem = exp(-dot(mouse, mouse) / stem_radius) * stem_color;
+
+        float flower_radius_init = length(mouse) * 15.;
+        float flower_radius_grow = clamp(u_time * 0.05, 0., .3);
+
+        float flower_angle = atan(mouse.y, mouse.x);
+        float flower_angle_animated = flower_angle + sin(u_time * 5.) * 0.07;
+
+        float flower_shape_main = abs(sin(flower_angle_animated * 3.)) + 0.5;
+        float flower_shape_center = abs(sin(flower_angle * 4.)) * 0.4;
+
+        vec3 flower = (1. - u_moving) * vec3(1. - smoothstep(0., flower_shape_main, flower_radius_init - flower_radius_grow));
+        flower *= vec3(.45, .005, 0.21);
+
+        vec3 flower_black = (1. - u_moving) * vec3(1. - smoothstep(0., flower_shape_main, flower_radius_init - flower_radius_grow));
+        flower_black *= vec3(1., 1., 1.);
+
+        vec3 flower_front = (1. - u_moving) * vec3(1. - smoothstep(0., flower_shape_center, flower_radius_init - flower_radius_grow * 0.3));
+        flower_front *= vec3(0., 0., 1.);
+
+        vec3 disappearing = vec3(1. - u_moving * 0.03, 1. - u_moving * 0.1, 1. - u_moving * 0.05);
+        vec3 color = disappearing * base * (1. - flower_black) + flower + flower_front + stem;
+
+        gl_FragColor = vec4(color, 1.0);
+    }
 </script>
 
 
@@ -72,15 +83,14 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js'></script>
 <script>
 
-    var renderer, container, renderTarget1, renderTarget2, sceneShader, sceneBasic, camera, size, clock, uniforms,
-        basicMaterial, shaderMaterial;
+    let renderer, container, renderTarget1, renderTarget2, renderTarget3, sceneShader, sceneBasic, camera, size, clock, basicMaterial, shaderMaterial;
     let pointer = {
         x: -1.5,
         y: -1.5,
         dx: 0,
         dy: 0,
         moved: false,
-        down: true
+        down: true,
     };
 
     // Initialize the WebGL renderer
@@ -96,6 +106,7 @@
     size = renderer.getDrawingBufferSize();
     renderTarget1 = new THREE.WebGLRenderTarget(size.width, size.height);
     renderTarget2 = new THREE.WebGLRenderTarget(size.width, size.height);
+    renderTarget3 = new THREE.WebGLRenderTarget(size.width, size.height);
 
     clock = new THREE.Clock(true);
 
@@ -177,8 +188,6 @@
         pointer.y = e.pageY / window.innerHeight;
         pointer.moved = Math.abs(pointer.dx) > 0 || Math.abs(pointer.dy) > 0;
     });
-
-
     window.addEventListener("touchstart", function (e) {
         pointer.down = true;
         pointer.x = e.targetTouches[0].pageX / window.innerWidth;
@@ -194,6 +203,7 @@
     window.addEventListener("touchend", function () {
         pointer.down = false;
     });
+
 
 </script>
 
