@@ -176,8 +176,8 @@ function initHeroAnimation(canvas) {
 
 
     const blurShader = compileShader(gl.FRAGMENT_SHADER, `
-        precision mediump float;
-        precision mediump sampler2D;
+        precision highp float;
+        precision highp sampler2D;
     
         varying vec2 vUv;
         varying vec2 vL;
@@ -193,8 +193,8 @@ function initHeroAnimation(canvas) {
     `);
 
     const copyShader = compileShader(gl.FRAGMENT_SHADER, `
-        precision mediump float;
-        precision mediump sampler2D;
+        precision highp float;
+        precision highp sampler2D;
     
         varying highp vec2 vUv;
         uniform sampler2D uTexture;
@@ -205,7 +205,7 @@ function initHeroAnimation(canvas) {
     `);
 
     const colorShader = compileShader(gl.FRAGMENT_SHADER, `
-        precision mediump float;
+        precision highp float;
     
         uniform vec4 color;
     
@@ -282,8 +282,8 @@ function initHeroAnimation(canvas) {
     );
 
     const divergenceShader = compileShader(gl.FRAGMENT_SHADER, `
-        precision mediump float;
-        precision mediump sampler2D;
+        precision highp float;
+        precision highp sampler2D;
     
         varying highp vec2 vUv;
         varying highp vec2 vL;
@@ -310,8 +310,8 @@ function initHeroAnimation(canvas) {
     `);
 
     const pressureShader = compileShader(gl.FRAGMENT_SHADER, `
-        precision mediump float;
-        precision mediump sampler2D;
+        precision highp float;
+        precision highp sampler2D;
     
         varying highp vec2 vUv;
         varying highp vec2 vL;
@@ -334,8 +334,8 @@ function initHeroAnimation(canvas) {
     `);
 
     const gradientSubtractShader = compileShader(gl.FRAGMENT_SHADER, `
-        precision mediump float;
-        precision mediump sampler2D;
+        precision highp float;
+        precision highp sampler2D;
     
         varying highp vec2 vUv;
         varying highp vec2 vL;
