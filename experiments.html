@@ -50,6 +50,29 @@
         dot(random2(i + vec2(1.0,1.0)), f - vec2(1.0,1.0)), u.x), u.y);
     }
 
+
+    float flower_petals_shape(float angle, float radius) {
+        float s = abs(sin(angle * 3.)) + .5;
+        return 1. - smoothstep(0., s, radius);
+    }
+
+    float flower_center_shape(float angle, float radius) {
+        float s = abs(sin(angle * 4.)) * .4;
+        return 1. - smoothstep(0., s, radius);
+    }
+
+    float stem_shape(vec2 mouse) {
+        float radius = .01 * u_speed * u_moving;
+        return pow(exp(-dot(mouse, mouse) / radius), 2.);
+    }
+
+    vec3 flower_from_shape(float shape, vec3 color) {
+        shape *= (1. - u_moving);
+        vec3 outer = vec3(shape);
+        outer *= color;
+        return outer;
+    }
+
     void main() {
 
         vec3 base = texture2D(u_texture, vUv).xyz;
@@ -57,12 +80,11 @@
         vec2 mouse = vUv - u_point.xy;
         mouse.x *= u_ratio;
 
-        vec3 stem_color = vec3(.3, .5, .5);
-        float stem_radius = .01 * u_speed * u_moving;
-        vec3 stem = pow(exp(-dot(mouse, mouse) / stem_radius), 2.) * stem_color;
+        float stem_s = stem_shape(mouse);
+        vec3 stem = vec3(stem_s * u_moving);
+        stem *= vec3(.1, .5, .1);
 
-        float flower_radius_init = length(mouse) * (8. + u_rand * 3.);
-
+        float flower_radius_init = length(mouse) * (6. + u_rand * 8.);
         float flower_radius_grow = clamp(u_time * .01, 0., .3);
 
         float flower_angle = atan(mouse.y, mouse.x) + (.5 - u_rand) * .01 / u_time;
@@ -73,17 +95,22 @@
         float radius_noise = .1 * sin(flower_angle * 20. + noise(vUv) * u_rand * 40.);
         flower_radius_init += radius_noise;
 
-        vec3 flower = (1. - u_moving) * vec3(1. - smoothstep(0., flower_shape_main, flower_radius_init + radius_noise * .2 - flower_radius_grow));
-        flower *= vec3(.65, .1, .2 + u_rand * .8);
+//        vec3 flower = vec3((1. - u_moving) * flower_petals_shape(flower_angle, flower_radius_init + radius_noise * .2 - flower_radius_grow));
+//        flower *= vec3(.65, .1, .2 + u_rand * .8);
 
-        vec3 flower_black = (1. - u_moving) * vec3(1. - smoothstep(0., flower_shape_main, flower_radius_init - flower_radius_grow));
+        float petals_radius = flower_radius_init + radius_noise * .2 - flower_radius_grow;
+        float petals_shape = flower_petals_shape(flower_angle, petals_radius);
+        vec3 petals = flower_from_shape(petals_shape, vec3(.65, .1, u_rand * .6));
+
+
+        vec3 flower_black = vec3(1. - (1. - u_moving) * flower_petals_shape(flower_angle, flower_radius_init - flower_radius_grow));
         flower_black *= vec3(1., 1., 1.);
 
         vec3 flower_front = (1. - u_moving) * vec3(1. - smoothstep(0., flower_shape_center, flower_radius_init - flower_radius_grow * 0.3));
         flower_front *= vec3(.4, .4, .1);
 
-        vec3 disappearing = vec3(1. - u_moving * .03, 1. - u_moving * .1, 1. - u_moving * .05);
-        vec3 color = disappearing * base * (1. - flower_black) + flower + flower_front + stem;
+        vec3 disappearing = 1. - u_moving * vec3(.03, .1, .05);
+        vec3 color = disappearing * base * flower_black + petals + flower_front + stem;
         color = clamp(color, .02, 1.);
 
         gl_FragColor = vec4(color, 1.0);
