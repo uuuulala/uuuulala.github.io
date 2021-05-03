@@ -4,6 +4,11 @@
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/back-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/back-animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/wave.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/style.sass" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,8 +36,8 @@
       <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+            <state relative-caret-position="142">
+              <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -68,8 +73,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="668" column="37" lean-forward="true" selection-start-line="668" selection-start-column="37" selection-end-line="668" selection-end-column="37" />
+            <state relative-caret-position="187">
+              <caret line="226" column="33" lean-forward="true" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -80,8 +85,8 @@
       <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/back-animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="602" column="46" selection-start-line="602" selection-start-column="46" selection-end-line="602" selection-end-column="46" />
+            <state relative-caret-position="126">
+              <caret line="358" column="58" lean-forward="true" selection-start-line="358" selection-start-column="58" selection-end-line="358" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -125,10 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>click</find>
-      <find>jell</find>
-      <find>plane</find>
-      <find>scrollTo</find>
       <find>jellyfish</find>
       <find>insta</find>
       <find>codepen-icon</find>
@@ -155,6 +156,10 @@
       <find>colorProgram</find>
       <find>a</find>
       <find>GSAP</find>
+      <find>wave</find>
+      <find>CURL</find>
+      <find>bil</find>
+      <find>buil</find>
     </findStrings>
     <replaceStrings>
       <replace>baseVertexShader</replace>
@@ -247,9 +252,9 @@
         <option value="$PROJECT_DIR$/js/update.js" />
         <option value="$PROJECT_DIR$/js/jellyfish.js" />
         <option value="$PROJECT_DIR$/experiments.html" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/style.sass" />
         <option value="$PROJECT_DIR$/js/back-animation.js" />
-        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -272,6 +277,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,7 +294,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,18 +416,20 @@
       <workItem from="1618073622260" duration="1609000" />
       <workItem from="1618246671482" duration="5000" />
       <workItem from="1618328735370" duration="262000" />
-      <workItem from="1618425540671" duration="85000" />
+      <workItem from="1618425540671" duration="661000" />
+      <workItem from="1618998807478" duration="412000" />
+      <workItem from="1620045563239" duration="105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228633000" />
+    <option name="totallyTimeSpent" value="229726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23676682" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24320458" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -431,7 +438,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2638701" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2638701" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -682,22 +689,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+        <state relative-caret-position="142">
+          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/back-animation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="602" column="46" selection-start-line="602" selection-start-column="46" selection-end-line="602" selection-end-column="46" />
+        <state relative-caret-position="126">
+          <caret line="358" column="58" lean-forward="true" selection-start-line="358" selection-start-column="58" selection-end-line="358" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="668" column="37" lean-forward="true" selection-start-line="668" selection-start-column="37" selection-end-line="668" selection-end-column="37" />
+        <state relative-caret-position="187">
+          <caret line="226" column="33" lean-forward="true" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
