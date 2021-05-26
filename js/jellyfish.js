@@ -93,18 +93,26 @@ Draggable.create(jellyfishBody, {
             transformOrigin: 'center bottom',
             ease: 'power2.in'
         });
+        gsap.to(jellyfishBody, {
+            y: 200,
+            duration: 2,
+            onUpdate: adjustTentacles,
+            ease: 'power1.inOut'
+        });
         jellyfishFloatingTl.kill();
         jellyfishFloatingTl = gsap.timeline({
+            delay: 2,
             repeat: -1,
+            yoyo: true,
             onUpdate: adjustTentacles
         })
             .to(jellyfishBody, {
-                y: 500,
+                y: 400,
                 duration: 4,
                 ease: 'power1.inOut'
             })
             .to(jellyfishBody, {
-                y: 0,
+                y: 50,
                 duration: 4,
                 ease: 'power1.inOut'
             });
