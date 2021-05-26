@@ -178,13 +178,13 @@ h2 {
       background-color: #4BC0C8; }
     .what-I-do .animation.mariane .animation-wrapper {
       height: 250px;
-      background-color: #eee; }
+      background-color: #f7f7f7; }
     .what-I-do .animation.mariane svg {
       width: 80%;
       max-width: 500px; }
     .what-I-do .animation.fire .animation-wrapper {
       height: 250px;
-      background-color: #eee; }
+      background-color: #f7f7f7; }
     .what-I-do .animation.fire svg {
       width: 70px; }
     .what-I-do .animation.jellyfish .tip {
@@ -203,7 +203,7 @@ h2 {
       height: 100%; }
     .what-I-do .animation.heart .animation-wrapper {
       height: 250px;
-      background-color: #eee; }
+      background-color: #f7f7f7; }
     .what-I-do .animation.heart img {
       margin: 0 auto;
       width: 100px; }
@@ -216,7 +216,7 @@ h2 {
     .what-I-do .animation.rate .animation-wrapper {
       display: block;
       height: auto;
-      background-color: #eee; }
+      background-color: #f7f7f7; }
     .what-I-do .animation.rate .tip {
       text-align: center;
       padding-top: 10px; }
