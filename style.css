@@ -92,13 +92,17 @@ h2 {
       text-transform: uppercase; }
     .banner .banner-content .btn:after {
       height: 3px; }
+  .banner .banner-color,
   .banner .banner-back {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; }
+  .banner .banner-back {
     z-index: -1; }
+  .banner .banner-color {
+    background-color: #4BC0C8; }
 
 .what-I-do, .who-I-am {
   max-width: 800px;

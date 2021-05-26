@@ -621,6 +621,9 @@ function initHeroAnimation(canvas) {
         dye.swap();
     }
 
+    gsap.set('.banner-color', {
+        display: 'none'
+    });
     createSplats(6);
 
     function createSplats(number) {
