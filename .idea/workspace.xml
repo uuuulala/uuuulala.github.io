@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments.html" beforeDir="false" afterPath="$PROJECT_DIR$/experiments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/back-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/back-animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jellyfish.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jellyfish.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/style.sass" afterDir="false" />
@@ -32,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.sass" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+            <state relative-caret-position="172">
+              <caret line="163" selection-start-line="163" selection-end-line="167" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -62,10 +63,32 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+            <state relative-caret-position="61">
+              <caret line="136" column="27" selection-start-line="136" selection-end-line="166" />
               <folding>
+                <element signature="n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jellyfish.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="192" column="1" lean-forward="true" selection-start-line="2" selection-end-line="192" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="experiments.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/experiments.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="30" lean-forward="true" selection-end-line="30" />
+              <folding>
+                <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,12 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tl</find>
-      <find>visual</find>
-      <find>banner-back</find>
-      <find>resizeCanvas</find>
-      <find>vh</find>
-      <find>scrollT</find>
       <find>initHeroAnimation</find>
       <find>draggable</find>
       <find>mediump</find>
@@ -113,11 +130,14 @@
       <find>backgroundColor</find>
       <find>banner-</find>
       <find>mouse</find>
+      <find>adjustTentacles</find>
+      <find>jellyfishBody</find>
+      <find>duration: 0.2,</find>
+      <find>none</find>
+      <find>curvesParams</find>
+      <find>jell</find>
     </findStrings>
     <replaceStrings>
-      <replace>blurShader</replace>
-      <replace>blurProgram</replace>
-      <replace>colorProgram</replace>
       <replace>gradientSubtractProgram</replace>
       <replace>ext</replace>
       <replace>velocity</replace>
@@ -145,6 +165,9 @@
       <replace>jellyfish</replace>
       <replace>highp</replace>
       <replace />
+      <replace>duration: 0.1,</replace>
+      <replace>duration: 0.2</replace>
+      <replace>duration: 0.3,</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -201,13 +224,13 @@
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/js/confetti.js" />
         <option value="$PROJECT_DIR$/js/update.js" />
-        <option value="$PROJECT_DIR$/js/jellyfish.js" />
-        <option value="$PROJECT_DIR$/experiments.html" />
         <option value="$PROJECT_DIR$/js/d3-scatterplot.js" />
         <option value="$PROJECT_DIR$/eye.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/back-animation.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/jellyfish.js" />
         <option value="$PROJECT_DIR$/style.sass" />
+        <option value="$PROJECT_DIR$/experiments.html" />
       </list>
     </option>
   </component>
@@ -375,12 +398,12 @@
       <workItem from="1620117587597" duration="2530000" />
       <workItem from="1620122159148" duration="2592000" />
       <workItem from="1621940152783" duration="2021000" />
-      <workItem from="1621952535651" duration="2619000" />
+      <workItem from="1621952535651" duration="5907000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239910000" />
+    <option name="totallyTimeSpent" value="243198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -567,22 +590,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/gsap/Draggable.min.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/d3-scatterplot.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -648,16 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/back-animation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -665,10 +664,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="192" column="1" lean-forward="true" selection-start-line="2" selection-end-line="192" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="136" column="27" selection-start-line="136" selection-end-line="166" />
+          <folding>
+            <element signature="n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="82" column="14" lean-forward="true" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+        <state relative-caret-position="172">
+          <caret line="163" selection-start-line="163" selection-end-line="167" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="30" lean-forward="true" selection-end-line="30" />
+          <folding>
+            <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

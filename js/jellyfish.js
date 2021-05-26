@@ -25,7 +25,9 @@ const curvesParams = [
 const jellyfish = document.querySelector('.jellyfish svg');
 const jellyfishEl = document.querySelector('.jellyfish-el');
 const jellyfishBody = jellyfishEl.querySelector('.jellyfish-body');
+const jellyfishBodyPath = jellyfishEl.querySelector('.jellyfish-body-path');
 const tentacles = Array.from(jellyfishEl.querySelectorAll('.tentacle'));
+let jellyfishPrevDirection = 'up';
 
 
 let tentaclesData = [];
@@ -64,34 +66,90 @@ tentaclesData.forEach((tentacle) => {
     setTentaclePosition(tentacle);
 });
 
-Draggable.create(jellyfishBody, {
-    type: "x,y",
-    edgeResistance: 0.2,
-    bounds: jellyfish,
-    inertia: true,
-    onDrag: () => {
-        adjustTentacles();
-    },
-    onThrowUpdate: () => {
-        adjustTentacles();
-    }
-});
 
-let tl = gsap.timeline({
+let jellyfishFloatingTl = gsap.timeline({
     repeat: -1,
     yoyo: true,
-    onUpdate: () => {
-        adjustTentacles();
-    }
+    onUpdate: adjustTentacles
 })
     .to(jellyfishBody, {
         x: 0, y: 500,
         duration: 4,
         ease: 'power1.inOut'
-    })
+    });
+
+Draggable.create(jellyfishBody, {
+    type: "x,y",
+    edgeResistance: 0.2,
+    bounds: jellyfish,
+    inertia: true,
+    onDragStart: () => { jellyfishFloatingTl.kill() },
+    onDrag: adjustTentacles,
+    onThrowUpdate: adjustTentacles,
+    onThrowComplete: () => {
+        gsap.to(jellyfishBodyPath, {
+            duration: 2,
+            rotation: 0,
+            transformOrigin: 'center bottom',
+            ease: 'power2.in'
+        });
+        jellyfishFloatingTl.kill();
+        jellyfishFloatingTl = gsap.timeline({
+            repeat: -1,
+            onUpdate: adjustTentacles
+        })
+            .to(jellyfishBody, {
+                y: 500,
+                duration: 4,
+                ease: 'power1.inOut'
+            })
+            .to(jellyfishBody, {
+                y: 0,
+                duration: 4,
+                ease: 'power1.inOut'
+            });
+    }
+});
 
 
 function adjustTentacles() {
+    if (this.isDragging) {
+        const direction = this.getDirection("velocity");
+        if (jellyfishPrevDirection !== direction) {
+            if (direction === 'up') {
+                gsap.to(jellyfishBodyPath, {
+                    duration: 0.3,
+                    rotation: 0,
+                    transformOrigin: 'center bottom'
+                })
+            } else if (direction === 'right-up') {
+                gsap.to(jellyfishBodyPath, {
+                    duration: 0.3,
+                    rotation: 6,
+                    transformOrigin: 'center bottom'
+                })
+            } else if (direction === 'right') {
+                gsap.to(jellyfishBodyPath, {
+                    duration: 0.3,
+                    rotation: 12,
+                    transformOrigin: 'center bottom'
+                })
+            } else if (direction === 'left-up') {
+                gsap.to(jellyfishBodyPath, {
+                    duration: 0.3,
+                    rotation: -6,
+                    transformOrigin: 'center bottom'
+                })
+            } else if (direction === 'left') {
+                gsap.to(jellyfishBodyPath, {
+                    duration: 0.2,
+                    rotation: -12,
+                    transformOrigin: 'center bottom'
+                })
+            }
+        }
+    }
+
     tentaclesAnimationStep();
     tentaclesData.forEach((td) => {
         setTentaclePosition(td);
