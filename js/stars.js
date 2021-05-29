@@ -12,9 +12,7 @@ function initStars() {
     // global variables
     let container, starsElements, starsParams = { speed: 2, number: 300, extinction: 4 };
 
-    // run stars
     setupStars();
-    updateStars();
 
     // handle slider
     output.innerHTML = slider.value;
@@ -61,7 +59,6 @@ function initStars() {
             h: canvas.clientHeight,
             c: [ canvas.clientWidth * 0.5, canvas.clientHeight * 0.5 ]
         };
-        window.cancelAnimationFrame(updateStars);
         canvas.width = container.w;
         canvas.height = container.h;
         starsElements = [];
@@ -70,14 +67,38 @@ function initStars() {
         }
     }
 
+    let isVisible = elementIsInViewport(canvas);
+
     // redraw the frame
     function updateStars() {
-        starsCtx.fillStyle = 'black';
-        starsCtx.fillRect(0, 0, canvas.width, canvas.height);
-        starsElements.forEach((s) => {
-            s.show();
-            s.move();
-        });
-        window.requestAnimationFrame(updateStars);
+        if (isVisible) {
+            starsCtx.fillStyle = 'black';
+            starsCtx.fillRect(0, 0, canvas.width, canvas.height);
+            starsElements.forEach((s) => {
+                s.show();
+                s.move();
+            });
+            window.requestAnimationFrame(updateStars);
+        }
     }
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: canvas,
+            onEnter: () => {
+                isVisible = true;
+                updateStars();
+            },
+            onLeave: () => {
+                isVisible = false;
+            },
+            onEnterBack: () => {
+                isVisible = true;
+                updateStars();
+            },
+            onLeaveBack: () => {
+                isVisible = false;
+            }
+        }
+    });
 }

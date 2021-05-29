@@ -38,12 +38,11 @@ function initConfetti() {
     ];
 
     setupCanvas();
-    updateConfetti();
 
     confetti.addEventListener('click', addConfetti);
     window.addEventListener('resize', () => {
+        confettiElements = [];
         setupCanvas();
-        hideConfetti();
     });
 
     // Confetti constructor
@@ -86,28 +85,33 @@ function initConfetti() {
         }
     }
 
-    function updateConfetti () {
-        confettiCtx.clearRect(0, 0, container.w, container.h);
+    function updateConfetti() {
 
-        confettiElements.forEach((c) => {
-            c.update();
-            confettiCtx.translate(c.position.x, c.position.y);
-            confettiCtx.rotate(c.rotation);
-            const width = (c.dimensions.x * c.scale.x);
-            const height = (c.dimensions.y * c.scale.y);
-            confettiCtx.fillStyle = c.color;
-            confettiCtx.fillRect(-0.5 * width, -0.5 * height, width, height);
-            confettiCtx.setTransform(1, 0, 0, 1, 0, 0)
-        });
+        if (isVisible) {
+            confettiCtx.clearRect(0, 0, container.w, container.h);
 
-        confettiElements.forEach((c, idx) => {
-            if (c.position.y > container.h ||
-                c.position.x < -0.5 * container.x ||
-                c.position.x > 1.5 * container.x) {
-                confettiElements.splice(idx, 1)
-            }
-        });
-        window.requestAnimationFrame(updateConfetti);
+            confettiElements.forEach((c) => {
+                c.update();
+                confettiCtx.translate(c.position.x, c.position.y);
+                confettiCtx.rotate(c.rotation);
+                const width = (c.dimensions.x * c.scale.x);
+                const height = (c.dimensions.y * c.scale.y);
+                confettiCtx.fillStyle = c.color;
+                confettiCtx.fillRect(-0.5 * width, -0.5 * height, width, height);
+                confettiCtx.setTransform(1, 0, 0, 1, 0, 0)
+            });
+
+            confettiElements.forEach((c, idx) => {
+                if (c.position.y > container.h ||
+                    c.position.x < -0.5 * container.x ||
+                    c.position.x > 1.5 * container.x) {
+                    confettiElements.splice(idx, 1)
+                }
+            });
+            window.requestAnimationFrame(updateConfetti);
+        } else {
+            confettiElements = [];
+        }
     }
 
     function setupCanvas() {
@@ -137,33 +141,29 @@ function initConfetti() {
         }
     }
 
-    function hideConfetti() {
-        confettiElements = [];
-        window.cancelAnimationFrame(updateConfetti)
-    }
+    let isVisible = elementIsInViewport(confetti);
 
-    let isVisible = false;
-    function confettiLoop() {
+    function confettyRandomBoom() {
         if (isVisible) {
             addConfetti();
-            setTimeout(confettiLoop, 700 + Math.random() * 1700);
+            setTimeout(confettyRandomBoom, 2000 + Math.random() * 2000);
         }
     }
     gsap.timeline({
         scrollTrigger: {
             trigger: confetti,
-            start: '0% 50%',
-            end: '100% 50%',
             onEnter: () => {
                 isVisible = true;
-                confettiLoop();
+                updateConfetti();
+                confettyRandomBoom();
             },
             onLeave: () => {
                 isVisible = false;
             },
             onEnterBack: () => {
                 isVisible = true;
-                confettiLoop();
+                updateConfetti();
+                confettyRandomBoom();
             },
             onLeaveBack: () => {
                 isVisible = false;

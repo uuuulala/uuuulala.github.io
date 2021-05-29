@@ -247,8 +247,8 @@
             if (this.pressed) {
                 this.deltaRotationQuaternion
                     .setFromEuler(new THREE.Euler(
-                        this.deltaMove.y * 0.5 * (Math.PI / 180),
-                        this.deltaMove.x * 0.5 * (Math.PI / 180),
+                        this.deltaMove.y * (Math.PI / 180),
+                        this.deltaMove.x * (Math.PI / 180),
                         0,
                         'XYZ'
                     ));
@@ -394,10 +394,10 @@
             container.appendChild(this.renderer.domElement);
             this.scene = new THREE.Scene();
             this.eyeGroup = new THREE.Group();
-            this.shadowMesh;
             this.eyeRadius = 30;
             this.camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 1, 10000);
 
+            this.setResponsiveValues();
             this.setupScene();
             this.createEyeball();
             this.createShadow();
@@ -416,8 +416,13 @@
             this.scene.add(directionalLight);
         }
 
+        setResponsiveValues() {
+            this.sceneVerticalOffset = window.innerWidth > 800 ? 0 : 25;
+        }
+
         setCameraPosition(cp) {
             this.camera.position.z = cp;
+            this.camera.position.y = this.sceneVerticalOffset;
             controls.zoomControl.value = eyeConfig.zoomLevel;
             eyeConfig.zoomLevel = cp;
         }
@@ -518,8 +523,10 @@
         }
 
         updateSize() {
+            this.setResponsiveValues();
             this.camera.aspect = window.innerWidth / window.innerHeight;
             this.camera.updateProjectionMatrix();
+            this.camera.position.y = this.sceneVerticalOffset;
             this.renderer.setSize(window.innerWidth, window.innerHeight);
         }
     }

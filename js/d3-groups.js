@@ -79,9 +79,11 @@ function initD3Groups() {
             start: '0% 50%',
             end: '100% 50%',
             onEnter: () => {
+                svg.style('opacity', 1);
                 switchLayout();
             },
             onEnterBack: () => {
+                svg.style('opacity', 1);
                 switchLayout();
             }
         }

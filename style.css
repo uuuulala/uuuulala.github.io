@@ -4,14 +4,18 @@ html, body {
   overscroll-behavior: none;
   font-family: sans-serif;
   color: #000;
-  line-height: 1.7em; }
+  line-height: 1.3em; }
 
 a {
   color: inherit;
   text-decoration: none; }
 
 h2 {
-  width: 100%; }
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0; }
 
 .btn {
   cursor: pointer;
@@ -37,13 +41,6 @@ h2 {
   @media (max-width: 888px) {
     .contacts {
       display: none; } }
-
-.mobile-padding {
-  padding-bottom: 10px; }
-  @media (max-width: 888px) {
-    .mobile-padding {
-      width: calc(100% - 20px);
-      margin: 0 auto; } }
 
 .social {
   width: 20px; }
@@ -109,24 +106,24 @@ h2 {
   padding-top: 30px; }
 
 .who-I-am {
-  padding-bottom: 25px; }
+  margin-bottom: 130px; }
   .who-I-am ul {
     list-style: none;
     padding: 0 0 0 10px; }
-  .who-I-am li {
-    line-height: 1.5em; }
-    .who-I-am li:before {
-      content: "";
-      display: inline-block;
-      height: 0.8em;
-      width: 0.8em;
-      background-image: url("./img/rect.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      margin-right: 10px;
-      margin-bottom: -2px; }
+  .who-I-am li:before {
+    content: "";
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    background-image: url("./img/rect.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    margin-bottom: -2px; }
   .who-I-am img {
     width: 100%; }
+  .who-I-am .who-I-am--paragraph {
+    margin: 1em auto; }
   .who-I-am .social-container {
     height: 1.5em; }
     .who-I-am .social-container .btn {
@@ -139,6 +136,8 @@ h2 {
       .who-I-am .social-container .btn span {
         line-height: 1.5em;
         padding-left: 8px; }
+  .who-I-am .social-container:nth-child(1) {
+    margin-top: 20px; }
 
 .what-I-do {
   display: -webkit-box;
@@ -251,7 +250,8 @@ h2 {
     .what-I-do .animation.d3-groups svg {
       height: 200px;
       max-width: 90%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      opacity: 0; }
     .what-I-do .animation.d3-bars .x.axis .tick line {
       display: none; }
     .what-I-do .animation.d3-bars .tick text {
@@ -294,7 +294,7 @@ h2 {
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
     .what-I-do .animation.confetti canvas {
-      background-color: #eee;
+      background-color: #f7f7f7;
       height: 250px; }
     .what-I-do .animation.stars .slider {
       position: absolute;
@@ -303,5 +303,31 @@ h2 {
       color: #ffffff; }
     .what-I-do .animation.stars canvas {
       height: 250px; }
+    .what-I-do .animation.eyeball .dg.main {
+      position: absolute;
+      top: 0;
+      right: 0; }
+    .what-I-do .animation.eyeball #zoom-range {
+      position: absolute;
+      width: 200px;
+      bottom: 0;
+      right: 10px;
+      padding: 30px 0; }
+    .what-I-do .animation.eyeball .cr.color .selector {
+      width: 50px !important; }
+    .what-I-do .animation.eyeball .cr.color .saturation-field,
+    .what-I-do .animation.eyeball .cr.color .field-knob {
+      display: none !important; }
+    .what-I-do .animation.eyeball .cr.color .hue-field {
+      width: calc(100% - 8px) !important; }
+    .what-I-do .animation.eyeball .cr.color .hue-knob {
+      margin-left: 26px !important;
+      height: 5px !important;
+      border-right: 10px solid #000 !important; }
+
+@media (max-width: 888px) {
+  .mobile-padding {
+    width: calc(100% - 20px);
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=style.css.map */

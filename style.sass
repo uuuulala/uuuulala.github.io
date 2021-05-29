@@ -6,13 +6,17 @@ html, body
   overscroll-behavior: none
   font-family: sans-serif
   color: #000
-  line-height: 1.7em
+  line-height: 1.3em
 
 a
   color: inherit
   text-decoration: none
 h2
   width: 100%
+  padding-top: 2em
+  padding-bottom: 0.5em
+  margin-top: 0
+  margin-bottom: 0
 .btn
   cursor: pointer
   position: relative
@@ -34,12 +38,6 @@ h2
   z-index: 2
   @media (max-width: 888px)
     display: none
-
-.mobile-padding
-  padding-bottom: 10px
-  @media (max-width: 888px)
-    width: calc(100% - 20px)
-    margin: 0 auto
 
 .social
   width: 20px
@@ -90,12 +88,11 @@ h2
   padding-top: 30px
 
 .who-I-am
-  padding-bottom: 25px
+  margin-bottom: 130px
   ul
     list-style: none
     padding: 0 0 0 10px
   li
-    line-height: 1.5em
     &:before
       content: ''
       display: inline-block
@@ -108,6 +105,8 @@ h2
       margin-bottom: -2px
   img
     width: 100%
+  .who-I-am--paragraph
+    margin: 1em auto
   .social-container
     height: 1.5em
     .btn
@@ -120,6 +119,9 @@ h2
       span
         line-height: 1.5em
         padding-left: 8px
+  .social-container:nth-child(1)
+    margin-top: 20px
+
 
 .what-I-do
   @include flexbox
@@ -218,6 +220,7 @@ h2
         height: 200px
         max-width: 90%
         margin: 0 auto
+        opacity: 0
     &.d3-bars
       .x.axis .tick line
         display: none
@@ -256,7 +259,7 @@ h2
         left: 50%
         @include transform(translate(-50%, -50%))
       canvas
-        background-color: #eee
+        background-color: #f7f7f7
         height: 250px
     &.stars
       .slider
@@ -266,3 +269,30 @@ h2
         color: #ffffff
       canvas
         height: 250px
+    &.eyeball
+      .dg.main
+        position: absolute
+        top: 0
+        right: 0
+      #zoom-range
+        position: absolute
+        width: 200px
+        bottom: 0
+        right: 10px
+        padding: 30px 0
+      .cr.color .selector
+        width: 50px !important
+      .cr.color .saturation-field,
+      .cr.color .field-knob
+        display: none !important
+      .cr.color .hue-field
+        width: calc(100% - 8px) !important
+      .cr.color .hue-knob
+        margin-left: 26px !important
+        height: 5px !important
+        border-right: 10px solid #000 !important
+
+.mobile-padding
+  @media (max-width: 888px)
+    width: calc(100% - 20px)
+    margin: 0 auto
