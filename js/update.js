@@ -42,6 +42,8 @@ if (hash === "#who-I-am") {
     })
 }
 
+const heroAnimationWrapper = document.querySelector('.banner');
+heroAnimationWrapper.style.height = window.innerHeight + 'px';
 const heroAnimation = document.querySelector('.banner-back');
 initHeroAnimation(heroAnimation);
 
