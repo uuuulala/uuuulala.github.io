@@ -27,7 +27,6 @@
 
     uniform float u_time;
     uniform vec2 u_pointer;
-    uniform vec2 u_col_number;
     varying vec2 vUv;
 
     #define TWO_PI 6.28318530718
@@ -75,7 +74,10 @@
         vec2 mouse = u_pointer;
         mouse.x *= u_ratio;
 
-        float width = 1. * u_ratio / 20.;
+        float col_number = 10. + step(1., u_ratio) * 10.;
+//        const int col_number = 10;
+
+        float width = 1. * u_ratio / float(col_number);
         float speed = u_time * .075;
         float pointer = calcMouse(mouse, uv, width);
         float sum = calcBottom(uv, width);
