@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+
+        .surface {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div class="surface">
+</div>
+
+
+
+<script type="x-shader/x-fragment" id="fragmentShader">
+    precision highp float;
+
+    uniform float u_ratio;
+
+    uniform float u_time;
+    uniform vec2 u_pointer;
+    uniform vec2 u_col_number;
+    varying vec2 vUv;
+
+    #define TWO_PI 6.28318530718
+
+
+    float random(in vec2 st) {
+        return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
+    }
+
+    float calcMouse(vec2 pos, vec2 uv, float width) {
+        pos.y = max(.15, pos.y);
+        float b = width * .001 / pow(pow(abs(uv.x - pos.x), 2.) + pow(abs(uv.y - pos.y), 2.), 2.);
+        b *= (1. - pos.y);
+        b *= smoothstep(0.2, 0.5, 1. - pos.y);
+        return b;
+    }
+
+    float calcBall(vec2 pos, vec2 uv, float width) {
+        float b = width * .018 / pow(pow(abs(uv.x - pos.x), 2.) + pow(abs(uv.y - pos.y), 2.), .9);
+        return b;
+    }
+
+    float calcColumn(vec2 pos, vec2 uv, float width) {
+        float bt = 1. - smoothstep(0., width, abs(uv.x - pos.x));
+        bt *= smoothstep(pos.y - width * 1.5, pos.y, uv.y);
+
+        return max(bt, 0.);
+    }
+
+    float calcBottom(vec2 uv, float width) {
+        uv.y = (1. - uv.y);
+        uv.y *= (1. / width);
+        uv.y -= (1. / width * .85);
+        uv.y = clamp(uv.y, 0., 1.);
+        uv.y = pow(uv.y, 2.);
+
+        return uv.y;
+    }
+
+
+    void main() {
+
+        vec2 uv = vUv;
+        uv.x *= u_ratio;
+        vec2 mouse = u_pointer;
+        mouse.x *= u_ratio;
+
+        float width = 1. * u_ratio / 20.;
+        float speed = u_time * .075;
+        float pointer = calcMouse(mouse, uv, width);
+        float sum = calcBottom(uv, width);
+
+        for (int i = 0; i <= 20; i++) {
+
+            float randomiser = random(vec2(pow(float(i), 0.1), pow(float(i), 0.2)));
+            float x = width * float(i);
+
+            vec2 drop = vec2(x, 1. - 2. * fract(speed * .1 + randomiser));
+            sum += calcBall(drop, uv, width);
+
+            vec2 column = vec2(x, .9 - .5 * (.5 + .5 * sin(speed + TWO_PI * randomiser)));
+            sum += calcColumn(column, uv, width);
+
+        }
+
+        sum -= pointer;
+
+        float bord = .5;
+        vec3 color = mix(vec3(.92), mix(vec3(.91, .39, .26), vec3(.56, .31, .58), uv.y), smoothstep(bord, bord + .02, sum));
+
+        gl_FragColor = vec4(color.rgb, 1.);
+        //    gl_FragColor = vec4(vec3(sum), 1.);
+
+    }
+</script>
+
+<script type="x-shader/x-vertex" id="vertexShader">
+
+    attribute vec3 position;
+    attribute vec2 uv;
+
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 1.0 );
+    }
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js'></script>
+<script>
+    const container = document.querySelector('.surface');
+    container.style.height = Math.min(window.innerHeight, container.clientHeight) + 'px';
+    let pointer, surface;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        pointer = new Pointer();
+        surface = new Surface();
+
+        surface.updateSize(container.clientWidth, container.clientHeight);
+        window.addEventListener('resize', () => surface.updateSize(container.clientWidth, container.clientHeight));
+        surface.loop();
+
+        window.addEventListener("mousemove", (e) => pointer.onMouseMove(e));
+        window.addEventListener("touchmove", (e) => pointer.onTouchMove(e));
+    });
+
+    class Pointer {
+        constructor() {
+            this.x = 0;
+            this.y = 0;
+        }
+        onMouseMove(e) {
+            this.x = e.pageX / container.clientWidth;
+            this.y = e.pageY / container.clientHeight
+        }
+        onTouchMove(e) {
+            this.x = e.targetTouches[0].pageX / container.clientWidth;
+            this.y = e.targetTouches[0].pageY / container.clientHeight;
+        }
+    }
+
+
+    class Surface {
+
+        constructor() {
+            this.renderer = new THREE.WebGLRenderer({});
+            this.renderer.setPixelRatio(window.devicePixelRatio);
+            this.container = document.getElementsByClassName('surface')[0];
+            this.container.appendChild(this.renderer.domElement);
+            this.scene = new THREE.Scene();
+            this.camera = new THREE.Camera();
+            this.size = this.renderer.getDrawingBufferSize();
+            this.createPlane();
+            this.render();
+        }
+
+        createPlane() {
+            this.material = new THREE.RawShaderMaterial({
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent,
+                uniforms: {
+                    u_time: {type: 'f', value: 0},
+                    u_ratio: {type: "f", value: this.size.width / this.size.height},
+                    u_pointer: {type: "v2", value: new THREE.Vector2(pointer.x, 1. - pointer.y)},
+                }
+            });
+            this.planeGeometry = new THREE.PlaneBufferGeometry(2, 2);
+            this.plane = new THREE.Mesh(this.planeGeometry, this.material);
+            this.scene.add(this.plane);
+        }
+
+        render() {
+            this.plane.material.uniforms.u_time.value += .1;
+            this.plane.material.uniforms.u_ratio.value = this.size.width / this.size.height;
+            this.plane.material.uniforms.u_pointer.value = new THREE.Vector2(pointer.x, 1. - pointer.y);
+
+            this.renderer.render(this.scene, this.camera);
+        }
+
+        loop() {
+            this.render();
+            requestAnimationFrame(this.loop.bind(this));
+        }
+
+        updateSize(w, h) {
+            container.style.height = Math.min(window.innerHeight, container.clientHeight) + 'px';
+            this.renderer.setSize(w, h);
+            this.size = this.renderer.getDrawingBufferSize();
+        }
+    }
+</script>
+
+</body>
+</html>
