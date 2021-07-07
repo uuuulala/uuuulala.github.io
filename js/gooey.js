@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.timeline({
         scrollTrigger: {
             trigger: gooeyContainer,
-            pin: window.innerWidth < 800,
             onEnter: () => {
                 gooeySurface.isVisible = true;
                 gooeySurface.loop();
