@@ -428,15 +428,6 @@
                     return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
                 }
 
-
-                float calcMouse(vec2 pos, vec2 uv, float width) {
-                    pos.y = max(.15, pos.y);
-                    float b = width * .001 / pow(pow(abs(uv.x - pos.x), 2.) + pow(abs(uv.y - pos.y), 2.), 2.);
-                    b *= (1. - pos.y);
-                    b *= smoothstep(0.2, 0.5, 1. - pos.y);
-                    return b;
-                }
-
                 float circle(vec2 pos, vec2 uv, float radius) {
                     return smoothstep(0., length(uv - pos), radius);
                 }
@@ -466,7 +457,8 @@
                     mouse.x *= u_ratio;
 
                     float width = u_ratio / float(colNumber);
-                    float pointer = calcMouse(mouse, uv, width);
+                    float pointer = circle(mouse, uv, width * 0.3);
+
                     float sum = calcBottom(uv, width);
 
                     for (int i = 0; i <= colNumber; i++) {
@@ -493,9 +485,9 @@
                         sum += col;
                     }
 
-                    sum -= pointer;
+                    sum += pointer;
                     float bord = .5;
-                    vec3 color = mix(vec3(.92), mix(vec3(.91, .39, .26), vec3(.56, .31, .58), uv.y), smoothstep(bord, bord + .02, sum));
+                    vec3 color = mix(vec3(.92), mix(vec3(.91, .39, .26), vec3(.56, .31, .58), uv.y), smoothstep(bord, bord + .01, sum));
                     gl_FragColor = vec4(color.rgb, 1.);
                 }
             </script>
