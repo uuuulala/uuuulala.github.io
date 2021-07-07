@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            display: block;
+        }
+        *:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="surface"></div>
+<script type="module">
+    import * as THREE from './js/threejs/three.module.js';
+    import { OrbitControls } from './js/threejs/OrbitControls.js';
+    import { LineMaterial } from './js/threejs/LineMaterial.js';
+    import { Wireframe } from './js/threejs/Wireframe.js';
+    import { WireframeGeometry2 } from './js/threejs/WireframeGeometry2.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let surface = new Surface();
+        surface.updateSize(window.innerWidth, window.innerHeight);
+        window.addEventListener('resize', () => {
+            surface.updateSize(window.innerWidth, window.innerHeight);
+        }, false);
+        surface.loop();
+    });
+
+
+    class Surface {
+
+        constructor() {
+            this.renderer = new THREE.WebGLRenderer({ antialias: true });
+            this.renderer.setPixelRatio(window.devicePixelRatio);
+            this.renderer.setClearColor(0xf7f7f7);
+            this.container = document.getElementsByClassName('surface')[0];
+            this.container.appendChild(this.renderer.domElement);
+
+            this.scene = new THREE.Scene();
+            this.scene.fog = new THREE.Fog(0xd4d4d4, 30, 50);
+
+            this.camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
+            this.camera.position.z = 35;
+
+            this.timer = 0;
+
+            const controls = new OrbitControls(this.camera, this.renderer.domElement);
+            controls.minDistance = controls.maxDistance = 35;
+
+            this.createSphere();
+            this.render();
+        }
+
+        createSphere() {
+
+            this.group = new THREE.Group();
+
+            const geometry = new THREE.IcosahedronBufferGeometry(10, 1);
+            const positionsIcosahedron = geometry.attributes.position.array;
+            this.spheres  = [];
+            for (let i = 0; i < geometry.attributes.position.count; i++) {
+                const geometry = new THREE.SphereGeometry(.5, 16, 16);
+                const material = new THREE.MeshBasicMaterial({
+                    transparent: true,
+                    depthTest: false
+                });
+                const sphere = new THREE.Mesh(geometry, material);
+                sphere.position.x = positionsIcosahedron[i * 3];
+                sphere.position.y = positionsIcosahedron[i * 3 + 1];
+                sphere.position.z = positionsIcosahedron[i * 3 + 2];
+
+                const sphereData = {
+                    el: sphere,
+                    speed: Math.random() * 0.005 + 0.005,
+                    paused: Math.random() < 0.8,
+                    scale: 0,
+                    color: '0xE50142',
+                    opacity: 0
+                };
+
+                if ((i % 3)) {
+                    sphereData.opacity = 1;
+                    sphereData.scale = 0.2 + Math.random() * 0.3;
+                    sphereData.speed = 0;
+                    sphereData.color = Math.random() > .3 ? '0x444444' : '0xE50142';
+                }
+
+                this.spheres.push(sphereData);
+                material.color.setHex(sphereData.color);
+                material.opacity = sphereData.opacity;
+                sphere.scale.set(sphereData.scale, sphereData.scale, sphereData.scale);
+                this.group.add(sphere);
+            }
+
+            const wfGeometry = new WireframeGeometry2(geometry);
+            this.wfMaterial = new LineMaterial({
+                fog: true,
+                color: 0x444444,
+                linewidth: 2,
+            });
+            this.wfMaterial.resolution.set(window.innerWidth, window.innerHeight);
+
+            this.wireframe = new Wireframe(wfGeometry, this.wfMaterial);
+            this.wireframe.computeLineDistances();
+
+            this.group.add(this.wireframe);
+            this.scene.add(this.group);
+        }
+
+        updatePoints() {
+            this.spheres.forEach((s) => {
+                if (s.speed && !s.paused) {
+                    s.scale += s.speed;
+                    if (s.scale >= 1) {
+                        s.scale = 0;
+                    }
+                    s.el.scale.set(s.scale * 1.5, s.scale * 1.5, s.scale * 1.5);
+
+                    s.opacity -= s.speed;
+                    if (s.opacity < 0) {
+                        s.opacity = 1;
+                    }
+                    s.el.material.opacity = s.opacity;
+                }
+            });
+        }
+
+        render() {
+            this.renderer.render(this.scene, this.camera);
+        }
+
+        loop() {
+            this.render();
+
+            this.timer += 0.01;
+            const scale = 1 + (1 + Math.sin(this.timer)) * 0.05;
+
+            this.group.rotation.x += 0.001;
+            this.group.rotation.y += 0.001;
+            this.group.scale.set(scale, scale, scale);
+
+            this.updatePoints();
+
+            requestAnimationFrame(this.loop.bind(this));
+        }
+
+        updateSize(w, h) {
+            this.camera.aspect = window.innerWidth / window.innerHeight;
+            this.camera.updateProjectionMatrix();
+            this.wfMaterial.resolution.set(window.innerWidth, window.innerHeight);
+            this.renderer.setSize(w, h);
+        }
+    }
+</script>
+
+</body>
+
+</html>
