@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/js/gooey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/eyeball.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/eyeball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/gooey.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/gooey.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,14 +27,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54545456">
+    <splitter split-orientation="horizontal" split-proportion="0.6792929">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/style.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2220">
-                  <caret line="148" selection-start-line="148" selection-end-line="148" />
+                <state relative-caret-position="202">
+                  <caret line="267" column="13" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -59,11 +57,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="148">
-                  <caret line="471" column="79" selection-start-line="471" selection-start-column="79" selection-end-line="471" selection-end-column="79" />
+                <state relative-caret-position="193">
+                  <caret line="437" column="17" selection-start-line="437" selection-start-column="17" selection-end-line="437" selection-end-column="17" />
                   <folding>
                     <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -83,11 +81,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="gooey.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="gooey.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/gooey.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="175">
-                  <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+                <state relative-caret-position="270">
+                  <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -95,8 +93,8 @@
           <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/eyeball.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="353" column="5" lean-forward="true" selection-start-line="353" selection-start-column="5" selection-end-line="353" selection-end-column="5" />
+                <state relative-caret-position="170">
+                  <caret line="349" selection-start-line="349" selection-end-line="352" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -150,8 +148,8 @@
           <file leaf-file-name="gooey.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/gooey.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-462">
-                  <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+                <state relative-caret-position="131">
+                  <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -170,21 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>deltaRotationQuaternion</find>
-      <find>loop</find>
-      <find>class=&quot;mobile-padding&quot;</find>
-      <find>mobile-padding</find>
-      <find>main-btn</find>
-      <find>h2</find>
-      <find>bottom</find>
-      <find>what-</find>
-      <find>initHeroAnimation</find>
-      <find>.banner</find>
-      <find>mariane</find>
-      <find>mari</find>
-      <find>dat</find>
-      <find>new</find>
-      <find>gui</find>
       <find>anchor</find>
       <find>fragmentShader</find>
       <find>appendChild</find>
@@ -200,6 +183,21 @@
       <find>render</find>
       <find>col_number</find>
       <find>PI</find>
+      <find>onClick</find>
+      <find>playShrink</find>
+      <find>eyeball</find>
+      <find>hei</find>
+      <find>updateSize</find>
+      <find>setResponsiveValues</find>
+      <find>width</find>
+      <find>updateProjectionMatrix</find>
+      <find>calcMouse</find>
+      <find>calcBall</find>
+      <find>sum3</find>
+      <find>calcColumn</find>
+      <find>isVisible</find>
+      <find>height</find>
+      <find>loop</find>
     </findStrings>
     <replaceStrings>
       <replace>pressure</replace>
@@ -291,10 +289,10 @@
         <option value="$PROJECT_DIR$/style.sass" />
         <option value="$PROJECT_DIR$/sphere.html" />
         <option value="$PROJECT_DIR$/js/update.js" />
-        <option value="$PROJECT_DIR$/js/eyeball.js" />
-        <option value="$PROJECT_DIR$/js/gooey.js" />
         <option value="$PROJECT_DIR$/gooey.html" />
+        <option value="$PROJECT_DIR$/js/eyeball.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/gooey.js" />
       </list>
     </option>
   </component>
@@ -324,11 +322,6 @@
             <path>
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -473,12 +466,12 @@
       <workItem from="1623667757140" duration="934000" />
       <workItem from="1624103371959" duration="1824000" />
       <workItem from="1624346295286" duration="684000" />
-      <workItem from="1625645167065" duration="3494000" />
+      <workItem from="1625645167065" duration="5124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266344000" />
+    <option name="totallyTimeSpent" value="267974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -718,13 +711,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.svg" />
     <entry file="file://$PROJECT_DIR$/hhhAsset 2.svg" />
-    <entry file="file://$PROJECT_DIR$/style.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/threejs/Wireframe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -759,17 +745,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+    <entry file="file://$PROJECT_DIR$/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="353" column="5" lean-forward="true" selection-start-line="353" selection-start-column="5" selection-end-line="353" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/gooey.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        <state relative-caret-position="202">
+          <caret line="267" column="13" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -782,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="471" column="79" selection-start-line="471" selection-start-column="79" selection-end-line="471" selection-end-column="79" />
+        <state relative-caret-position="193">
+          <caret line="437" column="17" selection-start-line="437" selection-start-column="17" selection-end-line="437" selection-end-column="17" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -799,6 +778,20 @@
             <element signature="n#script#1;n#div#17;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="349" selection-start-line="349" selection-end-line="352" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/gooey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
         </state>
       </provider>
     </entry>

@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("mousemove", (e) => gooeyPointer.onMouseMove(e));
     window.addEventListener("touchmove", (e) => gooeyPointer.onTouchMove(e));
 
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: eyeballContainer,
+            onEnter: () => {
+                gooeySurface.isVisible = true;
+                gooeySurface.loop();
+            },
+            onLeave: () => {
+                gooeySurface.isVisible = false;
+            },
+            onEnterBack: () => {
+                gooeySurface.isVisible = true;
+                gooeySurface.loop();
+            },
+            onLeaveBack: () => {
+                gooeySurface.isVisible = false;
+            }
+        }
+    });
 });
 
 class Pointer {
@@ -36,17 +55,23 @@ class Pointer {
 class Surface {
 
     constructor(w, h) {
+        this.setResponsiveValues();
         this.renderer = new THREE.WebGLRenderer({});
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.container = gooeyContainer;
         this.container.appendChild(this.renderer.domElement);
         this.scene = new THREE.Scene();
         this.camera = new THREE.Camera();
+        this.isVisible = elementIsInViewport(gooeyContainer);
         this.createPlane(w, h);
         this.render();
     }
 
-    createPlane(w, h) {
+    setResponsiveValues() {
+        this.height = window.innerWidth > 800 ? 400 : 550;
+    }
+
+    createPlane() {
         this.material = new THREE.RawShaderMaterial({
             vertexShader: document.getElementById('gooey-vertexShader').textContent,
             fragmentShader: document.getElementById('gooey-fragmentShader').textContent,
@@ -56,7 +81,7 @@ class Surface {
                 u_pointer: {type: "v2", value: new THREE.Vector2(gooeyPointer.x, 1. - gooeyPointer.y)},
             }
         });
-        this.material.defines = { COL_NUMBER: gooeyContainer.clientWidth > gooeyContainer.clientHeight ? 20 : 10 };
+        this.material.defines = { COL_NUMBER: window.innerWidth > 700 ? 17 : 9 };
 
         this.planeGeometry = new THREE.PlaneBufferGeometry(2, 2);
         this.plane = new THREE.Mesh(this.planeGeometry, this.material);
@@ -71,12 +96,16 @@ class Surface {
     }
 
     loop() {
-        this.render();
-        requestAnimationFrame(this.loop.bind(this));
+        if (this.isVisible) {
+            this.render();
+            requestAnimationFrame(this.loop.bind(this));
+        }
     }
 
-    updateSize(w, h) {
-        this.camera.aspect = gooeyContainer.clientWidth / gooeyContainer.clientHeight;
-        this.renderer.setSize(w, h);
+    updateSize() {
+        this.setResponsiveValues();
+        this.width = eyeballContainer.clientWidth;
+        this.camera.aspect = this.width / this.height;
+        this.renderer.setSize(this.width, this.height);
     }
 }

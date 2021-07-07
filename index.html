@@ -428,13 +428,23 @@
                     return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
                 }
 
+
+                float calcMouse(vec2 pos, vec2 uv, float width) {
+                    pos.y = max(.15, pos.y);
+                    float b = width * .001 / pow(pow(abs(uv.x - pos.x), 2.) + pow(abs(uv.y - pos.y), 2.), 2.);
+                    b *= (1. - pos.y);
+                    b *= smoothstep(0.2, 0.5, 1. - pos.y);
+                    return b;
+                }
+
                 float circle(vec2 pos, vec2 uv, float radius) {
                     return smoothstep(0., length(uv - pos), radius);
                 }
 
                 float calcColumn(vec2 pos, vec2 uv, float width) {
                     float bt = 1. - smoothstep(0., width, abs(uv.x - pos.x));
-                    bt *= smoothstep(pos.y - width, pos.y, uv.y);
+                    bt *= smoothstep(pos.y - width * 1.5, pos.y, uv.y);
+
                     return max(bt, 0.);
                 }
 
@@ -456,16 +466,15 @@
                     mouse.x *= u_ratio;
 
                     float width = u_ratio / float(colNumber);
-                    float pointer = circle(mouse, uv, width * .25);
-                    float sum = 0.;
-                    vec3 sum3 = vec3(0., 0., calcBottom(uv, width));
+                    float pointer = calcMouse(mouse, uv, width);
+                    float sum = calcBottom(uv, width);
 
                     for (int i = 0; i <= colNumber; i++) {
 
                         float randomiser = random(vec2(float(i), float(i) * .2));
                         float x = width * (.5 + float(i));
 
-                        float columnY = .7 - .4 * (.5 + .5 * sin(u_time + TWO_PI * randomiser));
+                        float columnY = .9 - .4 * (.5 + .5 * sin(u_time + TWO_PI * randomiser));
                         float col = calcColumn(vec2(x, columnY), uv, width);
 
                         float dropY = columnY;
@@ -477,15 +486,14 @@
                         x -= (.05 * dist * clamp((mouse.x - x), -.1, .1));
                         dropY -= (.05 * dist * clamp((mouse.y - dropY), -.1, .1));
 
-                        float d = circle(vec2(x, dropY), uv, width * .25);
+                        vec2 drop = vec2(x, 1. - 2. * fract(u_time * .1 + randomiser));
+                        float d = circle(drop, uv, width * 0.25);
 
-                        sum3.r += d;
-                        sum3.g += col;
+                        sum += d;
+                        sum += col;
                     }
 
-                    sum3.r += pointer;
-                    sum = sum3.r + sum3.g + sum3.b;
-
+                    sum -= pointer;
                     float bord = .5;
                     vec3 color = mix(vec3(.92), mix(vec3(.91, .39, .26), vec3(.56, .31, .58), uv.y), smoothstep(bord, bord + .02, sum));
                     gl_FragColor = vec4(color.rgb, 1.);
