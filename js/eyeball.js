@@ -302,8 +302,8 @@ class EyeballViz {
                     value: eyeConfig.darkness
                 },
             },
-            vertexShader: document.getElementById("vertexShader").textContent,
-            fragmentShader: document.getElementById("fragmentShader").textContent
+            vertexShader: document.getElementById("eyeball-vertexShader").textContent,
+            fragmentShader: document.getElementById("eyeball-fragmentShader").textContent
         });
         const eye = new THREE.Mesh(eyeGeometry, this.eyeShaderMaterial);
         eye.rotation.y = -Math.PI / 2;

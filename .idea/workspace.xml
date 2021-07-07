@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/js/gooey.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/update.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/eyeball.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/eyeball.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,139 +29,147 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="148" selection-start-line="148" selection-end-line="148" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/back-animation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="26" selection-start-column="9" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="update.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/update.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stars.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/stars.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="69" column="20" selection-start-line="69" selection-end-line="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="298" column="71" lean-forward="true" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
-              <folding>
-                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#9;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#11;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#13;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-719">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eye.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eye.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1086">
-              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Wireframe.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/threejs/Wireframe.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#110#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sphere.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sphere.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding>
-                <element signature="e#488#539#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gooey.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gooey.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3105">
-              <caret line="207" selection-start-line="207" selection-end-line="207" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.54545456">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/style.sass">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2220">
+                  <caret line="148" selection-start-line="148" selection-end-line="148" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/back-animation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="26" selection-start-column="9" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="update.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/update.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="447">
+                  <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="148">
+                  <caret line="471" column="79" selection-start-line="471" selection-start-column="79" selection-end-line="471" selection-end-column="79" />
+                  <folding>
+                    <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#9;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#11;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#13;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#script#0;n#div#15;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#script#1;n#div#15;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#script#1;n#div#17;n#div#1;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gooey.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/gooey.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="353" column="5" lean-forward="true" selection-start-line="353" selection-start-column="5" selection-end-line="353" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="eye.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/eye.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1086">
+                  <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Wireframe.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/threejs/Wireframe.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="7" selection-start-column="7" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#0#110#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sphere.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sphere.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#488#539#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gooey.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gooey.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="155">
+                  <caret line="159" column="57" lean-forward="true" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="gooey.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/gooey.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-462">
+                  <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
-      <find>hide</find>
-      <find>isVisible</find>
-      <find>confettiLoop</find>
-      <find>updateConfetti</find>
-      <find>hideConfetti</find>
-      <find>updateStars</find>
-      <find>confettRandomBoom</find>
-      <find>quaternion</find>
-      <find>0.5 *</find>
-      <find>updateSize</find>
-      <find>camera.</find>
-      <find>d3-groups</find>
       <find>deltaRotationQuaternion</find>
       <find>loop</find>
       <find>class=&quot;mobile-padding&quot;</find>
@@ -175,13 +185,23 @@
       <find>dat</find>
       <find>new</find>
       <find>gui</find>
-      <find>touchMode</find>
       <find>anchor</find>
+      <find>fragmentShader</find>
+      <find>appendChild</find>
+      <find>pointer</find>
+      <find>surface</find>
+      <find>container</find>
+      <find>&lt;a</find>
+      <find>gooey-vertexShader</find>
+      <find>textContent</find>
+      <find>touchMode</find>
+      <find>u_time</find>
+      <find>speed</find>
+      <find>render</find>
+      <find>col_number</find>
+      <find>PI</find>
     </findStrings>
     <replaceStrings>
-      <replace>dyeRes.width</replace>
-      <replace>divergence</replace>
-      <replace>curl</replace>
       <replace>pressure</replace>
       <replace>canvas</replace>
       <replace>createFBO</replace>
@@ -209,6 +229,9 @@
       <replace>eyeballContainer</replace>
       <replace>confettRandomBoom</replace>
       <replace>confettyRandomBoom</replace>
+      <replace>gooeyPointer</replace>
+      <replace>gooeySurface</replace>
+      <replace>gooeyContainer</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -221,7 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/r.html" />
         <option value="$PROJECT_DIR$/js/review.js" />
         <option value="$PROJECT_DIR$/js/wings.js" />
         <option value="$PROJECT_DIR$/js/fire.js" />
@@ -267,10 +289,11 @@
         <option value="$PROJECT_DIR$/test.svg" />
         <option value="$PROJECT_DIR$/hhhAsset 2.svg" />
         <option value="$PROJECT_DIR$/style.sass" />
-        <option value="$PROJECT_DIR$/gooey.html" />
         <option value="$PROJECT_DIR$/sphere.html" />
-        <option value="$PROJECT_DIR$/js/eyeball.js" />
         <option value="$PROJECT_DIR$/js/update.js" />
+        <option value="$PROJECT_DIR$/js/eyeball.js" />
+        <option value="$PROJECT_DIR$/js/gooey.js" />
+        <option value="$PROJECT_DIR$/gooey.html" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -450,12 +473,12 @@
       <workItem from="1623667757140" duration="934000" />
       <workItem from="1624103371959" duration="1824000" />
       <workItem from="1624346295286" duration="684000" />
-      <workItem from="1625645167065" duration="998000" />
+      <workItem from="1625645167065" duration="3494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263848000" />
+    <option name="totallyTimeSpent" value="266344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -467,7 +490,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25751072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1502146" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
@@ -515,7 +538,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/back-animation-funfun.js" />
     <entry file="file://$PROJECT_DIR$/js/wave.js" />
     <entry file="file://$PROJECT_DIR$/js/balloons.js" />
     <entry file="file://$PROJECT_DIR$/js/rate.js">
@@ -703,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gooey.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3105">
-          <caret line="207" selection-start-line="207" selection-end-line="207" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/threejs/Wireframe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -730,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-719">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eye.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1086">
@@ -751,19 +759,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="353" column="5" lean-forward="true" selection-start-line="353" selection-start-column="5" selection-end-line="353" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/gooey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gooey.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="159" column="57" lean-forward="true" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="298" column="71" lean-forward="true" selection-start-line="298" selection-start-column="71" selection-end-line="298" selection-end-column="71" />
+        <state relative-caret-position="148">
+          <caret line="471" column="79" selection-start-line="471" selection-start-column="79" selection-end-line="471" selection-end-column="79" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#9;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#10;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#11;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#12;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#13;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#0;n#div#15;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#1;n#div#15;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#script#1;n#div#17;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>

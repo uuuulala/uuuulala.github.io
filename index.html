@@ -304,7 +304,7 @@
             <div class="animation-wrapper">
                 <input type="range" min="0" max="0" value="0" step="1" id="zoom-range" />
             </div>
-            <script type="x-shader/x-fragment" id="fragmentShader">
+            <script type="x-shader/x-fragment" id="eyeball-fragmentShader">
                 precision highp float;
 
                 varying vec2 vUv;
@@ -394,14 +394,112 @@
                 }
 
             </script>
-
-            <script id="vertexShader" type="x-shader/x-vertex">
+            <script type="x-shader/x-vertex" id="eyeball-vertexShader">
                 varying vec2 vUv;
 
                 void main() {
                     vUv = uv;
                     vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
                     gl_Position = projectionMatrix * mvPosition;
+                }
+            </script>
+            <!--<a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen</a>-->
+        </div>
+        <div class="animation gooey">
+            <div class="animation-wrapper">
+            </div>
+            <script type="x-shader/x-fragment" id="gooey-fragmentShader">
+                precision highp float;
+
+                uniform float u_ratio;
+
+                uniform float u_time;
+                uniform vec2 u_pointer;
+                varying vec2 vUv;
+
+                #define TWO_PI 6.28318530718
+                #ifdef COL_NUMBER
+                    const int colNumber = COL_NUMBER;
+                #else
+                    const int colNumber = 15;
+                #endif
+
+                float random(in vec2 st) {
+                    return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
+                }
+
+                float circle(vec2 pos, vec2 uv, float radius) {
+                    return smoothstep(0., length(uv - pos), radius);
+                }
+
+                float calcColumn(vec2 pos, vec2 uv, float width) {
+                    float bt = 1. - smoothstep(0., width, abs(uv.x - pos.x));
+                    bt *= smoothstep(pos.y - width, pos.y, uv.y);
+                    return max(bt, 0.);
+                }
+
+                float calcBottom(vec2 uv, float width) {
+                    uv.y -= .5 * width;
+                    uv.y *= (1. / width);
+                    uv.y = smoothstep(.0, 1., uv.y);
+                    uv.y = 1. - uv.y;
+                    uv.y = clamp(uv.y, 0., 1.);
+
+                    return uv.y;
+                }
+
+                void main() {
+
+                    vec2 uv = vUv;
+                    uv.x *= u_ratio;
+                    vec2 mouse = u_pointer;
+                    mouse.x *= u_ratio;
+
+                    float width = u_ratio / float(colNumber);
+                    float pointer = circle(mouse, uv, width * .25);
+                    float sum = 0.;
+                    vec3 sum3 = vec3(0., 0., calcBottom(uv, width));
+
+                    for (int i = 0; i <= colNumber; i++) {
+
+                        float randomiser = random(vec2(float(i), float(i) * .2));
+                        float x = width * (.5 + float(i));
+
+                        float columnY = .7 - .4 * (.5 + .5 * sin(u_time + TWO_PI * randomiser));
+                        float col = calcColumn(vec2(x, columnY), uv, width);
+
+                        float dropY = columnY;
+                        dropY *= step(0., sin(u_time + TWO_PI * randomiser + .25 * TWO_PI));
+                        dropY -= .4;
+                        dropY *= 3.;
+
+                        float dist = 1. / distance(mouse, vec2(x, dropY));
+                        x -= (.05 * dist * clamp((mouse.x - x), -.1, .1));
+                        dropY -= (.05 * dist * clamp((mouse.y - dropY), -.1, .1));
+
+                        float d = circle(vec2(x, dropY), uv, width * .25);
+
+                        sum3.r += d;
+                        sum3.g += col;
+                    }
+
+                    sum3.r += pointer;
+                    sum = sum3.r + sum3.g + sum3.b;
+
+                    float bord = .5;
+                    vec3 color = mix(vec3(.92), mix(vec3(.91, .39, .26), vec3(.56, .31, .58), uv.y), smoothstep(bord, bord + .02, sum));
+                    gl_FragColor = vec4(color.rgb, 1.);
+                }
+            </script>
+            <script type="x-shader/x-vertex" id="gooey-vertexShader">
+                attribute vec3 position;
+                attribute vec2 uv;
+
+                varying vec2 vUv;
+
+                void main() {
+                    vUv = uv;
+                    gl_Position = vec4(position, 1.0 );
                 }
             </script>
             <!--<a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen</a>-->
@@ -551,6 +649,7 @@
     <script src='js/confetti.js'></script>
 
     <script src='js/eyeball.js'></script>
+    <script src='js/gooey.js'></script>
 
     <script src='js/update.js'></script>
 
