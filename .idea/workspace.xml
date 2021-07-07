@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/gooey.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/gooey.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,8 +84,8 @@
           <file leaf-file-name="gooey.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/gooey.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+                <state relative-caret-position="240">
+                  <caret line="16" selection-start-line="16" selection-end-line="16" />
                 </state>
               </provider>
             </entry>
@@ -92,8 +93,8 @@
           <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/eyeball.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
+                <state relative-caret-position="350">
+                  <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -167,7 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>anchor</find>
       <find>fragmentShader</find>
       <find>appendChild</find>
       <find>pointer</find>
@@ -197,6 +197,7 @@
       <find>isVisible</find>
       <find>height</find>
       <find>loop</find>
+      <find>loop()</find>
     </findStrings>
     <replaceStrings>
       <replace>pressure</replace>
@@ -465,12 +466,12 @@
       <workItem from="1623667757140" duration="934000" />
       <workItem from="1624103371959" duration="1824000" />
       <workItem from="1624346295286" duration="684000" />
-      <workItem from="1625645167065" duration="5307000" />
+      <workItem from="1625645167065" duration="5367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268157000" />
+    <option name="totallyTimeSpent" value="268217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -782,15 +783,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/eyeball.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
+        <state relative-caret-position="350">
+          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/gooey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
