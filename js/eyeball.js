@@ -36,9 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("mousedown", (e) => eyeballPointer.onMouseDown(e));
     document.addEventListener("mouseup", (e) => eyeballPointer.onMouseUp(e));
     document.addEventListener("mousemove", (e) => eyeballPointer.onMouseMove(e));
-    document.addEventListener("touchmove", (e) => eyeballPointer.onTouchMove(e));
-    document.addEventListener("touchend", (e) => eyeballPointer.onTouchEnd(e));
-    document.addEventListener("touchstart", (e) => eyeballPointer.onTouchStart(e));
 
     gsap.timeline({
         scrollTrigger: {
@@ -74,7 +71,6 @@ class EyeballPointer {
         this.deltaMove = { x: 0, y: 0 };
         this.previousMousePosition = { x: 0, y: 0 };
         this.pressed = false;
-        this.touchMode = false;
         this.dragging = false;
         this.deltaRotationQuaternion = new THREE.Quaternion();
     }
@@ -118,42 +114,6 @@ class EyeballPointer {
             this.dragging = true;
         }
     }
-    onTouchMove(e) {
-        this.touchMode = true;
-        setTimeout(() => this.dragging = true, 100);
-        if (e.touches.length === 1) {
-            this.deltaMove = {
-                x: e.touches[0].pageX - this.previousMousePosition.x,
-                y: e.touches[0].pageY - this.previousMousePosition.y
-            };
-            this.previousMousePosition = {
-                x: e.touches[0].pageX,
-                y: e.touches[0].pageY
-            };
-            this.deltaRotationQuaternion
-                .setFromEuler(new THREE.Euler(
-                    this.deltaMove.y * (Math.PI / 180),
-                    this.deltaMove.x * (Math.PI / 180),
-                    0,
-                    'XYZ'
-                ));
-        }
-    }
-    onTouchStart(e) {
-        this.previousMousePosition = {
-            x: e.touches[0].pageX,
-            y: e.touches[0].pageY
-        };
-    }
-    onTouchEnd() {
-        this.deltaRotationQuaternion
-            .setFromEuler(new THREE.Euler(
-                0,
-                0,
-                0,
-                'XYZ'
-            ));
-    }
     onClick() {
         if (!this.dragging) {
             eyeballAnimations.playShrink.play(0);
@@ -172,7 +132,7 @@ class EyeballControls {
         const eyeballControls = document.querySelector('.dg.main');
         let timeout;
         eyeballControls.addEventListener('mouseenter', () => {
-            if (!eyeballPointer.touchMode) timeout = setTimeout(() => this.mouseOverControls = true, 400);
+            timeout = setTimeout(() => this.mouseOverControls = true, 400);
         }, false);
         eyeballControls.addEventListener('mouseleave', () => {
             clearTimeout(timeout);
@@ -373,7 +333,7 @@ class EyeballViz {
     render() {
         const rotationSpeed = 0.2;
         if (!eyeballControls.mouseOverControls) {
-            if (!eyeballPointer.pressed && !eyeballPointer.touchMode) {
+            if (!eyeballPointer.pressed) {
                 this.eyeGroup.rotation.x += (eyeballPointer.mouse.y * 0.3 - this.eyeGroup.rotation.x) * rotationSpeed;
                 this.eyeGroup.rotation.y += (eyeballPointer.mouse.x * 0.6 - this.eyeGroup.rotation.y) * rotationSpeed;
             } else {
