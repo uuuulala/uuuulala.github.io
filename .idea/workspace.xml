@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/gooey.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/gooey.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,8 +83,8 @@
           <file leaf-file-name="gooey.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/gooey.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+                <state relative-caret-position="225">
+                  <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
                 </state>
               </provider>
             </entry>
@@ -93,8 +92,8 @@
           <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/eyeball.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="349" selection-start-line="349" selection-end-line="352" selection-end-column="9" />
+                <state relative-caret-position="95">
+                  <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -466,12 +465,12 @@
       <workItem from="1623667757140" duration="934000" />
       <workItem from="1624103371959" duration="1824000" />
       <workItem from="1624346295286" duration="684000" />
-      <workItem from="1625645167065" duration="5124000" />
+      <workItem from="1625645167065" duration="5307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267974000" />
+    <option name="totallyTimeSpent" value="268157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -482,8 +481,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1502146" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1502146" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
@@ -783,15 +782,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/eyeball.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="349" selection-start-line="349" selection-end-line="352" selection-end-column="9" />
+        <state relative-caret-position="95">
+          <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/gooey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+        <state relative-caret-position="225">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
         </state>
       </provider>
     </entry>

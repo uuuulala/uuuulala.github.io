@@ -8,14 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         gooeySurface.updateSize(gooeyContainer.clientWidth, gooeyContainer.clientHeight);
     });
-    gooeySurface.loop();
-
     window.addEventListener("mousemove", (e) => gooeyPointer.onMouseMove(e));
     window.addEventListener("touchmove", (e) => gooeyPointer.onTouchMove(e));
 
     gsap.timeline({
         scrollTrigger: {
-            trigger: eyeballContainer,
+            trigger: gooeyContainer,
+            markers: true,
             onEnter: () => {
                 gooeySurface.isVisible = true;
                 gooeySurface.loop();
@@ -32,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
 });
 
 class Pointer {
