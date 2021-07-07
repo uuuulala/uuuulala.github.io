@@ -5,6 +5,7 @@ const whoIam = document.querySelector('.who-I-am');
 const svgAnchor = document.querySelector('.svg-anchor');
 const d3anchor = document.querySelector('.d3-anchor');
 const canvasAnchor = document.querySelector('.canvas-anchor');
+const webglAnchor = document.querySelector('.webgl-anchor');
 
 whatIdoLink.addEventListener('click', () => {
     gsap.to(window, {
@@ -39,6 +40,12 @@ if (hash === "#who-I-am") {
     gsap.to(window, {
         duration: 0.5,
         scrollTo: canvasAnchor
+    })
+}
+ else if (hash === "#webgl") {
+    gsap.to(window, {
+        duration: 0.5,
+        scrollTo: webglAnchor
     })
 }
 
