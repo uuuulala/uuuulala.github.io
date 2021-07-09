@@ -8,6 +8,16 @@
             overflow: hidden;
             padding: 0;
             margin: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to right bottom, #030303, #222121, #3c3a3a, #585655, #747471);
+        }
+        .surface {
+            position: fixed;
+            top: 20%;
+            left: 40%;
+            width: 60%;
+            height: 75%;
         }
         canvas {
             display: block;
@@ -28,11 +38,16 @@
     import { Wireframe } from './js/threejs/Wireframe.js';
     import { WireframeGeometry2 } from './js/threejs/WireframeGeometry2.js';
 
+    const container = document.querySelector('.surface');
+
     document.addEventListener('DOMContentLoaded', () => {
+
+        console.log('container.clientWidth, container.clientHeight', container.clientWidth, container.clientHeight);
+
         let surface = new Surface();
-        surface.updateSize(window.innerWidth, window.innerHeight);
+        surface.updateSize(container.clientWidth, container.clientHeight);
         window.addEventListener('resize', () => {
-            surface.updateSize(window.innerWidth, window.innerHeight);
+            surface.updateSize(container.clientWidth, container.clientHeight);
         }, false);
         surface.loop();
     });
@@ -41,16 +56,16 @@
     class Surface {
 
         constructor() {
-            this.renderer = new THREE.WebGLRenderer({ antialias: true });
+            this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             this.renderer.setPixelRatio(window.devicePixelRatio);
-            this.renderer.setClearColor(0xf7f7f7);
+            this.renderer.setClearColor(0x000000, 0);
             this.container = document.getElementsByClassName('surface')[0];
             this.container.appendChild(this.renderer.domElement);
 
             this.scene = new THREE.Scene();
-            this.scene.fog = new THREE.Fog(0xd4d4d4, 30, 50);
+            this.scene.fog = new THREE.Fog(0x777777, 30, 50);
 
-            this.camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
+            this.camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 1, 1000);
             this.camera.position.z = 35;
 
             this.timer = 0;
@@ -68,71 +83,101 @@
 
             const geometry = new THREE.IcosahedronBufferGeometry(10, 1);
             const positionsIcosahedron = geometry.attributes.position.array;
-            this.spheres  = [];
-            for (let i = 0; i < geometry.attributes.position.count; i++) {
-                const geometry = new THREE.SphereGeometry(.5, 16, 16);
-                const material = new THREE.MeshBasicMaterial({
-                    transparent: true,
-                    depthTest: false
-                });
-                const sphere = new THREE.Mesh(geometry, material);
-                sphere.position.x = positionsIcosahedron[i * 3];
-                sphere.position.y = positionsIcosahedron[i * 3 + 1];
-                sphere.position.z = positionsIcosahedron[i * 3 + 2];
-
-                const sphereData = {
-                    el: sphere,
-                    speed: Math.random() * 0.005 + 0.005,
-                    paused: Math.random() < 0.8,
-                    scale: 0,
-                    color: '0xE50142',
-                    opacity: 0
-                };
-
-                if ((i % 3)) {
-                    sphereData.opacity = 1;
-                    sphereData.scale = 0.2 + Math.random() * 0.3;
-                    sphereData.speed = 0;
-                    sphereData.color = Math.random() > .3 ? '0x444444' : '0xE50142';
+            this.waves  = [];
+            let pointCoords = [];
+            let indexOfCustom = (parentArray, arrayToCheck) => {
+                for (let i = 0; i < parentArray.length; i++) {
+                    if (parentArray[i][0] === arrayToCheck[0] && parentArray[i][1] === arrayToCheck[1] && parentArray[i][2] === arrayToCheck[2]) {
+                        return i;
+                    }
                 }
+                return -1;
+            };
 
-                this.spheres.push(sphereData);
-                material.color.setHex(sphereData.color);
-                material.opacity = sphereData.opacity;
-                sphere.scale.set(sphereData.scale, sphereData.scale, sphereData.scale);
-                this.group.add(sphere);
+            let idx = 0;
+            for (let i = 0; i < geometry.attributes.position.count; i++) {
+                const coord = [positionsIcosahedron[i * 3], positionsIcosahedron[i * 3 + 1], positionsIcosahedron[i * 3 + 2]];
+                if (indexOfCustom(pointCoords, coord) === -1) {
+                    pointCoords.push(coord);
+                    idx++;
+
+                    const geometry = new THREE.SphereGeometry(.5, 16, 16);
+                    const material = new THREE.MeshLambertMaterial({
+                        transparent: true,
+                        color: idx % 3 ? 0x222222 : 0xE50142,
+                        opacity: 1,
+                    });
+                    const sphere = new THREE.Mesh(geometry, material);
+                    sphere.position.x = coord[0];
+                    sphere.position.y = coord[1];
+                    sphere.position.z = coord[2];
+                    sphere.scale.set(0.4, 0.4, 0.4);
+                    this.group.add(sphere);
+
+                    if (!(idx % 3)) {
+                        const waveMaterial = new THREE.MeshLambertMaterial({
+                            transparent: true,
+                            depthTest: false,
+                            color: 0xE50142,
+                            opacity: 1,
+                        });
+                        const sphere = new THREE.Mesh(geometry, waveMaterial);
+                        sphere.position.x = coord[0];
+                        sphere.position.y = coord[1];
+                        sphere.position.z = coord[2];
+                        const sphereData = {
+                            el: sphere,
+                            speed: Math.random() * 0.005 + 0.01,
+                            scale: 0,
+                            opacity: 1,
+                        };
+                        this.waves.push(sphereData);
+                        this.group.add(sphere);
+                    }
+                }
             }
+
+            const hemisphereLight = new THREE.HemisphereLight(0x999999, 0xFFFFFF, 1.);
+            this.scene.add(hemisphereLight);
 
             const wfGeometry = new WireframeGeometry2(geometry);
             this.wfMaterial = new LineMaterial({
                 fog: true,
-                color: 0x444444,
+                color: 0x111111,
                 linewidth: 2,
             });
-            this.wfMaterial.resolution.set(window.innerWidth, window.innerHeight);
+            this.wfMaterial.resolution.set(container.clientWidth, container.clientHeight);
 
             this.wireframe = new Wireframe(wfGeometry, this.wfMaterial);
             this.wireframe.computeLineDistances();
 
+            this.group.scale.set(0.9, 0.9, 0.9);
             this.group.add(this.wireframe);
             this.scene.add(this.group);
+
+            this.wireframeMaterialCopy = new LineMaterial({
+                fog: true,
+                color: 0x444444,
+                linewidth: 1,
+            });
+            this.wireframeMaterialCopy.resolution.set(container.clientWidth, container.clientHeight);
+            this.wireframeCopy = new Wireframe(wfGeometry, this.wireframeMaterialCopy);
+            this.scene.add(this.wireframeCopy);
         }
 
         updatePoints() {
-            this.spheres.forEach((s) => {
-                if (s.speed && !s.paused) {
-                    s.scale += s.speed;
-                    if (s.scale >= 1) {
-                        s.scale = 0;
-                    }
-                    s.el.scale.set(s.scale * 1.5, s.scale * 1.5, s.scale * 1.5);
-
-                    s.opacity -= s.speed;
-                    if (s.opacity < 0) {
-                        s.opacity = 1;
-                    }
-                    s.el.material.opacity = s.opacity;
+            this.waves.forEach((s) => {
+                s.scale += s.speed;
+                if (s.scale >= 1) {
+                    s.scale = 0;
                 }
+                s.el.scale.set(s.scale * 2.5, s.scale * 2.5, s.scale * 2.5);
+
+                s.opacity -= s.speed;
+                if (s.opacity < 0) {
+                    s.opacity = 1;
+                }
+                s.el.material.opacity = s.opacity * 0.9;
             });
         }
 
@@ -143,12 +188,15 @@
         loop() {
             this.render();
 
-            this.timer += 0.01;
-            const scale = 1 + (1 + Math.sin(this.timer)) * 0.05;
+            this.timer += 0.03;
+            const scale = 1 + (Math.sin(this.timer * 0.2)) * 0.2;
 
             this.group.rotation.x += 0.001;
             this.group.rotation.y += 0.001;
-            this.group.scale.set(scale, scale, scale);
+            this.wireframeCopy.rotation.x += 0.0005;
+            this.wireframeCopy.rotation.y += 0.0005;
+
+            this.wireframeCopy.scale.set(scale, scale, scale);
 
             this.updatePoints();
 
@@ -156,9 +204,10 @@
         }
 
         updateSize(w, h) {
-            this.camera.aspect = window.innerWidth / window.innerHeight;
+            this.camera.aspect = container.clientWidth / container.clientHeight;
             this.camera.updateProjectionMatrix();
-            this.wfMaterial.resolution.set(window.innerWidth, window.innerHeight);
+            this.wfMaterial.resolution.set(container.clientWidth, container.clientHeight);
+            this.wireframeMaterialCopy.resolution.set(container.clientWidth, container.clientHeight);
             this.renderer.setSize(w, h);
         }
     }
