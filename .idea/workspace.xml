@@ -120,8 +120,8 @@
           <file leaf-file-name="sphere.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sphere.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="371">
-                  <caret line="212" column="5" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
+                <state relative-caret-position="200">
+                  <caret line="193" column="42" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="42" />
                   <folding>
                     <element signature="e#488#542#0" expanded="true" />
                   </folding>
@@ -156,7 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pointer</find>
       <find>surface</find>
       <find>container</find>
       <find>&lt;a</find>
@@ -186,6 +185,7 @@
       <find>gooeyContainer</find>
       <find>calcMouse</find>
       <find>calcBall</find>
+      <find>timer</find>
     </findStrings>
     <replaceStrings>
       <replace>pressure</replace>
@@ -455,18 +455,18 @@
       <workItem from="1624103371959" duration="1824000" />
       <workItem from="1624346295286" duration="684000" />
       <workItem from="1625645167065" duration="6343000" />
-      <workItem from="1625831525802" duration="60000" />
+      <workItem from="1625831525802" duration="589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269253000" />
+    <option name="totallyTimeSpent" value="269782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15236051" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15236051" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -475,7 +475,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -768,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sphere.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="212" column="5" selection-start-line="212" selection-start-column="5" selection-end-line="212" selection-end-column="5" />
+        <state relative-caret-position="200">
+          <caret line="193" column="42" selection-start-line="193" selection-start-column="42" selection-end-line="193" selection-end-column="42" />
           <folding>
             <element signature="e#488#542#0" expanded="true" />
           </folding>

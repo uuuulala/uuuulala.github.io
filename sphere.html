@@ -63,7 +63,7 @@
             this.container.appendChild(this.renderer.domElement);
 
             this.scene = new THREE.Scene();
-            this.scene.fog = new THREE.Fog(0x777777, 30, 50);
+            this.scene.fog = new THREE.Fog(0x777777, 35, 50);
 
             this.camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 1, 1000);
             this.camera.position.z = 35;
@@ -191,10 +191,10 @@
             this.timer += 0.03;
             const scale = 1 + (Math.sin(this.timer * 0.2)) * 0.2;
 
-            this.group.rotation.x += 0.001;
-            this.group.rotation.y += 0.001;
-            this.wireframeCopy.rotation.x += 0.0005;
-            this.wireframeCopy.rotation.y += 0.0005;
+            this.group.rotation.x += 0.0025;
+            this.group.rotation.y += 0.002;
+            this.wireframeCopy.rotation.x += 0.001;
+            this.wireframeCopy.rotation.y += 0.001;
 
             this.wireframeCopy.scale.set(scale, scale, scale);
 
