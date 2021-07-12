@@ -34,15 +34,10 @@
 <script type="module">
     import * as THREE from './js/threejs/three.module.js';
     import { OrbitControls } from './js/threejs/OrbitControls.js';
-    import { LineMaterial } from './js/threejs/LineMaterial.js';
-    import { Wireframe } from './js/threejs/Wireframe.js';
-    import { WireframeGeometry2 } from './js/threejs/WireframeGeometry2.js';
 
     const container = document.querySelector('.surface');
 
     document.addEventListener('DOMContentLoaded', () => {
-
-        console.log('container.clientWidth, container.clientHeight', container.clientWidth, container.clientHeight);
 
         let surface = new Surface();
         surface.updateSize(container.clientWidth, container.clientHeight);
@@ -63,7 +58,7 @@
             this.container.appendChild(this.renderer.domElement);
 
             this.scene = new THREE.Scene();
-            this.scene.fog = new THREE.Fog(0x777777, 35, 50);
+            this.scene.fog = new THREE.Fog(0x777777, 25, 50);
 
             this.camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 1, 1000);
             this.camera.position.z = 35;
@@ -97,41 +92,23 @@
             let idx = 0;
             for (let i = 0; i < geometry.attributes.position.count; i++) {
                 const coord = [positionsIcosahedron[i * 3], positionsIcosahedron[i * 3 + 1], positionsIcosahedron[i * 3 + 2]];
-                if (indexOfCustom(pointCoords, coord) === -1) {
+                const coordIdx = indexOfCustom(pointCoords, coord);
+                if (coordIdx === -1) {
                     pointCoords.push(coord);
                     idx++;
 
-                    const geometry = new THREE.SphereGeometry(.5, 16, 16);
-                    const material = new THREE.MeshLambertMaterial({
-                        transparent: true,
-                        color: idx % 3 ? 0x222222 : 0xE50142,
-                        opacity: 1,
-                    });
-                    const sphere = new THREE.Mesh(geometry, material);
-                    sphere.position.x = coord[0];
-                    sphere.position.y = coord[1];
-                    sphere.position.z = coord[2];
-                    sphere.scale.set(0.4, 0.4, 0.4);
-                    this.group.add(sphere);
-
-                    if (!(idx % 3)) {
-                        const waveMaterial = new THREE.MeshLambertMaterial({
+                    if (i !== 0 && i !== 112 && i !== 97 && i !== 145 && i !== 172) {
+                        const geometry = new THREE.SphereGeometry(.5, 16, 16);
+                        const material = new THREE.MeshLambertMaterial({
                             transparent: true,
-                            depthTest: false,
-                            color: 0xE50142,
+                            color: idx % 3 ? 0x222222 : 0xE50142,
                             opacity: 1,
                         });
-                        const sphere = new THREE.Mesh(geometry, waveMaterial);
+                        const sphere = new THREE.Mesh(geometry, material);
                         sphere.position.x = coord[0];
                         sphere.position.y = coord[1];
                         sphere.position.z = coord[2];
-                        const sphereData = {
-                            el: sphere,
-                            speed: Math.random() * 0.005 + 0.01,
-                            scale: 0,
-                            opacity: 1,
-                        };
-                        this.waves.push(sphereData);
+                        sphere.scale.set(0.4, 0.4, 0.4);
                         this.group.add(sphere);
                     }
                 }
@@ -140,29 +117,70 @@
             const hemisphereLight = new THREE.HemisphereLight(0x999999, 0xFFFFFF, 1.);
             this.scene.add(hemisphereLight);
 
-            const wfGeometry = new WireframeGeometry2(geometry);
-            this.wfMaterial = new LineMaterial({
+            this.mainMaterial = new THREE.MeshLambertMaterial({
                 fog: true,
                 color: 0x111111,
-                linewidth: 2,
+                wireframe: true,
+                morphTargets: true,
             });
-            this.wfMaterial.resolution.set(container.clientWidth, container.clientHeight);
 
-            this.wireframe = new Wireframe(wfGeometry, this.wfMaterial);
-            this.wireframe.computeLineDistances();
-
-            this.group.scale.set(0.9, 0.9, 0.9);
-            this.group.add(this.wireframe);
-            this.scene.add(this.group);
-
-            this.wireframeMaterialCopy = new LineMaterial({
+            this.outerMaterial = new THREE.MeshLambertMaterial({
                 fog: true,
                 color: 0x444444,
-                linewidth: 1,
+                wireframe: true
             });
-            this.wireframeMaterialCopy.resolution.set(container.clientWidth, container.clientHeight);
-            this.wireframeCopy = new Wireframe(wfGeometry, this.wireframeMaterialCopy);
-            this.scene.add(this.wireframeCopy);
+            this.outerWireframe = new THREE.Mesh(geometry, this.outerMaterial);
+
+
+
+            const pointsMaterial = new THREE.PointsMaterial( {
+                color: 0xE50142,
+                size: 10,
+                sizeAttenuation: false,
+                map: new THREE.TextureLoader().load( './img/disc.png' ),
+                alphaTest: 0.5,
+                morphTargets: true
+            } );
+
+            this.points = new THREE.Points(geometry, pointsMaterial);
+
+
+            const positionAttribute = geometry.attributes.position;
+            let positionsChangedIcosahedron = [];
+            const vertexLeft = new THREE.Vector3();
+            for (let i = 0; i < positionAttribute.count; i ++) {
+                const x = positionAttribute.getX(i);
+                const y = positionAttribute.getY(i);
+                const z = positionAttribute.getZ(i);
+                vertexLeft.set(x, y, z);
+                const direction = vertexLeft.clone().normalize();
+                if (i === 0 || i === 3 || i === 8 || i === 49 ||  i === 53 || i === 59) {
+                    vertexLeft.addScaledVector(direction, 5);
+                } else if (i === 112 || i === 115 || i === 117 || i === 232 || i === 235 ||  i === 237) {
+                    vertexLeft.addScaledVector(direction, 2);
+                } else if (i === 97 || i === 101 || i === 107 || i === 205 ||  i === 209 || i === 215) {
+                    vertexLeft.addScaledVector(direction, 3);
+                } else if (i === 145 || i === 149 || i === 155 || i === 156 || i === 159 ||  i === 164) {
+                    vertexLeft.addScaledVector(direction, 2);
+                } else if (i === 172 || i === 175 || i === 177 || i === 228 || i === 231 || i === 236) {
+                    vertexLeft.addScaledVector(direction, 5);
+                }
+                vertexLeft.toArray(positionsChangedIcosahedron, positionsChangedIcosahedron.length);
+            }
+            geometry.morphAttributes.position = [
+                geometry.attributes.position,
+                new THREE.Float32BufferAttribute(positionsChangedIcosahedron, 3),
+            ];
+            this.signFlag = true;
+            this.mainWireframe = new THREE.Mesh(geometry, this.mainMaterial);
+
+            this.points.morphTargetInfluences = this.mainWireframe.morphTargetInfluences;
+
+            this.group.scale.set(0.85, 0.85, 0.85);
+            this.group.add(this.mainWireframe);
+            this.group.add(this.points);
+            this.scene.add(this.group);
+            this.scene.add(this.outerWireframe);
         }
 
         updatePoints() {
@@ -172,13 +190,20 @@
                     s.scale = 0;
                 }
                 s.el.scale.set(s.scale * 2.5, s.scale * 2.5, s.scale * 2.5);
-
                 s.opacity -= s.speed;
                 if (s.opacity < 0) {
                     s.opacity = 1;
                 }
                 s.el.material.opacity = s.opacity * 0.9;
             });
+        }
+
+        updateInnerShape() {
+            if (this.mainWireframe.morphTargetInfluences[1] < 0 || this.mainWireframe.morphTargetInfluences[1] > 1 ) {
+                this.signFlag *= -1;
+            }
+            this.mainWireframe.morphTargetInfluences[1] = this.mainWireframe.morphTargetInfluences[1] + this.signFlag * 0.01;
+            this.points.morphTargetInfluences[1] = this.mainWireframe.morphTargetInfluences[1];
         }
 
         render() {
@@ -191,14 +216,14 @@
             this.timer += 0.03;
             const scale = 1 + (Math.sin(this.timer * 0.2)) * 0.2;
 
-            this.group.rotation.x += 0.0025;
+            this.group.rotation.x += 0.002;
             this.group.rotation.y += 0.002;
-            this.wireframeCopy.rotation.x += 0.001;
-            this.wireframeCopy.rotation.y += 0.001;
-
-            this.wireframeCopy.scale.set(scale, scale, scale);
+            this.outerWireframe.rotation.x += 0.0005;
+            this.outerWireframe.rotation.y += 0.0005;
+            this.outerWireframe.scale.set(scale, scale, scale);
 
             this.updatePoints();
+            this.updateInnerShape();
 
             requestAnimationFrame(this.loop.bind(this));
         }
@@ -206,8 +231,6 @@
         updateSize(w, h) {
             this.camera.aspect = container.clientWidth / container.clientHeight;
             this.camera.updateProjectionMatrix();
-            this.wfMaterial.resolution.set(container.clientWidth, container.clientHeight);
-            this.wireframeMaterialCopy.resolution.set(container.clientWidth, container.clientHeight);
             this.renderer.setSize(w, h);
         }
     }
