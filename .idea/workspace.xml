@@ -111,8 +111,8 @@
           <file leaf-file-name="sphere.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sphere.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="129" selection-start-line="129" selection-end-line="129" />
+                <state relative-caret-position="219">
+                  <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
                   <folding>
                     <element signature="e#888#942#0" expanded="true" />
                   </folding>
@@ -464,12 +464,12 @@
       <workItem from="1625645167065" duration="6343000" />
       <workItem from="1625831525802" duration="891000" />
       <workItem from="1626103157018" duration="694000" />
-      <workItem from="1626265486137" duration="7543000" />
+      <workItem from="1626265486137" duration="7693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278321000" />
+    <option name="totallyTimeSpent" value="278471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -480,8 +480,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1416309" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1416309" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
@@ -786,8 +786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sphere.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="219">
+          <caret line="128" column="25" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
           <folding>
             <element signature="e#888#942#0" expanded="true" />
           </folding>

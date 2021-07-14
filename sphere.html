@@ -126,7 +126,7 @@
             let distance = calculateDistance(container, mX, mY);
             distance = distance / Math.min(window.innerWidth, window.innerHeight);
             gsap.set(surface.mainWireframe.morphTargetInfluences, {
-                [1]: -(1 - distance) * 0.4
+                [1]: -(0.8 - distance) * 0.4
             });
 
             const scale = 1 - 0.1 * distance;
