@@ -66,9 +66,9 @@
             repeat: -1
         });
         gsap.to(surface.mainWireframe.morphTargetInfluences, {
-            duration: 3,
+            duration: 5,
             [1]: 1,
-            ease: 'power2.out',
+            ease: 'power4.inOut',
             repeat: -1,
             yoyo: true
         });
@@ -131,8 +131,6 @@
 
             this.camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 1, 1000);
             this.camera.position.z = 35;
-
-            this.timer = 0;
 
             const controls = new OrbitControls(this.camera, this.renderer.domElement);
             controls.minDistance = controls.maxDistance = 35;
@@ -219,7 +217,7 @@
                 color: blackCol,
                 size: 15,
                 sizeAttenuation: false,
-                map: new THREE.TextureLoader().load( './disc.png' ),
+                map: new THREE.TextureLoader().load( './img/disc.png' ),
                 alphaTest: 0.5,
                 morphTargets: true
             } );
