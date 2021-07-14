@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sphere.html" beforeDir="false" afterPath="$PROJECT_DIR$/sphere.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,15 +87,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="900">
-                  <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="eye.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/eye.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -119,10 +111,10 @@
           <file leaf-file-name="sphere.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sphere.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="155">
-                  <caret line="219" column="56" selection-start-line="219" selection-start-column="56" selection-end-line="219" selection-end-column="56" />
+                <state relative-caret-position="234">
+                  <caret line="129" selection-start-line="129" selection-end-line="129" />
                   <folding>
-                    <element signature="e#888#939#0" expanded="true" />
+                    <element signature="e#888#942#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -135,8 +127,8 @@
           <file leaf-file-name="style.sass" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/style.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="267" column="13" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="13" />
+                <state relative-caret-position="221">
+                  <caret line="281" column="27" lean-forward="true" selection-start-line="281" selection-start-column="27" selection-end-line="281" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -155,20 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>surface</find>
-      <find>container</find>
-      <find>&lt;a</find>
-      <find>gooey-vertexShader</find>
-      <find>textContent</find>
-      <find>touchMode</find>
-      <find>u_time</find>
-      <find>speed</find>
-      <find>render</find>
-      <find>col_number</find>
-      <find>PI</find>
-      <find>onClick</find>
-      <find>playShrink</find>
-      <find>eyeball</find>
       <find>hei</find>
       <find>updateSize</find>
       <find>setResponsiveValues</find>
@@ -185,6 +163,20 @@
       <find>calcMouse</find>
       <find>calcBall</find>
       <find>timer</find>
+      <find>disc</find>
+      <find>Color</find>
+      <find>STATE</find>
+      <find>mousemo</find>
+      <find>handleMouseMoveRotate</find>
+      <find>enableRotate</find>
+      <find>pan</find>
+      <find>target</find>
+      <find>onMouseMove</find>
+      <find>controls</find>
+      <find>outer</find>
+      <find>verticesToMorph</find>
+      <find>ry \= new THREE\.SphereGeometry\(\.5\, 16\, 16\)\;\n                    \/\/     const material \= new THREE\.MeshLambertMaterial\(\{\}\)\;\n                    \/\/     const sphere \= new THREE\.Mesh\(geometry\, material\)\;\n                    \/\/     sphere\.position\.x \= coord\[0\]\;\n                    \/\/     sphere\.position\.y \= coord\[1\]\;\n                    \/\/     sphere\.position\.z \= coord\[2\]\;\n                    \/\/     this\.spheres\.push\(sphere\)\;\n                    \/\/     this\.group\.add\(</find>
+      <find>poin</find>
     </findStrings>
     <replaceStrings>
       <replace>pressure</replace>
@@ -229,7 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/review.js" />
         <option value="$PROJECT_DIR$/js/wings.js" />
         <option value="$PROJECT_DIR$/js/fire.js" />
         <option value="$PROJECT_DIR$/js/coin.js" />
@@ -279,6 +270,7 @@
         <option value="$PROJECT_DIR$/js/eyeball.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/gooey.js" />
+        <option value="$PROJECT_DIR$/js/threejs/OrbitControls.js" />
         <option value="$PROJECT_DIR$/sphere.html" />
       </list>
     </option>
@@ -313,6 +305,17 @@
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="threejs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -461,27 +464,28 @@
       <workItem from="1625645167065" duration="6343000" />
       <workItem from="1625831525802" duration="891000" />
       <workItem from="1626103157018" duration="694000" />
-      <workItem from="1626265486137" duration="141000" />
+      <workItem from="1626265486137" duration="7543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270919000" />
+    <option name="totallyTimeSpent" value="278321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10944206" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1416309" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27198917" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -491,7 +495,6 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -527,7 +530,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/wave.js" />
     <entry file="file://$PROJECT_DIR$/js/balloons.js" />
     <entry file="file://$PROJECT_DIR$/js/rate.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -732,13 +734,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gooey.html" />
-    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3630">
@@ -758,10 +753,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.sass">
+    <entry file="file://$PROJECT_DIR$/js/threejs/OrbitControls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4005">
-          <caret line="267" column="13" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="13" />
+        <state relative-caret-position="151">
+          <caret line="921" column="37" lean-forward="true" selection-start-line="921" selection-start-column="37" selection-end-line="921" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="92" column="15" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -772,12 +777,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4005">
+          <caret line="267" column="13" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sphere.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="219" column="56" selection-start-line="219" selection-start-column="56" selection-end-line="219" selection-end-column="56" />
+        <state relative-caret-position="234">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
           <folding>
-            <element signature="e#888#939#0" expanded="true" />
+            <element signature="e#888#942#0" expanded="true" />
           </folding>
         </state>
       </provider>

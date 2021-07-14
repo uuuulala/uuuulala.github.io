@@ -65,13 +65,14 @@
             ease: 'none',
             repeat: -1
         });
-        gsap.to(surface.mainWireframe.morphTargetInfluences, {
-            duration: 5,
-            [1]: 1,
-            ease: 'power4.inOut',
-            repeat: -1,
-            yoyo: true
-        });
+        // gsap.to(surface.mainWireframe.morphTargetInfluences, {
+        //     duration: 6,
+        //     [1]: 'random(0.2, 0.7)',
+        //     repeatRefresh: true,
+        //     ease: 'power2.inOut',
+        //     repeat: -1,
+        //     yoyo: true
+        // });
         surface.spheres.forEach((s, sIdx) => {
             const fstCol = sIdx % 2 ? blackCol : pinkCol;
             const scdCol = !(sIdx % 2) ? blackCol : pinkCol;
@@ -114,6 +115,29 @@
             yoyo: true,
             repeat: -1
         });
+
+
+        function calculateDistance(elem, mouseX, mouseY) {
+            return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offsetLeft+(elem.offsetWidth/2)), 2) + Math.pow(mouseY - (elem.offsetTop+(elem.offsetHeight/2)), 2)));
+        }
+        document.addEventListener('mousemove', function(e) {
+            const mX = e.pageX;
+            const mY = e.pageY;
+            let distance = calculateDistance(container, mX, mY);
+            distance = distance / Math.min(window.innerWidth, window.innerHeight);
+            gsap.set(surface.mainWireframe.morphTargetInfluences, {
+                [1]: -(1 - distance) * 0.4
+            });
+
+            const scale = 1 - 0.1 * distance;
+            gsap.set(surface.group.scale, {
+                x: scale,
+                y: scale,
+                z: scale
+            });
+
+        }, false);
+
     });
 
 
@@ -158,6 +182,8 @@
                 return -1;
             };
 
+            const verticesToMorph = [0, 5, 6, 13, 16, 20, 23, 26, 30, 33];
+            let morphIdx = 0;
             for (let i = 0; i < geometry.attributes.position.count; i++) {
                 const coord = [positionsIcosahedron[i * 3], positionsIcosahedron[i * 3 + 1], positionsIcosahedron[i * 3 + 2]];
                 const coordIdx = indexOfCoordinate(mainVertices, coord);
@@ -166,14 +192,17 @@
                         idx: i,
                         coord: coord
                     });
-                    const geometry = new THREE.SphereGeometry(.5, 16, 16);
-                    const material = new THREE.MeshLambertMaterial({ });
-                    const sphere = new THREE.Mesh(geometry, material);
-                    sphere.position.x = coord[0];
-                    sphere.position.y = coord[1];
-                    sphere.position.z = coord[2];
-                    this.spheres.push(sphere);
-                    this.group.add(sphere);
+                    // if (verticesToMorph.indexOf(morphIdx) === -1) {
+                        const geometry = new THREE.SphereGeometry(.5, 16, 16);
+                        const material = new THREE.MeshLambertMaterial({});
+                        const sphere = new THREE.Mesh(geometry, material);
+                        sphere.position.x = coord[0];
+                        sphere.position.y = coord[1];
+                        sphere.position.z = coord[2];
+                        this.spheres.push(sphere);
+                        this.group.add(sphere);
+                    // }
+                    morphIdx ++;
                 } else {
                     otherVertices.push({
                         idx: i,
@@ -226,7 +255,6 @@
 
 
             let positionsChangedIcosahedron = [];
-            const verticesToMorph = [0, 5, 6, 13, 16, 20, 23, 26, 30, 33];
             const vec = new THREE.Vector3();
             const positionAttribute = geometry.attributes.position;
             for (let i = 0; i < positionAttribute.count; i ++) {
@@ -237,7 +265,7 @@
                 const direction = vec.clone().normalize();
                 verticesToMorph.forEach((morphIdx) => {
                     if (verticesOrdered[morphIdx].indexOf(i) !== -1) {
-                        vec.addScaledVector(direction, -4);
+                        vec.addScaledVector(direction, -5);
                     }
                 });
                 vec.toArray(positionsChangedIcosahedron, positionsChangedIcosahedron.length);
