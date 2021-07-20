@@ -12,7 +12,7 @@
             height: 100vh;
             background-image: linear-gradient(to right bottom, #030303, #222121, #3c3a3a, #585655, #747471);
         }
-        .surface {
+        .viz {
             position: fixed;
             top: 20%;
             left: 40%;
@@ -25,129 +25,172 @@
         *:focus {
             outline: none;
         }
+        .dg.main .close-button.close-bottom,
+        .dg.a {
+            width: 500px !important;
+        }
     </style>
 </head>
 
 <body>
 
-<div class="surface"></div>
+<div class="viz"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+
 <script type="module">
+
     import * as THREE from './js/threejs/three.module.js';
     import { OrbitControls } from './js/threejs/OrbitControls.js';
 
-    const container = document.querySelector('.surface');
+    const container = document.querySelector('.viz');
 
     const pinkCol = new THREE.Color('#E50142');
     const blackCol = new THREE.Color('#222222');
 
+    let settings = {
+        mainGroupRotation: 10,
+        backShapeRotation: 12,
+        backShapeScaling: 4,
+        pointsColor: 2,
+        pointsScale: 2,
+        pointsMaxSize: 0.6,
+        morphingPowerInner: 0.8,
+        morphingPowerOuter: 0.4
+    };
+
+    let viz, controls, animations;
 
     document.addEventListener('DOMContentLoaded', () => {
-        let surface = new Surface();
-        surface.updateSize(container.clientWidth, container.clientHeight);
+        viz = new Viz();
+        controls = new Controls();
+        animations = new Animations();
+
         window.addEventListener('resize', () => {
-            surface.updateSize(container.clientWidth, container.clientHeight);
+            viz.updateSize(container.clientWidth, container.clientHeight);
         }, false);
-        surface.loop();
 
-        gsap.to(surface.group.rotation, {
-            duration: 10,
-            x: Math.PI * 2,
-            y: Math.PI * 2,
-            ease: 'none',
-            repeat: -1
-        });
-        gsap.to(surface.outerWireframe.rotation, {
-            duration: 12,
-            x: Math.PI * 2,
-            y: Math.PI * 2,
-            ease: 'none',
-            repeat: -1
-        });
-        // gsap.to(surface.mainWireframe.morphTargetInfluences, {
-        //     duration: 6,
-        //     [1]: 'random(0.2, 0.7)',
-        //     repeatRefresh: true,
-        //     ease: 'power2.inOut',
-        //     repeat: -1,
-        //     yoyo: true
-        // });
-        surface.spheres.forEach((s, sIdx) => {
-            const fstCol = sIdx % 2 ? blackCol : pinkCol;
-            const scdCol = !(sIdx % 2) ? blackCol : pinkCol;
-            gsap.fromTo(s.material.color, {
-                r: fstCol.r,
-                g: fstCol.g,
-                b: fstCol.b,
-            }, {
-                duration: 2,
-                r: scdCol.r,
-                g: scdCol.g,
-                b: scdCol.b,
-                repeat: -1,
-                yoyo: true
-            }).progress(Math.random() * 2);
-            gsap.fromTo(s.scale, {
-                x: 0.4,
-                y: 0.4,
-                z: 0.4,
-            }, {
-                duration: 2,
-                x: 0.6,
-                y: 0.6,
-                z: 0.6,
-                repeat: -1,
-                ease: 'power3.inOut',
-                yoyo: true
-            }).progress(Math.random() * 4);
-        });
-        gsap.fromTo(surface.outerWireframe.scale, {
-            x: 0.85,
-            y: 0.85,
-            z: 0.85,
-        }, {
-            duration: 4,
-            x: 1.2,
-            y: 1.2,
-            z: 1.2,
-            ease: 'power3.inOut',
-            yoyo: true,
-            repeat: -1
-        });
-
-
-        function calculateDistance(elem, mouseX, mouseY) {
-            return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offsetLeft+(elem.offsetWidth/2)), 2) + Math.pow(mouseY - (elem.offsetTop+(elem.offsetHeight/2)), 2)));
-        }
         document.addEventListener('mousemove', function(e) {
             const mX = e.pageX;
             const mY = e.pageY;
-            let distance = calculateDistance(container, mX, mY);
+            let distance = Math.floor(Math.sqrt(Math.pow(mX - (container.offsetLeft+(container.offsetWidth/2)), 2) + Math.pow(mY - (container.offsetTop + (container.offsetHeight/2)), 2)));
             distance = distance / Math.min(window.innerWidth, window.innerHeight);
-            gsap.set(surface.mainWireframe.morphTargetInfluences, {
-                [1]: -(0.8 - distance) * 0.4
-            });
-
+            viz.mainWireframe.morphTargetInfluences[1] = -(settings.morphingPowerInner - distance) * settings.morphingPowerOuter;
             const scale = 1 - 0.1 * distance;
-            gsap.set(surface.group.scale, {
-                x: scale,
-                y: scale,
-                z: scale
-            });
-
+            viz.group.scale.set(scale, scale, scale);
         }, false);
 
+        viz.updateSize(container.clientWidth, container.clientHeight);
+        viz.loop();
     });
 
 
-    class Surface {
+
+    class Controls {
+        constructor() {
+            this.gui = new dat.gui.GUI;
+            this.gui.add(settings, 'morphingPowerInner', 0.1, 1, 0.1).name('morphing inner influence');
+            this.gui.add(settings, 'morphingPowerOuter', 0.1, 1, 0.1).name('morphing power');
+            this.gui.add(settings, 'mainGroupRotation', 1, 20, 1).name('main group rotation duration').onFinishChange((v) => {
+                animations = new Animations();
+            });
+            this.gui.add(settings, 'backShapeRotation', 1, 20, 1).name('back shape rotation duration').onFinishChange((v) => {
+                animations = new Animations();
+            });
+            this.gui.add(settings, 'backShapeScaling', 1, 10, 0.2).name('back shape scaling duration').onFinishChange((v) => {
+                animations = new Animations();
+            });
+            this.gui.add(settings, 'pointsColor', 0.1, 4, 0.2).name('points color animation duration').onFinishChange((v) => {
+                animations = new Animations();
+            });
+            this.gui.add(settings, 'pointsScale', 0.1, 4, 0.2).name('points scale animation duration').onFinishChange((v) => {
+                animations = new Animations();
+            });
+            this.gui.add(settings, 'pointsMaxSize', 0.4, 1.5, 0.05).name('points scale max size').onFinishChange((v) => {
+                animations = new Animations();
+            });
+        }
+    }
+
+    class Animations {
+        constructor() {
+            gsap.globalTimeline.clear();
+
+            gsap.fromTo(viz.group.rotation, {
+                x: 0,
+                y: 0,
+            }, {
+                duration: settings.mainGroupRotation,
+                x: Math.PI * 2,
+                y: Math.PI * 2,
+                ease: 'none',
+                repeat: -1
+            });
+            gsap.fromTo(viz.outerWireframe.rotation, {
+                x: 0,
+                y: 0,
+            }, {
+                duration: settings.backShapeRotation,
+                x: Math.PI * 2,
+                y: Math.PI * 2,
+                ease: 'none',
+                repeat: -1
+            });
+            gsap.fromTo(viz.outerWireframe.scale, {
+                x: 0.85,
+                y: 0.85,
+                z: 0.85,
+            }, {
+                duration: settings.backShapeScaling,
+                x: 1.2,
+                y: 1.2,
+                z: 1.2,
+                ease: 'power3.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+
+            viz.spheres.forEach((s, sIdx) => {
+                const fstCol = sIdx % 2 ? blackCol : pinkCol;
+                const scdCol = !(sIdx % 2) ? blackCol : pinkCol;
+                gsap.fromTo(s.material.color, {
+                    r: fstCol.r,
+                    g: fstCol.g,
+                    b: fstCol.b,
+                }, {
+                    duration: settings.pointsColor,
+                    r: scdCol.r,
+                    g: scdCol.g,
+                    b: scdCol.b,
+                    repeat: -1,
+                    yoyo: true
+                }).progress(Math.random() * settings.pointsColor);
+                gsap.fromTo(s.scale, {
+                    x: 0.35,
+                    y: 0.35,
+                    z: 0.35,
+                }, {
+                    duration: settings.pointsScale,
+                    x: settings.pointsMaxSize,
+                    y: settings.pointsMaxSize,
+                    z: settings.pointsMaxSize,
+                    repeat: -1,
+                    ease: 'power3.inOut',
+                    yoyo: true
+                }).progress(Math.random() * settings.pointsScale * 2);
+            });
+        }
+    }
+
+
+    class Viz {
 
         constructor() {
             this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             this.renderer.setPixelRatio(window.devicePixelRatio);
             this.renderer.setClearColor(0x000000, 0);
-            this.container = document.getElementsByClassName('surface')[0];
+            this.container = document.getElementsByClassName('viz')[0];
             this.container.appendChild(this.renderer.domElement);
 
             this.scene = new THREE.Scene();
@@ -159,11 +202,11 @@
             const controls = new OrbitControls(this.camera, this.renderer.domElement);
             controls.minDistance = controls.maxDistance = 35;
 
-            this.createSphere();
+            this.createGlobe();
             this.render();
         }
 
-        createSphere() {
+        createGlobe() {
 
             this.group = new THREE.Group();
 
@@ -227,32 +270,22 @@
             const hemisphereLight = new THREE.HemisphereLight(0x999999, 0xFFFFFF, 1.);
             this.scene.add(hemisphereLight);
 
-            this.mainMaterial = new THREE.MeshLambertMaterial({
-                fog: true,
-                color: 0x111111,
-                wireframe: true,
-                morphTargets: true,
-            });
-
-            this.outerMaterial = new THREE.MeshLambertMaterial({
+            const outerMaterial = new THREE.MeshLambertMaterial({
                 fog: true,
                 color: 0x444444,
                 wireframe: true
             });
-            this.outerWireframe = new THREE.Mesh(geometry, this.outerMaterial);
+            this.outerWireframe = new THREE.Mesh(geometry, outerMaterial);
 
-
-            const pointsMaterial = new THREE.PointsMaterial( {
+            const pointsMaterial = new THREE.PointsMaterial({
                 color: blackCol,
-                size: 15,
+                size: 12,
                 sizeAttenuation: false,
                 map: new THREE.TextureLoader().load( './img/disc.png' ),
                 alphaTest: 0.5,
                 morphTargets: true
-            } );
-
+            });
             this.points = new THREE.Points(geometry, pointsMaterial);
-
 
             let positionsChangedIcosahedron = [];
             const vec = new THREE.Vector3();
@@ -274,15 +307,22 @@
                 geometry.attributes.position,
                 new THREE.Float32BufferAttribute(positionsChangedIcosahedron, 3),
             ];
+
+            this.mainMaterial = new THREE.MeshLambertMaterial({
+                fog: true,
+                color: 0x111111,
+                wireframe: true,
+                morphTargets: true,
+            });
             this.mainWireframe = new THREE.Mesh(geometry, this.mainMaterial);
 
             this.points.morphTargetInfluences = this.mainWireframe.morphTargetInfluences;
 
+            this.scene.add(this.outerWireframe);
             this.group.scale.set(0.85, 0.85, 0.85);
             this.group.add(this.mainWireframe);
             this.group.add(this.points);
             this.scene.add(this.group);
-            this.scene.add(this.outerWireframe);
         }
 
         render() {
