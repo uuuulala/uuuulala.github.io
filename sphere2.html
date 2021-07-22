@@ -199,8 +199,9 @@
             this.camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 1, 1000);
             this.camera.position.z = 35;
 
-            const controls = new OrbitControls(this.camera, this.renderer.domElement);
-            controls.minDistance = controls.maxDistance = 35;
+            this.orbitControls = new OrbitControls(this.camera, this.renderer.domElement);
+            this.orbitControls.enableDamping = true;
+            this.orbitControls.minDistance = this.orbitControls.maxDistance = 35;
 
             this.createGlobe();
             this.render();
@@ -330,6 +331,7 @@
         }
 
         loop() {
+            this.orbitControls.update();
             this.render();
             requestAnimationFrame(this.loop.bind(this));
         }
