@@ -25,10 +25,6 @@
         *:focus {
             outline: none;
         }
-        .dg.main .close-button.close-bottom,
-        .dg.a {
-            width: 500px !important;
-        }
     </style>
 </head>
 
@@ -36,13 +32,12 @@
 
 <div class="viz"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
 
 <script type="module">
 
-    import * as THREE from './js/threejs/three.module.js';
-    import { OrbitControls } from './js/threejs/OrbitControls.js';
+    import * as THREE from 'https://unpkg.com/three@0.119.0/build/three.module.js';
+    import { OrbitControls } from 'https://unpkg.com/three@0.119.0/examples/jsm/controls/OrbitControls.js';
 
     const container = document.querySelector('.viz');
 
@@ -50,21 +45,20 @@
     const blackCol = new THREE.Color('#222222');
 
     let settings = {
-        mainGroupRotation: 10,
-        backShapeRotation: 12,
-        backShapeScaling: 4,
-        pointsColor: 2,
-        pointsScale: 2,
-        pointsMaxSize: 0.6,
-        morphingPowerInner: 0.8,
-        morphingPowerOuter: 0.4
+        mainGroupRotation: 20,
+        backShapeRotation: 14,
+        backShapeScaling: 5,
+        pointsColor: 4,
+        pointsScale: 2.2,
+        pointsMaxSize: 0.5,
+        morphingPowerInner: 0.5,
+        morphingPowerOuter: 0.5
     };
 
-    let viz, controls, animations;
+    let viz, animations;
 
     document.addEventListener('DOMContentLoaded', () => {
         viz = new Viz();
-        controls = new Controls();
         animations = new Animations();
 
         window.addEventListener('resize', () => {
@@ -85,33 +79,6 @@
         viz.loop();
     });
 
-
-
-    class Controls {
-        constructor() {
-            this.gui = new dat.gui.GUI;
-            this.gui.add(settings, 'morphingPowerInner', 0.1, 1, 0.1).name('morphing inner influence');
-            this.gui.add(settings, 'morphingPowerOuter', 0.1, 1, 0.1).name('morphing power');
-            this.gui.add(settings, 'mainGroupRotation', 1, 20, 1).name('main group rotation duration').onChange((v) => {
-                animations = new Animations();
-            });
-            this.gui.add(settings, 'backShapeRotation', 1, 20, 1).name('back shape rotation duration').onChange((v) => {
-                animations = new Animations();
-            });
-            this.gui.add(settings, 'backShapeScaling', 1, 10, 0.2).name('back shape scaling duration').onChange((v) => {
-                animations = new Animations();
-            });
-            this.gui.add(settings, 'pointsColor', 0.1, 4, 0.2).name('points color animation duration').onChange((v) => {
-                animations = new Animations();
-            });
-            this.gui.add(settings, 'pointsScale', 0.1, 4, 0.2).name('points scale animation duration').onChange((v) => {
-                animations = new Animations();
-            });
-            this.gui.add(settings, 'pointsMaxSize', 0.4, 1.5, 0.05).name('points scale max size').onChange((v) => {
-                animations = new Animations();
-            });
-        }
-    }
 
     class Animations {
         constructor() {
