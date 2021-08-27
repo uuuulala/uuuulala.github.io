@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        .img-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        canvas, img {
+            display: block;
+        }
+        img {
+            max-width: 90%;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="surface"></div>
+<div class="img-container">
+    <img src="./img/cat.png">
+</div>
+
+<script type="x-shader/x-fragment" id="fragmentShader">
+    precision highp float;
+
+    uniform float u_time;
+    uniform float u_ratio;
+    uniform vec2 u_mouse;
+    varying vec2 vUv;
+
+    // Color transfrom
+    //
+    vec3 hsb2rgb( in vec3 c ){
+        vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),
+        6.0)-3.0)-1.0,
+        0.0,
+        1.0 );
+        rgb = rgb*rgb*(3.0-2.0*rgb);
+        return c.z * mix(vec3(1.0), rgb, c.y);
+    }
+
+    // Simplex 2D noise
+    //
+    vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+    float snoise(vec2 v){
+        const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+        -0.577350269189626, 0.024390243902439);
+        vec2 i  = floor(v + dot(v, C.yy) );
+        vec2 x0 = v -   i + dot(i, C.xx);
+        vec2 i1;
+        i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+        vec4 x12 = x0.xyxy + C.xxzz;
+        x12.xy -= i1;
+        i = mod(i, 289.0);
+        vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+        + i.x + vec3(0.0, i1.x, 1.0 ));
+        vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+        dot(x12.zw,x12.zw)), 0.0);
+        m = m*m ;
+        m = m*m ;
+        vec3 x = 2.0 * fract(p * C.www) - 1.0;
+        vec3 h = abs(x) - 0.5;
+        vec3 ox = floor(x + 0.5);
+        vec3 a0 = x - ox;
+        m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+        vec3 g;
+        g.x  = a0.x  * x0.x  + h.x  * x0.y;
+        g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+        return 130.0 * dot(m, g);
+    }
+
+    // Transfrom rotate
+    //
+    mat2 rotate2d(float angle) {
+        return mat2 (
+        cos(angle), -sin(angle),
+        sin(angle), cos(angle)
+        );
+    }
+
+    // Main function
+    //
+    void main () {
+        float mouseDistance = length((vUv - u_mouse) * u_ratio);
+
+        // slightly rotate the space around the center
+        vec2 _uv = vUv;
+        _uv.x *= u_ratio;
+        _uv = rotate2d(-u_time * 10.) * (vUv - 0.5) * (length((vUv - vec2(.5))) * u_ratio * 5.2);
+
+        // create noisy structure
+        float pos = (snoise(vec2(_uv)));
+        // make it pulse with time
+        pos += snoise(vec2(u_time));
+        // disturb it with mouse
+        float distortion = exp(-dot(mouseDistance, mouseDistance) / .04) * 2.;
+        pos += distortion;
+
+        // select color palette
+        float hue = 0.2 * snoise(vec2(pos));;
+        vec3 hslCol = vec3(hue, .7, .95);
+
+        vec4 color = vec4(hsb2rgb(hslCol), 1.);
+
+        // Outer glow
+        float outerGlow = distance(vUv, vec2(.5)) * 2. - 1.2;
+        color.r += outerGlow * 2.;
+        color.g += outerGlow * 1.;
+
+        gl_FragColor = color;
+    }
+</script>
+
+<script type="x-shader/x-vertex" id="vertexShader">
+
+    attribute vec3 position;
+    attribute vec2 uv;
+
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 1.0 );
+    }
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js'></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let surface = new Surface();
+        surface.updateSize(window.innerWidth, window.innerHeight);
+        window.addEventListener('resize', () => {
+            surface.updateSize(window.innerWidth, window.innerHeight);
+        }, false);
+        document.addEventListener('mousemove', (e) => {
+            surface.targetMousePos.x = e.clientX / window.innerWidth;
+            surface.targetMousePos.y = 1.0 - e.clientY / window.innerHeight;
+        }, false);
+        surface.loop();
+    });
+
+
+    class Surface {
+
+        constructor() {
+            this.renderer = new THREE.WebGLRenderer({});
+            this.renderer.setPixelRatio(window.devicePixelRatio);
+            this.container = document.getElementsByClassName('surface')[0];
+            this.container.appendChild(this.renderer.domElement);
+            this.scene = new THREE.Scene();
+            this.camera = new THREE.Camera();
+            this.mousePos = { x: 0, y: 0 };
+            this.targetMousePos = { x: 0, y: 0 };
+            this.clock = new THREE.Clock();
+
+            this.createPlane();
+            this.render();
+        }
+
+        createPlane() {
+            this.material = new THREE.RawShaderMaterial({
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent,
+                uniforms: {
+                    u_time: { type: 'f', value: 0 },
+                    u_ratio: { type: "f", value: window.innerWidth / window.innerHeight },
+                    u_mouse: { type: 'v2', value: new THREE.Vector2(0.5, 0.5) } },
+            });
+            this.planeGeometry = new THREE.PlaneBufferGeometry(2, 2);
+            this.plane = new THREE.Mesh(this.planeGeometry, this.material);
+            this.scene.add(this.plane);
+        }
+
+        render() {
+            this.plane.material.uniforms.u_time.value = this.clock.getElapsedTime() * .01;
+            this.mousePos.x += (this.targetMousePos.x - this.mousePos.x) * .1;
+            this.mousePos.y += (this.targetMousePos.y - this.mousePos.y) * .1;
+            this.plane.material.uniforms.u_mouse.value = new THREE.Vector2(this.mousePos.x, this.mousePos.y);
+            this.renderer.render(this.scene, this.camera);
+        }
+
+        loop() {
+            this.render();
+            requestAnimationFrame(this.loop.bind(this));
+        }
+
+        updateSize(w, h) {
+            this.material.uniforms.u_ratio.value = window.innerWidth / window.innerHeight;
+            this.renderer.setSize(w, h);
+        }
+    }
+</script>
+
+</body>
+</html>
