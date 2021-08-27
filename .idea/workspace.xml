@@ -86,8 +86,17 @@
       <file leaf-file-name="pid.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pid.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            <state relative-caret-position="315">
+              <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="experiments.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiments.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -118,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isVisible</find>
       <find>height</find>
       <find>loop()</find>
       <find>circle</find>
@@ -148,6 +156,7 @@
       <find>a</find>
       <find>map</find>
       <find>scroll-</find>
+      <find>meta</find>
     </findStrings>
     <replaceStrings>
       <replace>pressure</replace>
@@ -432,12 +441,12 @@
       <workItem from="1628258143675" duration="1302000" />
       <workItem from="1628417098368" duration="2505000" />
       <workItem from="1628587315463" duration="372000" />
-      <workItem from="1630065002903" duration="680000" />
+      <workItem from="1630065002903" duration="985000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290871000" />
+    <option name="totallyTimeSpent" value="291176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="836" extended-state="0" />
@@ -448,7 +457,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.040595397" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.13125846" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28040057" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
@@ -540,13 +549,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/img/heart.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/experiments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" lean-forward="true" selection-end-line="30" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jellyfish.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -722,10 +724,17 @@
     <entry file="file://$PROJECT_DIR$/img/cat.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/experiments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        <state relative-caret-position="315">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
