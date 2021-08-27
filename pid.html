@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        body {
+        html, body {
             overflow: hidden;
             padding: 0;
             margin: 0;
+            overscroll-behavior: none
         }
         .img-container {
             position: fixed;
@@ -149,6 +150,10 @@
         document.addEventListener('mousemove', (e) => {
             surface.targetMousePos.x = e.clientX / window.innerWidth;
             surface.targetMousePos.y = 1.0 - e.clientY / window.innerHeight;
+        }, false);
+        document.addEventListener('touchmove', (e) => {
+            surface.targetMousePos.x = e.targetTouches[0].pageX / window.innerWidth;
+            surface.targetMousePos.y = 1.0 - e.targetTouches[0].pageY / window.innerHeight;
         }, false);
         surface.loop();
     });
