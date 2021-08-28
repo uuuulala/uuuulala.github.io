@@ -417,7 +417,7 @@
                 uniform float u_ratio;
 
                 uniform float u_time;
-                uniform vec2 u_pointer;
+                uniform vec2 u_mouse;
                 varying vec2 vUv;
 
                 #define TWO_PI 6.28318530718
@@ -456,7 +456,7 @@
 
                     vec2 uv = vUv;
                     uv.x *= u_ratio;
-                    vec2 mouse = u_pointer;
+                    vec2 mouse = u_mouse;
                     mouse.x *= u_ratio;
 
                     float width = u_ratio / float(colNumber);
@@ -505,7 +505,7 @@
                     gl_Position = vec4(position, 1.0 );
                 }
             </script>
-            <!--<a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen</a>-->
+            <a href="https://codepen.io/ksenia-k/pen/vYZNKQj" target="_blank">open codepen</a>
         </div>
     </div>
 

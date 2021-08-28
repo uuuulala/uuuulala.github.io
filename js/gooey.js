@@ -77,7 +77,7 @@ class Surface {
             uniforms: {
                 u_time: {type: 'f', value: 0},
                 u_ratio: {type: "f", value: gooeyContainer.clientWidth / gooeyContainer.clientHeight },
-                u_pointer: {type: "v2", value: new THREE.Vector2(gooeyPointer.x, 1. - gooeyPointer.y)},
+                u_mouse: {type: "v2", value: new THREE.Vector2(gooeyPointer.x, 1. - gooeyPointer.y)},
             }
         });
         this.material.defines = { COL_NUMBER: window.innerWidth > 700 ? 17 : 9 };
@@ -90,7 +90,7 @@ class Surface {
     render() {
         this.plane.material.uniforms.u_time.value += .01;
         this.plane.material.uniforms.u_ratio.value = gooeyContainer.clientWidth / gooeyContainer.clientHeight;
-        this.plane.material.uniforms.u_pointer.value = new THREE.Vector2(gooeyPointer.x, 1. - gooeyPointer.y);
+        this.plane.material.uniforms.u_mouse.value = new THREE.Vector2(gooeyPointer.x, 1. - gooeyPointer.y);
         this.renderer.render(this.scene, this.camera);
     }
 
