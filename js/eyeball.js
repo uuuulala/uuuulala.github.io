@@ -188,7 +188,7 @@ class EyeballViz {
     }
 
     createEyeball() {
-        const eyeBallTexture = new THREE.TextureLoader().load('./img/eyeball.png');
+        const eyeBallTexture = new THREE.TextureLoader().load('./img/eyeball.jpg');
         const eyeAddonGeometry = new THREE.SphereGeometry(this.eyeRadius, 128, 128);
         const eyeAddonMaterial = new THREE.MeshPhongMaterial({
             color: 0xffffff,
