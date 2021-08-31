@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/eye.html" beforeDir="false" afterPath="$PROJECT_DIR$/eye.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/eyeball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/ksenia-kondrashova.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/ksenia-kondrashova.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/matcap-crystal.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/matcap-crystal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/eyeball.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/eyeball.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/eyeball.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/eyeball.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,20 +64,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/eyeball.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="273">
+              <caret line="263" column="33" selection-start-line="263" selection-start-column="33" selection-end-line="263" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="512" column="39" lean-forward="true" selection-start-line="512" selection-start-column="39" selection-end-line="512" selection-end-column="39" />
+            <state relative-caret-position="277">
+              <caret line="360" column="43" selection-start-line="360" selection-start-column="43" selection-end-line="360" selection-end-column="43" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -96,6 +93,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="rect.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/rect.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="wave.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/wave.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -109,13 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>container</find>
-      <find>size</find>
-      <find>u_pointer</find>
-      <find>surface</find>
-      <find>settings</find>
-      <find>crystal</find>
-      <find>minDistance</find>
       <find>gooey</find>
       <find>height</find>
       <find>canvas</find>
@@ -129,7 +129,6 @@
       <find>addSceneControls</find>
       <find>eyeballControls</find>
       <find>eyeballContainer</find>
-      <find>sequins</find>
       <find>dragging</find>
       <find>previousMousePosition</find>
       <find>deltaMove</find>
@@ -137,8 +136,16 @@
       <find>mouseOverControls</find>
       <find>onClick</find>
       <find>deltaRotationQuaternion</find>
-      <find>pressed</find>
       <find>eyeball.</find>
+      <find>pressed</find>
+      <find>texture</find>
+      <find>camera</find>
+      <find>zoomLevel</find>
+      <find>sampler</find>
+      <find>sampler2D</find>
+      <find>zoomLevelBounds</find>
+      <find>sequins</find>
+      <find>speed</find>
     </findStrings>
     <replaceStrings>
       <replace>drawingColor</replace>
@@ -168,9 +175,9 @@
       <replace>size.h</replace>
       <replace>u_mouse</replace>
       <replace>sequinsSize</replace>
-      <replace>sequinsContainer</replace>
       <replace>sequinsSettings</replace>
       <replace>sequinsSurface</replace>
+      <replace>sequinsContainer</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -232,8 +239,8 @@
         <option value="$PROJECT_DIR$/style.sass" />
         <option value="$PROJECT_DIR$/js/gooey.js" />
         <option value="$PROJECT_DIR$/js/sequins.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/eyeball.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -436,12 +443,12 @@
       <workItem from="1628417098368" duration="2505000" />
       <workItem from="1628587315463" duration="372000" />
       <workItem from="1630065002903" duration="3739000" />
-      <workItem from="1630228090499" duration="6387000" />
+      <workItem from="1630228090499" duration="8107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300317000" />
+    <option name="totallyTimeSpent" value="302037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -452,7 +459,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2897436" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.03717949" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28397712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
@@ -573,9 +580,6 @@
     <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/wave.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -645,9 +649,6 @@
     <entry file="file://$PROJECT_DIR$/t.svg" />
     <entry file="file://$PROJECT_DIR$/3.svg" />
     <entry file="file://$PROJECT_DIR$/4.svg" />
-    <entry file="file://$PROJECT_DIR$/img/rect.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/cat.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -717,10 +718,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/rect.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/wave.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="263" column="33" selection-start-line="263" selection-start-column="33" selection-end-line="263" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="512" column="39" lean-forward="true" selection-start-line="512" selection-start-column="39" selection-end-line="512" selection-end-column="39" />
+        <state relative-caret-position="277">
+          <caret line="360" column="43" selection-start-line="360" selection-start-column="43" selection-end-line="360" selection-end-column="43" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -732,13 +746,6 @@
             <element signature="n#div#14;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
         </state>
       </provider>
     </entry>

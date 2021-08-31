@@ -314,6 +314,7 @@
                 uniform float vignette;
                 uniform float brightness;
                 uniform float darkness;
+                uniform sampler2D u_texture;
 
                 float random (in vec2 st) {
                     return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);
@@ -356,6 +357,9 @@
                     st.x *= 6.28318531; // 2Pi
                     st.y *= 3.14159265359; // Pi
 
+                    vec4 back = texture2D(u_texture, vUv);
+                    back += vec4(.4, .4, .4, 0.);
+
                     float r = length(st);
                     float a = atan(st.y, st.x);
 
@@ -387,9 +391,8 @@
 
                     // crop
                     f = smoothstep(.79, 0.85, r);
-                    col = mix(col, vec3(1.), f);
 
-                    gl_FragColor = vec4(col, 1.);
+                    gl_FragColor = mix(vec4(col, 1.), back, f);
                 }
 
             </script>

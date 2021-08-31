@@ -4,8 +4,7 @@ let eyeballViz, eyeballPointer, eyeballControls, eyeballAnimations;
 const eyeballContainer = document.querySelector('.eyeball .animation-wrapper');
 
 let eyeConfig = {
-    zoomLevel: 525,
-    zoomLevelBounds: [ 300, 1000 ],
+    zoomLevel: 450,
     shrink: 0,
     fstBaseColor: '#03565c',
     scdBaseColor: '#42cf44',
@@ -131,8 +130,8 @@ class EyeballAnimations {
             })
             .from(eyeballViz.eyeGroup.rotation, {
                 duration: 2,
-                x: 25,
-                z: 5,
+                x: -25,
+                z: 10,
                 ease: 'power3.out'
             }, 0)
             .from(eyeballViz.shadowMesh.scale, {
@@ -173,10 +172,7 @@ class EyeballViz {
         this.scene.background = new THREE.Color(0xf7f7f7);
         this.setCameraPosition(eyeConfig.zoomLevel);
 
-        // const ambientLight = new THREE.AmbientLight(0x999999, 0.7);
-        // this.scene.add(ambientLight);
-
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.);
         directionalLight.position.set(-1, 1, 1);
         this.scene.add(directionalLight);
     }
@@ -189,19 +185,18 @@ class EyeballViz {
 
     createEyeball() {
         const eyeBallTexture = new THREE.TextureLoader().load('./img/eyeball.jpg');
-        const eyeAddonGeometry = new THREE.SphereGeometry(this.eyeRadius, 128, 128);
+        const eyeAddonGeometry = new THREE.SphereGeometry(this.eyeRadius, 32, 32);
         const eyeAddonMaterial = new THREE.MeshPhongMaterial({
             color: 0xffffff,
-            emissive: 0x220000,
-            opacity: 0.25,
-            shininess: 100,
+            opacity: 0.3,
             transparent: true,
-            map: eyeBallTexture
+            emissive: 0x220000,
+            shininess: 300,
         });
         const eyeAddon = new THREE.Mesh(eyeAddonGeometry, eyeAddonMaterial);
         this.eyeGroup.add(eyeAddon);
 
-        const eyeGeometry = new THREE.SphereGeometry(this.eyeRadius - 0.3, 256, 256);
+        const eyeGeometry = new THREE.SphereGeometry(this.eyeRadius - 0.5, 256, 256);
         this.eyeShaderMaterial = new THREE.ShaderMaterial({
             uniforms: {
                 shrink: {
@@ -231,6 +226,10 @@ class EyeballViz {
                 darkness: {
                     type: "f",
                     value: eyeConfig.darkness
+                },
+                u_texture: {
+                    type: "t",
+                    value: eyeBallTexture
                 },
             },
             vertexShader: document.getElementById("eyeball-vertexShader").textContent,
@@ -262,7 +261,7 @@ class EyeballViz {
     }
 
     render() {
-        const rotationSpeed = 0.2;
+        const rotationSpeed = 0.7;
         this.eyeGroup.rotation.x += (eyeballPointer.mouse.y * 0.3 - this.eyeGroup.rotation.x) * rotationSpeed;
         this.eyeGroup.rotation.y += (eyeballPointer.mouse.x * 0.6 - this.eyeGroup.rotation.y) * rotationSpeed;
         this.renderer.render(this.scene, this.camera);
