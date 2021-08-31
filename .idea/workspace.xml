@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/img/matcap-crystal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/sequins.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pid.html" beforeDir="false" afterPath="$PROJECT_DIR$/pid.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/eyeball.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/eyeball.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/gooey.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/gooey.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/threejs/LineMaterial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/threejs/LineSegmentsGeometry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/threejs/OrbitControls.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/threejs/Wireframe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/threejs/WireframeGeometry2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/threejs/three.module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/style.sass" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,26 +43,43 @@
       <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1695">
-              <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+            <state relative-caret-position="1019">
+              <caret line="286" column="14" lean-forward="true" selection-start-line="286" selection-start-column="14" selection-end-line="286" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="back-animation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/back-animation.js">
+      <file leaf-file-name="sequins.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/sequins.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+            <state relative-caret-position="345">
+              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#79#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/update.js">
+      <file leaf-file-name="fire.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/fire.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="gooey.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/gooey.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+            <state relative-caret-position="437">
+              <caret line="99" column="14" selection-start-line="99" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/eyeball.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -59,8 +87,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5265">
-              <caret line="507" column="52" selection-start-line="507" selection-start-column="52" selection-end-line="507" selection-end-column="52" />
+            <state relative-caret-position="271">
+              <caret line="512" column="39" lean-forward="true" selection-start-line="512" selection-start-column="39" selection-end-line="512" selection-end-column="39" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -76,99 +104,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eyeball.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3945">
-              <caret line="263" column="31" selection-start-line="263" selection-start-column="31" selection-end-line="263" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pid.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pid.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="experiments.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/experiments.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="33" selection-end-line="30" />
-              <folding>
-                <element signature="n#style#0;n#g#0;n#g#0;n#svg#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cat.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/cat.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="gooey.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/gooey.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="73" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Color</find>
-      <find>STATE</find>
-      <find>mousemo</find>
-      <find>handleMouseMoveRotate</find>
-      <find>enableRotate</find>
-      <find>pan</find>
-      <find>target</find>
-      <find>onMouseMove</find>
-      <find>controls</find>
-      <find>outer</find>
-      <find>verticesToMorph</find>
-      <find>ry \= new THREE\.SphereGeometry\(\.5\, 16\, 16\)\;\n                    \/\/     const material \= new THREE\.MeshLambertMaterial\(\{\}\)\;\n                    \/\/     const sphere \= new THREE\.Mesh\(geometry\, material\)\;\n                    \/\/     sphere\.position\.x \= coord\[0\]\;\n                    \/\/     sphere\.position\.y \= coord\[1\]\;\n                    \/\/     sphere\.position\.z \= coord\[2\]\;\n                    \/\/     this\.spheres\.push\(sphere\)\;\n                    \/\/     this\.group\.add\(</find>
-      <find>poin</find>
-      <find>power</find>
-      <find>orbit</find>
-      <find>fill</find>
-      <find>Hi,g</find>
-      <find>a</find>
-      <find>map</find>
-      <find>scroll-</find>
-      <find>meta</find>
-      <find>gooey</find>
-      <find>onTouchMove</find>
-      <find>tx</find>
-      <find>gooeyContainer</find>
-      <find>setResponsiveValues</find>
       <find>loop</find>
       <find>container</find>
       <find>size</find>
       <find>u_pointer</find>
+      <find>surface</find>
+      <find>settings</find>
+      <find>crystal</find>
+      <find>minDistance</find>
+      <find>gooey</find>
+      <find>height</find>
+      <find>canvas</find>
+      <find>clear</find>
+      <find>0xf7f7f7</find>
+      <find>sequinsSize</find>
+      <find>isVisible</find>
+      <find>gooeyContainer</find>
+      <find>color</find>
+      <find>zoom-range</find>
+      <find>addSceneControls</find>
+      <find>eyeballControls</find>
+      <find>eyeballContainer</find>
+      <find>sequins</find>
+      <find>dragging</find>
+      <find>previousMousePosition</find>
+      <find>deltaMove</find>
+      <find>mouse</find>
+      <find>mouseOverControls</find>
+      <find>onClick</find>
+      <find>deltaRotationQuaternion</find>
+      <find>pressed</find>
     </findStrings>
     <replaceStrings>
-      <replace>dx</replace>
-      <replace>pointer</replace>
-      <replace>dy</replace>
-      <replace>splat</replace>
       <replace>drawingColor</replace>
       <replace>dt</replace>
       <replace>updateLinesAndLabels</replace>
@@ -195,6 +175,10 @@
       <replace>surface</replace>
       <replace>size.h</replace>
       <replace>u_mouse</replace>
+      <replace>sequinsSize</replace>
+      <replace>sequinsContainer</replace>
+      <replace>sequinsSettings</replace>
+      <replace>sequinsSurface</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -207,8 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/e.svg" />
         <option value="$PROJECT_DIR$/js/dude.js" />
         <option value="$PROJECT_DIR$/js/d3-bars.js" />
         <option value="$PROJECT_DIR$/js/MorphSVGPlugin3.min.js" />
@@ -241,10 +223,8 @@
         <option value="$PROJECT_DIR$/eye.html" />
         <option value="$PROJECT_DIR$/test.svg" />
         <option value="$PROJECT_DIR$/hhhAsset 2.svg" />
-        <option value="$PROJECT_DIR$/style.sass" />
         <option value="$PROJECT_DIR$/js/update.js" />
         <option value="$PROJECT_DIR$/gooey.html" />
-        <option value="$PROJECT_DIR$/js/eyeball.js" />
         <option value="$PROJECT_DIR$/js/threejs/OrbitControls.js" />
         <option value="$PROJECT_DIR$/sphere.html" />
         <option value="$PROJECT_DIR$/sphere3.html" />
@@ -254,10 +234,14 @@
         <option value="$PROJECT_DIR$/4.svg" />
         <option value="$PROJECT_DIR$/r.css" />
         <option value="$PROJECT_DIR$/experiments.html" />
-        <option value="$PROJECT_DIR$/js/gooey.js" />
         <option value="$PROJECT_DIR$/js/gooey-copy.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/pid.html" />
+        <option value="$PROJECT_DIR$/js/threejs/MeshSurfaceSampler.js" />
+        <option value="$PROJECT_DIR$/style.sass" />
+        <option value="$PROJECT_DIR$/js/gooey.js" />
+        <option value="$PROJECT_DIR$/js/sequins.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/eyeball.js" />
       </list>
     </option>
   </component>
@@ -270,10 +254,10 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="836" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -291,12 +275,13 @@
             <path>
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="gsap" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -454,27 +439,28 @@
       <workItem from="1628417098368" duration="2505000" />
       <workItem from="1628587315463" duration="372000" />
       <workItem from="1630065002903" duration="3739000" />
-      <workItem from="1630228090499" duration="1159000" />
+      <workItem from="1630228090499" duration="6054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295089000" />
+    <option name="totallyTimeSpent" value="299984000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="836" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28397712" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2909337" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28397712" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1285521" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -484,7 +470,6 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -520,15 +505,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/img/IMG_1678.jpeg" />
-    <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova.jpeg" />
-    <entry file="file://$PROJECT_DIR$/mixins.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -655,13 +631,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gooey.html" />
-    <entry file="file://$PROJECT_DIR$/js/threejs/OrbitControls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="921" column="37" lean-forward="true" selection-start-line="921" selection-start-column="37" selection-end-line="921" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sphere.html" />
     <entry file="file://$PROJECT_DIR$/sphere3.html" />
     <entry file="file://$PROJECT_DIR$/js/back-animation.js">
@@ -679,13 +648,6 @@
     <entry file="file://$PROJECT_DIR$/t.svg" />
     <entry file="file://$PROJECT_DIR$/3.svg" />
     <entry file="file://$PROJECT_DIR$/4.svg" />
-    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3945">
-          <caret line="263" column="31" selection-start-line="263" selection-start-column="31" selection-end-line="263" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/rect.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -703,18 +665,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.sass">
+    <entry file="file://$PROJECT_DIR$/js/gooey-copy.js" />
+    <entry file="file://$PROJECT_DIR$/pid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="113" column="17" selection-start-line="113" selection-start-column="17" selection-end-line="113" selection-end-column="17" />
+        <state relative-caret-position="370">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/gooey-copy.js" />
+    <entry file="file://$PROJECT_DIR$/js/threejs/OrbitControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/threejs/MeshSurfaceSampler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fire.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1019">
+          <caret line="286" column="14" lean-forward="true" selection-start-line="286" selection-start-column="14" selection-end-line="286" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/gooey.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="99" column="14" selection-start-line="99" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sequins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5265">
-          <caret line="507" column="52" selection-start-line="507" selection-start-column="52" selection-end-line="507" selection-end-column="52" />
+        <state relative-caret-position="271">
+          <caret line="512" column="39" lean-forward="true" selection-start-line="512" selection-start-column="39" selection-end-line="512" selection-end-column="39" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -729,17 +738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/gooey.js">
+    <entry file="file://$PROJECT_DIR$/js/eyeball.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="73" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        <state relative-caret-position="212">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,8 @@
 let gooeyPointer, gooeySurface;
 const gooeyContainer = document.querySelector('.gooey .animation-wrapper');
 
+import * as THREE from 'https://unpkg.com/three@0.119.0/build/three.module.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     gooeyPointer = new Pointer();
     gooeySurface = new Surface(gooeyContainer.clientWidth, gooeyContainer.clientHeight);
@@ -103,7 +105,7 @@ class Surface {
 
     updateSize() {
         this.setResponsiveValues();
-        this.width = eyeballContainer.clientWidth;
+        this.width = gooeyContainer.clientWidth;
         this.camera.aspect = this.width / this.height;
         this.renderer.setSize(this.width, this.height);
     }

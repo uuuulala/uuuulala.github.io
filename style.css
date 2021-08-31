@@ -304,12 +304,6 @@ h2 {
       position: absolute;
       top: 0;
       right: 0; }
-    .what-I-do .animation.eyeball #zoom-range {
-      position: absolute;
-      width: 200px;
-      bottom: 0;
-      right: 10px;
-      padding: 30px 0; }
     .what-I-do .animation.eyeball .cr.color .selector {
       width: 50px !important; }
     .what-I-do .animation.eyeball .cr.color .saturation-field,
@@ -321,6 +315,11 @@ h2 {
       margin-left: 26px !important;
       height: 5px !important;
       border-right: 10px solid #000 !important; }
+    .what-I-do .animation.sequins .animation-wrapper {
+      height: 400px; }
+      .what-I-do .animation.sequins .animation-wrapper canvas {
+        display: block;
+        outline: none; }
 
 @media (max-width: 888px) {
   .mobile-padding {

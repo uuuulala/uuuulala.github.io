@@ -302,7 +302,6 @@
         </div>
         <div class="animation eyeball">
             <div class="animation-wrapper">
-                <input type="range" min="0" max="0" value="0" step="1" id="zoom-range" />
             </div>
             <script type="x-shader/x-fragment" id="eyeball-fragmentShader">
                 precision highp float;
@@ -507,6 +506,15 @@
             </script>
             <a href="https://codepen.io/ksenia-k/pen/vYZNKQj" target="_blank">open codepen</a>
         </div>
+
+        <div class="mobile-padding">
+            Three.js 3D shape covered with fancy sequins
+        </div>
+        <div class="animation sequins">
+            <div class="animation-wrapper">
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/yLXeVov" target="_blank">open codepen</a>
+        </div>
     </div>
 
     <div class='who-I-am'>
@@ -626,7 +634,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
 
     <script src="js/gsap/CustomEase.min.js"></script>
@@ -651,8 +658,9 @@
     <script src='js/stars.js'></script>
     <script src='js/confetti.js'></script>
 
-    <script src='js/eyeball.js'></script>
-    <script src='js/gooey.js'></script>
+    <script type="module" src='js/eyeball.js'></script>
+    <script type="module" src='js/gooey.js'></script>
+    <script type="module" src='js/sequins.js'></script>
 
     <script src='js/update.js'></script>
 

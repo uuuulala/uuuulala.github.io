@@ -1,6 +1,7 @@
+import * as THREE from 'https://unpkg.com/three@0.119.0/build/three.module.js';
+
 let eyeballViz, eyeballPointer, eyeballControls, eyeballAnimations;
 const eyeballContainer = document.querySelector('.eyeball .animation-wrapper');
-
 
 let eyeConfig = {
     zoomLevel: 525,
@@ -25,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     eyeballViz.updateSize();
 
     eyeballControls.addShaderControls();
-    eyeballControls.addSceneControls();
 
     window.addEventListener('resize', () => {
         eyeballPointer.updateCenter();
@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     eyeballContainer.querySelector('canvas').addEventListener("click", (e) => eyeballPointer.onClick(e));
-    document.addEventListener("mousedown", (e) => eyeballPointer.onMouseDown(e));
-    document.addEventListener("mouseup", (e) => eyeballPointer.onMouseUp(e));
     document.addEventListener("mousemove", (e) => eyeballPointer.onMouseMove(e));
 
     gsap.timeline({
@@ -68,76 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
 class EyeballPointer {
     constructor() {
         this.mouse = { x: 0, y: 0 };
-        this.deltaMove = { x: 0, y: 0 };
-        this.previousMousePosition = { x: 0, y: 0 };
-        this.pressed = false;
-        this.dragging = false;
-        this.deltaRotationQuaternion = new THREE.Quaternion();
     }
     updateCenter() {
         this.windowHalf = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    }
-    onMouseDown() {
-        this.pressed = true;
-    }
-    onMouseUp() {
-        this.pressed = false;
-        this.deltaRotationQuaternion
-            .setFromEuler(new THREE.Euler(
-                0,
-                0,
-                0,
-                'XYZ'
-            ));
     }
     onMouseMove(e) {
         this.mouse = {
             x: (e.clientX - this.windowHalf.x) / this.windowHalf.x,
             y: (e.clientY - this.windowHalf.y) / this.windowHalf.y
         };
-        this.deltaMove = {
-            x: e.offsetX - this.previousMousePosition.x,
-            y: e.offsetY - this.previousMousePosition.y
-        };
-        this.previousMousePosition = {
-            x: e.offsetX,
-            y: e.offsetY
-        };
-        if (this.pressed) {
-            this.deltaRotationQuaternion
-                .setFromEuler(new THREE.Euler(
-                    this.deltaMove.y * (Math.PI / 180),
-                    this.deltaMove.x * (Math.PI / 180),
-                    0,
-                    'XYZ'
-                ));
-            this.dragging = true;
-        }
     }
     onClick() {
-        if (!this.dragging) {
-            eyeballAnimations.playShrink.play(0);
-        }
-        this.dragging = false;
+        eyeballAnimations.playShrink.play(0);
     }
 }
 
 class EyeballControls {
     constructor() {
-        this.zoomControl = document.querySelector('#zoom-range');
-
-        this.mouseOverControls = false;
         this.gui = new dat.gui.GUI({ autoPlace: false });
         eyeballContainer.appendChild(this.gui.domElement);
-        const eyeballControls = document.querySelector('.dg.main');
-        let timeout;
-        eyeballControls.addEventListener('mouseenter', () => {
-            timeout = setTimeout(() => this.mouseOverControls = true, 400);
-        }, false);
-        eyeballControls.addEventListener('mouseleave', () => {
-            clearTimeout(timeout);
-            this.mouseOverControls = false;
-        }, false);
     }
     addShaderControls() {
         this.shrinkContol = this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.shrink, 'value', -0.9, 0.3, 0.05).name('shrink');
@@ -153,19 +100,6 @@ class EyeballControls {
         this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.vignette, 'value', 0, 1, 0.05).name('vignette');
         this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.brightness, 'value', 0.2, 0.65, 0.05).name('brightness');
         this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.darkness, 'value', 0, 1, 0.05).name('darkness');
-    }
-    addSceneControls() {
-        this.zoomControl.min = eyeConfig.zoomLevelBounds[0];
-        this.zoomControl.max = eyeConfig.zoomLevelBounds[1];
-        this.zoomControl.value = eyeConfig.zoomLevel;
-        this.zoomControl.addEventListener('change', () => {
-            eyeballViz.setCameraPosition(+this.zoomControl.value);
-            this.mouseOverControls = false;
-        }, false);
-        this.zoomControl.addEventListener('input', () => {
-            eyeballViz.setCameraPosition(+this.zoomControl.value);
-            this.mouseOverControls = true;
-        }, false);
     }
 }
 
@@ -205,9 +139,7 @@ class EyeballAnimations {
                 duration: 2,
                 x: 2,
             }, 0)
-
     }
-
 }
 
 class EyeballViz {
@@ -241,8 +173,8 @@ class EyeballViz {
         this.scene.background = new THREE.Color(0xf7f7f7);
         this.setCameraPosition(eyeConfig.zoomLevel);
 
-        const ambientLight = new THREE.AmbientLight(0x999999, 0.7);
-        this.scene.add(ambientLight);
+        // const ambientLight = new THREE.AmbientLight(0x999999, 0.7);
+        // this.scene.add(ambientLight);
 
         const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
         directionalLight.position.set(-1, 1, 1);
@@ -252,7 +184,6 @@ class EyeballViz {
     setCameraPosition(cp) {
         this.camera.position.z = cp;
         this.camera.position.y = this.sceneVerticalOffset;
-        eyeballControls.zoomControl.value = eyeConfig.zoomLevel;
         eyeConfig.zoomLevel = cp;
     }
 
@@ -332,17 +263,8 @@ class EyeballViz {
 
     render() {
         const rotationSpeed = 0.2;
-        if (!eyeballControls.mouseOverControls) {
-            if (!eyeballPointer.pressed) {
-                this.eyeGroup.rotation.x += (eyeballPointer.mouse.y * 0.3 - this.eyeGroup.rotation.x) * rotationSpeed;
-                this.eyeGroup.rotation.y += (eyeballPointer.mouse.x * 0.6 - this.eyeGroup.rotation.y) * rotationSpeed;
-            } else {
-                this.eyeGroup.quaternion.multiplyQuaternions(eyeballPointer.deltaRotationQuaternion, this.eyeGroup.quaternion);
-            }
-        } else {
-            this.eyeGroup.rotation.x += (- this.eyeGroup.rotation.x) * rotationSpeed * 0.1;
-            this.eyeGroup.rotation.y += (- this.eyeGroup.rotation.y) * rotationSpeed * 0.1;
-        }
+        this.eyeGroup.rotation.x += (eyeballPointer.mouse.y * 0.3 - this.eyeGroup.rotation.x) * rotationSpeed;
+        this.eyeGroup.rotation.y += (eyeballPointer.mouse.x * 0.6 - this.eyeGroup.rotation.y) * rotationSpeed;
         this.renderer.render(this.scene, this.camera);
     }
 
