@@ -1,7 +1,7 @@
 const sequinsContainer = document.querySelector('.sequins .animation-wrapper');
 
 import * as THREE from 'https://unpkg.com/three@0.119.0/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.119.0/examples/jsm/controls/OrbitControls.js';
+// import { OrbitControls } from 'https://unpkg.com/three@0.119.0/examples/jsm/controls/OrbitControls.js';
 import { MeshSurfaceSampler } from 'https://unpkg.com/three@0.119.0/examples/jsm/math/MeshSurfaceSampler.js';
 
 let sequinsSize = {
@@ -61,9 +61,9 @@ class sequinsSurface {
         this.scene.add(pointLight);
         this.scene.add(new THREE.HemisphereLight());
 
-        const controls = new OrbitControls(this.camera, this.renderer.domElement);
-        controls.enableDamping = true;
-        controls.maxDistance = 70;
+        // const controls = new OrbitControls(this.camera, this.renderer.domElement);
+        // controls.enableDamping = true;
+        // controls.maxDistance = 70;
 
         this.clock = new THREE.Clock();
 
