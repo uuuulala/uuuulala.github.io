@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            overflow: hidden;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            outline: none;
+        }
+        .log {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<canvas class="webgl"></canvas>
+<div class="log"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+<script type="module" src="./js/globe/js/script.js"></script>
+
+</body>
+</html>
