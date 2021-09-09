@@ -276,11 +276,9 @@ const tick = () => {
     }
     if (clouds) {
         clouds.rotation.y += deltaTime * .1;
-        clouds.rotation.z += deltaTime * .005;
     }
     if (globe) {
         globe.rotation.y += deltaTime * .2;
-        globe.rotation.z += deltaTime * .01;
     }
 
     if (spinControl) {
