@@ -25,7 +25,8 @@ var SpinControls = function ( object, trackBallRadius, camera, domElement ) {
 	this.relativelySpinOffTrackball = true; // Rotation continues relatively when pointer is beyond trackball
 	this.enableDamping = true; // True for movement with momentum after pointer release on control.update 
 	this.dampingFactor = 5; // Increase for more friction
-	this.spinAxisConstraint; // Set to a THREE.Vector3 to limit spinning to about an axis
+	// this.spinAxisConstraint; // Set to a THREE.Vector3 to limit spinning to about an axis
+	this.spinAxisConstraint = new THREE.Vector3(0, 1, 0); // Set to a THREE.Vector3 to limit spinning to about an axis
 
 	// Raycast projects pointer line through camera frustum for accurate trackball control. 
 	// Shoemake has direct touching feel of pointer on orthographically projected sphere but jumps at sphere edge.
