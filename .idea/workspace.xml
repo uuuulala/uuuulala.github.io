@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/globe.html" beforeDir="false" afterPath="$PROJECT_DIR$/globe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/globe/js/SpinControlsModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/globe/js/SpinControlsModule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/globe/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/globe/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/globe/models/globe-comp.gltf" beforeDir="false" afterPath="$PROJECT_DIR$/js/globe/models/globe-comp.gltf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globe.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="globe.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/globe.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+            <state relative-caret-position="375">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -58,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/globe/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+            <state relative-caret-position="2025">
+              <caret line="198" column="3" lean-forward="true" selection-start-line="198" selection-start-column="3" selection-end-line="198" selection-end-column="3" />
               <folding>
                 <element signature="e#0#79#0" expanded="true" />
               </folding>
@@ -263,8 +259,8 @@
         <option value="$PROJECT_DIR$/js/sequins.js" />
         <option value="$PROJECT_DIR$/js/globe.js" />
         <option value="$PROJECT_DIR$/js/globe/js/SpinControlsModule.js" />
-        <option value="$PROJECT_DIR$/globe.html" />
         <option value="$PROJECT_DIR$/js/globe/js/script.js" />
+        <option value="$PROJECT_DIR$/globe.html" />
       </list>
     </option>
   </component>
@@ -484,18 +480,18 @@
       <workItem from="1631113261918" duration="1124000" />
       <workItem from="1631174090372" duration="560000" />
       <workItem from="1631178270690" duration="2335000" />
-      <workItem from="1631261484265" duration="372000" />
+      <workItem from="1631261484265" duration="596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310162000" />
+    <option name="totallyTimeSpent" value="310386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19527897" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19527897" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -504,7 +500,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32746956" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.06538462" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.15" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -740,20 +736,20 @@
     <entry file="file://$PROJECT_DIR$/js/globe/models/globe-comp.gltf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/globe.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="18" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/globe/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+        <state relative-caret-position="2025">
+          <caret line="198" column="3" lean-forward="true" selection-start-line="198" selection-start-column="3" selection-end-line="198" selection-end-column="3" />
           <folding>
             <element signature="e#0#79#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/globe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
