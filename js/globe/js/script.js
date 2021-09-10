@@ -1,27 +1,31 @@
 import * as THREE from 'https://unpkg.com/three@0.124.0/build/three.module.js';
-import {OrbitControls} from 'https://unpkg.com/three@0.124.0/examples/jsm/controls/OrbitControls.js';
-import {SpinControls} from './SpinControlsModule.js';
-import {GLTFLoader} from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/GLTFLoader.js';
-import {DRACOLoader} from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/DRACOLoader.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.124.0/examples/jsm/controls/OrbitControls.js';
+import { SpinControls } from './SpinControlsModule.js';
+import { GLTFLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/DRACOLoader.js';
 
 let isDebugMode = true;
-
 
 let settings = {
     ambientLightIntensity: 1,
     topLightIntensity: .3,
     bottomLightIntensity: .9,
-    sceneRotation: .1,
+    sceneRotation: .2,
     metalness: 0.2,
     roughness: 0.6
 };
 
 
-const canvas = document.querySelector('canvas.webgl');
-const log = document.querySelector('.log');
+
+const pageContainer = document.querySelector('.page-container');
+const canvasContainer = document.querySelector('.canvas-container');
+// canvasContainer.style.height = canvasContainer.clientWidth + 'px';
+canvasContainer.style.width = canvasContainer.clientHeight + 'px';
+const canvas = pageContainer.querySelector('canvas');
+const log = pageContainer.querySelector('.log');
 
 const scene = new THREE.Scene();
-
+scene.fog = new THREE.Fog(0x49CDEC, 100, 200);
 
 let stats;
 let spinControl, drone, globe, globeSpinWrapper, clouds;
@@ -31,6 +35,7 @@ let pointsOfInterestMaterials = [];
 const pointsOfInterestMaterialsColors = {
     active: 0xFF0000,
     inActive: 0xAAAAAA,
+    clicked: 0xFF00FF
 };
 
 const dracoLoader = new DRACOLoader();
@@ -68,6 +73,34 @@ gltfLoader.load(
         updateSceneMaterials();
     }
 );
+
+
+const glowMaterial = new THREE.ShaderMaterial({
+    vertexShader: document.getElementById('vertexShader').textContent,
+    fragmentShader: document.getElementById('fragmentShader').textContent,
+    uniforms: {
+        u_power: { type: 'f', value: 6.2 },
+        u_size: { type: 'f', value: .2 },
+        u_alpha: { type: 'f', value: 0.5 }
+    },
+    transparent: true,
+});
+// const testMaterial = new THREE.MeshBasicMaterial({
+//     color: 0xFF0000
+// });
+const glowGeometry = new THREE.PlaneBufferGeometry(305, 305);
+const glowGeometry2 = new THREE.PlaneBufferGeometry(280, 280);
+const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+const glow2 = new THREE.Mesh(glowGeometry2, glowMaterial);
+glow2.position.z = -20;
+scene.add(glow, glow2);
+
+
+// const testSphere = new THREE.SphereGeometry(25, 32, 32);
+// const glow = new THREE.Mesh(testSphere, glowMaterial);
+// scene.add(glow);
+
+
 
 
 function updateSceneMaterials() {
@@ -128,13 +161,18 @@ if (isDebugMode) {
     scene.add(pointLightTopHelper);
 }
 
+
+
+
 let sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight
+    width: canvasContainer.clientWidth,
+    height: canvasContainer.clientHeight
 };
 window.addEventListener('resize', () => {
-    sizes.width = window.innerWidth;
-    sizes.height = window.innerHeight;
+    // canvasContainer.style.height = canvasContainer.clientWidth + 'px';
+    canvasContainer.style.width = canvasContainer.clientHeight + 'px';
+    sizes.width = canvasContainer.clientWidth;
+    sizes.height = canvasContainer.clientHeight;
 
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
@@ -145,7 +183,7 @@ window.addEventListener('resize', () => {
 
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
-camera.position.set(0, 0, 120);
+camera.position.set(0, 0, 160);
 camera.rotation.z = settings.sceneRotation;
 scene.add(camera);
 
@@ -169,6 +207,12 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor('#1D3075');
 
 
+
+
+
+
+
+
 if (isDebugMode) {
     stats = new Stats();
     stats.showPanel(0);
@@ -182,17 +226,23 @@ const raycaster = new THREE.Raycaster();
 let currentIntersect = null;
 
 const mouse = new THREE.Vector2();
-window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX / sizes.width * 2 - 1;
-    mouse.y = - (e.clientY / sizes.height) * 2 + 1;
+canvasContainer.addEventListener('mousemove', (e) => {
+    const x = e.pageX - canvasContainer.offsetLeft;
+    const y = e.pageY - canvasContainer.offsetTop;
+    mouse.x = x / sizes.width * 2 - 1;
+    mouse.y = - (y / sizes.height) * 2 + 1;
 });
-window.addEventListener('touchend', (e) => {
-    console.log('e.targetTouches[0]', e);
+canvasContainer.addEventListener('touchmove', (e) => {
+    const x = e.targetTouches[0].pageX - canvasContainer.offsetLeft;
+    const y = e.targetTouches[0].pageY - canvasContainer.offsetTop;
+    mouse.x = x / sizes.width * 2 - 1;
+    mouse.y = - (y / sizes.height) * 2 + 1;
 });
 
 window.addEventListener('click', () => {
-    // checkIntersects();
     if (currentIntersect) {
+        const intersects = raycaster.intersectObjects(pointsOfInterest);
+        intersects[0].object.material.color.setHex(pointsOfInterestMaterialsColors.clicked);
         switch (currentIntersect) {
             case pointsOfInterest[0]:
                 log.innerHTML = 'click on object 1';
@@ -204,13 +254,13 @@ window.addEventListener('click', () => {
                 log.innerHTML = 'click on object 3';
                 break;
             case pointsOfInterest[3]:
-                log.innerHTML = 'click on object 3';
+                log.innerHTML = 'click on object 4';
                 break;
             case pointsOfInterest[4]:
-                log.innerHTML = 'click on object 3';
+                log.innerHTML = 'click on object 5';
                 break;
             case pointsOfInterest[5]:
-                log.innerHTML = 'click on object 3';
+                log.innerHTML = 'click on object 6';
                 break;
         }
     }
@@ -244,6 +294,7 @@ function checkIntersects() {
 
 if (isDebugMode) {
     const gui = new dat.gui.GUI;
+    gui.close();
     gui.add(settings, 'ambientLightIntensity', 0.01, 3, 0.001).name('ambient light intensity').onChange((v) => {
         ambientLight.intensity = v;
     });

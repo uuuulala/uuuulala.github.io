@@ -8,21 +8,37 @@
             margin: 0;
             padding: 0;
         }
-        html, body {
-            overflow: hidden;
+        body {
+            background: #1D3075;
+        }
+        .page-container {
+            height: 200vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .canvas-container {
+            position: absolute;
+            top: -30vh;
+            right: -30%;
+            height: 160vh;
+            /*right: 0;*/
+            /*width: 100vh;*/
+            max-width: 120%;
+            /*outline: 1px solid #fff;*/
         }
         canvas {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             outline: none;
         }
         .log {
-            position: fixed;
+            position: absolute;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
-            top: 10px;
             color: #ffffff;
+            font-size: 20px;
         }
 
     </style>
@@ -30,10 +46,44 @@
 
 <body>
 
-<canvas class="webgl"></canvas>
-<div class="log"></div>
+<div class="page-container">
+    <div class="canvas-container">
+        <canvas></canvas>
+    </div>
+    <div class="log"></div>
+</div>
 
-<div class="log"></div>
+<script type="x-shader/x-fragment" id="fragmentShader">
+
+    uniform float u_power;
+    uniform float u_size;
+    uniform float u_alpha;
+    varying vec2 vUv;
+
+    void main () {
+
+        vec2 uv = vec2(.5) - vUv;
+
+        float dist = 1. / length(uv);
+        dist *= u_size;
+        dist = pow(dist, u_power);
+
+        vec4 color = dist * vec4(.286, .8, 0.925, 1.);
+        color = 1. - exp(-color);
+        color.a *= u_alpha;
+
+        gl_FragColor = vec4(color);
+    }
+</script>
+
+<script type="x-shader/x-vertex" id="vertexShader">
+    varying vec2 vUv;
+
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+</script>
 
 <script src="https://mrdoob.github.io/stats.js/build/stats.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" ></script>
