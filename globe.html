@@ -10,6 +10,7 @@
         }
         body {
             background: #1D3075;
+            overflow-x: hidden;
         }
         .page-container {
             height: 200vh;
@@ -17,14 +18,14 @@
             overflow-x: hidden;
         }
         .canvas-container {
+            background: #1D3075;
             position: absolute;
             top: -30vh;
-            right: -30%;
+            right: 0;
+            margin-right: -20%;
+            width: 140vh;
             height: 160vh;
-            /*right: 0;*/
-            /*width: 100vh;*/
-            max-width: 130%;
-            /*outline: 1px solid #fff;*/
+            max-width: 140vw;
         }
         canvas {
             position: absolute;
@@ -40,7 +41,6 @@
             color: #ffffff;
             font-size: 20px;
         }
-
     </style>
 </head>
 
@@ -53,17 +53,15 @@
     <div class="log"></div>
 </div>
 
-<script type="x-shader/x-fragment" id="fragmentShader">
 
+<script type="x-shader/x-fragment" id="fragmentShader">
     uniform float u_power;
     uniform float u_size;
     uniform float u_alpha;
     varying vec2 vUv;
 
     void main () {
-
         vec2 uv = vec2(.5) - vUv;
-
         float dist = 1. / length(uv);
         dist *= u_size;
         dist = pow(dist, u_power);

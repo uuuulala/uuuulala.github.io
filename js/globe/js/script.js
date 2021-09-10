@@ -4,43 +4,63 @@ import { SpinControls } from './SpinControlsModule.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/DRACOLoader.js';
 
-let isDebugMode = true;
 
+
+// ==========================================================
+
+
+// Change to switch off controls, statistic, etc
+let isDebugMode = true;
+let useOrbitControls = false;
+
+
+// To change with GUI
 let settings = {
     ambientLightIntensity: 1,
-    topLightIntensity: .3,
-    bottomLightIntensity: .9,
-    sceneRotation: .2,
+    topLightIntensity: .5,
+    bottomLightIntensity: 1.3,
+    sceneRotation: .25,
     metalness: 0.2,
-    roughness: 0.6
+    roughness: 0.8,
+    globeRotationSpeed: 1,
+    droneRotationSpeed: 1,
 };
 
-
-
+// Selectors
 const pageContainer = document.querySelector('.page-container');
 const canvasContainer = document.querySelector('.canvas-container');
-// canvasContainer.style.height = canvasContainer.clientWidth + 'px';
-canvasContainer.style.width = canvasContainer.clientHeight + 'px';
 const canvas = pageContainer.querySelector('canvas');
 const log = pageContainer.querySelector('.log');
 
-const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x49CDEC, 100, 200);
+// Globals
+let stats, spinControl, drone, globe, globeSpinWrapper, clouds;
 
-let stats;
-let spinControl, drone, globe, globeSpinWrapper, clouds;
+// For spheres to be replaced with "real" objects
 let pointsOfInterest = [];
 let pointsOfInterestMaterials = [];
-
 const pointsOfInterestMaterialsColors = {
     active: 0xFF0000,
-    inActive: 0xAAAAAA,
+    inActive: 0xFFFFFF,
     clicked: 0xFF00FF
 };
 
+// Canvas size
+let sizes = {
+    width: canvasContainer.clientWidth,
+    height: canvasContainer.clientHeight
+};
+
+// Create scene
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0x163d47, 100, 200);
+
+
+
+// ==========================================================
+
+// Load the model
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath('./js/globe/js/draco/');
-
 const gltfLoader = new GLTFLoader();
 gltfLoader.setDRACOLoader(dracoLoader);
 gltfLoader.load(
@@ -69,39 +89,9 @@ gltfLoader.load(
                 clouds = child;
             }
         });
-
         updateSceneMaterials();
     }
 );
-
-
-const glowMaterial = new THREE.ShaderMaterial({
-    vertexShader: document.getElementById('vertexShader').textContent,
-    fragmentShader: document.getElementById('fragmentShader').textContent,
-    uniforms: {
-        u_power: { type: 'f', value: 6.2 },
-        u_size: { type: 'f', value: .2 },
-        u_alpha: { type: 'f', value: 0.5 }
-    },
-    transparent: true,
-});
-// const testMaterial = new THREE.MeshBasicMaterial({
-//     color: 0xFF0000
-// });
-const glowGeometry = new THREE.PlaneBufferGeometry(305, 305);
-const glowGeometry2 = new THREE.PlaneBufferGeometry(280, 280);
-const glow = new THREE.Mesh(glowGeometry, glowMaterial);
-const glow2 = new THREE.Mesh(glowGeometry2, glowMaterial);
-glow2.position.z = -20;
-scene.add(glow, glow2);
-
-
-// const testSphere = new THREE.SphereGeometry(25, 32, 32);
-// const glow = new THREE.Mesh(testSphere, glowMaterial);
-// scene.add(glow);
-
-
-
 
 function updateSceneMaterials() {
     scene.traverse((child) => {
@@ -135,6 +125,28 @@ function updateSceneMaterials() {
 }
 
 
+// Add glow to the globe
+const glowMaterial = new THREE.ShaderMaterial({
+    vertexShader: document.getElementById('vertexShader').textContent,
+    fragmentShader: document.getElementById('fragmentShader').textContent,
+    uniforms: {
+        u_power: { type: 'f', value: 6 },
+        u_size: { type: 'f', value: .2 },
+        u_alpha: { type: 'f', value: 0.3 }
+    },
+    transparent: true,
+});
+const glowGeometry = new THREE.PlaneBufferGeometry(300, 300);
+const glowBack = new THREE.Mesh(glowGeometry, glowMaterial);
+const glowFront = new THREE.Mesh(glowGeometry, glowMaterial);
+glowBack.position.z = -30;
+scene.add(glowFront, glowBack);
+
+
+// ==========================================================
+
+// Add lights
+
 const ambientLight = new THREE.AmbientLight(0xffffff, settings.ambientLightIntensity);
 scene.add(ambientLight);
 
@@ -149,7 +161,6 @@ if (isDebugMode) {
     scene.add(pointLightBottomHelper);
 }
 
-
 const pointLightTop = new THREE.PointLight(0xffffff, settings.topLightIntensity);
 pointLightTop.position.set(50, 50, 50);
 scene.add(pointLightTop);
@@ -162,65 +173,44 @@ if (isDebugMode) {
 }
 
 
-
-
-let sizes = {
-    width: canvasContainer.clientWidth,
-    height: canvasContainer.clientHeight
-};
-window.addEventListener('resize', () => {
-    // canvasContainer.style.height = canvasContainer.clientWidth + 'px';
-    canvasContainer.style.width = canvasContainer.clientHeight + 'px';
-    sizes.width = canvasContainer.clientWidth;
-    sizes.height = canvasContainer.clientHeight;
-
-    camera.aspect = sizes.width / sizes.height;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(sizes.width, sizes.height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-});
-
+// Add camera
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
 camera.position.set(0, 0, 160);
 camera.rotation.z = settings.sceneRotation;
 scene.add(camera);
 
-// const controls = new OrbitControls(camera, canvas)
-// controls.target.set(0, 1, 0)
-// controls.enableDamping = true
-// controls.update()
 
+// Add controls for debug purposes
+
+if (useOrbitControls) {
+    const controls = new OrbitControls(camera, canvas);
+    controls.target.set(0, 1, 0);
+    controls.enableDamping = true;
+    controls.update();
+}
+
+
+
+// ==========================================================
+
+// Setup renderer
 
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
-    antialias: true
+    // antialias: true
 });
-
-// renderer.physicallyCorrectLights = true;
 renderer.shadowMap.enabled = true;
-// renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
-// renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor('#1D3075');
 
 
 
+// ==========================================================
 
-
-
-
-
-if (isDebugMode) {
-    stats = new Stats();
-    stats.showPanel(0);
-    document.body.appendChild(stats.dom);
-
-    const axesHelper = new THREE.AxesHelper(500);
-    scene.add(axesHelper);
-}
+// Setup raycaster
 
 const raycaster = new THREE.Raycaster();
 let currentIntersect = null;
@@ -266,10 +256,6 @@ window.addEventListener('click', () => {
     }
 });
 
-
-const clock = new THREE.Clock();
-let previousTime = 0;
-
 function checkIntersects() {
     if (raycaster && globe) {
         raycaster.setFromCamera(mouse, camera);
@@ -292,9 +278,30 @@ function checkIntersects() {
 }
 
 
+
+
+// ==========================================================
+
+// FPS statistics and 3 axises
+
+if (isDebugMode) {
+    stats = new Stats();
+    stats.showPanel(0);
+    document.body.appendChild(stats.dom);
+
+    const axesHelper = new THREE.AxesHelper(500);
+    scene.add(axesHelper);
+}
+
+
+
+
+// ==========================================================
+
+// To play with settings in debug mode
+
 if (isDebugMode) {
     const gui = new dat.gui.GUI;
-    gui.close();
     gui.add(settings, 'ambientLightIntensity', 0.01, 3, 0.001).name('ambient light intensity').onChange((v) => {
         ambientLight.intensity = v;
     });
@@ -309,27 +316,57 @@ if (isDebugMode) {
     });
     gui.add(settings, 'metalness', 0.01, 1, 0.001).name('metalness').onChange(updateSceneMaterials);
     gui.add(settings, 'roughness', 0.01, 1, 0.001).name('roughness').onChange(updateSceneMaterials);
+    gui.add(settings, 'globeRotationSpeed', 0.1, 10, 0.001).name('globe speed');
+    gui.add(settings, 'droneRotationSpeed', 0.1, 10, 0.001).name('drone speed');
 }
 
+
+
+
+
+// ==========================================================
+
+// Update on resize
+
+
+window.addEventListener('resize', () => {
+    sizes.width = canvasContainer.clientWidth;
+    sizes.height = canvasContainer.clientHeight;
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
+
+
+
+
+// ==========================================================
+
+// Animations
+
+
+const clock = new THREE.Clock();
+let previousTime = 0;
 const tick = () => {
     if (isDebugMode && stats) {
         stats.begin();
     }
 
     const elapsedTime = clock.getElapsedTime();
-    const deltaTime = elapsedTime - previousTime;
+    let deltaTime = elapsedTime - previousTime;
     previousTime = elapsedTime;
 
     renderer.render(scene, camera);
 
     if (drone) {
-        drone.rotation.y += deltaTime;
+        drone.rotation.y += deltaTime * settings.droneRotationSpeed;
     }
     if (clouds) {
-        clouds.rotation.y += deltaTime * .1;
+        clouds.rotation.y += deltaTime * .03 * settings.globeRotationSpeed;
     }
     if (globe) {
-        globe.rotation.y += deltaTime * .2;
+        globe.rotation.y += deltaTime * .07 * settings.globeRotationSpeed;
     }
 
     if (spinControl) {
