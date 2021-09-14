@@ -16,7 +16,7 @@ let useOrbitControls = false;
 
 // To change with GUI
 let settings = {
-    ambientLightIntensity: 1.85,
+    ambientLightIntensity: 1.6,
     topLightIntensity: .3,
     bottomLightIntensity: .6,
     sceneRotation: .25,
