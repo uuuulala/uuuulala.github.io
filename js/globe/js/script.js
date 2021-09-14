@@ -16,12 +16,12 @@ let useOrbitControls = false;
 
 // To change with GUI
 let settings = {
-    ambientLightIntensity: 1,
-    topLightIntensity: .5,
-    bottomLightIntensity: 1.3,
+    ambientLightIntensity: 1.85,
+    topLightIntensity: .3,
+    bottomLightIntensity: .6,
     sceneRotation: .25,
-    metalness: 0.2,
-    roughness: 0.8,
+    metalness: 0.5,
+    roughness: 0.9,
     globeRotationSpeed: 1,
     droneRotationSpeed: 1,
 };
@@ -52,7 +52,7 @@ let sizes = {
 
 // Create scene
 const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x163d47, 100, 200);
+scene.fog = new THREE.Fog(0x163d47, 100, 150);
 
 
 
@@ -64,7 +64,7 @@ dracoLoader.setDecoderPath('./js/globe/js/draco/');
 const gltfLoader = new GLTFLoader();
 gltfLoader.setDRACOLoader(dracoLoader);
 gltfLoader.load(
-    './js/globe/models/globe-comp.gltf',
+    './js/globe/models/globe-comp.glb',
     (gltf) => {
         scene.add(gltf.scene);
 
@@ -82,6 +82,10 @@ gltfLoader.load(
                         const material = new THREE.MeshBasicMaterial({color: pointsOfInterestMaterialsColors.inActive});
                         pointsOfInterestMaterials.push(material);
                         globeChild.material = material;
+                    } else if (globeChild.name === 'OCEAN') {
+                        globeChild.scale.set(1.01, 1.01, 1.01);
+                    } else if (globeChild.name === 'ICEBERG') {
+                        globeChild.scale.set(.97, .97, .97);
                     }
                 });
 
@@ -103,22 +107,31 @@ function updateSceneMaterials() {
             if (child.name !== 'lighthouse-cone') {
                 child.material.transparent = false;
             } else {
-                child.material.opacity = .5;
+                child.material = child.material.clone();
+                child.material.transparent = true;
+                child.material.opacity = .7;
             }
 
-            if (child.parent.name === 'clouds' || child.parent.name === 'ICEBERG') {
-                child.material.metalness = 0.4;
+            if (child.name === 'ICEBERG') {
+                child.material.flatShading = true;
+                child.material.metalness = .6;
             }
-
-            if (child.parent.name === 'drone') {
-                child.material.metalness = .1;
+            if (child.parent.name === 'droneWrapper') {
+                child.material.metalness = .35;
                 child.castShadow = true;
-            } else if (child.name === 'world-sphere' || child.name === 'world-continents') {
+            } else if (child.name === 'OCEAN') {
                 child.receiveShadow = true;
+            } else if (child.name === 'CONTINENTS') {
+                child.children[0].children.forEach((continent) => {
+                    continent.receiveShadow = true;
+                });
             }
 
             if (child.parent.name === 'clouds') {
+                child.material = child.material.clone();
                 child.castShadow = true;
+                child.material.transparent = true;
+                child.material.opacity = .9;
             }
         }
     })
@@ -130,17 +143,18 @@ const glowMaterial = new THREE.ShaderMaterial({
     vertexShader: document.getElementById('vertexShader').textContent,
     fragmentShader: document.getElementById('fragmentShader').textContent,
     uniforms: {
-        u_power: { type: 'f', value: 6 },
+        u_power: { type: 'f', value: 9 },
         u_size: { type: 'f', value: .2 },
-        u_alpha: { type: 'f', value: 0.3 }
+        u_alpha: { type: 'f', value: 0.5 }
     },
     transparent: true,
 });
 const glowGeometry = new THREE.PlaneBufferGeometry(300, 300);
 const glowBack = new THREE.Mesh(glowGeometry, glowMaterial);
-const glowFront = new THREE.Mesh(glowGeometry, glowMaterial);
+glowBack.position.x = 3;
+glowBack.position.y = 5;
 glowBack.position.z = -30;
-scene.add(glowFront, glowBack);
+scene.add(glowBack);
 
 
 // ==========================================================
@@ -151,7 +165,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff, settings.ambientLightInten
 scene.add(ambientLight);
 
 const pointLightBottom = new THREE.PointLight(0xffffff, settings.bottomLightIntensity);
-pointLightBottom.position.set(-50, -50, 50);
+pointLightBottom.position.set(-35, -35, 35);
 scene.add(pointLightBottom);
 pointLightBottom.castShadow = true;
 pointLightBottom.shadow.camera.far = 100;
@@ -162,7 +176,7 @@ if (isDebugMode) {
 }
 
 const pointLightTop = new THREE.PointLight(0xffffff, settings.topLightIntensity);
-pointLightTop.position.set(50, 50, 50);
+pointLightTop.position.set(35, 35, 35);
 scene.add(pointLightTop);
 pointLightTop.castShadow = true;
 pointLightTop.shadow.camera.far = 100;
@@ -176,7 +190,7 @@ if (isDebugMode) {
 // Add camera
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
-camera.position.set(0, 0, 160);
+camera.position.set(0, 0, 130);
 camera.rotation.z = settings.sceneRotation;
 scene.add(camera);
 
@@ -198,7 +212,7 @@ if (useOrbitControls) {
 
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
-    // antialias: true
+    antialias: true
 });
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
