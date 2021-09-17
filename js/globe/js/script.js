@@ -64,7 +64,7 @@ const canvas = pageContainer.querySelector('canvas');
 const title = pageContainer.querySelector('.title');
 
 // Globals
-let stats, spinControl, drone, globe, globeSpinWrapper, clouds, lighthouse;
+let stats, spinControl, drone, globe, globeSpinWrapper, clouds, lighthouse, duck, ship, test;
 let clock = new THREE.Clock();
 
 // For spheres to be replaced with "real" objects
@@ -106,9 +106,6 @@ gltfLoader.load(
                 drone.children[0].children.forEach((droneChild) => {
                     if (droneChild.name.startsWith('location-pin-')) {
                         locationPin.push(droneChild);
-                        const material = new THREE.MeshBasicMaterial({color: locationPinMaterialsColors.inActive});
-                        locationPinMaterials.push(material);
-                        droneChild.material = material;
                     }
                 });
             } else if (child.name === 'globeWrapper') {
@@ -119,13 +116,14 @@ gltfLoader.load(
                 globe.children[0].children.forEach((globeChild) => {
                     if (globeChild.name.startsWith('location-pin-')) {
                         locationPin.push(globeChild);
-                        const material = new THREE.MeshBasicMaterial({color: locationPinMaterialsColors.inActive});
-                        locationPinMaterials.push(material);
-                        globeChild.material = material;
                     } else if (globeChild.name === 'OCEAN') {
                         globeChild.scale.set(1.01, 1.01, 1.01);
                     } else if (globeChild.name === 'ICEBERG') {
                         globeChild.scale.set(.97, .97, .97);
+                    } else if (globeChild.name === 'DUCK') {
+                        duck = globeChild;
+                    } else if (globeChild.name === 'SHIP') {
+                        ship = globeChild;
                     } else if (globeChild.name === 'LIGHTHOUSE') {
                         globeChild.children.forEach((globeChildChild) => {
                             if (globeChildChild.name === 'lighthouse-cone') {
@@ -134,18 +132,21 @@ gltfLoader.load(
                         });
                     }
                 });
-
             } else if (child.name === 'clouds') {
                 clouds = child;
+            } else if (child.name === 'test') {
+                test = child;
+                console.log('test', test.position);
             }
         });
         updateSceneMaterials();
+        canvasContainer.style.opacity = '1';
     }
 );
 
 function updateSceneMaterials() {
     scene.traverse((child) => {
-        if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial && !child.name.startsWith('point-of-interest-')) {
+        if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial && !child.name.startsWith('location-pin-')) {
             child.material.side = THREE.FrontSide;
             child.material.metalness = settings.metalness;
             child.material.roughness = settings.roughness;
@@ -180,6 +181,16 @@ function updateSceneMaterials() {
                 child.material.opacity = .9;
             }
         }
+    });
+
+
+    locationPin.forEach((p) => {
+        const material = new THREE.MeshStandardMaterial({
+            color: locationPinMaterialsColors.inActive,
+            metalness: .7,
+        });
+        locationPinMaterials.push(material);
+        p.material = material;
     })
 }
 
@@ -236,7 +247,7 @@ if (isDebugMode) {
 // Add camera
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 1000);
-camera.position.set(0, 0, 130);
+camera.position.set(0, 0, 135);
 camera.rotation.z = settings.sceneRotation;
 scene.add(camera);
 
@@ -331,11 +342,11 @@ function checkIntersects() {
 
 // FPS statistics and 3 axises
 
-if (isDebugMode) {
-    stats = new Stats();
-    stats.showPanel(0);
-    document.body.appendChild(stats.dom);
+stats = new Stats();
+stats.showPanel(0);
+document.body.appendChild(stats.dom);
 
+if (isDebugMode) {
     const axesHelper = new THREE.AxesHelper(500);
     scene.add(axesHelper);
 }
@@ -393,9 +404,12 @@ window.addEventListener('resize', () => {
 // Animations
 
 const lighthouseAxis = new THREE.Vector3(-40.933799743652344, -10.520000457763672, 30.112199783325195).normalize();
+const duckAxis = new THREE.Vector3(-23, 10, 70).normalize();
+const shipAxis = new THREE.Vector3(14, 20, 38).normalize();
 let previousTime = 0;
 const tick = () => {
-    if (isDebugMode && stats) {
+    // if (isDebugMode && stats) {
+    if (stats) {
         stats.begin();
     }
 
@@ -413,7 +427,23 @@ const tick = () => {
     }
     if (globe) {
         globe.rotation.y += deltaTime * .07 * settings.globeRotationSpeed;
+    }
+    if (lighthouse) {
         lighthouse.rotateOnAxis(lighthouseAxis, deltaTime);
+    }
+    if (duck) {
+        duck.rotateOnAxis(duckAxis, deltaTime * .5);
+    }
+    if (ship) {
+        ship.rotateOnAxis(shipAxis, -deltaTime * .2);
+    }
+    if (locationPin.length) {
+        locationPin.forEach((p, pIdx) => {
+            if (pIdx) {
+                const s = Math.sin(elapsedTime * 1.8) * .03 + .025;
+                p.scale.set(1 + s, 1 + s, 1 + s);
+            }
+        })
     }
 
     if (spinControl) {
@@ -422,7 +452,8 @@ const tick = () => {
 
     checkIntersects();
 
-    if (isDebugMode && stats) {
+    // if (isDebugMode && stats) {
+    if (stats) {
         stats.end();
     }
 
