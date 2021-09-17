@@ -10,13 +10,13 @@ import { DRACOLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loader
 
 
 // Change to switch off controls, statistic, etc
-let isDebugMode = true;
+let isDebugMode = false;
 let useOrbitControls = false;
 
 
 // To change with GUI
 let settings = {
-    ambientLightIntensity: 1.6,
+    ambientLightIntensity: 1.85,
     topLightIntensity: .3,
     bottomLightIntensity: .6,
     sceneRotation: .25,
@@ -26,22 +26,54 @@ let settings = {
     droneRotationSpeed: 1,
 };
 
+// Location names to action
+let URL, titleText;
+let nameToData = (name) => {
+    switch (name) {
+        case 'location-pin--drone':
+            titleText = 'Request delivery';
+            URL = 'https://wpdsun.com.au/node/7';
+            break;
+        case 'location-pin-buildings':
+            titleText = 'Library';
+            URL = 'https://wpdsun.com.au/node/4';
+            break;
+        case 'location-pin-factory':
+            titleText = 'Event toolkit';
+            URL = 'https://wpdsun.com.au/node/6';
+            break;
+        case 'location-pin-lighthouse':
+            titleText = 'How to guides';
+            URL = 'https://wpdsun.com.au/node/5';
+            break;
+        case 'location-pin-postbox':
+            titleText = 'Contact us';
+            URL = 'https://wpdsun.com.au/node/9';
+            break;
+        case 'location-pin-TV':
+            titleText = 'Specialist videos';
+            URL = 'https://wpdsun.com.au/node/8';
+            break;
+    }
+};
+
 // Selectors
 const pageContainer = document.querySelector('.page-container');
 const canvasContainer = document.querySelector('.canvas-container');
 const canvas = pageContainer.querySelector('canvas');
-const log = pageContainer.querySelector('.log');
+const title = pageContainer.querySelector('.title');
 
 // Globals
-let stats, spinControl, drone, globe, globeSpinWrapper, clouds;
+let stats, spinControl, drone, globe, globeSpinWrapper, clouds, lighthouse;
+let clock = new THREE.Clock();
 
 // For spheres to be replaced with "real" objects
-let pointsOfInterest = [];
-let pointsOfInterestMaterials = [];
-const pointsOfInterestMaterialsColors = {
-    active: 0xFF0000,
-    inActive: 0xFFFFFF,
-    clicked: 0xFF00FF
+let locationPin = [];
+let locationPinMaterials = [];
+const locationPinMaterialsColors = {
+    active: 0xffffff,
+    inActive: 0xfaa324,
+    clicked: 0xFF0000
 };
 
 // Canvas size
@@ -71,21 +103,35 @@ gltfLoader.load(
         gltf.scene.children.forEach((child) => {
             if (child.name === 'drone') {
                 drone = child;
+                drone.children[0].children.forEach((droneChild) => {
+                    if (droneChild.name.startsWith('location-pin-')) {
+                        locationPin.push(droneChild);
+                        const material = new THREE.MeshBasicMaterial({color: locationPinMaterialsColors.inActive});
+                        locationPinMaterials.push(material);
+                        droneChild.material = material;
+                    }
+                });
             } else if (child.name === 'globeWrapper') {
                 globe = child;
                 globeSpinWrapper = child.children[0];
                 spinControl = new SpinControls(globeSpinWrapper, 50, camera, renderer.domElement);
 
                 globe.children[0].children.forEach((globeChild) => {
-                    if (globeChild.name.startsWith('point-of-interest-')) {
-                        pointsOfInterest.push(globeChild);
-                        const material = new THREE.MeshBasicMaterial({color: pointsOfInterestMaterialsColors.inActive});
-                        pointsOfInterestMaterials.push(material);
+                    if (globeChild.name.startsWith('location-pin-')) {
+                        locationPin.push(globeChild);
+                        const material = new THREE.MeshBasicMaterial({color: locationPinMaterialsColors.inActive});
+                        locationPinMaterials.push(material);
                         globeChild.material = material;
                     } else if (globeChild.name === 'OCEAN') {
                         globeChild.scale.set(1.01, 1.01, 1.01);
                     } else if (globeChild.name === 'ICEBERG') {
                         globeChild.scale.set(.97, .97, .97);
+                    } else if (globeChild.name === 'LIGHTHOUSE') {
+                        globeChild.children.forEach((globeChildChild) => {
+                            if (globeChildChild.name === 'lighthouse-cone') {
+                                lighthouse = globeChildChild;
+                            }
+                        });
                     }
                 });
 
@@ -245,27 +291,11 @@ canvasContainer.addEventListener('touchmove', (e) => {
 
 window.addEventListener('click', () => {
     if (currentIntersect) {
-        const intersects = raycaster.intersectObjects(pointsOfInterest);
-        intersects[0].object.material.color.setHex(pointsOfInterestMaterialsColors.clicked);
-        switch (currentIntersect) {
-            case pointsOfInterest[0]:
-                log.innerHTML = 'click on object 1';
-                break;
-            case pointsOfInterest[1]:
-                log.innerHTML = 'click on object 2';
-                break;
-            case pointsOfInterest[2]:
-                log.innerHTML = 'click on object 3';
-                break;
-            case pointsOfInterest[3]:
-                log.innerHTML = 'click on object 4';
-                break;
-            case pointsOfInterest[4]:
-                log.innerHTML = 'click on object 5';
-                break;
-            case pointsOfInterest[5]:
-                log.innerHTML = 'click on object 6';
-                break;
+        const intersects = raycaster.intersectObjects(locationPin);
+        intersects[0].object.material.color.setHex(locationPinMaterialsColors.clicked);
+        if (URL) {
+            clock = null;
+            window.location.assign(URL);
         }
     }
 });
@@ -273,24 +303,27 @@ window.addEventListener('click', () => {
 function checkIntersects() {
     if (raycaster && globe) {
         raycaster.setFromCamera(mouse, camera);
-        const intersects = raycaster.intersectObjects(pointsOfInterest);
+        const intersects = raycaster.intersectObjects(locationPin);
 
         if (intersects.length) {
             if (!currentIntersect) {
-                intersects[0].object.material.color.setHex(pointsOfInterestMaterialsColors.active);
+                intersects[0].object.material.color.setHex(locationPinMaterialsColors.active);
                 document.body.style.cursor = 'pointer';
             }
             currentIntersect = intersects[0].object;
+            nameToData(currentIntersect.name);
+            title.innerHTML = titleText;
         } else {
             if (currentIntersect) {
-                currentIntersect.material.color.setHex(pointsOfInterestMaterialsColors.inActive);
+                currentIntersect.material.color.setHex(locationPinMaterialsColors.inActive);
+                currentIntersect = null;
                 document.body.style.cursor = 'auto';
+                URL = null;
+                title.innerHTML = '';
             }
-            currentIntersect = null;
         }
     }
 }
-
 
 
 
@@ -359,8 +392,7 @@ window.addEventListener('resize', () => {
 
 // Animations
 
-
-const clock = new THREE.Clock();
+const lighthouseAxis = new THREE.Vector3(-40.933799743652344, -10.520000457763672, 30.112199783325195).normalize();
 let previousTime = 0;
 const tick = () => {
     if (isDebugMode && stats) {
@@ -381,6 +413,7 @@ const tick = () => {
     }
     if (globe) {
         globe.rotation.y += deltaTime * .07 * settings.globeRotationSpeed;
+        lighthouse.rotateOnAxis(lighthouseAxis, deltaTime);
     }
 
     if (spinControl) {
