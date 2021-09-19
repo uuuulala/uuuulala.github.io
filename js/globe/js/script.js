@@ -1,5 +1,4 @@
 import * as THREE from 'https://unpkg.com/three@0.124.0/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.124.0/examples/jsm/controls/OrbitControls.js';
 import { SpinControls } from './SpinControlsModule.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/DRACOLoader.js';
@@ -11,19 +10,18 @@ import { DRACOLoader } from 'https://unpkg.com/three@0.124.0/examples/jsm/loader
 
 // Change to switch off controls, statistic, etc
 let isDebugMode = false;
-let useOrbitControls = false;
 
 
 // To change with GUI
 let settings = {
-    ambientLightIntensity: 1.85,
-    topLightIntensity: .3,
-    bottomLightIntensity: .6,
-    sceneRotation: .25,
+    ambientLightIntensity: 1.8,
+    bottomLightIntensity: 1.1,
+    sceneRotation: .3,
     metalness: 0.5,
     roughness: 0.9,
     globeRotationSpeed: 1,
     droneRotationSpeed: 1,
+    test: 1
 };
 
 // Location names to action
@@ -64,7 +62,7 @@ const canvas = pageContainer.querySelector('canvas');
 const title = pageContainer.querySelector('.title');
 
 // Globals
-let stats, spinControl, drone, globe, globeSpinWrapper, clouds, lighthouse, duck, ship, test;
+let stats, spinControl, drone, globe, globeSpinWrapper, clouds, cloud, lighthouse, duck, ship, test;
 let clock = new THREE.Clock();
 
 // For spheres to be replaced with "real" objects
@@ -84,7 +82,7 @@ let sizes = {
 
 // Create scene
 const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x163d47, 100, 150);
+scene.fog = new THREE.Fog(0xFFFFFF, 100, 250);
 
 
 
@@ -134,19 +132,45 @@ gltfLoader.load(
                 });
             } else if (child.name === 'clouds') {
                 clouds = child;
-            } else if (child.name === 'test') {
-                test = child;
-                console.log('test', test.position);
+                cloud = child.children[0];
             }
         });
+
+        addInstancedObjects();
         updateSceneMaterials();
         canvasContainer.style.opacity = '1';
     }
 );
 
+function addInstancedObjects() {
+    const cloudMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFFFFFF,
+        transparent: true,
+        opacity: .85,
+    });
+    let inst = new THREE.InstancedMesh(
+        cloud.geometry,
+        cloudMaterial, 22);
+    clouds.add(inst);
+
+
+    let dummyObject = new THREE.Object3D();
+    let dummyPosition = new THREE.Vector3();
+
+    for (let i = 0; i < 22; i++) {
+        dummyObject.position.copy(dummyPosition);
+        dummyObject.rotation.x = Math.random() * 2 * Math.PI;
+        dummyObject.rotation.y = Math.random() * 2 * Math.PI;
+        dummyObject.rotation.z = Math.random() * 2 * Math.PI;
+        dummyObject.scale.set(.85 + .3 * Math.random(), .85 + .3 * Math.random(), .85 + .3 * Math.random());
+        dummyObject.updateMatrix();
+        inst.setMatrixAt(i, dummyObject.matrix);
+    }
+}
+
 function updateSceneMaterials() {
     scene.traverse((child) => {
-        if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial && !child.name.startsWith('location-pin-')) {
+        if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial && !child.name.startsWith('location-pin-') && child.parent.name !== 'clouds') {
             child.material.side = THREE.FrontSide;
             child.material.metalness = settings.metalness;
             child.material.roughness = settings.roughness;
@@ -163,31 +187,24 @@ function updateSceneMaterials() {
                 child.material.flatShading = true;
                 child.material.metalness = .6;
             }
-            if (child.parent.name === 'droneWrapper') {
-                child.material.metalness = .35;
+            if (child.name === 'drone-cube' || child.name === 'drone-box' || child.name === 'drone-blade' || child.name === 'ship-base' || child.parent.name === 'DUCK') {
                 child.castShadow = true;
-            } else if (child.name === 'OCEAN') {
+            } else if (child.name === 'OCEAN' || child.parent.name === 'CONTINENTS') {
                 child.receiveShadow = true;
-            } else if (child.name === 'CONTINENTS') {
-                child.children[0].children.forEach((continent) => {
-                    continent.receiveShadow = true;
-                });
-            }
-
-            if (child.parent.name === 'clouds') {
-                child.material = child.material.clone();
-                child.castShadow = true;
-                child.material.transparent = true;
-                child.material.opacity = .9;
             }
         }
     });
 
+    const cloudMaterial = new THREE.MeshStandardMaterial({
+        color: 0xFFFFFF,
+        transparent: true,
+        opacity: .85,
+    });
+
 
     locationPin.forEach((p) => {
-        const material = new THREE.MeshStandardMaterial({
+        const material = new THREE.MeshBasicMaterial({
             color: locationPinMaterialsColors.inActive,
-            metalness: .7,
         });
         locationPinMaterials.push(material);
         p.material = material;
@@ -221,26 +238,14 @@ scene.add(glowBack);
 const ambientLight = new THREE.AmbientLight(0xffffff, settings.ambientLightIntensity);
 scene.add(ambientLight);
 
-const pointLightBottom = new THREE.PointLight(0xffffff, settings.bottomLightIntensity);
-pointLightBottom.position.set(-35, -35, 35);
-scene.add(pointLightBottom);
-pointLightBottom.castShadow = true;
-pointLightBottom.shadow.camera.far = 100;
-pointLightBottom.shadow.mapSize.set(512, 512);
-if (isDebugMode) {
-    const pointLightBottomHelper = new THREE.PointLightHelper(pointLightBottom, 10);
-    scene.add(pointLightBottomHelper);
-}
 
-const pointLightTop = new THREE.PointLight(0xffffff, settings.topLightIntensity);
-pointLightTop.position.set(35, 35, 35);
-scene.add(pointLightTop);
-pointLightTop.castShadow = true;
-pointLightTop.shadow.camera.far = 100;
-pointLightTop.shadow.mapSize.set(512, 512);
+const pointLight = new THREE.PointLight(0xffffff, settings.topLightIntensity);
+pointLight.position.set(30, 30, 55);
+scene.add(pointLight);
+pointLight.castShadow = true;
 if (isDebugMode) {
-    const pointLightTopHelper = new THREE.PointLightHelper(pointLightTop, 10);
-    scene.add(pointLightTopHelper);
+    const pointLightHelper = new THREE.PointLightHelper(pointLight, 10);
+    scene.add(pointLightHelper);
 }
 
 
@@ -250,16 +255,6 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 
 camera.position.set(0, 0, 135);
 camera.rotation.z = settings.sceneRotation;
 scene.add(camera);
-
-
-// Add controls for debug purposes
-
-if (useOrbitControls) {
-    const controls = new OrbitControls(camera, canvas);
-    controls.target.set(0, 1, 0);
-    controls.enableDamping = true;
-    controls.update();
-}
 
 
 
@@ -277,7 +272,7 @@ renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setClearColor('#1D3075');
 
-
+console.log(renderer.info);
 
 // ==========================================================
 
@@ -360,11 +355,11 @@ if (isDebugMode) {
 
 if (isDebugMode) {
     const gui = new dat.gui.GUI;
+    gui.add(settings, 'test', -100, 100, 0.1).name('test').onChange((v) => {
+        pointLightBottom.shadow.camera.right = v;
+    });
     gui.add(settings, 'ambientLightIntensity', 0.01, 3, 0.001).name('ambient light intensity').onChange((v) => {
         ambientLight.intensity = v;
-    });
-    gui.add(settings, 'topLightIntensity', 0.01, 3, 0.001).name('top light intensity').onChange((v) => {
-        pointLightTop.intensity = v;
     });
     gui.add(settings, 'bottomLightIntensity', 0.01, 3, 0.001).name('bottom light intensity').onChange((v) => {
         pointLightBottom.intensity = v;
@@ -408,8 +403,8 @@ const duckAxis = new THREE.Vector3(-23, 10, 70).normalize();
 const shipAxis = new THREE.Vector3(14, 20, 38).normalize();
 let previousTime = 0;
 const tick = () => {
-    // if (isDebugMode && stats) {
-    if (stats) {
+    if (isDebugMode && stats) {
+        // if (stats) {
         stats.begin();
     }
 
@@ -452,8 +447,8 @@ const tick = () => {
 
     checkIntersects();
 
-    // if (isDebugMode && stats) {
-    if (stats) {
+    if (isDebugMode && stats) {
+        // if (stats) {
         stats.end();
     }
 
