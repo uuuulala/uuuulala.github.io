@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         gooeySurface.updateSize(gooeyContainer.clientWidth, gooeyContainer.clientHeight);
     });
-    window.addEventListener("mousemove", (e) => gooeyPointer.onMouseMove(e));
+    gooeyContainer.addEventListener("mousemove", (e) => gooeyPointer.onMouseMove(e));
     // window.addEventListener("touchmove", (e) => gooeyPointer.onTouchMove(e));
 
     gsap.timeline({

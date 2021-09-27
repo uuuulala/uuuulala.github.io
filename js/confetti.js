@@ -146,7 +146,7 @@ function initConfetti() {
     function confettyRandomBoom() {
         if (isVisible) {
             addConfetti();
-            setTimeout(confettyRandomBoom, 2000 + Math.random() * 2000);
+            // setTimeout(confettyRandomBoom, 2000 + Math.random() * 2000);
         }
     }
     gsap.timeline({
