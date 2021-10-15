@@ -57,6 +57,13 @@ function initD3Scatterplot() {
         .attr('class', 'axis axis--y')
         .call(yAxis);
 
+    // create labels & lines
+    let labels = svg
+        .append('g')
+        .attr('class', 'labels');
+    let labelLinesGroup = svg
+        .append('g');
+
     // create chart area and make it clipped (for zooming)
     svg.select('#scatterplot-area-clip')
         .append('rect')
@@ -72,11 +79,6 @@ function initD3Scatterplot() {
         .attr('class', 'zoom');
 
     // draw labels & lines
-    let labels = svg
-        .append('g')
-        .attr('class', 'labels');
-    let labelLinesGroup = svg
-        .append('g');
     drawSelectionLines();
     drawSelectionLabels();
 
