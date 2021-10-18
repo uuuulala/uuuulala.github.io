@@ -29,35 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         eyeballPointer.updateCenter();
         eyeballViz.updateSize();
+        eyeballControls.collapse();
     });
 
-    eyeballContainer.querySelector('canvas').addEventListener("click", (e) => eyeballPointer.onClick(e));
     document.addEventListener("mousemove", (e) => eyeballPointer.onMouseMove(e));
-
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: eyeballContainer,
-            onEnter: () => {
-                eyeballViz.isVisible = true;
-                eyeballAnimations.eyeAppear.play(0);
-                gsap.delayedCall(1.1, () => { eyeballAnimations.playShrink.play(0); });
-
-                eyeballViz.loop();
-            },
-            onLeave: () => {
-                eyeballViz.isVisible = false;
-            },
-            onEnterBack: () => {
-                eyeballViz.isVisible = true;
-                gsap.delayedCall(1.1, () => { eyeballAnimations.playShrink.play(0); });
-
-                eyeballViz.loop();
-            },
-            onLeaveBack: () => {
-                eyeballViz.isVisible = false;
-            }
-        }
-    });
+    eyeballViz.loop();
+    eyeballAnimations.eyeAppear.play(0);
 });
 
 
@@ -74,9 +51,6 @@ class EyeballPointer {
             x: (e.clientX - this.windowHalf.x) / this.windowHalf.x,
             y: (e.clientY - this.windowHalf.y) / this.windowHalf.y
         };
-    }
-    onClick() {
-        eyeballAnimations.playShrink.play(0);
     }
 }
 
@@ -99,6 +73,13 @@ class EyeballControls {
         this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.vignette, 'value', 0, 1, 0.05).name('vignette');
         this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.brightness, 'value', 0.2, 0.65, 0.05).name('brightness');
         this.gui.add(eyeballViz.eyeShaderMaterial.uniforms.darkness, 'value', 0, 1, 0.05).name('darkness');
+    }
+    collapse() {
+        if (eyeballViz.width < 600) {
+            this.gui.close();
+        } else {
+            this.gui.open();
+        }
     }
 }
 
@@ -154,9 +135,6 @@ class EyeballViz {
         this.eyeGroup = new THREE.Group();
         this.eyeRadius = 30;
         this.camera = new THREE.PerspectiveCamera(20, this.width / this.height, 1, 10000);
-
-        this.isVisible = elementIsInViewport(eyeballContainer);
-
         this.setupScene();
         this.createEyeball();
         this.createShadow();
@@ -164,8 +142,8 @@ class EyeballViz {
     }
 
     setResponsiveValues() {
-        this.height = window.innerWidth > 800 ? 400 : 550;
-        this.sceneVerticalOffset = window.innerWidth > 800 ? 0 : 25;
+        this.height = eyeballContainer.clientHeight;
+        this.sceneVerticalOffset = window.innerWidth > 700 ? 0 : 25;
     }
 
     setupScene() {
@@ -268,10 +246,8 @@ class EyeballViz {
     }
 
     loop() {
-        if (this.isVisible) {
-            this.render();
-            requestAnimationFrame(this.loop.bind(this));
-        }
+        this.render();
+        requestAnimationFrame(this.loop.bind(this));
     }
 
     updateSize() {

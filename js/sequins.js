@@ -20,25 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         surface.updateSize(sequinsSize.w, sequinsSize.h);
     }, false);
 
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: sequinsContainer,
-            onEnter: () => {
-                surface.isVisible = true;
-                surface.loop();
-            },
-            onLeave: () => {
-                surface.isVisible = false;
-            },
-            onEnterBack: () => {
-                surface.isVisible = true;
-                surface.loop();
-            },
-            onLeaveBack: () => {
-                surface.isVisible = false;
-            }
-        }
-    });
+    surface.loop();
 });
 
 
@@ -60,15 +42,6 @@ class sequinsSurface {
         pointLight.position.set(50, -25, 75);
         this.scene.add(pointLight);
         this.scene.add(new THREE.HemisphereLight());
-
-        // const controls = new OrbitControls(this.camera, this.renderer.domElement);
-        // controls.enableDamping = true;
-        // controls.maxDistance = 70;
-
-        this.clock = new THREE.Clock();
-
-        this.isVisible = elementIsInViewport(sequinsContainer);
-
         this.createShape();
         this.resampleSequins();
         this.render();
@@ -127,17 +100,15 @@ class sequinsSurface {
     }
 
     loop() {
-        if (this.isVisible) {
-            const elapsedTime = this.clock.getElapsedTime();
-            const deltaTime = elapsedTime - this.previousTime;
-            if (this.sequinMesh) {
-                this.scene.rotation.x = deltaTime * .1;
-                this.scene.rotation.y = deltaTime * .5;
-                this.sequinMesh.instanceMatrix.needsUpdate = true;
-            }
-            this.render();
-            requestAnimationFrame(this.loop.bind(this));
+        const elapsedTime = this.clock.getElapsedTime();
+        const deltaTime = elapsedTime - this.previousTime;
+        if (this.sequinMesh) {
+            this.scene.rotation.x = deltaTime * .1;
+            this.scene.rotation.y = deltaTime * .5;
+            this.sequinMesh.instanceMatrix.needsUpdate = true;
         }
+        this.render();
+        requestAnimationFrame(this.loop.bind(this));
     }
 
     updateSize(w, h) {

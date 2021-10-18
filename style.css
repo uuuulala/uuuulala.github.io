@@ -72,7 +72,7 @@ h2 {
   justify-content: center; }
   .banner .banner-content {
     width: 95%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     position: relative;
     z-index: 1; }
@@ -104,7 +104,7 @@ h2 {
     background-color: #4BC0C8; }
 
 .what-I-do, .who-I-am {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   padding-top: 30px; }
 
@@ -170,6 +170,7 @@ h2 {
       -moz-justify-content: center;
       justify-content: center;
       width: 100%;
+      height: 300px;
       background-color: #f7f7f7; }
     .what-I-do .animation svg, .what-I-do .animation canvas, .what-I-do .animation img {
       display: block;
@@ -192,7 +193,6 @@ h2 {
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
     .what-I-do .animation.jellyfish .animation-wrapper {
-      height: 300px;
       background: #4CD0C2; }
     .what-I-do .animation.jellyfish svg {
       width: 100%;
@@ -203,8 +203,6 @@ h2 {
     .what-I-do .animation.heart img {
       margin: 0 auto;
       width: 100px; }
-    .what-I-do .animation.wavy-back .animation-wrapper {
-      height: 300px; }
     .what-I-do .animation.plane .animation-wrapper {
       height: 200px; }
     .what-I-do .animation.plane svg {
@@ -292,14 +290,14 @@ h2 {
       transform: translate(-50%, -50%); }
     .what-I-do .animation.confetti canvas {
       background-color: #f7f7f7;
-      height: 250px; }
+      height: auto; }
     .what-I-do .animation.stars .slider {
       position: absolute;
       top: 10px;
       right: 10px;
       color: #ffffff; }
     .what-I-do .animation.stars canvas {
-      height: 250px; }
+      height: auto; }
     .what-I-do .animation.eyeball .dg.main {
       position: absolute;
       top: 0;
@@ -315,11 +313,9 @@ h2 {
       margin-left: 26px !important;
       height: 5px !important;
       border-right: 10px solid #000 !important; }
-    .what-I-do .animation.sequins .animation-wrapper {
-      height: 400px; }
-      .what-I-do .animation.sequins .animation-wrapper canvas {
-        display: block;
-        outline: none; }
+    .what-I-do .animation.sequins canvas {
+      display: block;
+      outline: none; }
 
 @media (max-width: 888px) {
   .mobile-padding {

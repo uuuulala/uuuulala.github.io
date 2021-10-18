@@ -70,35 +70,14 @@ function initStars() {
     let isVisible = elementIsInViewport(canvas);
 
     // redraw the frame
+    updateStars();
     function updateStars() {
-        if (isVisible) {
-            starsCtx.fillStyle = 'black';
-            starsCtx.fillRect(0, 0, canvas.width, canvas.height);
-            starsElements.forEach((s) => {
-                s.show();
-                s.move();
-            });
-            window.requestAnimationFrame(updateStars);
-        }
+        starsCtx.fillStyle = 'black';
+        starsCtx.fillRect(0, 0, canvas.width, canvas.height);
+        starsElements.forEach((s) => {
+            s.show();
+            s.move();
+        });
+        window.requestAnimationFrame(updateStars);
     }
-
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: canvas,
-            onEnter: () => {
-                isVisible = true;
-                updateStars();
-            },
-            onLeave: () => {
-                isVisible = false;
-            },
-            onEnterBack: () => {
-                isVisible = true;
-                updateStars();
-            },
-            onLeaveBack: () => {
-                isVisible = false;
-            }
-        }
-    });
 }

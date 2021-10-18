@@ -12,27 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     gooeyContainer.addEventListener("mousemove", (e) => gooeyPointer.onMouseMove(e));
     // window.addEventListener("touchmove", (e) => gooeyPointer.onTouchMove(e));
-
-    gsap.timeline({
-        scrollTrigger: {
-            trigger: gooeyContainer,
-            onEnter: () => {
-                gooeySurface.isVisible = true;
-                gooeySurface.loop();
-            },
-            onLeave: () => {
-                gooeySurface.isVisible = false;
-            },
-            onEnterBack: () => {
-                gooeySurface.isVisible = true;
-                gooeySurface.loop();
-            },
-            onLeaveBack: () => {
-                gooeySurface.isVisible = false;
-            }
-        }
-    });
-
+    gooeySurface.loop();
 });
 
 class Pointer {
@@ -56,20 +36,14 @@ class Pointer {
 class Surface {
 
     constructor(w, h) {
-        this.setResponsiveValues();
         this.renderer = new THREE.WebGLRenderer({});
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.container = gooeyContainer;
         this.container.appendChild(this.renderer.domElement);
         this.scene = new THREE.Scene();
         this.camera = new THREE.Camera();
-        this.isVisible = elementIsInViewport(gooeyContainer);
         this.createPlane(w, h);
         this.render();
-    }
-
-    setResponsiveValues() {
-        this.height = window.innerWidth > 800 ? 400 : 550;
     }
 
     createPlane() {
@@ -97,15 +71,13 @@ class Surface {
     }
 
     loop() {
-        if (this.isVisible) {
-            this.render();
-            requestAnimationFrame(this.loop.bind(this));
-        }
+        this.render();
+        requestAnimationFrame(this.loop.bind(this));
     }
 
     updateSize() {
-        this.setResponsiveValues();
         this.width = gooeyContainer.clientWidth;
+        this.height = gooeyContainer.clientHeight;
         this.camera.aspect = this.width / this.height;
         this.renderer.setSize(this.width, this.height);
     }

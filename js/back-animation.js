@@ -639,7 +639,10 @@ function initHeroAnimation(canvas) {
         }
     }
 
-    window.addEventListener("mousemove", function (e) {
+
+    const container = document.querySelector('.banner');
+
+    container.addEventListener("mousemove", function (e) {
         pointers[0].moved = pointers[0].down;
         pointers[0].dx = 5 * (e.pageX - pointers[0].x);
         pointers[0].dy = 5 * (e.pageY - pointers[0].y);
@@ -648,7 +651,7 @@ function initHeroAnimation(canvas) {
         pointers[0].moved = Math.abs(pointers[0].dx) > 0 || Math.abs(pointers[0].dy) > 0;
     });
 
-    window.addEventListener("touchmove", function (e) {
+    container.addEventListener("touchmove", function (e) {
         for (let n = e.targetTouches, r = 0; r < n.length; r++) {
             let t = pointers[r];
             t.moved = t.down;
@@ -659,7 +662,7 @@ function initHeroAnimation(canvas) {
         }
     }, false);
 
-    window.addEventListener("touchstart", function (e) {
+    container.addEventListener("touchstart", function (e) {
         for (let n = e.targetTouches, r = 0; r < n.length; r++) {
             pointers[r].id = n[r].identifier;
             pointers[r].down = true;
@@ -668,7 +671,7 @@ function initHeroAnimation(canvas) {
         }
     });
 
-    window.addEventListener("touchend", function (e) {
+    container.addEventListener("touchend", function (e) {
         for (let n = e.changedTouches, r = 0; r < n.length; r++) {
             for (let t = 0; t < pointers.length; t++) {
                 n[r].identifier === pointers[t].id && (pointers[t].down = false);
