@@ -37,8 +37,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="538" column="37" selection-start-line="538" selection-start-column="37" selection-end-line="538" selection-end-column="37" />
+            <state relative-caret-position="295">
+              <caret line="537" column="41" selection-start-line="537" selection-start-column="41" selection-end-line="537" selection-end-column="41" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -286,18 +286,18 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
+      <recent name="$PROJECT_DIR$/js/globe/models" />
+      <recent name="$PROJECT_DIR$/js/globe/js" />
+      <recent name="$PROJECT_DIR$/js/globe" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js/globe" />
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/js/gsap" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/js/globe/models" />
-      <recent name="$PROJECT_DIR$/js/globe/js" />
-      <recent name="$PROJECT_DIR$/js/globe" />
-      <recent name="$PROJECT_DIR$/img" />
-      <recent name="$PROJECT_DIR$/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -449,16 +449,15 @@
       <workItem from="1635271547006" duration="426000" />
       <workItem from="1635444483156" duration="30000" />
       <workItem from="1635529517322" duration="629000" />
-      <workItem from="1635745398579" duration="1106000" />
+      <workItem from="1635745398579" duration="1937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332977000" />
+    <option name="totallyTimeSpent" value="333808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22317597" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -703,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="538" column="37" selection-start-line="538" selection-start-column="37" selection-end-line="538" selection-end-column="37" />
+        <state relative-caret-position="295">
+          <caret line="537" column="41" selection-start-line="537" selection-start-column="41" selection-end-line="537" selection-end-column="41" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
