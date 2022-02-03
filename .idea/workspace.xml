@@ -4,6 +4,9 @@
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/style.sass" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,12 +39,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="665" lean-forward="true" selection-start-line="665" selection-end-line="665" />
+            <state relative-caret-position="134">
+              <caret line="510" selection-start-line="510" selection-end-line="510" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4125">
+              <caret line="275" column="40" lean-forward="true" selection-start-line="275" selection-start-column="40" selection-end-line="275" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -53,11 +65,6 @@
               <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="favicon-16x16.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/favicon/favicon-16x16.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="favicon.ico" pinned="false" current-in-tab="false">
@@ -103,11 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>800</find>
-      <find>max</find>
-      <find>700</find>
-      <find>onClick</find>
-      <find>eyeAppear</find>
       <find>clock</find>
       <find>OrbitControls</find>
       <find>loop</find>
@@ -133,6 +135,11 @@
       <find>isVisible</find>
       <find>canvas</find>
       <find>I'm a freelance front-end</find>
+      <find>regis</find>
+      <find>matcap</find>
+      <find>seq</find>
+      <find>sequins</find>
+      <find>BufferGeometryUtils</find>
     </findStrings>
     <replaceStrings>
       <replace>dt</replace>
@@ -168,6 +175,8 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/js</dir>
+      <dir>$PROJECT_DIR$/</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -226,8 +235,8 @@
         <option value="$PROJECT_DIR$/js/eyeball.js" />
         <option value="$PROJECT_DIR$/js/stars.js" />
         <option value="$PROJECT_DIR$/t.js" />
-        <option value="$PROJECT_DIR$/style.sass" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/style.sass" />
       </list>
     </option>
   </component>
@@ -250,7 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -258,25 +266,11 @@
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="favicon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,18 +283,18 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/img" />
-      <recent name="$PROJECT_DIR$/js/globe/models" />
-      <recent name="$PROJECT_DIR$/js/globe/js" />
-      <recent name="$PROJECT_DIR$/js/globe" />
-      <recent name="$PROJECT_DIR$/js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/js/globe" />
       <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/js/gsap" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img/threejs" />
+      <recent name="$PROJECT_DIR$/img" />
+      <recent name="$PROJECT_DIR$/js/globe/models" />
+      <recent name="$PROJECT_DIR$/js/globe/js" />
+      <recent name="$PROJECT_DIR$/js/globe" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -454,18 +448,19 @@
       <workItem from="1635529517322" duration="629000" />
       <workItem from="1635745398579" duration="3519000" />
       <workItem from="1635936640415" duration="121000" />
-      <workItem from="1635937902770" duration="39000" />
+      <workItem from="1635937902770" duration="848000" />
+      <workItem from="1642553852748" duration="896000" />
+      <workItem from="1643465836878" duration="278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="335550000" />
+    <option name="totallyTimeSpent" value="337533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22889842" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23462088" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -585,13 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/sequins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="104" column="30" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sequins.js" />
     <entry file="file://$PROJECT_DIR$/e.css" />
     <entry file="file://$PROJECT_DIR$/js/eyeball.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -626,13 +615,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/what-I-do.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3630">
-          <caret line="242" column="21" selection-start-line="242" selection-start-column="21" selection-end-line="242" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eye.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -704,10 +686,17 @@
     <entry file="file://$PROJECT_DIR$/img/heart.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/style.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4125">
+          <caret line="275" column="40" lean-forward="true" selection-start-line="275" selection-start-column="40" selection-end-line="275" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="665" lean-forward="true" selection-start-line="665" selection-end-line="665" />
+        <state relative-caret-position="134">
+          <caret line="510" selection-start-line="510" selection-end-line="510" />
           <folding>
             <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />

@@ -313,9 +313,6 @@ h2 {
       margin-left: 26px !important;
       height: 5px !important;
       border-right: 10px solid #000 !important; }
-    .what-I-do .animation.sequins canvas {
-      display: block;
-      outline: none; }
 
 @media (max-width: 888px) {
   .mobile-padding {
