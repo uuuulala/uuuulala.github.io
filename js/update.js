@@ -74,6 +74,6 @@ gifOverlays.forEach((overlay) => {
     };
     overlay.onclick = function () {
         // console.log(this);
-        // window.open('www.yourdomain.com','_blank');
+        window.open('https://codepen.io/ksenia-k/full/QWadgoY','_blank');
     };
 });
