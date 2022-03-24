@@ -73,7 +73,10 @@ gifOverlays.forEach((overlay) => {
         })
     };
     overlay.onclick = function () {
-        // console.log(this);
-        window.open('https://codepen.io/ksenia-k/full/QWadgoY','_blank');
+        if (this.getAttribute('data-gif-name') === 'globe') {
+            window.open('https://codepen.io/ksenia-k/full/QWadgoY','_blank');
+        } else if (this.getAttribute('data-gif-name') === 'disco') {
+            window.open('https://codepen.io/ksenia-k/pen/VwMNgZO','_blank');
+        }
     };
 });
