@@ -23,10 +23,10 @@
     <meta name='twitter:description' content="Hi, I'm Ksenia. I make animations and data visualisations for web">
     <meta name='twitter:image' content='https://ksenia-k.com/img/ksenia-kondrashova-logo-big.png'>
 
-    <link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png'>
-    <link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png'>
-    <link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png'>
-    <link rel="shortcut icon" href="/favicon/favicon-96x96.png">
+    <link rel='apple-touch-icon' sizes='180x180' href='./favicon/apple-touch-icon.png'>
+    <link rel='icon' type='image/png' sizes='32x32' href='./favicon/favicon-32x32.png'>
+    <link rel='icon' type='image/png' sizes='16x16' href='./favicon/favicon-16x16.png'>
+    <link rel="shortcut icon" href="./favicon/favicon-96x96.png">
 
     <title>Ksenia Kondrashova | Creative Front-End & Digital Art</title>
     <link rel='stylesheet' href='style.css'>
@@ -295,221 +295,16 @@
             <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen</a>
         </div>
 
-        <!--<h2 class="webgl-anchor mobile-padding">Three.js and WebGL</h2>-->
-        <!--<div class="mobile-padding">-->
-            <!--Interactive eyeball animation based on the <a href="https://www.shadertoy.com/view/lsfGRr" target="_blank">famous shader</a> created by Inigo Quilez.-->
-        <!--</div>-->
-        <!--<div class="animation eyeball">-->
-            <!--<div class="animation-wrapper">-->
-            <!--</div>-->
-            <!--<script type="x-shader/x-fragment" id="eyeball-fragmentShader">-->
-                <!--precision highp float;-->
-
-                <!--varying vec2 vUv;-->
-                <!--uniform float shrink;-->
-                <!--uniform vec3 base_color_1;-->
-                <!--uniform vec3 base_color_2;-->
-                <!--uniform vec3 mid_color;-->
-                <!--uniform float vignette;-->
-                <!--uniform float brightness;-->
-                <!--uniform float darkness;-->
-                <!--uniform sampler2D u_texture;-->
-
-                <!--float random (in vec2 st) {-->
-                    <!--return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);-->
-                <!--}-->
-
-                <!--// Based on Morgan McGuire @morgan3d-->
-                <!--// https://www.shadertoy.com/view/4dS3Wd-->
-                <!--float noise (in vec2 st) {-->
-                    <!--vec2 i = floor(st);-->
-                    <!--vec2 f = fract(st);-->
-                    <!--float a = random(i);-->
-                    <!--float b = random(i + vec2(1.0, 0.0));-->
-                    <!--float c = random(i + vec2(0.0, 1.0));-->
-                    <!--float d = random(i + vec2(1.0, 1.0));-->
-                    <!--vec2 u = f * f * (3.0 - 2.0 * f);-->
-                    <!--return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;-->
-                <!--}-->
-
-                <!--float fbm (in vec2 st) {-->
-                    <!--float value = 0.0;-->
-                    <!--float amplitude = .5;-->
-                    <!--float frequency = 0.;-->
-                    <!--for (int i = 0; i < 4; i++) {-->
-                        <!--value += amplitude * noise(st);-->
-                        <!--st *= 2.;-->
-                        <!--amplitude *= .5;-->
-                    <!--}-->
-                    <!--return value;-->
-                <!--}-->
-
-                <!--float length2( vec2 p ) {-->
-                    <!--vec2 q = p*p*p*p;-->
-                    <!--return pow( q.x + q.y, 1.0/4.0 );-->
-                <!--}-->
-
-                <!--void main() {-->
-
-                    <!--vec2 st = vec2(.5) - vUv;-->
-                    <!--st *= 1.3;-->
-                    <!--st.x *= 6.28318531; // 2Pi-->
-                    <!--st.y *= 3.14159265359; // Pi-->
-
-                    <!--vec4 back = texture2D(u_texture, vUv);-->
-                    <!--back += vec4(.4, .4, .4, 0.);-->
-
-                    <!--float r = length(st);-->
-                    <!--float a = atan(st.y, st.x);-->
-
-                    <!--float pulsing = 1. + clamp(1. - r, 0., 1.) * shrink;-->
-
-                    <!--// noisy fullscreen mix of 2 colors-->
-                    <!--float f = fbm(5. * st);-->
-                    <!--vec3 col = mix(base_color_1, base_color_2, f);-->
-
-                    <!--// blury spot in the middle-->
-                    <!--col = mix(col, mid_color, 1. - smoothstep(0.2, 0.6, r * (.2 + .8 * pulsing)));-->
-
-                    <!--// white streaks-->
-                    <!--a += .05 * fbm(20. * st) * fbm(20. * st);-->
-                    <!--f = smoothstep((1. - brightness), 1., fbm(vec2(20. * a, 6. * r * pulsing)));-->
-                    <!--col = mix(col, vec3(1.), f);-->
-
-                    <!--// dark insertions-->
-                    <!--a = fbm(vec2(15. * a, 10. * r * pulsing));-->
-                    <!--f = smoothstep(.4, .9,  a);-->
-                    <!--col *= 1. - darkness * f;-->
-
-                    <!--// vignette-->
-                    <!--col *= 1. - vignette * smoothstep(.6, .8, r * (.9 + .1 * pulsing));-->
-
-                    <!--// pupil-->
-                    <!--f = 1. - smoothstep(.2, .25, r * pulsing);-->
-                    <!--col = mix(col, vec3(.0), f);-->
-
-                    <!--// crop-->
-                    <!--f = smoothstep(.79, 0.85, r);-->
-
-                    <!--gl_FragColor = mix(vec4(col, 1.), back, f);-->
-                <!--}-->
-
-            <!--</script>-->
-            <!--<script type="x-shader/x-vertex" id="eyeball-vertexShader">-->
-                <!--varying vec2 vUv;-->
-
-                <!--void main() {-->
-                    <!--vUv = uv;-->
-                    <!--vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);-->
-                    <!--gl_Position = projectionMatrix * mvPosition;-->
-                <!--}-->
-            <!--</script>-->
-            <!--<a href="https://codepen.io/ksenia-k/full/jOLqmYe" target="_blank">open codepen</a>-->
-        <!--</div>-->
-        <!--<div class="mobile-padding">-->
-            <!--Gooey effect implemented with GLSL shaders-->
-        <!--</div>-->
-        <!--<div class="animation gooey">-->
-            <!--<div class="animation-wrapper">-->
-            <!--</div>-->
-            <!--<script type="x-shader/x-fragment" id="gooey-fragmentShader">-->
-                <!--precision highp float;-->
-
-                <!--uniform float u_ratio;-->
-
-                <!--uniform float u_time;-->
-                <!--uniform vec2 u_mouse;-->
-                <!--varying vec2 vUv;-->
-
-                <!--#define TWO_PI 6.28318530718-->
-                <!--#ifdef COL_NUMBER-->
-                    <!--const int colNumber = COL_NUMBER;-->
-                <!--#else-->
-                    <!--const int colNumber = 15;-->
-                <!--#endif-->
-
-                <!--float random(in vec2 st) {-->
-                    <!--return fract(sin(dot(st.xy,vec2(12.9898,78.233)))*43758.5453123);-->
-                <!--}-->
-
-                <!--float circle(vec2 pos, vec2 uv, float radius) {-->
-                    <!--return smoothstep(0., length(uv - pos), radius);-->
-                <!--}-->
-
-                <!--float calcColumn(vec2 pos, vec2 uv, float width) {-->
-                    <!--float bt = 1. - smoothstep(0., width, abs(uv.x - pos.x));-->
-                    <!--bt *= smoothstep(pos.y - width * 1.5, pos.y, uv.y);-->
-
-                    <!--return max(bt, 0.);-->
-                <!--}-->
-
-                <!--float calcBottom(vec2 uv, float width) {-->
-                    <!--uv.y -= .5 * width;-->
-                    <!--uv.y *= (1. / width);-->
-                    <!--uv.y = smoothstep(.0, 1., uv.y);-->
-                    <!--uv.y = 1. - uv.y;-->
-                    <!--uv.y = clamp(uv.y, 0., 1.);-->
-
-                    <!--return uv.y;-->
-                <!--}-->
-
-                <!--void main() {-->
-
-                    <!--vec2 uv = vUv;-->
-                    <!--uv.x *= u_ratio;-->
-                    <!--vec2 mouse = u_mouse;-->
-                    <!--mouse.x *= u_ratio;-->
-
-                    <!--float width = u_ratio / float(colNumber);-->
-                    <!--float pointer = circle(mouse, uv, width * 0.3);-->
-
-                    <!--float sum = calcBottom(uv, width);-->
-
-                    <!--for (int i = 0; i <= colNumber; i++) {-->
-
-                        <!--float randomiser = random(vec2(float(i), float(i) * .2));-->
-                        <!--float x = width * (.5 + float(i));-->
-
-                        <!--float columnY = .9 - .4 * (.5 + .5 * sin(u_time + TWO_PI * randomiser));-->
-                        <!--float col = calcColumn(vec2(x, columnY), uv, width);-->
-
-                        <!--float dropY = columnY;-->
-                        <!--dropY *= step(0., sin(u_time + TWO_PI * randomiser + .25 * TWO_PI));-->
-                        <!--dropY -= .4;-->
-                        <!--dropY *= 3.;-->
-
-                        <!--float dist = 1. / distance(mouse, vec2(x, dropY));-->
-                        <!--x -= (.05 * dist * clamp((mouse.x - x), -.1, .1));-->
-                        <!--dropY -= (.05 * dist * clamp((mouse.y - dropY), -.1, .1));-->
-
-                        <!--vec2 drop = vec2(x, 1. - 2. * fract(u_time * .1 + randomiser));-->
-                        <!--float d = circle(drop, uv, width * 0.25);-->
-
-                        <!--sum += d;-->
-                        <!--sum += col;-->
-                    <!--}-->
-
-                    <!--sum += pointer;-->
-                    <!--float bord = .5;-->
-                    <!--vec3 color = mix(vec3(.92), mix(vec3(.91, .39, .26), vec3(.56, .31, .58), uv.y), smoothstep(bord, bord + .01, sum));-->
-                    <!--gl_FragColor = vec4(color.rgb, 1.);-->
-                <!--}-->
-            <!--</script>-->
-            <!--<script type="x-shader/x-vertex" id="gooey-vertexShader">-->
-                <!--attribute vec3 position;-->
-                <!--attribute vec2 uv;-->
-
-                <!--varying vec2 vUv;-->
-
-                <!--void main() {-->
-                    <!--vUv = uv;-->
-                    <!--gl_Position = vec4(position, 1.0 );-->
-                <!--}-->
-            <!--</script>-->
-            <!--<a href="https://codepen.io/ksenia-k/pen/vYZNKQj" target="_blank">open codepen</a>-->
-        <!--</div>-->
-
-    <!--</div>-->
+        <h2 class="webgl-anchor mobile-padding">Three.js and WebGL</h2>
+        <div class="animation globe">
+            <div class="gif-wrapper">
+                <img src="./img/demos-preview/globe.gif">
+                <div class="gif-overlay" data-gif-name="globe">
+                    <div>This is just a GIF. See the live demo <a href="">here</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class='who-I-am'>
         <h2 class="mobile-padding">WHO I AM</h2>

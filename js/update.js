@@ -55,3 +55,25 @@ initHeroAnimation(heroAnimation);
 window.addEventListener('touchstart', () => {
     whatIdo.classList.add('mobile');
 });
+
+// ---------------------------------
+
+const gifOverlays = Array.from(document.querySelectorAll('.gif-overlay'));
+gifOverlays.forEach((overlay) => {
+    overlay.onmouseover = function () {
+        gsap.to(overlay, {
+            duration: .2,
+            opacity: 1
+        })
+    };
+    overlay.onmouseleave = function () {
+        gsap.to(overlay, {
+            duration: .2,
+            opacity: 0
+        })
+    };
+    overlay.onclick = function () {
+        // console.log(this);
+        // window.open('www.yourdomain.com','_blank');
+    };
+});
