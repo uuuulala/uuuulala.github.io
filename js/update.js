@@ -77,6 +77,8 @@ gifOverlays.forEach((overlay) => {
             window.open('https://codepen.io/ksenia-k/full/QWadgoY','_blank');
         } else if (this.getAttribute('data-gif-name') === 'disco') {
             window.open('https://codepen.io/ksenia-k/pen/VwMNgZO','_blank');
+        } else if (this.getAttribute('data-gif-name') === 'gooey') {
+            window.open('https://codepen.io/ksenia-k/pen/oNpwwrN','_blank');
         }
     };
 });
