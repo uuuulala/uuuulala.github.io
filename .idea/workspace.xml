@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/demos-preview/gooey.gif" beforeDir="false" afterPath="$PROJECT_DIR$/img/demos-preview/gooey.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eye.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hire-me.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/what-I-do.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/who-I-am.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,34 +36,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="306" column="14" lean-forward="true" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
+            <state relative-caret-position="261">
+              <caret line="312" column="22" lean-forward="true" selection-start-line="312" selection-start-column="22" selection-end-line="312" selection-end-column="22" />
               <folding>
                 <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="earth-map.jpeg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/img/demos-preview/earth-map.jpeg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="style.sass" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="317" column="25" lean-forward="true" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -68,11 +50,40 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
+      <file leaf-file-name="cat.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/cat.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="rect.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/rect.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="wave.svg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/wave.svg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="eyeball.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/eyeball.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
       <file leaf-file-name="update.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/update.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+            <state relative-caret-position="120">
+              <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CNAME" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CNAME">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -90,7 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>resizeC</find>
       <find>fancy</find>
       <find>height</find>
       <find>setResponsiveValues</find>
@@ -120,6 +130,7 @@
       <find>gif-overlay</find>
       <find>favico</find>
       <find>gif-wrapper</find>
+      <find>resize</find>
     </findStrings>
     <replaceStrings>
       <replace>dt</replace>
@@ -201,7 +212,6 @@
         <option value="$PROJECT_DIR$/js/d3-scatterplot.js" />
         <option value="$PROJECT_DIR$/js/confetti.js" />
         <option value="$PROJECT_DIR$/js/d3-groups.js" />
-        <option value="$PROJECT_DIR$/eye.html" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/js/back-animation.js" />
         <option value="$PROJECT_DIR$/js/gooey.js" />
@@ -217,6 +227,7 @@
         <option value="$PROJECT_DIR$/js/update.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/style.sass" />
+        <option value="$PROJECT_DIR$/eye.html" />
       </list>
     </option>
   </component>
@@ -239,7 +250,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,16 +262,11 @@
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="demos-preview" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,29 +457,32 @@
       <workItem from="1647180848465" duration="60000" />
       <workItem from="1647622575548" duration="1485000" />
       <workItem from="1648126175236" duration="5602000" />
-      <workItem from="1648474500959" duration="1190000" />
+      <workItem from="1648474500959" duration="1923000" />
+      <workItem from="1648632870084" duration="798000" />
+      <workItem from="1648730768421" duration="199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350146000" />
+    <option name="totallyTimeSpent" value="351876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1881259" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32692307" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21923077" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19241774" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.37179488" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -482,7 +490,6 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -518,7 +525,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/globe.js" />
     <entry file="file://$PROJECT_DIR$/js/globe/js/draco/gltf/draco_decoder.js" />
     <entry file="file://$PROJECT_DIR$/js/globe/js/SpinControlsModule.js" />
     <entry file="file://$PROJECT_DIR$/js/globe/models/globe-comp.gltf" />
@@ -582,9 +588,6 @@
     <entry file="file://$PROJECT_DIR$/who-I-am.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/what-I-do.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/t.js" />
     <entry file="file://$PROJECT_DIR$/js/d3-scatterplot.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -596,19 +599,10 @@
     <entry file="file://$PROJECT_DIR$/favicon/site.webmanifest">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/cat.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/eyeball.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/img/matcap-crystal.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/rect.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/img/ksenia-kondrashova-logo-big.png">
@@ -632,35 +626,15 @@
     <entry file="file://$PROJECT_DIR$/favicon/favicon-32x32.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNAME">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/wave.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/img/heart.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/imported-keyframes/js/vendor/gsap/gsap.min.js" />
-    <entry file="file://$PROJECT_DIR$/eye.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7515">
-          <caret line="501" column="9" selection-start-line="501" selection-start-column="9" selection-end-line="501" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hire-me.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/demos/globe/js/vendor/gsap.min.js" />
     <entry file="file://$PROJECT_DIR$/demos/globe/js/script.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/demos/globe/css/style.css" />
     <entry file="file://$PROJECT_DIR$/demos/globe/globe.html" />
     <entry file="file://$PROJECT_DIR$/img/demos-preview/earth-map.jpeg">
@@ -672,28 +646,71 @@
     <entry file="file://$PROJECT_DIR$/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/update.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="80" column="64" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="317" column="25" lean-forward="true" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
+        <state relative-caret-position="4755">
+          <caret line="317" column="25" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="25" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/update.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNAME">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/what-I-do.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eye.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/eyeball.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/cat.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/rect.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/wave.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="306" column="14" lean-forward="true" selection-start-line="306" selection-start-column="14" selection-end-line="306" selection-end-column="14" />
+        <state relative-caret-position="261">
+          <caret line="312" column="22" lean-forward="true" selection-start-line="312" selection-start-column="22" selection-end-line="312" selection-end-column="22" />
           <folding>
             <element signature="n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" />
           </folding>
