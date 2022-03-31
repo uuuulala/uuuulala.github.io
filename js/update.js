@@ -49,6 +49,20 @@ if (hash === "#who-I-am") {
     })
 }
 
+const heroContent = document.querySelector('.banner-content');
+gsap.set(heroContent, {
+    height: window.innerHeight
+});
+let oldWindowHeight = 0;
+window.addEventListener('resize', () => {
+    if (Math.abs(oldWindowHeight - window.innerHeight) > 100) {
+        oldWindowHeight = window.innerHeight;
+        gsap.set(heroContent, {
+            height: window.innerHeight
+        })
+    }
+});
+
 const heroAnimation = document.querySelector('.banner-back');
 initHeroAnimation(heroAnimation);
 
