@@ -349,6 +349,8 @@ h2 {
         max-width: 100%;
         height: auto;
         margin: 0 auto; }
+  .what-I-do.mobile.jellyfish {
+    display: none; }
   .what-I-do.mobile .gif-overlay {
     opacity: 1; }
 
