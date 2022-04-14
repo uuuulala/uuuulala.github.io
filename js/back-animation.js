@@ -527,7 +527,7 @@ function initHeroAnimation(canvas) {
     function resizeCanvas() {
         let width = window.innerWidth;
         let height = window.innerHeight;
-        if (canvas.width !== width || canvas.height !== height) {
+        if (Math.abs(canvas.width - width) > 150 || Math.abs(canvas.height - height) > 150 ) {
             canvas.width = width;
             canvas.height = height;
             return true;

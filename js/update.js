@@ -55,7 +55,7 @@ gsap.set(heroContent, {
 });
 let oldWindowHeight = 0;
 window.addEventListener('resize', () => {
-    if (Math.abs(oldWindowHeight - window.innerHeight) > 100) {
+    if (Math.abs(oldWindowHeight - window.innerHeight) > 150) {
         oldWindowHeight = window.innerHeight;
         gsap.set(heroContent, {
             height: window.innerHeight

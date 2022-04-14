@@ -349,10 +349,11 @@ h2 {
         max-width: 100%;
         height: auto;
         margin: 0 auto; }
-  .what-I-do.mobile.jellyfish {
-    display: none; }
-  .what-I-do.mobile .gif-overlay {
-    opacity: 1; }
+
+.mobile .jellyfish {
+  display: none; }
+.mobile .gif-overlay {
+  opacity: 1; }
 
 @media (max-width: 888px) {
   .mobile-padding {
