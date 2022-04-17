@@ -218,6 +218,7 @@
             </div>
             <a href="https://codepen.io/ksenia-k/pen/JjjyBoL" target="_blank">open codepen</a>
         </div>
+
         <h2 class="mobile-padding">Single file SVG animations</h2>
         <div class="mobile-padding">
             Some basic animations can be done as a single .svg file - without any external styles or JS dependencies. These tiny animations have total size just 3kb (waves) and 1kb (heart).
@@ -226,16 +227,44 @@
             <div class="animation-wrapper">
                 <img src="./img/wave.svg">
             </div>
-            <a href="./img/wave.svg" download="wave-animation---ksenia-k">download .svg file</a>
+            <a href="./img/wave.svg" download="wave-animation---ksenia-k">download .svg file (3kb)</a>
         </div>
         <div class='animation heart'>
             <div class="animation-wrapper">
                 <img src="./img/heart.svg">
             </div>
-            <a href="./img/heart.svg" download="heart-animation---ksenia-k">download .svg file</a>
+            <a href="./img/heart.svg" download="heart-animation---ksenia-k">download .svg file (1kb)</a>
         </div>
 
+        <h2 class="canvas-anchor mobile-padding">HTML5 Canvas</h2>
+        <div class="mobile-padding">
+            Same as with SVG, I make some 2D and pseudo-3D visuals on the &lt;canvas&gt; without any special JS libs. Just vanilla JS, light and simple
+        </div>
+        <div class="animation stars">
+            <div class="animation-wrapper">
+                <canvas id="stars"></canvas>
+                <div class="slider">
+                    <input type="range" min="0.2" max="5" value="2" step="0.1" >
+                    <div>Speed: <span id="speed"></span></div>
+                </div>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/gOPboQg" target="_blank">open codepen</a>
+        </div>
+        <div class="animation confetti">
+            <div class="animation-wrapper">
+                <div class="tip">
+                    click to add more confetti
+                </div>
+                <canvas id="confetti"></canvas>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen</a>
+        </div>
+
+
         <h2 class="d3-anchor mobile-padding">D3.js data visualizations</h2>
+        <div class="mobile-padding">
+            If some data is involved, D3.js is quite helpful. Although the examples below are SVG graphics, I work with HTML, CSS, Canvas and other tools to create visual representations of data.
+        </div>
         <div class="animation d3-groups">
             <div class="animation-wrapper">
                 <div>
@@ -262,51 +291,43 @@
         <div class="animation d3-scatterplot">
             <div class="animation-wrapper">
                 <svg>
-                <clipPath id="scatterplot-area-clip">
-                </clipPath>
-                <symbol id="plus" viewBox="0 0 18 18">
-                    <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                    <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                </symbol>
-                <symbol id="minus" viewBox="0 0 18 18" >
-                    <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                </symbol>
-                <symbol id="reset" viewBox="0 0 18 18">
-                    <path stroke-width="0" fill="#000"  d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
-                </symbol>
-            </svg>
+                    <clipPath id="scatterplot-area-clip">
+                    </clipPath>
+                    <symbol id="plus" viewBox="0 0 18 18">
+                        <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
+                        <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
+                    </symbol>
+                    <symbol id="minus" viewBox="0 0 18 18" >
+                        <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
+                    </symbol>
+                    <symbol id="reset" viewBox="0 0 18 18">
+                        <path stroke-width="0" fill="#000"  d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
+                    </symbol>
+                </svg>
             </div>
             <a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen</a>
         </div>
 
-        <h2 class="canvas-anchor mobile-padding">HTML5 Canvas</h2>
-        <div class="animation stars">
-            <div class="animation-wrapper">
-                <canvas id="stars"></canvas>
-                <div class="slider">
-                    <input type="range" min="0.2" max="5" value="2" step="0.1" >
-                    <div>Speed: <span id="speed"></span></div>
-                </div>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/gOPboQg" target="_blank">open codepen</a>
-        </div>
-        <div class="animation confetti">
-            <div class="animation-wrapper">
-                <div class="tip">
-                    click to add more confetti
-                </div>
-                <canvas id="confetti"></canvas>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen</a>
-        </div>
-
         <h2 class="webgl-anchor mobile-padding">Three.js and WebGL</h2>
+        <div class="mobile-padding">
+            The whole new world of animated 3D computer graphics!
+            </br></br>
+            Love this stuff and particularly interested in this kind of collaborations - from porting 3D models to the browser to writing custom shaders.
+        </div>
 
         <div class="animation globe">
             <div class="gif-wrapper">
                 <img src="./img/demos-preview/globe.gif">
                 <div class="gif-overlay" data-gif-name="globe">
                     <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/QWadgoY" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation glass">
+            <div class="gif-wrapper">
+                <img src="./img/demos-preview/glass.gif">
+                <div class="gif-overlay" data-gif-name="glass">
+                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">here</a></div>
                 </div>
             </div>
         </div>
@@ -468,9 +489,6 @@
     <script src='js/d3-scatterplot.js'></script>
     <script src='js/stars.js'></script>
     <script src='js/confetti.js'></script>
-
-    <!--<script type="module" src='js/eyeball.js'></script>-->
-    <!--<script type="module" src='js/gooey.js'></script>-->
 
     <script src='js/update.js'></script>
 

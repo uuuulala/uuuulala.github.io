@@ -12,8 +12,8 @@ a {
 
 h2 {
   width: 100%;
-  padding-top: 2em;
-  padding-bottom: 0.5em;
+  padding-top: 2.5em;
+  padding-bottom: 1.5em;
   margin-top: 0;
   margin-bottom: 0; }
 
@@ -351,6 +351,12 @@ h2 {
         max-width: 100%;
         height: auto;
         margin: 0 auto; }
+    .what-I-do .animation.glass .gif-wrapper {
+      background-color: #ffffff; }
+      .what-I-do .animation.glass .gif-wrapper img {
+        display: block;
+        width: 100%;
+        height: auto; }
     .what-I-do .animation.disco .gif-wrapper {
       background-color: #DDE0E3; }
       .what-I-do .animation.disco .gif-wrapper img {
