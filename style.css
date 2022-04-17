@@ -169,11 +169,13 @@ h2 {
       -moz-justify-content: center;
       justify-content: center;
       width: 100%;
-      height: 300px;
+      height: 250px;
+      max-height: 50vw;
       background-color: #f7f7f7; }
     .what-I-do .animation svg, .what-I-do .animation canvas, .what-I-do .animation img {
       display: block;
-      width: 100%; }
+      width: 100%;
+      max-height: 100%; }
     .what-I-do .animation a {
       padding: 2px 8px;
       float: right;
@@ -200,10 +202,8 @@ h2 {
         .what-I-do .animation .gif-wrapper .gif-overlay * {
           pointer-events: none; }
     .what-I-do .animation.fire .animation-wrapper {
-      height: 250px;
+      height: 150px;
       background-color: #f7f7f7; }
-    .what-I-do .animation.fire svg {
-      width: 70px; }
     .what-I-do .animation.jellyfish .tip {
       position: absolute;
       top: 50%;
@@ -217,27 +217,33 @@ h2 {
     .what-I-do .animation.jellyfish svg {
       width: 100%;
       height: 100%; }
+    .what-I-do .animation.wavy-back .animation-wrapper {
+      height: 320px;
+      max-height: 50vw; }
     .what-I-do .animation.heart .animation-wrapper {
-      height: 250px;
+      height: 100px;
+      max-height: 25vw;
       background-color: #f7f7f7; }
     .what-I-do .animation.heart img {
-      margin: 0 auto;
-      width: 100px; }
+      padding: 10px 0; }
     .what-I-do .animation.plane .animation-wrapper {
       height: 200px; }
     .what-I-do .animation.plane svg {
       background-color: rgba(110, 81, 161, 0.9); }
     .what-I-do .animation.rate .animation-wrapper {
-      display: block;
-      height: auto;
-      background-color: #f7f7f7; }
+      background-color: #f7f7f7;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: vertical;
+      -moz-flex-direction: vertical;
+      -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+      flex-direction: column; }
     .what-I-do .animation.rate .tip {
       text-align: center;
       padding-top: 10px; }
     .what-I-do .animation.rate svg {
-      max-width: 450px;
-      margin: 0 auto;
-      padding: 15px 0 25px 0; }
+      padding-bottom: 10px; }
     .what-I-do .animation.rate .card {
       cursor: pointer;
       user-select: none; }
@@ -251,36 +257,39 @@ h2 {
     .what-I-do .animation.rate .card--selected path {
       fill: #000; }
     .what-I-do .animation.d3-groups .animation-wrapper {
-      display: block; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: vertical;
+      -moz-flex-direction: vertical;
+      -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      text-align: center;
+      height: 250px;
+      max-height: 40vw;
+      padding: 10px 0; }
     .what-I-do .animation.d3-groups .title {
       display: inline-block;
       float: left;
-      text-align: center;
       width: 50%;
-      opacity: 0;
-      padding-top: 15px; }
-    .what-I-do .animation.d3-groups .tip {
-      text-align: center;
-      padding-bottom: 15px; }
+      opacity: 0; }
     .what-I-do .animation.d3-groups svg {
-      height: 200px;
-      max-width: 90%;
       margin: 0 auto;
       opacity: 0; }
+    .what-I-do .animation.d3-bars .animation-wrapper {
+      height: 290px;
+      max-height: 45vw;
+      padding: 10px 0; }
     .what-I-do .animation.d3-bars .x.axis .tick line {
       display: none; }
     .what-I-do .animation.d3-bars .tick text {
       font-size: 20px; }
     .what-I-do .animation.d3-bars .grid path {
       stroke-width: 0; }
-    .what-I-do .animation.d3-bars svg {
-      height: 300px;
-      max-width: 90%;
-      margin: 0 auto; }
-    .what-I-do .animation.d3-scatterplot svg {
-      height: 300px;
-      max-width: 90%;
-      margin: 0 auto; }
+    .what-I-do .animation.d3-scatterplot .animation-wrapper {
+      height: 290px;
+      max-height: 45vw;
+      padding: 10px 0; }
     .what-I-do .animation.d3-scatterplot text {
       font-size: 20px; }
     .what-I-do .animation.d3-scatterplot .btn {
@@ -296,7 +305,8 @@ h2 {
         opacity: 0.3; }
     .what-I-do .animation.d3-scatterplot .dot {
       fill: #336B00;
-      opacity: 0.6; }
+      opacity: 0.6;
+      cursor: pointer; }
       .what-I-do .animation.d3-scatterplot .dot.selected {
         fill: #ff5252;
         opacity: 1; }

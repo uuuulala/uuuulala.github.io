@@ -138,11 +138,13 @@ h2
       @include flexbox
       @include justify-content(center)
       width: 100%
-      height: 300px
+      height: 250px
+      max-height: 50vw
       background-color: #f7f7f7
     svg, canvas, img
       display: block
       width: 100%
+      max-height: 100%
     a
       padding: 2px 8px
       float: right
@@ -170,10 +172,8 @@ h2
           pointer-events: none
     &.fire
       .animation-wrapper
-        height: 250px
+        height: 150px
         background-color: #f7f7f7
-      svg
-        width: 70px
     &.jellyfish
       .tip
         position: absolute
@@ -185,13 +185,17 @@ h2
       svg
         width: 100%
         height: 100%
+    &.wavy-back
+      .animation-wrapper
+        height: 320px
+        max-height: 50vw
     &.heart
       .animation-wrapper
-        height: 250px
+        height: 100px
+        max-height: 25vw
         background-color: #f7f7f7
       img
-        margin: 0 auto
-        width: 100px
+        padding: 10px 0
     &.plane
       .animation-wrapper
         height: 200px
@@ -199,16 +203,13 @@ h2
         background-color: rgba(110, 81, 161, 0.9)
     &.rate
       .animation-wrapper
-        display: block
-        height: auto
         background-color: #f7f7f7
+        @include flex-direction(column)
       .tip
         text-align: center
         padding-top: 10px
       svg
-        max-width: 450px
-        margin: 0 auto
-        padding: 15px 0 25px 0
+        padding-bottom: 10px
       .card
         cursor: pointer
         user-select: none
@@ -219,38 +220,35 @@ h2
         fill: #000
     &.d3-groups
       .animation-wrapper
-        display: block
+        @include flex-direction(column)
+        text-align: center
+        height: 250px
+        max-height: 40vw
+        padding: 10px 0
       .title
         display: inline-block
         float: left
-        text-align: center
         width: 50%
         opacity: 0
-        padding-top: 15px
-      .tip
-        text-align: center
-        padding-bottom: 15px
       svg
-        height: 200px
-        max-width: 90%
         margin: 0 auto
         opacity: 0
     &.d3-bars
+      .animation-wrapper
+        height: 290px
+        max-height: 45vw
+        padding: 10px 0
       .x.axis .tick line
         display: none
       .tick text
         font-size: 20px
       .grid path
         stroke-width: 0
-      svg
-        height: 300px
-        max-width: 90%
-        margin: 0 auto
     &.d3-scatterplot
-      svg
-        height: 300px
-        max-width: 90%
-        margin: 0 auto
+      .animation-wrapper
+        height: 290px
+        max-height: 45vw
+        padding: 10px 0
       text
         font-size: 20px
       .btn
@@ -263,6 +261,7 @@ h2
       .dot
         fill: #336B00
         opacity: 0.6
+        cursor: pointer
         &.selected
           fill: #ff5252
           opacity: 1
