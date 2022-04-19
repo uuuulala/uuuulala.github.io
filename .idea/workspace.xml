@@ -31,8 +31,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="312" column="106" selection-start-line="312" selection-start-column="106" selection-end-line="312" selection-end-column="106" />
+            <state relative-caret-position="305">
+              <caret line="350" column="48" lean-forward="true" selection-start-line="350" selection-start-column="48" selection-end-line="350" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -264,13 +264,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="uuuulala.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="favicon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="uuuulala.github.io" type="b2602c69:ProjectViewProjectNode" />
@@ -286,6 +290,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -492,29 +497,31 @@
       <workItem from="1650264946189" duration="392000" />
       <workItem from="1650267411288" duration="279000" />
       <workItem from="1650267702741" duration="619000" />
-      <workItem from="1650293613714" duration="28000" />
+      <workItem from="1650293613714" duration="317000" />
+      <workItem from="1650357292266" duration="461000" />
+      <workItem from="1650379894392" duration="133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366755000" />
+    <option name="totallyTimeSpent" value="367638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23247497" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23819743" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32692307" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24358974" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24358974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -710,8 +717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="312" column="106" selection-start-line="312" selection-start-column="106" selection-end-line="312" selection-end-column="106" />
+        <state relative-caret-position="305">
+          <caret line="350" column="48" lean-forward="true" selection-start-line="350" selection-start-column="48" selection-end-line="350" selection-end-column="48" />
         </state>
       </provider>
     </entry>
