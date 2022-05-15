@@ -87,7 +87,9 @@ gifOverlays.forEach((overlay) => {
         })
     };
     overlay.onclick = function () {
-        if (this.getAttribute('data-gif-name') === 'globe') {
+        if (this.getAttribute('data-gif-name') === 'tornado') {
+            window.open('https://codepen.io/ksenia-k/full/yLvVzzd','_blank');
+        } else if (this.getAttribute('data-gif-name') === 'globe') {
             window.open('https://codepen.io/ksenia-k/full/QWadgoY','_blank');
         } else if (this.getAttribute('data-gif-name') === 'glass') {
             window.open('https://codepen.io/ksenia-k/full/YzYRPwb','_blank');

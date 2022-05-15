@@ -328,21 +328,6 @@ h2 {
       color: #ffffff; }
     .what-I-do .animation.stars canvas {
       height: auto; }
-    .what-I-do .animation.eyeball .dg.main {
-      position: absolute;
-      top: 0;
-      right: 0; }
-    .what-I-do .animation.eyeball .cr.color .selector {
-      width: 50px !important; }
-    .what-I-do .animation.eyeball .cr.color .saturation-field,
-    .what-I-do .animation.eyeball .cr.color .field-knob {
-      display: none !important; }
-    .what-I-do .animation.eyeball .cr.color .hue-field {
-      width: calc(100% - 8px) !important; }
-    .what-I-do .animation.eyeball .cr.color .hue-knob {
-      margin-left: 26px !important;
-      height: 5px !important;
-      border-right: 10px solid #000 !important; }
     .what-I-do .animation.globe .gif-wrapper {
       background-color: #191618; }
       .what-I-do .animation.globe .gif-wrapper img {
