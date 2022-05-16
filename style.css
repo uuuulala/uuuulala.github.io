@@ -46,7 +46,7 @@ h2 {
   width: 20px; }
 
 .social-container {
-  height: 25px; }
+  height: 1.6em; }
   .social-container .btn:after {
     height: 0; }
 
@@ -127,17 +127,14 @@ h2 {
   .who-I-am .who-I-am--paragraph {
     margin: 1em auto; }
   .who-I-am .social-container {
-    height: 1.5em; }
-    .who-I-am .social-container .btn {
-      height: 1.5em; }
-      .who-I-am .social-container .btn svg, .who-I-am .social-container .btn span {
-        display: inline-block;
-        float: left; }
-      .who-I-am .social-container .btn svg {
-        height: 100%; }
-      .who-I-am .social-container .btn span {
-        line-height: 1.5em;
-        padding-left: 8px; }
+    height: 1.6em; }
+    .who-I-am .social-container svg, .who-I-am .social-container span {
+      float: left; }
+    .who-I-am .social-container svg {
+      height: 100%; }
+    .who-I-am .social-container span {
+      line-height: 1.6em;
+      padding-left: 0.6em; }
   .who-I-am .social-container:nth-child(1) {
     margin-top: 20px; }
 
