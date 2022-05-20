@@ -2,30 +2,51 @@
     <defs>
         <style type="text/css">
             @-webkit-keyframes rotate {
-            0% {-webkit-transform: rotate(0);-ms-transform: rotate(0);transform: rotate(0)}
-            100% {-webkit-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg)}
+            0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
             }
+            100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+            }
+            }
+
             @keyframes rotate {
-            0% {-webkit-transform: rotate(0);-ms-transform: rotate(0);transform: rotate(0)}
-            100% {-webkit-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg)}
+            0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
             }
+            100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+            }
+            }
+
             .top-outer {
-            -webkit-transform-origin: 73px 69px;-ms-transform-origin: 73px 69px;transform-origin: 73px 69px:
+            -webkit-transform-origin: 73px 69px;
+            transform-origin: 73px 69px;
             -webkit-animation: rotate 30s linear infinite;
             animation: rotate 30s linear infinite;
             }
+
             .top-inner {
-            -webkit-transform-origin: 73px 69px;-ms-transform-origin: 73px 69px;transform-origin: 73px 69px:
+            -webkit-transform-origin: 73px 69px;
+            transform-origin: 73px 69px;
             -webkit-animation: rotate 20s linear infinite;
             animation: rotate 20s linear infinite;
             }
+
             .bottom-outer {
-            -webkit-transform-origin: 134px 222px;-ms-transform-origin: 134px 222px;transform-origin: 134px 222px:
+            -webkit-transform-origin: 134px 222px;
+            transform-origin: 134px 222px;
             -webkit-animation: rotate 30s linear infinite;
             animation: rotate 30s linear infinite;
             }
+
             .bottom-inner {
-            -webkit-transform-origin: 134px 222px;-ms-transform-origin: 134px 222px;transform-origin: 134px 222px:
+            -webkit-transform-origin: 134px  222px;
+            transform-origin: 134px  222px;
             -webkit-animation: rotate 20s linear infinite;
             animation: rotate 20s linear infinite;
             }
