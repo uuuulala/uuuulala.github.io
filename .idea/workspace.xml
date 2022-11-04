@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="60adec39-c08c-4c68-a71e-8e8d8af5db47" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,16 +228,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/kseniakondrashova/Desktop/upwork/uuuulala.github.io",
+    "last_opened_file_path": "/Users/kseniakondrashova/Desktop/upwork/uuuulala.github.io/img/threejs",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img/threejs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/img/demos-preview" />
       <recent name="$PROJECT_DIR$/demos/globe" />
-      <recent name="$PROJECT_DIR$/img/threejs" />
       <recent name="$PROJECT_DIR$/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -431,6 +429,7 @@
       <workItem from="1653058059339" duration="303000" />
       <workItem from="1653415584735" duration="292000" />
       <workItem from="1659517529606" duration="110000" />
+      <workItem from="1667558811673" duration="314000" />
     </task>
     <servers />
   </component>
@@ -486,6 +485,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/globe/js/script.js" />
