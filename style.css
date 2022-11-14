@@ -199,21 +199,8 @@ h2 {
         .what-I-do .animation .gif-wrapper .gif-overlay * {
           pointer-events: none; }
     .what-I-do .animation.fire .animation-wrapper {
-      height: 150px;
+      height: 120px;
       background-color: #f7f7f7; }
-    .what-I-do .animation.jellyfish .tip {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%); }
-    .what-I-do .animation.jellyfish .animation-wrapper {
-      background: #4CD0C2; }
-    .what-I-do .animation.jellyfish svg {
-      width: 100%;
-      height: 100%; }
     .what-I-do .animation.wavy-back .animation-wrapper {
       height: 320px;
       max-height: 50vw; }
@@ -347,9 +334,15 @@ h2 {
         max-width: 100%;
         height: auto;
         margin: 0 auto; }
+  .what-I-do .publication {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .what-I-do .publication .publication-description {
+      padding-left: 1em; }
 
-.mobile .jellyfish {
-  display: none; }
 .mobile .gif-overlay {
   opacity: 1; }
 

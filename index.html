@@ -29,7 +29,7 @@
     <link rel='icon' type='image/png' sizes='16x16' href='./favicon/favicon-16x16.png'>
     <link rel="shortcut icon" href="./favicon/favicon-96x96.png">
 
-    <title>Ksenia Kondrashova | Creative Front-End & Digital Art</title>
+    <title>Ksenia Kondrashova | Creative Front-End Developer</title>
     <link rel='stylesheet' href='style.css'>
 </head>
 
@@ -119,39 +119,6 @@
             Yes, they are!
         </div>
 
-        <div class='jellyfish animation'>
-            <div class="animation-wrapper">
-                <div class="tip">
-                    drag the jellyfish around!
-                </div>
-                <svg stroke-linecap="round" stroke-linejoin="round">
-                    <defs>
-                        <radialGradient id="jellyfishGradient" gradientUnits="userSpaceOnUse" cx="50" cy="0" r="80" >
-                            <stop offset="5%" stop-color="#995697" stop-opacity="0.3" />
-                            <stop offset="30%" stop-color="#A23762" stop-opacity="0.3" />
-                            <stop offset="95%" stop-color="#995697" stop-opacity="1" />
-                            <stop offset="100%" stop-color="#995697" stop-opacity="1" />
-                        </radialGradient>
-                    </defs>
-                    <g class="jellyfish-el" transform="scale(0.5) translate(60, 20)">
-                        <g transform="translate(20)" stroke="#995697" opacity="0.85" stroke-width="10" fill="none" style="pointer-events: none">
-                            <path class="tentacle" d="" />
-                            <path class="tentacle" d="" />
-                            <path class="tentacle" d="" />
-                            <path class="tentacle" d="" />
-                            <path class="tentacle" d="" />
-                            <path class="tentacle" d="" />
-                            <path class="tentacle" d="" />
-                        </g>
-                        <g class="jellyfish-body">
-                            <circle cx="75" cy="50" r="100" fill="transparent" />
-                            <path class="jellyfish-body-path" fill="url(#jellyfishGradient)" d="M142,71c0,39.21-34.79,16-74,16S0,110.21,0,71a71,71,0,0,1,142,0Z"/>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/rNMWVKG" target="_blank">open codepen</a>
-        </div>
         <div class='animation rate'>
             <div class="animation-wrapper">
                 <div class="tip">
@@ -221,7 +188,7 @@
 
         <h2 class="mobile-padding">Single file SVG animations</h2>
         <div class="mobile-padding">
-            Some basic animations can be done as a single .svg file - without any external styles or JS dependencies. These tiny animations have total size just 2kb (waves) and 1kb (heart).
+            Don't forget that some animations can be done as a single .svg file - without any external styles or JS dependencies. These tiny animations have total size just 2kb (waves) and 1kb (heart).
         </div>
         <div class='animation wavy-back'>
             <div class="animation-wrapper">
@@ -238,7 +205,7 @@
 
         <h2 class="canvas-anchor mobile-padding">HTML5 Canvas</h2>
         <div class="mobile-padding">
-            Same as with SVG, I make some 2D and pseudo-3D visuals on the &lt;canvas&gt; without usage of any special JS libs. Just vanilla JS, light and simple
+            Same as with SVG, I do some 2D and pseudo-3D visuals on &lt;canvas&gt; without any special JS libs. Just vanilla JS, light and simple
         </div>
         <div class="animation stars">
             <div class="animation-wrapper">
@@ -263,7 +230,7 @@
 
         <h2 class="d3-anchor mobile-padding">D3.js data visualizations</h2>
         <div class="mobile-padding">
-            If some data is involved, D3.js is quite helpful. Although the examples below are SVG graphics, I work with CSS, Canvas and other tools to create visual representations of data.
+            If some data is involved, D3.js is quite helpful. The examples below are SVG graphics but I also use CSS, Canvas and other tools for data representations.
         </div>
         <div class="animation d3-groups">
             <div class="animation-wrapper">
@@ -321,6 +288,14 @@
                 </div>
             </div>
         </div>
+        <div class="animation gooey">
+            <div class="gif-wrapper">
+                <img src="./img/demos-preview/gooey.gif">
+                <div class="gif-overlay" data-gif-name="gooey">
+                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/oNpwwrN" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
         <div class="animation globe">
             <div class="gif-wrapper">
                 <img src="./img/demos-preview/globe.gif">
@@ -329,11 +304,19 @@
                 </div>
             </div>
         </div>
-        <div class="animation gooey">
+        <div class="animation glass">
             <div class="gif-wrapper">
-                <img src="./img/demos-preview/gooey.gif">
-                <div class="gif-overlay" data-gif-name="gooey">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/oNpwwrN" target="_blank">here</a></div>
+                <img src="./img/demos-preview/glass.gif">
+                <div class="gif-overlay" data-gif-name="glass">
+                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation ghost">
+            <div class="gif-wrapper">
+                <img src="./img/demos-preview/ghost.gif">
+                <div class="gif-overlay" data-gif-name="ghost">
+                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/QWmjgWX" target="_blank">here</a></div>
                 </div>
             </div>
         </div>
@@ -345,12 +328,16 @@
                 </div>
             </div>
         </div>
-        <div class="animation glass">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/glass.gif">
-                <div class="gif-overlay" data-gif-name="glass">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">here</a></div>
-                </div>
+
+        <h2 class="publications-anchor mobile-padding">Tutorials</h2>
+        <div class="mobile-padding">
+        </div>
+        <div class="publication">
+            <a href="https://tympanus.net/codrops/2022/11/08/3d-typing-effects-with-three-js/" target="_blank">
+                <img class="publication-preview" src="./img/demos-preview/flowers.gif">
+            </a>
+            <div class="publication-description">
+                A detailed tutorial on how to create typable 3D text with Three.js published on <a class="btn" href="https://tympanus.net/codrops/2022/11/08/3d-typing-effects-with-three-js/" target="_blank">Codrops</a>
             </div>
         </div>
     </div>
@@ -375,7 +362,7 @@
         <img src="img/ksenia-kondrashova.jpg">
         <div class="who-I-am--paragraph mobile-padding">
             I have an MA degree in embedded electronics (I still love hardware!) but turned to web development a few years after graduation.
-            Since then, I’ve worked on various projects for clients all around the world. Please check out my <a class="btn" href="https://www.upwork.com/freelancers/~01d7272896b74a4413">upwork&nbsp;profile</a> to see the reviews from more than 150 clients of mine.
+            Since then, I’ve worked on various projects for clients all around the world. Please check out my <a class="btn" href="https://www.upwork.com/freelancers/~01d7272896b74a4413" target="_blank">upwork&nbsp;profile</a> to see the reviews from more than 150 clients of mine.
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://wa.me/79111397174'>
@@ -503,7 +490,6 @@
     <script src='js/common.js'></script>
 
     <script src='js/fire.js'></script>
-    <script src='js/jellyfish.js'></script>
     <script src='js/plane.js'></script>
     <script src='js/rate.js'></script>
     <script src='js/d3-groups.js'></script>
