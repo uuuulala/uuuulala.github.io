@@ -335,11 +335,14 @@ h2 {
         height: auto;
         margin: 0 auto; }
   .what-I-do .publication {
+    margin-bottom: 3em;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex; }
+    .what-I-do .publication .publication-preview {
+      max-width: 250px; }
     .what-I-do .publication .publication-description {
       padding-left: 1em; }
 
