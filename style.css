@@ -341,10 +341,21 @@ h2 {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex; }
+    @media (max-width: 350px) {
+      .what-I-do .publication {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: vertical;
+        -moz-flex-direction: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column; } }
     .what-I-do .publication .publication-preview {
-      max-width: 250px; }
-    .what-I-do .publication .publication-description {
-      padding-left: 1em; }
+      width: 100%;
+      min-width: 200px; }
+    @media (min-width: 351px) {
+      .what-I-do .publication .publication-description {
+        padding-left: 1em; } }
 
 .mobile .gif-overlay {
   opacity: 1; }

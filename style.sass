@@ -296,10 +296,14 @@ h2
   .publication
     margin-bottom: 3em
     @include flexbox
+    @media (max-width: 350px)
+      @include flex-direction(column)
     .publication-preview
-      max-width: 250px
+      width: 100%
+      min-width: 200px
     .publication-description
-      padding-left: 1em
+      @media (min-width: 351px)
+        padding-left: 1em
 
 .mobile
   .gif-overlay
