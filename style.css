@@ -357,6 +357,9 @@ h2 {
       .what-I-do .publication .publication-description {
         padding-left: 1em; } }
 
+.tip {
+  user-select: none; }
+
 .mobile .gif-overlay {
   opacity: 1; }
 
