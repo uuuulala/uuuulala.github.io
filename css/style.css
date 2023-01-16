@@ -1,0 +1,518 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    overscroll-behavior: none;
+    font-family: sans-serif;
+    color: #000;
+    line-height: 1.3em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    width: 100%;
+    padding-top: 2.5em;
+    padding-bottom: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -1px;
+    background: #222;
+}
+
+.contacts {
+    position: fixed;
+    bottom: 25px;
+    right: 16px;
+    z-index: 2;
+}
+
+@media (max-width: 888px) {
+    .contacts {
+        display: none;
+    }
+}
+
+.social {
+    width: 20px;
+}
+
+.social-container {
+    height: 1.6em;
+}
+
+.social-container .btn:after {
+    height: 0;
+}
+
+.banner .banner-content {
+    height: 100vh;
+    width: 95%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.banner .banner-content h2 {
+    padding-top: 0;
+    font-size: 31px;
+    line-height: 42px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.banner .banner-content h2 span {
+    padding-top: 10px;
+}
+
+.banner .banner-content .main-btn {
+    font-size: 27px;
+    display: inline-block;
+    margin: 30px 20px 0 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.banner .banner-content .btn:after {
+    height: 3px;
+    bottom: -4px;
+}
+
+.banner .banner-color,
+.banner .banner-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .banner-back {
+    z-index: -1;
+}
+
+.banner .banner-color {
+    background-color: #4BC0C8;
+}
+
+.what-I-do, .who-I-am {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.who-I-am {
+    margin-bottom: 130px;
+}
+
+.who-I-am ul {
+    list-style: none;
+    padding: 0 0 0 10px;
+}
+
+.who-I-am li:before {
+    content: "";
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    background-image: url("./img/rect.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    margin-bottom: -2px;
+}
+
+.who-I-am img {
+    width: 100%;
+}
+
+.who-I-am .who-I-am--paragraph {
+    margin: 1em auto;
+}
+
+.who-I-am .social-container {
+    height: 1.6em;
+}
+
+.who-I-am .social-container svg, .who-I-am .social-container span {
+    float: left;
+}
+
+.who-I-am .social-container svg {
+    height: 100%;
+}
+
+.who-I-am .social-container span {
+    line-height: 1.6em;
+    padding-left: 0.6em;
+}
+
+.who-I-am .social-container:nth-child(1) {
+    margin-top: 20px;
+}
+
+.what-I-do {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.what-I-do .animation {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.what-I-do .animation .animation-wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+    max-height: 50vw;
+    background-color: #f7f7f7;
+}
+
+.what-I-do .animation svg, .what-I-do .animation canvas, .what-I-do .animation img {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+}
+
+.what-I-do .animation a {
+    padding: 2px 8px;
+    float: right;
+    background-color: #4BC0C8;
+}
+
+.what-I-do .animation .gif-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.what-I-do .animation .gif-wrapper .gif-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(10, 10, 10, 0.7);
+    color: #fff;
+    opacity: 0;
+}
+
+.what-I-do .animation .gif-wrapper .gif-overlay a {
+    float: none;
+    color: #000;
+}
+
+.what-I-do .animation .gif-wrapper .gif-overlay * {
+    pointer-events: none;
+}
+
+.what-I-do .animation.fire .animation-wrapper {
+    height: 120px;
+    background-color: #f7f7f7;
+}
+
+.what-I-do .animation.wavy-back .animation-wrapper {
+    height: 320px;
+    max-height: 50vw;
+}
+
+.what-I-do .animation.heart .animation-wrapper {
+    height: 100px;
+    max-height: 25vw;
+    background-color: #f7f7f7;
+}
+
+.what-I-do .animation.heart img {
+    padding: 10px 0;
+}
+
+.what-I-do .animation.plane .animation-wrapper {
+    height: 200px;
+}
+
+.what-I-do .animation.plane svg {
+    background-color: rgba(110, 81, 161, 0.9);
+}
+
+.what-I-do .animation.rate .animation-wrapper {
+    background-color: #f7f7f7;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.what-I-do .animation.rate .tip {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.what-I-do .animation.rate svg {
+    padding-bottom: 10px;
+}
+
+.what-I-do .animation.rate .card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.what-I-do .animation.rate > text, .what-I-do .animation.rate .card path {
+    fill: #95B0B6;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.what-I-do .animation.rate .card--selected path {
+    fill: #000;
+}
+
+.what-I-do .animation.d3-groups .animation-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    height: 250px;
+    max-height: 40vw;
+    padding: 10px 0;
+}
+
+.what-I-do .animation.d3-groups .title {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    opacity: 0;
+}
+
+.what-I-do .animation.d3-groups svg {
+    margin: 0 auto;
+    opacity: 0;
+}
+
+.what-I-do .animation.d3-bars .animation-wrapper {
+    height: 290px;
+    max-height: 45vw;
+    padding: 10px 0;
+}
+
+.what-I-do .animation.d3-bars .x.axis .tick line {
+    display: none;
+}
+
+.what-I-do .animation.d3-bars .tick text {
+    font-size: 20px;
+}
+
+.what-I-do .animation.d3-bars .grid path {
+    stroke-width: 0;
+}
+
+.what-I-do .animation.d3-scatterplot .animation-wrapper {
+    height: 290px;
+    max-height: 45vw;
+    padding: 10px 0;
+}
+
+.what-I-do .animation.d3-scatterplot text {
+    font-size: 20px;
+}
+
+.what-I-do .animation.d3-scatterplot .btn {
+    cursor: pointer;
+    opacity: 0.9;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.what-I-do .animation.d3-scatterplot .btn.disabled {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.what-I-do .animation.d3-scatterplot .dot {
+    fill: #336B00;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.what-I-do .animation.d3-scatterplot .dot.selected {
+    fill: #ff5252;
+    opacity: 1;
+}
+
+.what-I-do .animation.confetti .tip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.what-I-do .animation.confetti canvas {
+    background-color: #f7f7f7;
+    height: auto;
+}
+
+.what-I-do .animation.stars .slider {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ffffff;
+}
+
+.what-I-do .animation.stars canvas {
+    height: auto;
+}
+
+.what-I-do .animation.globe .gif-wrapper {
+    background-color: #191618;
+}
+
+.what-I-do .animation.globe .gif-wrapper img {
+    display: block;
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.what-I-do .animation.glass .gif-wrapper {
+    background-color: #ffffff;
+}
+
+.what-I-do .animation.glass .gif-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.what-I-do .animation.disco .gif-wrapper {
+    background-color: #DDE0E3;
+}
+
+.what-I-do .animation.disco .gif-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.what-I-do .publication {
+    margin-bottom: 3em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media (max-width: 350px) {
+    .what-I-do .publication {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: vertical;
+        -moz-flex-direction: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.what-I-do .publication .publication-preview {
+    width: 100%;
+    min-width: 200px;
+}
+
+@media (min-width: 351px) {
+    .what-I-do .publication .publication-description {
+        padding-left: 1em;
+    }
+}
+
+.tip {
+    user-select: none;
+}
+
+.mobile .gif-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 888px) {
+    .mobile-padding {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+}
