@@ -94,7 +94,7 @@ gifOverlays.forEach((overlay) => {
         } else if (this.getAttribute('data-gif-name') === 'glass') {
             window.open('https://codepen.io/ksenia-k/full/YzYRPwb','_blank');
         } else if (this.getAttribute('data-gif-name') === 'disco') {
-            window.open('https://codepen.io/ksenia-k/full/VwMNgZO','_blank');
+            window.open('https://codepen.io/ksenia-k/full/ZEjJxWQ','_blank');
         } else if (this.getAttribute('data-gif-name') === 'gooey') {
             window.open('https://codepen.io/ksenia-k/full/oNpwwrN','_blank');
         } else if (this.getAttribute('data-gif-name') === 'ghost') {
