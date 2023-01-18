@@ -151,7 +151,7 @@ h2 {
     display: inline-block;
     height: 0.8em;
     width: 0.8em;
-    background-image: url("./img/rect.svg");
+    background-image: url("../img/rect.svg");
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 10px;
