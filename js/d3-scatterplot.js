@@ -17,9 +17,9 @@ function initD3Scatterplot() {
         svgCenter = [ svgSize.w / 2, svgSize.h / 2 ],
         dottedLineThickness = 4,
         dottedLineSpacing = 3 * dottedLineThickness,
-        labelPadding = { v: 5, h: 10 },
-        btnSize = 55,
-        btnPadding = 15,
+        labelPadding = { v: 2, h: 4 },
+        btnSize = 40,
+        btnPadding = 10,
         trimmedFormat = d3.format('.3~s');
     // zooming
     const zoomingDuration = 500,
@@ -118,7 +118,7 @@ function initD3Scatterplot() {
 
     // set the position of zooming buttons
     const btnsSize = btns.node().getBBox();
-    btns.attr('transform', 'translate(' + (svgSize.w - btnsSize.width) + ', ' + (svgSize.h - 30 - btnsSize.height) + ')');
+    btns.attr('transform', 'translate(' + (svgSize.w - btnsSize.width) + ', ' + (svgSize.h - 10 - btnsSize.height) + ')');
 
     // zoom-related data & defs
     zoomTransformData = d3.zoomTransform(chart);
@@ -234,7 +234,8 @@ function initD3Scatterplot() {
         let btn = parent
             .append('g')
             .attr('class', 'btn ' + className)
-            .attr('fill', '#dddddd');
+            .attr('fill', '#fff')
+            .attr('stroke', '#000')
         btn
             .append('rect')
             .attr('x', (btnPadding + btnSize) * idx)
@@ -261,7 +262,7 @@ function initD3Scatterplot() {
             .attr('y1', 0)
             .attr('x2', x(data[selectedDotIdx].x))
             .attr('y2', svgSize.h)
-            .attr('stroke', '#ff5252')
+            .attr('stroke', '#FE005E')
             .attr('stroke-width', dottedLineThickness)
             .attr('stroke-dasharray', dottedLineSpacing + ' ' + dottedLineSpacing);
         labelLines[1] = labelLinesGroup
@@ -270,7 +271,7 @@ function initD3Scatterplot() {
             .attr('y1', y(data[selectedDotIdx].y))
             .attr('x2', 0)
             .attr('y2', y(data[selectedDotIdx].y))
-            .attr('stroke', '#ff5252')
+            .attr('stroke', '#FE005E')
             .attr('stroke-width', dottedLineThickness)
             .attr('stroke-dasharray', dottedLineSpacing + ' ' + dottedLineSpacing);
     }
@@ -305,7 +306,7 @@ function initD3Scatterplot() {
         function appendBack(parent) {
             return parent
                 .append('rect')
-                .attr('fill', '#ff5252')
+                .attr('fill', '#FE005E')
                 .attr('x', 0)
                 .attr('y', 0)
                 .attr('rx', 5)

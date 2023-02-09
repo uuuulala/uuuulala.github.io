@@ -2,14 +2,14 @@
 <html lang='en-US' >
 <head>
     <script async src='https://www.googletagmanager.com/gtag/js?id=UA-154705115-1'></script>
-    <script>
-        if (!(document.location.hostname.search("localhost") !== -1)) {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'UA-154705115-1');
-        }
-    </script>
+<!--    <script>-->
+<!--        if (!(document.location.hostname.search("localhost") !== -1)) {-->
+<!--            window.dataLayer = window.dataLayer || [];-->
+<!--            function gtag() { dataLayer.push(arguments); }-->
+<!--            gtag('js', new Date());-->
+<!--            gtag('config', 'UA-154705115-1');-->
+<!--        }-->
+<!--    </script>-->
 
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width'>
@@ -30,7 +30,7 @@
     <link rel="shortcut icon" href="./favicon/favicon-96x96.png">
 
     <title>Ksenia Kondrashova | Creative Front-End Developer</title>
-    <link rel='stylesheet' href='./css/style.css'>
+    <link rel='stylesheet' href='css/main.css'>
 </head>
 
 <body>
@@ -39,240 +39,231 @@
         <canvas class='banner-back'></canvas>
         <div class='banner-content'>
             <h2>
-                Hi, I'm Ksenia.
-                <span style = "display: block;">I make visuals and animations for&nbsp;web.</span>
+                Hi, I'm <div class='btn who-I-am-link'>Ksenia</div>.
+                <span >I make <div class='btn what-I-do-link'>visuals and animations</div> for&nbsp;web.</span>
             </h2>
-            <div>
-                <div class='btn main-btn what-I-do-link'>
-                    what I do
-                </div>
-                <div class='btn main-btn who-I-am-link'>
-                    who I am
-                </div>
-            </div>
         </div>
     </div>
 
     <div class='what-I-do'>
         <h2 class="svg-anchor mobile-padding">SVG / JS animations</h2>
         <div class="mobile-padding">
-            Logos, icons and illustrations animated with <a class="btn" href="https://greensock.com/gsap/">GreenSock (GSAP)</a>.
-        </div>
-        <div class='fire animation'>
-            <div class="animation-wrapper">
-                <svg viewBox="0 -20 120 240">
-                    <defs>
-                        <linearGradient id="fire-gradient-basic" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop stop-color="#ffb200" offset="0.2" />
-                            <stop stop-color="#dc0000" offset="1" />
-                        </linearGradient>
-                        <linearGradient id="fire-gradient-red" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop stop-color="#ffb200" offset="0" />
-                            <stop stop-color="#dc0000" offset="0.9" />
-                        </linearGradient>
-                        <linearGradient id="fire-gradient-yellow" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop stop-color="#ffb200" offset="0.3" />
-                            <stop stop-color="#dc0000" offset="1" />
-                        </linearGradient>
-                    </defs>
-                    <g stroke-width="0.5" stroke-opacity="0.5">
-                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M13 90c-8,-10 -6,-14 -5,-21 3,-3 0,-7 -2,-19 8,11 18,12 7,40l0 0z"></path>
-                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M36 45c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
-                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M63 48c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
-                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M83 80c-8,-10 -6,-14 -5,-21 3,-3 0,-7 -2,-19 8,11 18,12 7,40l0 0z"></path>
-                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M94 126c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
-                        <path class="flame" fill="url(#fire-gradient-basic)" stroke="#ff0" d="M46 50c1,13 -15,26 -13,44 0,11 -4,-17 -2,-26 -1,-8 -3,-16 -9,-21 8,42 -28,33 -5,88 -4,-2 -8,-4 -12,-7 4,13 9,21 15,28 9,9 21,13 39,16 13,4 28,2 38,-6 10,-7 15,-19 12,-34 -3,6 -7,10 -13,12 3,-17 -14,-25 -7,-42 10,-20 3,-45 0,-32 -4,12 -11,21 -20,29 22,-70 -10,-53 -11,-88 -9,12 -14,23 -12,39z"></path>
-                        <path class="flame" fill="url(#fire-gradient-yellow)" stroke="#ff0" d="M51 168c-55,-58 30,-62 -11,-121 11,39 -13,64 -21,76 -5,-15 -1,-21 5,-39 -38,42 -9,63 27,84l0 0z"></path>
-                        <path class="flame" fill="url(#fire-gradient-yellow)" stroke-width="0.5" stroke="#ff0" d="M55 168c-1,-14 -3,-25 15,-38 31,-22 16,-34 -3,-57 5,22 -4,40 -12,52 -5,8 -23,23 0,43z"></path>
-                        <path class="flame" fill="url(#fire-gradient-red)" stroke="#ff0" d="M63 172c9,-5 11,-20 12,-37 2,-17 7,-33 34,-36 -11,9 -20,20 -16,41 -1,31 -24,29 -30,32l0 0z"></path>
-                    </g>
-                    <text font-size="18" fill="#111" x="60" y="195" text-anchor="middle" font-weight="600">ON FIRE</text>
-                </svg>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/moYyMw" target="_blank">open codepen</a>
-        </div>
-        <div class='plane animation'>
-            <div class="animation-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox='0 100 2100 1000' >
-                    <g fill='none' stroke='#674C99' stroke-width='15' stroke-linecap='round'>
-                        <line class="line" stroke-dashoffset="5208.54" stroke-dasharray="0 500 150 1150 200 604.27" x1="2723" y1="-83" x2="816.3" y2="1690.9"  />
-                        <line class="line" stroke-dashoffset="5372.94" stroke-dasharray="300 1000 200 1186.4" x1="2448.3" y1="-94.4" x2="408.9" y2="1654.3" />
-                        <line class="line" stroke-dashoffset="5628.66" stroke-dasharray="200 1214.33 300 1100" x1="2187.4" y1="-87.6" x2="-38.7" y2="1634.3" />
-                        <line class="line" stroke-dashoffset="5843.54" stroke-dasharray="10 490 100 1321.77 400 600" x1="1978.6" y1="-87.8" x2="-379.6" y2="1637.2"/>
-                    </g>
-                    <path class="shadow" fill='#674C99' d='M1528,665l-221.8,141c-2,1-2,5,0,7l120,60c2,1,4.6,0,5-1l101-201.2C1536.1,667,1531.7,663.1,1528,665z'/>
-                    <g class="plane-body">
-                        <path fill='#56C2FF' d='M1131,516.3l297-38c3,0,5.6,4,2,6l-133,97c0,0-2,0.9-3,0l-163-58C1127,522,1127,516,1131,516.3z'/>
-                        <path fill='#6B6BD9' d='M1689,302l-349,423c-2,2.9-7,1-8-1l-40-138c0-1,0-3,1-5l390-284C1687,291,1692,297,1689,302z'/>
-                        <path fill='#9A9AE3' d='M1336,603.7l-2,119c0,2,3,4,5,1l349-423c2-2-1-6.7-4-4l-347,303C1336.6,602,1336,602,1336,603.7z'/>
-                        <path fill='#8FECFF' d='M1132,514l564-234c2,0,3,2,1,3l-266,195.8c0,0-0.6,0,0,0l-297,38C1130,518,1130,515,1132,514z'/>
-                        <path fill='#CDB3FF' d='M1705,279l-241,211.9c-1,0-1,2-0.7,3l116,239c1,2,4,2,5,0l124-451C1710,279,1707,277.8,1705,279z'/>
-                        <path fill='#AD81FF' d='M1341,597l120-104c1-1,3,0,4,0l115.8,238c1,2-1,4-3,3l-236-133c-4.8,2-4.8,0-3.8-2L1341,597z'/>
-                    </g>
-                </svg>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/eroaGg" target="_blank">open codepen</a>
+            Vector logos, icons and illustrations animated with JavaScript, most likely using <a class="btn" href="https://greensock.com/gsap/">GSAP</a> library.
         </div>
 
-        <h2 class="svg-anchor mobile-padding">Interactive SVG animations</h2>
-        <div class="mobile-padding">
-            Yes, they are!
-        </div>
-
-        <div class='animation rate'>
-            <div class="animation-wrapper">
-                <div class="tip">
-                    rate your experience
+        <div class="container">
+            <div class='fire animation'>
+                <div class="animation-wrapper">
+                    <svg viewBox="0 -80 120 330">
+                        <defs>
+                            <linearGradient id="fire-gradient-basic" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop stop-color="#ffb200" offset="0.2"/>
+                                <stop stop-color="#dc0000" offset="1"/>
+                            </linearGradient>
+                            <linearGradient id="fire-gradient-red" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop stop-color="#ffb200" offset="0"/>
+                                <stop stop-color="#dc0000" offset="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="fire-gradient-yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop stop-color="#ffb200" offset="0.3"/>
+                                <stop stop-color="#dc0000" offset="1"/>
+                            </linearGradient>
+                        </defs>
+                        <g stroke-width="0.5" stroke-opacity="0.5">
+                            <path class="spark" fill="#ffd700" stroke="#ff0" d="M13 90c-8,-10 -6,-14 -5,-21 3,-3 0,-7 -2,-19 8,11 18,12 7,40l0 0z"></path>
+                            <path class="spark" fill="#ffd700" stroke="#ff0" d="M36 45c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
+                            <path class="spark" fill="#ffd700" stroke="#ff0" d="M63 48c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
+                            <path class="spark" fill="#ffd700" stroke="#ff0" d="M83 80c-8,-10 -6,-14 -5,-21 3,-3 0,-7 -2,-19 8,11 18,12 7,40l0 0z"></path>
+                            <path class="spark" fill="#ffd700" stroke="#ff0" d="M94 126c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
+                            <path class="flame" fill="url(#fire-gradient-basic)" stroke="#ff0" d="M46 50c1,13 -15,26 -13,44 0,11 -4,-17 -2,-26 -1,-8 -3,-16 -9,-21 8,42 -28,33 -5,88 -4,-2 -8,-4 -12,-7 4,13 9,21 15,28 9,9 21,13 39,16 13,4 28,2 38,-6 10,-7 15,-19 12,-34 -3,6 -7,10 -13,12 3,-17 -14,-25 -7,-42 10,-20 3,-45 0,-32 -4,12 -11,21 -20,29 22,-70 -10,-53 -11,-88 -9,12 -14,23 -12,39z"></path>
+                            <path class="flame" fill="url(#fire-gradient-yellow)" stroke="#ff0" d="M51 168c-55,-58 30,-62 -11,-121 11,39 -13,64 -21,76 -5,-15 -1,-21 5,-39 -38,42 -9,63 27,84l0 0z"></path>
+                            <path class="flame" fill="url(#fire-gradient-yellow)" stroke-width="0.5" stroke="#ff0" d="M55 168c-1,-14 -3,-25 15,-38 31,-22 16,-34 -3,-57 5,22 -4,40 -12,52 -5,8 -23,23 0,43z"></path>
+                            <path class="flame" fill="url(#fire-gradient-red)" stroke="#ff0" d="M63 172c9,-5 11,-20 12,-37 2,-17 7,-33 34,-36 -11,9 -20,20 -16,41 -1,31 -24,29 -30,32l0 0z"></path>
+                        </g>
+                    </svg>
                 </div>
-                <svg viewBox="0 140 947 500" >
-                    <g>
-                        <path class="body" fill="#2EB7CE" d="M576,362c-14-59,4.7-91.4-10-133c-14.9-42.3-63-66.1-119-59c-56.4,7.2-89.8,59.4-99,97c-6.9,28.1,2.7,34.8,6,92c5.1,88.4-59,134,79,137c68.8,1.5,145-1,158-47C597,427.7,584.3,396.8,576,362z" />
-                        <path class="eye eye--left" d="M433.9,244c5.3,0.6,9,8.1,8.2,16.8c-0.8,8.7-5.8,15.4-11.1,14.8c-5.3-0.6-9-8.1-8.2-16.8 C423.6,250.1,428.6,243.5,433.9,244z" />
-                        <path class="eye eye--right" d="M508.3,270.5c-5,0.2-9.3-6.2-9.6-14c-0.3-7.9,3.5-14.4,8.5-14.5c5-0.1,9.3,6.2,9.6,14 C517.1,263.9,513.3,270.4,508.3,270.5z" />
-                        <path class="month month" d="M483.8,292.3c11.1,7,18.9,16.9,15,27.4s-16.3,11.1-29.4,10.6c-16.7-0.7-18.9-16.9-15-27.4 C458.4,292.3,470.1,283.7,483.8,292.3z" />
-                        <g class="eyebrow--girl">
-                            <path class="eyebrow eyebrow--left" d="M373,280c-0.6,0.5-1.3,0.8-2.1,0.9c-2,0.2-3.7-1.3-3.9-3.3c-0.1-1.2-2.3-29.9,17.4-57.7 c1.1-1.6,3.4-2,5-0.8c1.6,1.1,2,3.4,0.8,5c-18.3,25.7-16.2,52.7-16.1,53z" />
-                            <path class="eyebrow eyebrow--second" d="M348.9,294.7c-0.7,0.9-1.7,1.5-2.8,1.8c-2.8,0.7-5.6-1.1-6.3-3.9c-0.4-1.7-10-42.9,12.6-87.6 c1.3-2.6,4.5-3.6,7-2.3c2.6,1.3,3.6,4.5,2.3,7c-20.9,41.3-11.9,80-11.8,80.4z" />
-                            <path class="eyebrow eyebrow--right" d="M546.4,223.6c0.2-0.7,0.6-1.3,1.2-1.7c1.5-1,3.5-0.7,4.6,0.8c0.6,0.9,15.6,22.7,12.7,53.8	c-0.2,1.8-1.8,3.1-3.6,3c-1.8-0.2-3.1-1.8-3-3.6c2.7-28.8-11.4-49.2-11.5-49.4z" />
-                            <path class="eyebrow eyebrow--second" d="M560.2,202.7c0.2-1,0.6-2,1.4-2.7c1.9-1.8,5-1.8,6.8,0.2c1.1,1.2,27.7,29.4,30.3,75.3 c0.2,2.7-1.9,4.9-4.5,5.1c-2.7,0.2-4.9-1.9-5.1-4.5c-2.4-42.3-27.4-68.9-27.6-69.2z" />
-                        </g>
-                        <path class="hand hand--left" d="M401.8,316.6c1.8,0,3.4,1.2,3.8,3c0.3,1.3,0.7,3.4,1,5.9c2.7-1.4,5.6-2.6,8.4-3.3c1.8-0.5,3.7,0.3,4.5,2 c0.9,1.6,0.4,3.7-1,4.8c-1.9,1.6-3.9,3-5.8,4.3c-4,2.9-7.9,5.6-10.5,9.5c-1.9,2.8-3.4,5.9-5.1,9.1c-1.8,3.6-3.7,7.3-6.1,10.8 c-4.2,6.1-7.1,12.4-7.6,16.8c-0.3,2.1-2.2,3.7-4.4,3.4c-2.1-0.3-3.7-2.2-3.4-4.4c1-8.1,6.6-16.9,8.9-20.3 c2.1-3.1,3.8-6.4,5.6-9.9c1.7-3.3,3.4-6.7,5.5-9.9c0.3-0.4,0.5-0.8,0.8-1.1c-1.4-0.6-2.7-1.3-3.9-2c-0.7-0.1-1.3-0.3-1.9-0.7 c-0.7-0.6-1.4-1.1-2.1-1.7c-1.5-1.4-1.7-3.6-0.5-5.2c1.2-1.6,3.4-2.1,5.1-1.1c0.7,0.4,1.4,0.8,2.1,1.2c0.9,0.6,1.8,1.1,2.7,1.6 c0-1.1,0-2.2-0.1-3.3c0-2-0.1-4,0-5.8c0.1-2,1.6-3.5,3.5-3.7C401.6,316.6,401.7,316.6,401.8,316.6z" />
-                        <path class="hand hand--right" d="M553.1,280.7c1.6,0.8,2.5,2.7,2,4.6c-0.9,3.1-3.7,6.7-7.7,11.5c-0.4,0.4-0.7,0.8-1,1.2 c1.3,2.5,2.2,5.3,3.1,7.8c0.5,1.7,1.1,3.2,1.6,4.5c2.2,5,5,9.6,7.9,14.6c2.3,3.9,4.8,8,6.8,12.1l1,1.9c5.6,11.3,11,23,9.6,30.2 c-0.4,2.1-2.5,3.5-4.6,3.1c-2.1-0.4-3.5-2.5-3.1-4.6c1-5.2-6.2-19.7-8.9-25.2l-1-1.9c-1.9-3.9-4.3-7.8-6.5-11.6 c-2.9-4.9-6-10-8.4-15.4c-0.7-1.6-1.3-3.5-1.9-5.2c-1.1-3.5-2.3-7.1-4.3-9.1c-1.8-1.7-4.6-2.6-7.6-3.6c-1.3-0.4-2.6-0.8-3.9-1.3 c-1.9-0.7-3-2.9-2.3-4.8c0.6-2,2.7-3.1,4.7-2.6l2.3,0.6c0.5,0.1,0.9,0.2,1.4,0.3c-0.7-2.2-1.1-4.4-1.5-6.3 c-0.3-1.6-0.6-3.1-1-4.3c-0.5-1.9,0.4-3.9,2.3-4.7c1.8-0.8,4,0,4.9,1.7c2.5,4.5,5,9.3,6.9,14.5c1.7-2.1,3.3-4.3,3.6-5.5 c0.6-2.1,2.7-3.3,4.8-2.7C552.6,280.5,552.8,280.6,553.1,280.7z" />
-                    </g>
-                    <g transform="translate(0 520)" font-size="40px">
-                        <g class="card card--selected" >
-                            <path d="M247.8,75.4l-3.1-0.5c-11.5-2.1-18.9-13.4-16.1-24.7l5.5-22.2c2.8-11.4,14.7-18.1,25.9-14.4l0,0c9.1,3,14.9,11.9,13.9,21.4l-2.4,22.8C270.2,69.2,259.4,77.4,247.8,75.4z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 0.27 -0.27 1 235 57)">1</text>
-                        </g>
-                        <g class="card">
-                            <path d="M305.5,92.7l-20-3.7c-6.4-1.2-10.8-7-10.2-13.5l3.4-37.7c0.7-7.5,7.8-12.8,15.2-11.2l21.9,4.7c6.5,1.4,10.8,7.6,9.8,14.1l-5.3,36.8C319.3,89.2,312.5,94,305.5,92.7z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 0.20 -0.20 1 284.5 72)">2</text>
-                        </g>
-                        <g class="card">
-                            <path d="M344.2,33.2l18.7,0c7.5,0,13.2,6.7,12,14.1L368,88c-1.2,7-8.1,11.5-14.9,9.7L338.6,94c-5.7-1.4-9.5-6.8-9.1-12.6l2.7-37C332.6,38.1,337.9,33.2,344.2,33.2z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 0.15 -0.15 1 336.5 78)">3</text>
-                        </g>
-                        <g class="card">
-                            <path d="M412.2,108.9l-26.8,0.3c-6.8,0.1-12-6-10.8-12.6l8.8-53.2c0.9-5.7,6.2-9.7,11.9-9l13.8,1.5c5.2,0.6,9.2,4.7,9.7,9.9l4.1,51.3C423.4,103.5,418.5,108.9,412.2,108.9z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 0.05 -0.05 1 385 86)">4</text>
-                        </g>
-                        <g class="card">
-                            <path d="M436.4,27.7l19.4-1.1c8.8-0.5,15.9,7.1,15,15.8l-6.8,60.1c-0.9,7.7-7.7,13.3-15.5,12.6l-7.1-0.6c-6.8-0.6-12.3-6-12.9-12.9L423,43.3C422.2,35.2,428.3,28.1,436.4,27.7z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 0.02 -0.02 1 433 80)">5</text>
-                        </g>
-                        <g class="card">
-                            <path d="M503.6,111.7l-20.2,0.6c-7.2,0.2-13-5.7-12.7-12.9l2.4-51c0.3-7.1,6.6-12.5,13.7-11.7l14.6,1.6c6,0.6,10.6,5.5,11,11.5l3.3,48.8C516,105.5,510.6,111.5,503.6,111.7z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 -0.02 0.02 1 483 85)">6</text>
-                        </g>
-                        <g class="card">
-                            <path d="M556.9,99.2L530,98.7c-6.2-0.1-11.4-4.9-11.9-11.1L515.2,54c-0.6-6.7,4.5-12.7,11.2-13.2l24.6-1.9c6.4-0.5,12.1,4.1,13,10.4l5.2,36C570.2,92.7,564.4,99.3,556.9,99.2z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 -0.08 0.08 1 533 85)">7</text>
-                        </g>
-                        <g class="card">
-                            <path d="M586,35.5l8.5-0.1c9-0.1,16.7,6.4,18.1,15.3l2.8,17.9c1.4,9.3-4.5,18.1-13.6,20.3L593,91c-10.4,2.5-20.8-4.6-22.1-15.3l-2.5-19.9C567,45.1,575.2,35.7,586,35.5z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 -0.11 0.11 1 582 79)">8</text>
-                        </g>
-                        <g class="card">
-                            <path d="M663.3,91.6L639.4,99c-7.1,2.2-14.5-2.4-15.6-9.8l-7.6-48.3c-1.1-6.8,3.7-13.2,10.6-14l17.9-2.1c5.8-0.7,11.3,2.9,13.1,8.4l13.6,43.1C673.3,82.7,669.7,89.6,663.3,91.6z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 -0.15 0.15 1 631 78)">9</text>
-                        </g>
-                        <g class="card">
-                            <path d="M671.6,15.4l40.1-12c6.9-2.1,14.1,2.3,15.5,9.3l8.8,44.6c1.3,6.4-2.7,12.6-9,14.2l-34.7,8.7c-6.1,1.5-12.4-1.9-14.5-7.9L663.6,31C661.4,24.4,665,17.3,671.6,15.4z"></path>
-                            <text class="cards-number" fill="#fff" transform="matrix(1 -0.28 0.28 1 680.5 65)">10</text>
-                        </g>
-                    </g>
-                </svg>
+                <a href="https://codepen.io/ksenia-k/pen/moYyMw" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
             </div>
-            <a href="https://codepen.io/ksenia-k/pen/JjjyBoL" target="_blank">open codepen</a>
+            <div class='plane animation'>
+                <div class="animation-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox='850 200 1000 800'>
+                        <g fill='none' stroke='#674C99' stroke-width='15' stroke-linecap='round'>
+                            <line class="line" stroke-dashoffset="5208.54" stroke-dasharray="0 500 150 1150 200 604.27" x1="2723" y1="-83" x2="816.3" y2="1690.9"/>
+                            <line class="line" stroke-dashoffset="5372.94" stroke-dasharray="300 1000 200 1186.4" x1="2448.3" y1="-94.4" x2="408.9" y2="1654.3"/>
+                            <line class="line" stroke-dashoffset="5628.66" stroke-dasharray="200 1214.33 300 1100" x1="2187.4" y1="-87.6" x2="-38.7" y2="1634.3"/>
+                            <line class="line" stroke-dashoffset="5843.54" stroke-dasharray="10 490 100 1321.77 400 600" x1="1978.6" y1="-87.8" x2="-379.6" y2="1637.2"/>
+                        </g>
+                        <path class="shadow" fill='#674C99' d='M1528,665l-221.8,141c-2,1-2,5,0,7l120,60c2,1,4.6,0,5-1l101-201.2C1536.1,667,1531.7,663.1,1528,665z'/>
+                        <g class="plane-body">
+                            <path fill='#56C2FF' d='M1131,516.3l297-38c3,0,5.6,4,2,6l-133,97c0,0-2,0.9-3,0l-163-58C1127,522,1127,516,1131,516.3z'/>
+                            <path fill='#6B6BD9' d='M1689,302l-349,423c-2,2.9-7,1-8-1l-40-138c0-1,0-3,1-5l390-284C1687,291,1692,297,1689,302z'/>
+                            <path fill='#9A9AE3' d='M1336,603.7l-2,119c0,2,3,4,5,1l349-423c2-2-1-6.7-4-4l-347,303C1336.6,602,1336,602,1336,603.7z'/>
+                            <path fill='#8FECFF' d='M1132,514l564-234c2,0,3,2,1,3l-266,195.8c0,0-0.6,0,0,0l-297,38C1130,518,1130,515,1132,514z'/>
+                            <path fill='#CDB3FF' d='M1705,279l-241,211.9c-1,0-1,2-0.7,3l116,239c1,2,4,2,5,0l124-451C1710,279,1707,277.8,1705,279z'/>
+                            <path fill='#AD81FF' d='M1341,597l120-104c1-1,3,0,4,0l115.8,238c1,2-1,4-3,3l-236-133c-4.8,2-4.8,0-3.8-2L1341,597z'/>
+                        </g>
+                    </svg>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/eroaGg" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+            </div>
+            <div class='animation rate'>
+                <div class="animation-wrapper">
+                    <svg viewBox="0 140 947 530">
+                        <g>
+                            <path class="body" fill="#4BC0C8" d="M576,362c-14-59,4.7-91.4-10-133c-14.9-42.3-63-66.1-119-59c-56.4,7.2-89.8,59.4-99,97c-6.9,28.1,2.7,34.8,6,92c5.1,88.4-59,134,79,137c68.8,1.5,145-1,158-47C597,427.7,584.3,396.8,576,362z"/>
+                            <path class="eye eye--left" d="M433.9,244c5.3,0.6,9,8.1,8.2,16.8c-0.8,8.7-5.8,15.4-11.1,14.8c-5.3-0.6-9-8.1-8.2-16.8 C423.6,250.1,428.6,243.5,433.9,244z"/>
+                            <path class="eye eye--right" d="M508.3,270.5c-5,0.2-9.3-6.2-9.6-14c-0.3-7.9,3.5-14.4,8.5-14.5c5-0.1,9.3,6.2,9.6,14 C517.1,263.9,513.3,270.4,508.3,270.5z"/>
+                            <path class="month month" d="M483.8,292.3c11.1,7,18.9,16.9,15,27.4s-16.3,11.1-29.4,10.6c-16.7-0.7-18.9-16.9-15-27.4 C458.4,292.3,470.1,283.7,483.8,292.3z"/>
+                            <g class="eyebrow--girl">
+                                <path class="eyebrow eyebrow--left" d="M373,280c-0.6,0.5-1.3,0.8-2.1,0.9c-2,0.2-3.7-1.3-3.9-3.3c-0.1-1.2-2.3-29.9,17.4-57.7 c1.1-1.6,3.4-2,5-0.8c1.6,1.1,2,3.4,0.8,5c-18.3,25.7-16.2,52.7-16.1,53z"/>
+                                <path class="eyebrow eyebrow--second" d="M348.9,294.7c-0.7,0.9-1.7,1.5-2.8,1.8c-2.8,0.7-5.6-1.1-6.3-3.9c-0.4-1.7-10-42.9,12.6-87.6 c1.3-2.6,4.5-3.6,7-2.3c2.6,1.3,3.6,4.5,2.3,7c-20.9,41.3-11.9,80-11.8,80.4z"/>
+                                <path class="eyebrow eyebrow--right" d="M546.4,223.6c0.2-0.7,0.6-1.3,1.2-1.7c1.5-1,3.5-0.7,4.6,0.8c0.6,0.9,15.6,22.7,12.7,53.8	c-0.2,1.8-1.8,3.1-3.6,3c-1.8-0.2-3.1-1.8-3-3.6c2.7-28.8-11.4-49.2-11.5-49.4z"/>
+                                <path class="eyebrow eyebrow--second" d="M560.2,202.7c0.2-1,0.6-2,1.4-2.7c1.9-1.8,5-1.8,6.8,0.2c1.1,1.2,27.7,29.4,30.3,75.3 c0.2,2.7-1.9,4.9-4.5,5.1c-2.7,0.2-4.9-1.9-5.1-4.5c-2.4-42.3-27.4-68.9-27.6-69.2z"/>
+                            </g>
+                            <path class="hand hand--left"
+                                  d="M401.8,316.6c1.8,0,3.4,1.2,3.8,3c0.3,1.3,0.7,3.4,1,5.9c2.7-1.4,5.6-2.6,8.4-3.3c1.8-0.5,3.7,0.3,4.5,2 c0.9,1.6,0.4,3.7-1,4.8c-1.9,1.6-3.9,3-5.8,4.3c-4,2.9-7.9,5.6-10.5,9.5c-1.9,2.8-3.4,5.9-5.1,9.1c-1.8,3.6-3.7,7.3-6.1,10.8 c-4.2,6.1-7.1,12.4-7.6,16.8c-0.3,2.1-2.2,3.7-4.4,3.4c-2.1-0.3-3.7-2.2-3.4-4.4c1-8.1,6.6-16.9,8.9-20.3 c2.1-3.1,3.8-6.4,5.6-9.9c1.7-3.3,3.4-6.7,5.5-9.9c0.3-0.4,0.5-0.8,0.8-1.1c-1.4-0.6-2.7-1.3-3.9-2c-0.7-0.1-1.3-0.3-1.9-0.7 c-0.7-0.6-1.4-1.1-2.1-1.7c-1.5-1.4-1.7-3.6-0.5-5.2c1.2-1.6,3.4-2.1,5.1-1.1c0.7,0.4,1.4,0.8,2.1,1.2c0.9,0.6,1.8,1.1,2.7,1.6 c0-1.1,0-2.2-0.1-3.3c0-2-0.1-4,0-5.8c0.1-2,1.6-3.5,3.5-3.7C401.6,316.6,401.7,316.6,401.8,316.6z"/>
+                            <path class="hand hand--right"
+                                  d="M553.1,280.7c1.6,0.8,2.5,2.7,2,4.6c-0.9,3.1-3.7,6.7-7.7,11.5c-0.4,0.4-0.7,0.8-1,1.2 c1.3,2.5,2.2,5.3,3.1,7.8c0.5,1.7,1.1,3.2,1.6,4.5c2.2,5,5,9.6,7.9,14.6c2.3,3.9,4.8,8,6.8,12.1l1,1.9c5.6,11.3,11,23,9.6,30.2 c-0.4,2.1-2.5,3.5-4.6,3.1c-2.1-0.4-3.5-2.5-3.1-4.6c1-5.2-6.2-19.7-8.9-25.2l-1-1.9c-1.9-3.9-4.3-7.8-6.5-11.6 c-2.9-4.9-6-10-8.4-15.4c-0.7-1.6-1.3-3.5-1.9-5.2c-1.1-3.5-2.3-7.1-4.3-9.1c-1.8-1.7-4.6-2.6-7.6-3.6c-1.3-0.4-2.6-0.8-3.9-1.3 c-1.9-0.7-3-2.9-2.3-4.8c0.6-2,2.7-3.1,4.7-2.6l2.3,0.6c0.5,0.1,0.9,0.2,1.4,0.3c-0.7-2.2-1.1-4.4-1.5-6.3 c-0.3-1.6-0.6-3.1-1-4.3c-0.5-1.9,0.4-3.9,2.3-4.7c1.8-0.8,4,0,4.9,1.7c2.5,4.5,5,9.3,6.9,14.5c1.7-2.1,3.3-4.3,3.6-5.5 c0.6-2.1,2.7-3.3,4.8-2.7C552.6,280.5,552.8,280.6,553.1,280.7z"/>
+                        </g>
+                        <g transform="translate(0 520)" font-size="40px">
+                            <g class="card card--selected">
+                                <path d="M247.8,75.4l-3.1-0.5c-11.5-2.1-18.9-13.4-16.1-24.7l5.5-22.2c2.8-11.4,14.7-18.1,25.9-14.4l0,0c9.1,3,14.9,11.9,13.9,21.4l-2.4,22.8C270.2,69.2,259.4,77.4,247.8,75.4z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 0.27 -0.27 1 235 57)">1</text>
+                            </g>
+                            <g class="card">
+                                <path d="M305.5,92.7l-20-3.7c-6.4-1.2-10.8-7-10.2-13.5l3.4-37.7c0.7-7.5,7.8-12.8,15.2-11.2l21.9,4.7c6.5,1.4,10.8,7.6,9.8,14.1l-5.3,36.8C319.3,89.2,312.5,94,305.5,92.7z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 0.20 -0.20 1 284.5 72)">2</text>
+                            </g>
+                            <g class="card">
+                                <path d="M344.2,33.2l18.7,0c7.5,0,13.2,6.7,12,14.1L368,88c-1.2,7-8.1,11.5-14.9,9.7L338.6,94c-5.7-1.4-9.5-6.8-9.1-12.6l2.7-37C332.6,38.1,337.9,33.2,344.2,33.2z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 0.15 -0.15 1 336.5 78)">3</text>
+                            </g>
+                            <g class="card">
+                                <path d="M412.2,108.9l-26.8,0.3c-6.8,0.1-12-6-10.8-12.6l8.8-53.2c0.9-5.7,6.2-9.7,11.9-9l13.8,1.5c5.2,0.6,9.2,4.7,9.7,9.9l4.1,51.3C423.4,103.5,418.5,108.9,412.2,108.9z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 0.05 -0.05 1 385 86)">4</text>
+                            </g>
+                            <g class="card">
+                                <path d="M436.4,27.7l19.4-1.1c8.8-0.5,15.9,7.1,15,15.8l-6.8,60.1c-0.9,7.7-7.7,13.3-15.5,12.6l-7.1-0.6c-6.8-0.6-12.3-6-12.9-12.9L423,43.3C422.2,35.2,428.3,28.1,436.4,27.7z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 0.02 -0.02 1 433 80)">5</text>
+                            </g>
+                            <g class="card">
+                                <path d="M503.6,111.7l-20.2,0.6c-7.2,0.2-13-5.7-12.7-12.9l2.4-51c0.3-7.1,6.6-12.5,13.7-11.7l14.6,1.6c6,0.6,10.6,5.5,11,11.5l3.3,48.8C516,105.5,510.6,111.5,503.6,111.7z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 -0.02 0.02 1 483 85)">6</text>
+                            </g>
+                            <g class="card">
+                                <path d="M556.9,99.2L530,98.7c-6.2-0.1-11.4-4.9-11.9-11.1L515.2,54c-0.6-6.7,4.5-12.7,11.2-13.2l24.6-1.9c6.4-0.5,12.1,4.1,13,10.4l5.2,36C570.2,92.7,564.4,99.3,556.9,99.2z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 -0.08 0.08 1 533 85)">7</text>
+                            </g>
+                            <g class="card">
+                                <path d="M586,35.5l8.5-0.1c9-0.1,16.7,6.4,18.1,15.3l2.8,17.9c1.4,9.3-4.5,18.1-13.6,20.3L593,91c-10.4,2.5-20.8-4.6-22.1-15.3l-2.5-19.9C567,45.1,575.2,35.7,586,35.5z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 -0.11 0.11 1 582 79)">8</text>
+                            </g>
+                            <g class="card">
+                                <path d="M663.3,91.6L639.4,99c-7.1,2.2-14.5-2.4-15.6-9.8l-7.6-48.3c-1.1-6.8,3.7-13.2,10.6-14l17.9-2.1c5.8-0.7,11.3,2.9,13.1,8.4l13.6,43.1C673.3,82.7,669.7,89.6,663.3,91.6z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 -0.15 0.15 1 631 78)">9</text>
+                            </g>
+                            <g class="card">
+                                <path d="M671.6,15.4l40.1-12c6.9-2.1,14.1,2.3,15.5,9.3l8.8,44.6c1.3,6.4-2.7,12.6-9,14.2l-34.7,8.7c-6.1,1.5-12.4-1.9-14.5-7.9L663.6,31C661.4,24.4,665,17.3,671.6,15.4z"></path>
+                                <text class="cards-number" fill="#fff" transform="matrix(1 -0.28 0.28 1 680.5 65)">10</text>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/JjjyBoL" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+            </div>
         </div>
 
         <h2 class="mobile-padding">Single file SVG animations</h2>
         <div class="mobile-padding">
             Don't forget that some animations can be done as a single .svg file - without any external styles or JS dependencies. These tiny animations have total size just 2kb (waves) and 1kb (heart).
         </div>
-        <div class='animation wavy-back'>
-            <div class="animation-wrapper">
-                <img src="./img/wave.svg">
+        <div class="container">
+            <div class='animation wavy-back'>
+                <div class="animation-wrapper">
+                    <img src="./img/wave.svg">
+                </div>
+                <a href="./img/wave.svg" download="wave-animation---ksenia-k">download .svg file (2kb)<img class="icon" src="./img/icons/save.svg"></a>
             </div>
-            <a href="./img/wave.svg" download="wave-animation---ksenia-k">download .svg file (2kb)</a>
-        </div>
-        <div class='animation heart'>
-            <div class="animation-wrapper">
-                <img src="./img/heart.svg">
+            <div class='animation heart'>
+                <div class="animation-wrapper">
+                    <img src="./img/heart.svg">
+                </div>
+                <a href="./img/heart.svg" download="heart-animation---ksenia-k">download .svg file (1kb)<img class="icon" src="./img/icons/save.svg"></a>
             </div>
-            <a href="./img/heart.svg" download="heart-animation---ksenia-k">download .svg file (1kb)</a>
         </div>
 
         <h2 class="canvas-anchor mobile-padding">HTML5 Canvas</h2>
         <div class="mobile-padding">
-            Same as with SVG, I do some 2D and pseudo-3D visuals on &lt;canvas&gt; without any special JS libs. Just vanilla JS, light and simple
+            Same as with SVG, I do some 2D and pseudo-3D visuals on &lt;canvas&gt; without any special JS libs. Just vanilla JS, light and simple.
         </div>
-        <div class="animation stars">
-            <div class="animation-wrapper">
-                <canvas id="stars"></canvas>
-                <div class="slider">
-                    <input type="range" min="0.2" max="5" value="2" step="0.1" >
-                    <div>Speed: <span id="speed"></span></div>
+        <div class="container">
+            <div class="animation stars">
+                <div class="animation-wrapper">
+                    <canvas id="stars"></canvas>
+                    <div class="slider">
+                        <input type="range" min="0.2" max="5" value="2" step="0.1" >
+                    </div>
                 </div>
+                <a href="https://codepen.io/ksenia-k/pen/gOPboQg" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
             </div>
-            <a href="https://codepen.io/ksenia-k/pen/gOPboQg" target="_blank">open codepen</a>
-        </div>
-        <div class="animation confetti">
-            <div class="animation-wrapper">
-                <div class="tip">
-                    click to add more confetti
+            <div class="animation confetti">
+                <div class="animation-wrapper">
+                    <div class="tip">
+                        click for confetti
+                    </div>
+                    <canvas id="confetti"></canvas>
                 </div>
-                <canvas id="confetti"></canvas>
+                <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
             </div>
-            <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen</a>
         </div>
-
 
         <h2 class="d3-anchor mobile-padding">D3.js data visualizations</h2>
         <div class="mobile-padding">
-            If some data is involved, D3.js is quite helpful. The examples below are SVG graphics but I also use CSS, Canvas and other tools for data representations.
+            If some data is involved, D3.js is quite helpful. The examples below are SVG graphics, but I also use CSS, HTML5 Canvas, Three.js, WebGL, and other tools for data representations.
         </div>
-        <div class="animation d3-groups">
-            <div class="animation-wrapper">
-                <div>
-                    <div class="title">
-                        group #1
+        <div class="container">
+            <div class="animation d3-bars">
+                <div class="animation-wrapper">
+                    <svg></svg>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/gZaOPP" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+            </div>
+            <div class="animation d3-scatterplot">
+                <div class="animation-wrapper">
+                    <svg>
+                        <clipPath id="scatterplot-area-clip">
+                        </clipPath>
+                        <symbol id="plus" viewBox="0 0 18 18">
+                            <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
+                            <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
+                        </symbol>
+                        <symbol id="minus" viewBox="0 0 18 18" >
+                            <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
+                        </symbol>
+                        <symbol id="reset" viewBox="0 0 18 18">
+                            <path stroke-width="0" fill="#000"  d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
+                        </symbol>
+                    </svg>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+            </div>
+            <div class="animation d3-groups">
+                <div class="animation-wrapper">
+                    <div>
+                        <div class="title">
+                            group #1
+                        </div>
+                        <div class="title">
+                            group #2
+                        </div>
                     </div>
-                    <div class="title">
-                        group #2
+                    <svg></svg>
+                    <div class="tip">
+                        click to switch layout
                     </div>
                 </div>
-                <svg></svg>
-                <div class="tip">
-                    click to switch layout
-                </div>
+                <a href="https://codepen.io/ksenia-k/pen/BayjNQj" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
             </div>
-            <a href="https://codepen.io/ksenia-k/pen/BayjNQj" target="_blank">open codepen</a>
-        </div>
-        <div class="animation d3-bars">
-            <div class="animation-wrapper">
-                <svg></svg>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/gZaOPP" target="_blank">open codepen</a>
-        </div>
-        <div class="animation d3-scatterplot">
-            <div class="animation-wrapper">
-                <svg>
-                    <clipPath id="scatterplot-area-clip">
-                    </clipPath>
-                    <symbol id="plus" viewBox="0 0 18 18">
-                        <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                        <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                    </symbol>
-                    <symbol id="minus" viewBox="0 0 18 18" >
-                        <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                    </symbol>
-                    <symbol id="reset" viewBox="0 0 18 18">
-                        <path stroke-width="0" fill="#000"  d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
-                    </symbol>
-                </svg>
-            </div>
-            <a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen</a>
         </div>
 
         <h2 class="webgl-anchor mobile-padding">Three.js and WebGL</h2>
@@ -280,54 +271,57 @@
             Love this stuff and particularly interested in collaborations related to Three.js / WebGL — pretty much anything from 3D modeling to writing custom GLSL shaders.
         </div>
 
-        <div class="animation tornado">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/tornado.gif">
-                <div class="gif-overlay" data-gif-name="tornado">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/yLvVzzd" target="_blank">here</a></div>
-                </div>
-            </div>
-        </div>
-        <div class="animation disco">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/discoballs.gif">
-                <div class="gif-overlay" data-gif-name="disco">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/ZEjJxWQ" target="_blank">here</a>
+        <div class="container">
+            <div class="animation disco">
+                <div class="gif-wrapper">
+                    <img class="preview" src="./img/demos-preview/discoballs.gif">
+                    <div class="gif-overlay" data-gif-name="disco">
+                        <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/ZEjJxWQ" target="_blank">here</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="animation gooey">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/gooey.gif">
-                <div class="gif-overlay" data-gif-name="gooey">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/oNpwwrN" target="_blank">here</a></div>
+            <div class="animation tornado">
+                    <div class="gif-wrapper">
+                        <img class="preview" src="./img/demos-preview/tornado.gif">
+                        <div class="gif-overlay" data-gif-name="tornado">
+                            <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/yLvVzzd" target="_blank">here</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation gooey">
+                    <div class="gif-wrapper">
+                        <img class="preview" src="./img/demos-preview/gooey.gif">
+                        <div class="gif-overlay" data-gif-name="gooey">
+                            <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/pen/oNpwwrN" target="_blank">here</a></div>
+                        </div>
+                    </div>
+                </div>
+            <div class="animation ghost">
+                <div class="gif-wrapper">
+                    <img class="preview" src="./img/demos-preview/ghost.gif">
+                    <div class="gif-overlay" data-gif-name="ghost">
+                        <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/QWmjgWX" target="_blank">here</a></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="animation globe">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/globe.gif">
-                <div class="gif-overlay" data-gif-name="globe">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/QWadgoY" target="_blank">here</a></div>
+                <div class="animation globe">
+                    <div class="gif-wrapper">
+                        <img class="preview" src="./img/demos-preview/globe.gif">
+                        <div class="gif-overlay" data-gif-name="globe">
+                            <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/QWadgoY" target="_blank">here</a></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="animation glass">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/glass.gif">
-                <div class="gif-overlay" data-gif-name="glass">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">here</a></div>
+                <div class="animation glass">
+                    <div class="gif-wrapper">
+                        <img class="preview" src="./img/demos-preview/glass.gif">
+                        <div class="gif-overlay" data-gif-name="glass">
+                            <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">here</a></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="animation ghost">
-            <div class="gif-wrapper">
-                <img src="./img/demos-preview/ghost.gif">
-                <div class="gif-overlay" data-gif-name="ghost">
-                    <div>This is just a GIF. See the live demo <a href="https://codepen.io/ksenia-k/full/QWmjgWX" target="_blank">here</a></div>
-                </div>
-            </div>
+
         </div>
 
         <h2 class="publications-anchor mobile-padding">Tutorials</h2>
@@ -336,7 +330,13 @@
                 <img class="publication-preview" src="./img/demos-preview/flowers.gif">
             </a>
             <div class="publication-description">
-                A detailed tutorial on how to create typable 3D text with Three.js published on <a class="btn" href="https://tympanus.net/codrops/2022/11/08/3d-typing-effects-with-three-js/" target="_blank">Codrops</a>
+                <div>
+                    <i>"In this tutorial we’ll explore various animated WebGL text typing effects. We will mostly be using Three.js but not the whole tutorial relies on the specific features of this library..."</i>
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2022/11/08/3d-typing-effects-with-three-js/" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>.
+                    <a href="https://codepen.io/ksenia-k/full/WNyxXpO" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
             </div>
         </div>
         <div class="publication mobile-padding">
@@ -344,7 +344,27 @@
                 <img class="publication-preview" src="./img/demos-preview/carton-box.gif">
             </a>
             <div class="publication-description">
-                This article talks about how to make a cool on-scroll folding cardboard box using the Three.js and GSAP libraries.
+                <div>
+                    <i>"Today we’ll walk through the creation of a 3D packaging box that folds and unfolds on scroll. We’ll be using Three.js and GSAP for this. We won’t use any textures or shaders to set it up. Instead, we’ll discover some ways to manipulate the Three.js BufferGeometry...</i>
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2022/12/13/how-to-code-an-on-scroll-folding-3d-cardboard-box-animation-with-three-js-and-gsap" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://codepen.io/ksenia-k/full/dyjWPdp" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="publication mobile-padding">
+            <a href="https://tympanus.net/codrops/2023/01/25/crafting-a-dice-roller-with-three-js-and-cannon-es/" target="_blank">
+                <img class="publication-preview" src="./img/demos-preview/dice-prev.gif">
+            </a>
+            <div class="publication-description">
+                <div>
+                    <i>"In this tutorial, we will guide you through the process of creating an interactive 3D dice roller using the JavaScript libraries Three.js for creating 3D graphics, and cannon-es for adding interaction..."</i>
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2022/12/13/how-to-code-an-on-scroll-folding-3d-cardboard-box-animation-with-three-js-and-gsap" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://tympanus.net/Tutorials/DiceRoller/" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
             </div>
         </div>
     </div>
@@ -366,7 +386,7 @@
                 <li>Browser games</li>
             </ul>
         </div>
-        <img src="img/ksenia-kondrashova.jpg">
+        <img class="photo" src="img/ksenia-kondrashova.jpg">
         <div class="who-I-am--paragraph mobile-padding">
             I have an MA degree in embedded electronics (I still hold a passion for hardware!) but transitioned to web
             development a few years after graduation. Since then, I have worked on various projects for clients worldwide.
@@ -375,58 +395,44 @@
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://wa.me/79111397174'>
-                <svg class='social whatsapp' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.576-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411'/>
-                </svg>
-                <span>whatsapp</span>
+                <img class='whatsapp' src="./img/icons/whatsapp.svg">
+                <span>WhatsApp</span>
             </a>
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://t.me/ksenia_it_is/'>
-                <svg class='social telegram' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z'/>
-                </svg>
-                <span>telegram</span>
+                <img class='telegram' src="./img/icons/telegram.svg">
+                <span>Telegram</span>
             </a>
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://www.linkedin.com/in/ksenia-kondrashova/'>
-                <svg class='social linkedIn' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/>
-                </svg>
-                <span>linkedIn</span>
+                <img class='linkedin' src="./img/icons/linkedin.svg">
+                <span>LinkedIn</span>
             </a>
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://www.upwork.com/freelancers/~01d7272896b74a4413'>
-                <svg class='social upwork' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z'/>
-                </svg>
-                <span>upwork</span>
+                <img class='upwork' src="./img/icons/upwork.svg">
+                <span>Upwork</span>
             </a>
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://codepen.io/ksenia-k/'>
-                <svg class='social codepen-icon' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.03-.075-.003-.018-.015-.034-.02-.05l-.035-.067-.03-.05-.044-.06-.046-.045-.06-.045-.046-.03-.06-.044-.044-.04-.015-.02L12.58.19c-.347-.232-.796-.232-1.142 0L.453 7.502l-.015.015-.044.035-.06.05-.038.04-.05.056-.037.045-.05.06c-.02.017-.03.03-.03.046l-.05.06-.02.06c-.02.01-.02.04-.03.07l-.01.05C0 8.12 0 8.15 0 8.18v7.497c0 .044.003.09.01.135l.01.046c.005.03.01.06.02.086l.015.05c.01.027.016.053.027.075l.022.05c0 .01.015.04.03.06l.03.04c.015.01.03.04.045.06l.03.04.04.04c.01.013.01.03.03.03l.06.042.04.03.01.014 10.97 7.33c.164.12.375.163.57.163s.39-.06.57-.18l10.99-7.28.014-.01.046-.037.06-.043.048-.036.052-.058.033-.045.04-.06.03-.05.03-.07.016-.052.03-.077.015-.045.03-.08v-7.5c0-.05 0-.095-.016-.14l-.014-.045.044.003zm-11.99 6.28l-3.65-2.44 3.65-2.442 3.65 2.44-3.65 2.44zm-1.034-6.674l-4.473 2.99L2.89 8.362l8.086-5.39V7.79zm-6.33 4.233l-2.582 1.73V10.3l2.582 1.726zm1.857 1.25l4.473 2.99v4.82L2.89 15.69l3.618-2.417v-.004zm6.537 2.99l4.474-2.98 3.613 2.42-8.087 5.39v-4.82zm6.33-4.23l2.583-1.72v3.456l-2.583-1.73zm-1.855-1.24L13.042 7.8V2.97l8.085 5.39-3.612 2.415v.003z'/>
-                </svg>
-                <span>codepen</span>
+                <img class='codepen' src="./img/icons/codepen.svg">
+                <span>Codepen</span>
             </a>
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://www.instagram.com/ksenia_it_is/'>
-                <svg class='social instagram' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/>
-                </svg>
-                <span>instagram</span>
+                <img class='instagram' src="./img/icons/instagram.svg">
+                <span>Instagram</span>
             </a>
         </div>
         <div class='social-container mobile-padding'>
             <a class='btn' href='https://twitter.com/uuuuuulala'>
-                <svg class='social twitter' viewBox='0 -23 256 256' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M256,25.4500259 C246.580841,29.6272672 236.458451,32.4504868 225.834156,33.7202333 C236.678503,27.2198053 245.00583,16.9269929 248.927437,4.66307685 C238.779765,10.6812633 227.539325,15.0523376 215.57599,17.408298 C205.994835,7.2006971 192.34506,0.822 177.239197,0.822 C148.232605,0.822 124.716076,24.3375931 124.716076,53.3423116 C124.716076,57.4586875 125.181462,61.4673784 126.076652,65.3112644 C82.4258385,63.1210453 43.7257252,42.211429 17.821398,10.4359288 C13.3005011,18.1929938 10.710443,27.2151234 10.710443,36.8402889 C10.710443,55.061526 19.9835254,71.1374907 34.0762135,80.5557137 C25.4660961,80.2832239 17.3681846,77.9207088 10.2862577,73.9869292 C10.2825122,74.2060448 10.2825122,74.4260967 10.2825122,74.647085 C10.2825122,100.094453 28.3867003,121.322443 52.413563,126.14673 C48.0059695,127.347184 43.3661509,127.988612 38.5755734,127.988612 C35.1914554,127.988612 31.9009766,127.659938 28.694773,127.046602 C35.3777973,147.913145 54.7742053,163.097665 77.7569918,163.52185 C59.7820257,177.607983 37.1354036,186.004604 12.5289147,186.004604 C8.28987161,186.004604 4.10888474,185.75646 0,185.271409 C23.2431033,200.173139 50.8507261,208.867532 80.5109185,208.867532 C177.116529,208.867532 229.943977,128.836982 229.943977,59.4326002 C229.943977,57.1552968 229.893412,54.8901664 229.792282,52.6381454 C240.053257,45.2331635 248.958338,35.9825545 256,25.4500259'/>
-                </svg>
-                <span>twitter</span>
+                <img class='twitter' src="./img/icons/twitter.svg">
+                <span>Twitter</span>
             </a>
         </div>
     </div>
@@ -434,51 +440,37 @@
     <div class='contacts'>
         <div class='social-container'>
             <a class='btn' href='https://wa.me/79111397174'>
-                <svg class='social whatsapp' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375c-.99-1.576-1.516-3.391-1.516-5.26 0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.859 2.909 4.35 2.909 6.99-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411'/>
-                </svg>
+                <img class='whatsapp' src="./img/icons/whatsapp.svg">
             </a>
         </div>
         <div class='social-container'>
             <a class='btn' href='https://t.me/ksenia_it_is/'>
-                <svg class='social telegram' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M23.91 3.79L20.3 20.84c-.25 1.21-.98 1.5-2 .94l-5.5-4.07-2.66 2.57c-.3.3-.55.56-1.1.56-.72 0-.6-.27-.84-.95L6.3 13.7l-5.45-1.7c-1.18-.35-1.19-1.16.26-1.75l21.26-8.2c.97-.43 1.9.24 1.53 1.73z'/>
-                </svg>
+                <img class='telegram' src="./img/icons/telegram.svg">
             </a>
         </div>
         <div class='social-container'>
             <a class='btn' href='https://www.linkedin.com/in/ksenia-kondrashova/'>
-                <svg class='social linkedIn' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/>
-                </svg>
+                <img class='linkedin' src="./img/icons/linkedin.svg">
             </a>
         </div>
         <div class='social-container'>
             <a class='btn' href='https://www.upwork.com/o/profiles/users/_~01d7272896b74a4413/'>
-                <svg class='social upwork' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z'/>
-                </svg>
+                <img class='upwork' src="./img/icons/upwork.svg">
             </a>
         </div>
         <div class='social-container'>
             <a class='btn' href='https://codepen.io/ksenia-k/'>
-                <svg class='social codepen-icon' viewBox='0 0 25 25' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.03-.075-.003-.018-.015-.034-.02-.05l-.035-.067-.03-.05-.044-.06-.046-.045-.06-.045-.046-.03-.06-.044-.044-.04-.015-.02L12.58.19c-.347-.232-.796-.232-1.142 0L.453 7.502l-.015.015-.044.035-.06.05-.038.04-.05.056-.037.045-.05.06c-.02.017-.03.03-.03.046l-.05.06-.02.06c-.02.01-.02.04-.03.07l-.01.05C0 8.12 0 8.15 0 8.18v7.497c0 .044.003.09.01.135l.01.046c.005.03.01.06.02.086l.015.05c.01.027.016.053.027.075l.022.05c0 .01.015.04.03.06l.03.04c.015.01.03.04.045.06l.03.04.04.04c.01.013.01.03.03.03l.06.042.04.03.01.014 10.97 7.33c.164.12.375.163.57.163s.39-.06.57-.18l10.99-7.28.014-.01.046-.037.06-.043.048-.036.052-.058.033-.045.04-.06.03-.05.03-.07.016-.052.03-.077.015-.045.03-.08v-7.5c0-.05 0-.095-.016-.14l-.014-.045.044.003zm-11.99 6.28l-3.65-2.44 3.65-2.442 3.65 2.44-3.65 2.44zm-1.034-6.674l-4.473 2.99L2.89 8.362l8.086-5.39V7.79zm-6.33 4.233l-2.582 1.73V10.3l2.582 1.726zm1.857 1.25l4.473 2.99v4.82L2.89 15.69l3.618-2.417v-.004zm6.537 2.99l4.474-2.98 3.613 2.42-8.087 5.39v-4.82zm6.33-4.23l2.583-1.72v3.456l-2.583-1.73zm-1.855-1.24L13.042 7.8V2.97l8.085 5.39-3.612 2.415v.003z'/>
-                </svg>
+                <img class='codepen' src="./img/icons/codepen.svg">
             </a>
         </div>
         <div class='social-container'>
             <a class='btn' href='https://www.instagram.com/ksenia_it_is/'>
-                <svg class='social instagram' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/>
-                </svg>
+                <img class='instagram' src="./img/icons/instagram.svg">
             </a>
         </div>
         <div class='social-container'>
             <a class='btn' href='https://twitter.com/uuuuuulala'>
-                <svg class='social twitter' viewBox='0 -23 256 256' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M256,25.4500259 C246.580841,29.6272672 236.458451,32.4504868 225.834156,33.7202333 C236.678503,27.2198053 245.00583,16.9269929 248.927437,4.66307685 C238.779765,10.6812633 227.539325,15.0523376 215.57599,17.408298 C205.994835,7.2006971 192.34506,0.822 177.239197,0.822 C148.232605,0.822 124.716076,24.3375931 124.716076,53.3423116 C124.716076,57.4586875 125.181462,61.4673784 126.076652,65.3112644 C82.4258385,63.1210453 43.7257252,42.211429 17.821398,10.4359288 C13.3005011,18.1929938 10.710443,27.2151234 10.710443,36.8402889 C10.710443,55.061526 19.9835254,71.1374907 34.0762135,80.5557137 C25.4660961,80.2832239 17.3681846,77.9207088 10.2862577,73.9869292 C10.2825122,74.2060448 10.2825122,74.4260967 10.2825122,74.647085 C10.2825122,100.094453 28.3867003,121.322443 52.413563,126.14673 C48.0059695,127.347184 43.3661509,127.988612 38.5755734,127.988612 C35.1914554,127.988612 31.9009766,127.659938 28.694773,127.046602 C35.3777973,147.913145 54.7742053,163.097665 77.7569918,163.52185 C59.7820257,177.607983 37.1354036,186.004604 12.5289147,186.004604 C8.28987161,186.004604 4.10888474,185.75646 0,185.271409 C23.2431033,200.173139 50.8507261,208.867532 80.5109185,208.867532 C177.116529,208.867532 229.943977,128.836982 229.943977,59.4326002 C229.943977,57.1552968 229.893412,54.8901664 229.792282,52.6381454 C240.053257,45.2331635 248.958338,35.9825545 256,25.4500259'/>
-                </svg>
+                <img class='twitter' src="./img/icons/twitter.svg">
             </a>
         </div>
     </div>

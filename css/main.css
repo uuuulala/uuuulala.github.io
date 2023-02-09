@@ -1,0 +1,513 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    overscroll-behavior: none;
+    font-family: sans-serif;
+    color: #000;
+    line-height: 1.3;
+    font-size: 20px;
+}
+.banner,
+.banner .banner-content h2 {
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    width: 100%;
+    margin: 2.5em 0 1em 0;
+    padding: 0;
+}
+
+.btn {
+    cursor: pointer;
+    position: relative;
+    padding: 2px 2px 2px 1px;
+    display: inline-flex;
+}
+
+
+
+.btn:before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 7px);
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #F9F871;
+    z-index: -1;
+    opacity: 0;
+}
+.btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -1px;
+    background: #222;
+}
+.btn:hover:before {
+    opacity: 1;
+}
+
+.tip {
+    pointer-events: none;
+    user-select: none;
+}
+.contacts {
+    position: fixed;
+    bottom: 25px;
+    right: 16px;
+    z-index: 2;
+}
+.contacts .btn {
+    width: 1.5em;
+    height: 1.5em;
+}
+.contacts .social-container img {
+    height: 80%;
+    width: auto;
+}
+
+
+.social-container .btn:after {
+    height: 0;
+}
+
+.banner .banner-content {
+    height: 100vh;
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+
+.banner .banner-content h2 {
+    padding-top: 0;
+    font-size: 40px;
+    margin: 0;
+}
+
+.banner .banner-content h2 span {
+    padding-top: 1em;
+}
+
+.banner .banner-content .btn:after {
+    height: 5px;
+    bottom: 9px;
+}
+
+.banner .banner-color,
+.banner .banner-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .banner-back {
+    z-index: -1;
+}
+
+.banner .banner-color {
+    background-color: #4BC0C8;
+}
+
+.what-I-do, .who-I-am {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.who-I-am {
+    margin-bottom: 130px;
+}
+
+.who-I-am ul {
+    list-style: none;
+    padding: 0 0 0 10px;
+}
+
+.who-I-am li:before {
+    content: "";
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    background-image: url("../img/rect.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    margin-bottom: -2px;
+}
+
+.who-I-am img.photo {
+    width: 100%;
+}
+
+.who-I-am .who-I-am--paragraph {
+    margin: 1em auto;
+}
+
+.who-I-am .social-container {
+    height: 1.3em;
+}
+
+.who-I-am .social-container img {
+    width: 20px;
+}
+.who-I-am .social-container span {
+    padding-left: 0.6em;
+    font-size: 1em;
+}
+
+
+.what-I-do .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+
+/*  ----------------------------------- */
+/*  Animations layout  */
+/*  ----------------------------------- */
+
+.what-I-do .animation {
+    width: 100%;
+    margin-bottom: 1em;
+}
+.what-I-do .animation .animation-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.what-I-do .animation .animation-wrapper canvas,
+.what-I-do .animation .animation-wrapper svg,
+.what-I-do .animation .gif-wrapper img.preview {
+    display: block;
+    width: 100%;
+}
+
+
+/*  ----------------------------------- */
+
+.what-I-do .animation.plane .animation-wrapper {
+    background-color: rgba(110, 81, 161, .9);
+}
+.what-I-do .animation.plane,
+.what-I-do .animation.fire {
+    width: calc(50% - 5px);
+}
+.what-I-do .animation.rate .animation-wrapper {
+    height: 220px;
+}
+.what-I-do .animation.plane .animation-wrapper,
+.what-I-do .animation.fire .animation-wrapper {
+    height: 150px;
+}
+
+/*  ----------------------------------- */
+
+.what-I-do .animation.wavy-back .animation-wrapper {
+    height: 320px;
+    max-height: 50vw;
+}
+.what-I-do .animation.wavy-back .animation-wrapper img {
+    width: 100%;
+}
+.what-I-do .animation.heart .animation-wrapper {
+    height: 80px;
+}
+
+/*  ----------------------------------- */
+
+.what-I-do .animation.confetti canvas,
+.what-I-do .animation.stars canvas {
+    height: 250px;
+}
+
+/*  ----------------------------------- */
+
+.what-I-do .animation.d3-scatterplot,
+.what-I-do .animation.d3-bars {
+    width: calc(50% - 5px);
+}
+.what-I-do .animation.d3-scatterplot svg,
+.what-I-do .animation.d3-bars svg {
+    padding: 20px;
+}
+
+/*  ----------------------------------- */
+
+.what-I-do .animation .gif-wrapper {
+    position: relative;
+}
+.what-I-do .animation.tornado {
+    width: calc(40% - 5px);
+}
+.what-I-do .animation.gooey {
+    width: calc(60% - 5px);
+}
+.what-I-do .animation.globe {
+    width: calc(37% - 5px);
+}
+.what-I-do .animation.glass {
+    width: calc(63% - 5px);
+}
+
+
+.what-I-do .publication .publication-links a,
+.what-I-do .animation a {
+    padding: 2px 8px;
+    float: right;
+    background-color: #4BC0C8;
+    font-size: .8em;
+}
+
+.what-I-do .publication .publication-links a:hover,
+.what-I-do .animation a:hover {
+    background-color: #F9F871;
+}
+
+
+.what-I-do .animation .gif-wrapper .gif-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    opacity: 0;
+}
+
+.what-I-do .animation .gif-wrapper .gif-overlay > div {
+    max-width: 75%;
+    line-height: 1.8;
+}
+.what-I-do .animation .gif-wrapper .gif-overlay a {
+    float: none;
+    color: #000;
+}
+
+.what-I-do .animation .gif-wrapper .gif-overlay * {
+    pointer-events: none;
+}
+
+
+
+
+
+.what-I-do .animation.rate .card {
+    cursor: pointer;
+    user-select: none;
+}
+
+.what-I-do .animation.rate > text, .what-I-do .animation.rate .card path {
+    fill: #95B0B6;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.what-I-do .animation.rate .card--selected path {
+    fill: #000;
+}
+
+.what-I-do .animation.d3-groups .animation-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.what-I-do .animation.d3-groups .title {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    opacity: 0;
+}
+
+
+.what-I-do .animation.d3-bars .x.axis {
+    display: none;
+}
+
+.what-I-do .animation.d3-bars .grid path {
+    stroke-width: 0;
+}
+
+.what-I-do .animation.d3-bars .tick text,
+.what-I-do .animation.d3-scatterplot text {
+    font-size: 25px;
+}
+
+.what-I-do .animation.d3-scatterplot .btn {
+    cursor: pointer;
+}
+
+.what-I-do .animation.d3-scatterplot .btn:hover {
+    opacity: 1;
+}
+
+.what-I-do .animation.d3-scatterplot .btn.disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.what-I-do .animation.d3-scatterplot .dot {
+    fill: #336B00;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.what-I-do .animation.d3-scatterplot .dot.selected {
+    fill: #FE005E;
+    opacity: 1;
+}
+
+.what-I-do .animation.confetti .tip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
+
+.what-I-do .animation.stars .slider {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+}
+.what-I-do .animation.stars .interactive-sticker .sticker-text {
+    color: #ffffff;
+}
+
+
+
+.what-I-do .animation.glass .gif-wrapper {
+    background-color: #ffffff;
+}
+
+.what-I-do .animation.glass .gif-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.what-I-do .animation.disco .gif-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+
+/*  ----------------------------------- */
+/*  Publications section   */
+/*  ----------------------------------- */
+
+.what-I-do .publication {
+    margin-bottom: 3em;
+    display: flex;
+    position: relative;
+}
+.what-I-do .publication .publication-preview {
+    width: 200px;
+}
+.what-I-do .publication .publication-links a {
+    float: left;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+
+
+a img.icon {
+    display: inline-block;
+    height: 1em;
+    margin: 0 0 -0.1em 0.3em;
+}
+
+
+
+.mobile .gif-overlay {
+    opacity: 1;
+}
+
+
+/*  ----------------------------------- */
+/*  Responsiveness   */
+/*  ----------------------------------- */
+
+
+@media (max-width: 400px) {
+    .what-I-do .publication {
+        flex-direction: column;
+    }
+    .what-I-do .publication .publication-preview {
+        width: 100%;
+    }
+
+    .what-I-do .animation.d3-scatterplot,
+    .what-I-do .animation.d3-bars,
+    .what-I-do .animation.tornado,
+    .what-I-do .animation.gooey,
+    .what-I-do .animation.globe,
+    .what-I-do .animation.glass,
+    .what-I-do .animation.plane,
+    .what-I-do .animation.fire {
+        width: 100%;
+    }
+
+    .who-I-am .social-container.mobile-padding {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 401px) {
+    .what-I-do .publication .publication-description {
+        padding-left: 1em;
+    }
+}
+
+@media (max-width: 888px) {
+    .mobile-padding {
+        width: calc(100% - 20px);
+        margin: .5em auto;
+    }
+    h2.mobile-padding {
+        margin-top: 2em;
+    }
+    .contacts {
+        display: none;
+    }
+}

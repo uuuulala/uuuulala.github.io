@@ -76,13 +76,13 @@ const gifOverlays = Array.from(document.querySelectorAll('.gif-overlay'));
 gifOverlays.forEach((overlay) => {
     overlay.onmouseover = function () {
         gsap.to(overlay, {
-            duration: .2,
+            duration: .03,
             opacity: 1
         })
     };
     overlay.onmouseleave = function () {
         gsap.to(overlay, {
-            duration: .2,
+            duration: .03,
             opacity: 0
         })
     };

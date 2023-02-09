@@ -41,12 +41,14 @@ function initPlane() {
             transformOrigin: 'center center',
             ease: 'power2.out'
         }, 1.5);
-
+    
     lines.forEach((l) => {
         planeTl.to(l, {
             duration: 4,
             attr: {'stroke-dashoffset': 0},
             ease: 'none'
         }, 0)
-    })
+    });
+
+    planeTl.timeScale(1.3)
 }

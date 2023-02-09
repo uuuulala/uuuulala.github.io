@@ -7,7 +7,7 @@ function initD3Bars() {
     let svg, axis, grid, curve, bars = [];
 
     const svgSize = { w: 800, h: 350 };
-    const animationDuration = 750;
+    const animationDuration = 1000;
 
     let x = d3.scaleBand();
     let y = d3.scaleLinear();
@@ -58,10 +58,10 @@ function initD3Bars() {
                 .enter()
                 .append('rect')
                 .attr('class', 'bar bar-' + key)
-                .attr('x', (d) => x(d.data.month))
+                .attr('x', (d) => x(d.data.month) + .25 * x.bandwidth())
                 .attr('y', (d) => y(d[1]))
                 .attr('height', (d) => (y(d[0]) - y(d[1])))
-                .attr('width', x.bandwidth())
+                .attr('width', .5 * x.bandwidth())
                 .attr('fill', color(key))
                 .attr('opacity', 0.9)
                 .attr('stroke-width', 3)
@@ -73,8 +73,8 @@ function initD3Bars() {
             .append('path')
             .data(data)
             .attr('d', curveFunc(data))
-            .attr('stroke-width', '8')
-            .attr('stroke', '#BB456F')
+            .attr('stroke-width', '6')
+            .attr('stroke', '#FE005E')
             .attr('stroke-linecap', 'round')
             .attr('fill', 'none')
             .attr('transform', 'translate(' + x(months[1]) * 0.5 + ', 0)');

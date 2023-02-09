@@ -7,7 +7,6 @@ function initStars() {
     const canvas = stars.querySelector('canvas');
     const starsCtx = canvas.getContext('2d');
     const slider = stars.querySelector('.slider input');
-    const output = stars.querySelector('#speed');
 
     // global variables
     let container, starsElements, starsParams = { speed: 2, number: 300, extinction: 4 };
@@ -15,9 +14,7 @@ function initStars() {
     setupStars();
 
     // handle slider
-    output.innerHTML = slider.value;
     slider.oninput = function () {
-        output.innerHTML = this.value;
         starsParams.speed = this.value;
     };
 
@@ -66,8 +63,6 @@ function initStars() {
             starsElements[i] = new Star();
         }
     }
-
-    let isVisible = elementIsInViewport(canvas);
 
     // redraw the frame
     updateStars();

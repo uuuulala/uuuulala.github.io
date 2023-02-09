@@ -2,7 +2,7 @@ const d3Groups = document.querySelector('.d3-groups');
 initD3Groups();
 
 function initD3Groups() {
-    const width = 500, height = 150, radius = 4;
+    const width = 500, height = 100, radius = 4;
     const center = { x: width / 2, y: height / 2 };
     const titles = d3.selectAll('.d3-groups .title');
 

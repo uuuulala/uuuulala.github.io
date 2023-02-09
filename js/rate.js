@@ -30,7 +30,8 @@ function initRate() {
     });
 
     rateCards.forEach((card, cardIdx) => {
-        card.onclick = function () { changeRate(cardIdx); };
+        card.addEventListener("click", () => changeRate(cardIdx));
+        card.addEventListener("mouseenter", () => changeRate(cardIdx));
     });
 
     //--------------------------------------------------------------
