@@ -9,11 +9,6 @@ function playFire() {
         tl.play();
     });
 }
-function pauseFire() {
-    fireTls.forEach((tl) => {
-        tl.pause();
-    });
-}
 function initFire() {
     const sparks = Array.from(fire.querySelectorAll('.spark'));
     sparks.forEach((s) => {
