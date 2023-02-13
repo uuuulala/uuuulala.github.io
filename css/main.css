@@ -97,6 +97,7 @@ h2 {
     padding-top: 0;
     font-size: 40px;
     margin: 0;
+    position: relative;
 }
 
 
@@ -159,6 +160,7 @@ h2 {
 
 .who-I-am .social-container {
     height: 1.3em;
+    padding: .15em 0;
 }
 
 .who-I-am .social-container img {
@@ -270,15 +272,22 @@ h2 {
 
 
 .what-I-do .publication .publication-links a,
-.what-I-do .animation a {
+.what-I-do .animation a,
+.resume a {
     padding: 2px 8px;
     float: right;
     background-color: #4BC0C8;
     font-size: .8em;
 }
+.resume a {
+    display: inline-block;
+    float: right;
+    font-size: 1em;
+}
 
 .what-I-do .publication .publication-links a:hover,
-.what-I-do .animation a:hover {
+.what-I-do .animation a:hover,
+.resume a:hover {
     background-color: #F9F871;
 }
 
