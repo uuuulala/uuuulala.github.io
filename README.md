@@ -2,10 +2,9 @@
 
 # Personal Website & Portfolio
 
-Heya, I'm Ksenia 👋 \
-I make visuals and animations for web
+Hello there! 👋
+I'm Ksenia, and I specialize in creating stunning visuals and animations for the web.
 
+My personal website and portfolio, [ksenia-k.com](https://ksenia-k.com/), is the perfect place to see some of my latest works (although I must admit, I could update it more frequently!). From sleek designs to eye-catching animations, my portfolio showcases my unique style and creative flair.
 
-[ksenia-k.com](https://ksenia-k.com/) is the showcase of my works (which should be updated more frequently, of course)
-
-I'm always open to new job opportunitites, don't hesitate to reach out!
+I'm always on the lookout for new job opportunities, so if you're interested in working together or have any questions, don't hesitate to reach out! Let's bring your web projects to life with captivating visuals and animations.
