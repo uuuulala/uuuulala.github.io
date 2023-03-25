@@ -527,7 +527,7 @@ function initHeroAnimation(canvas, isFullScreen) {
     function resizeCanvas() {
         let newWidth = window.innerWidth;
         let newHeight = isFullScreen ? window.innerHeight : 150;
-        if (Math.abs(canvas.width - newWidth) > 150 || Math.abs(canvas.height - newHeight) > 150) {
+        if (Math.abs(canvas.width - newWidth) > 1 || Math.abs(canvas.height - newHeight) > 150) {
             canvas.width = newWidth;
             canvas.height = newHeight;
             return true;
