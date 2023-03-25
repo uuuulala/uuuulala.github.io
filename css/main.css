@@ -1,62 +1,8 @@
-html, body {
-    margin: 0;
-    width: 100%;
-    overscroll-behavior: none;
-    font-family: sans-serif;
-    color: #000;
-    line-height: 1.3;
-    font-size: 20px;
-}
-
 .banner .banner-content h2 {
     font-weight: 600;
     line-height: 1.7;
 }
 
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-h2 {
-    width: 100%;
-    margin: 2.5em 0 1em 0;
-    padding: 0;
-}
-
-.btn {
-    cursor: pointer;
-    position: relative;
-    padding: 2px 2px 2px 1px;
-    display: inline-flex;
-}
-
-
-
-.btn:before {
-    position: absolute;
-    content: "";
-    width: calc(100% + 7px);
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #F9F871;
-    z-index: -1;
-    opacity: 0;
-}
-.btn:after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 2px;
-    left: 0;
-    bottom: -1px;
-    background: #222;
-}
-.btn:hover:before {
-    opacity: 1;
-}
 
 .tip {
     pointer-events: none;
@@ -123,13 +69,11 @@ h2 {
     background-color: #4BC0C8;
 }
 
-.what-I-do, .who-I-am {
-    max-width: 800px;
-    margin: 0 auto;
+
+.page {
     padding-top: 30px;
 }
-
-.who-I-am {
+.who-I-am.page {
     margin-bottom: 130px;
 }
 
@@ -209,10 +153,10 @@ h2 {
 .what-I-do .animation.plane .animation-wrapper {
     background-color: rgba(110, 81, 161, .9);
 }
-.what-I-do .animation.plane,
-.what-I-do .animation.fire {
-    width: calc(50% - 5px);
-}
+/*.what-I-do .animation.plane,*/
+/*.what-I-do .animation.fire {*/
+/*    width: calc(50% - 5px);*/
+/*}*/
 .what-I-do .animation.rate .animation-wrapper {
     height: 220px;
 }

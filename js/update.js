@@ -64,7 +64,7 @@ window.addEventListener('resize', () => {
 });
 
 const heroAnimation = document.querySelector('.banner-back');
-initHeroAnimation(heroAnimation);
+initHeroAnimation(heroAnimation, true);
 
 window.addEventListener('touchstart', () => {
     whatIdo.classList.add('mobile');
