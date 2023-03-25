@@ -18,11 +18,23 @@
     padding-top: 20px;
 }
 
+.banner .homepage-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.banner .homepage-link:after {
+    height: 0;
+}
+
+
 h1 {
     margin: 0;
 }
 h2 {
-    margin: 1em 0 .3em 0;
+    margin: 1.5em 0 .3em 0;
     font-size: 1.2em;
 }
 .page {
@@ -31,9 +43,8 @@ h2 {
     flex-wrap: wrap;
     position: relative;
 }
-.homepage-link {
+.page .homepage-link {
     position: absolute;
-    font-size: .9em;
     bottom: -20px;
     right: 30px;
 }
@@ -62,7 +73,8 @@ h2 {
     margin-right: .3em;
 }
 .link-subtitle {
-    font-size: .7em;
+    font-size: .75em;
+    margin-top: -.3em;
     padding-bottom: 1em;
 }
 .link-container .btn ,
@@ -70,7 +82,7 @@ h2 {
     height: 100%;
 }
 .link-container span {
-    font-size: .8em;
+    font-size: 1em;
     padding-left: .3em;
 }
 .link-container .btn:after {
