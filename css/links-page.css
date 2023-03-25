@@ -8,7 +8,7 @@
 }
 .banner-content {
     position: relative;
-    height: 250px;
+    height: 150px;
     width: 95%;
     max-width: 800px;
     margin: 0 auto;
@@ -20,4 +20,59 @@
 
 h1 {
     margin: 0;
+}
+h2 {
+    margin: 1em 0 .3em 0;
+    font-size: 1.2em;
+}
+.page {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.homepage-link {
+    position: absolute;
+    font-size: .9em;
+    bottom: -20px;
+    right: 30px;
+}
+.col {
+    flex-basis: calc(50% - 10px);
+}
+.col:nth-child(1) {
+    padding-right: 20px;
+}
+@media (max-width: 800px) {
+    .page {
+        width: 95%;
+    }
+}
+@media (max-width: 600px) {
+    .col {
+        flex-basis: 95%;
+    }
+    .col {
+        padding: 0 10px;
+    }
+}
+.link-container {
+    height: 1.1em;
+    display: inline-block;
+    margin-right: .3em;
+}
+.link-subtitle {
+    font-size: .7em;
+    padding-bottom: 1em;
+}
+.link-container .btn ,
+.link-container img {
+    height: 100%;
+}
+.link-container span {
+    font-size: .8em;
+    padding-left: .3em;
+}
+.link-container .btn:after {
+    height: 0;
 }

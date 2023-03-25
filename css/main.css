@@ -1,9 +1,12 @@
+h2 {
+    width: 100%;
+    margin: 2.5em 0 1em 0;
+    padding: 0;
+}
 .banner .banner-content h2 {
     font-weight: 600;
     line-height: 1.7;
 }
-
-
 .tip {
     pointer-events: none;
     user-select: none;

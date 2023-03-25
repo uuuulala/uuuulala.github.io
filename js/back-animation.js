@@ -8,7 +8,7 @@ function initHeroAnimation(canvas, isFullScreen) {
         VELOCITY_DISSIPATION: 0.8,
         PRESSURE: 0.5,
         PRESSURE_ITERATIONS: 40,
-        SPLAT_RADIUS: isFullScreen ? .01 : (.01 * window.innerHeight / 150),
+        SPLAT_RADIUS: isFullScreen ? .01 : (.025 * window.innerHeight / 150),
     };
 
     let drawingColor = () => {
@@ -525,11 +525,11 @@ function initHeroAnimation(canvas, isFullScreen) {
     }
 
     function resizeCanvas() {
-        let width = window.innerWidth;
-        let height = isFullScreen ? window.innerHeight : 250;
-        if (Math.abs(canvas.width - width) > 150 || Math.abs(canvas.height - height) > 150 ) {
-            canvas.width = width;
-            canvas.height = height;
+        let newWidth = window.innerWidth;
+        let newHeight = isFullScreen ? window.innerHeight : 150;
+        if (Math.abs(canvas.width - newWidth) > 1 || Math.abs(canvas.height - newHeight) > 150) {
+            canvas.width = newWidth;
+            canvas.height = newHeight;
             return true;
         }
         return false;
