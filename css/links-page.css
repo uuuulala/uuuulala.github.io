@@ -38,14 +38,14 @@ h2 {
     font-size: 1.2em;
 }
 .page {
-    margin-bottom: 50px;
+    margin-bottom: 90px;
     display: flex;
     flex-wrap: wrap;
     position: relative;
 }
 .page .homepage-link {
     position: absolute;
-    bottom: -20px;
+    bottom: -40px;
     right: 30px;
 }
 .col {
