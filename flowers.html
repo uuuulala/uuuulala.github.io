@@ -215,8 +215,8 @@
     });
     window.addEventListener("touchmove", (e) => {
         pointer.moved = true;
-        const dx = 8 * (e.targetTouches[0].pageX / window.innerWidth - pointer.x);
-        const dy = 8 * (e.targetTouches[0].pageY / window.innerHeight - pointer.y);
+        const dx = 1 * (e.targetTouches[0].pageX / window.innerWidth - pointer.x);
+        const dy = 1 * (e.targetTouches[0].pageY / window.innerHeight - pointer.y);
         pointer.x = e.targetTouches[0].pageX / window.innerWidth;
         pointer.y = e.targetTouches[0].pageY / window.innerHeight;
         pointer.speed = Math.pow(dx, 2) + Math.pow(dy, 2);
