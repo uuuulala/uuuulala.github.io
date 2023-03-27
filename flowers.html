@@ -118,7 +118,7 @@
         // - noise power
         // - angle offset
 
-        vec3 flower_color = vec3(.6 + u_stop_randomizer[1], u_stop_randomizer[1] * .7, .2 + u_stop_randomizer[0] * .6);
+        vec3 flower_color = vec3(.6 + u_stop_randomizer[1], u_stop_randomizer[1] * .7, .8);
 
         vec3 flower_new = flower_color * flower_shape(cursor, 1., .96, 1., .15, 0.);
         vec3 flower_mask = 1. - vec3(flower_shape(cursor, 1., 1.02, 1., .15, 0.));
@@ -215,8 +215,8 @@
     });
     window.addEventListener("touchmove", (e) => {
         pointer.moved = true;
-        const dx = 1 * (e.targetTouches[0].pageX / window.innerWidth - pointer.x);
-        const dy = 1 * (e.targetTouches[0].pageY / window.innerHeight - pointer.y);
+        const dx = 5 * (e.targetTouches[0].pageX / window.innerWidth - pointer.x);
+        const dy = 5 * (e.targetTouches[0].pageY / window.innerHeight - pointer.y);
         pointer.x = e.targetTouches[0].pageX / window.innerWidth;
         pointer.y = e.targetTouches[0].pageY / window.innerHeight;
         pointer.speed = Math.pow(dx, 2) + Math.pow(dy, 2);
