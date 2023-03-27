@@ -118,7 +118,7 @@
         // - noise power
         // - angle offset
 
-        vec3 flower_color = vec3(.7 + u_stop_randomizer[1], .8 * u_stop_randomizer[1], .9 + u_stop_randomizer[0] * .6);
+        vec3 flower_color = vec3(.7 + u_stop_randomizer[1], .8 * u_stop_randomizer[1], 2.9 + u_stop_randomizer[0] * .6);
 
         vec3 flower_new = flower_color * flower_shape(cursor, 1., .96, 1., .15, 0.);
         vec3 flower_mask = 1. - vec3(flower_shape(cursor, 1., 1.02, 1., .15, 0.));
