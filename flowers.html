@@ -73,16 +73,16 @@
 
         float petals_thickness = .5;
         float petals_number = 5. + floor(u_stop_randomizer[0] * 4.);
-        float angle_animated_offset = .7 * (random_by_uv - .5) / (.2 + 20. * u_stop_time);
+        float angle_animated_offset = .7 * (random_by_uv - .5) / (.2 + 30. * u_stop_time);
         float flower_angle = atan(_point.y, _point.x) - angle_animated_offset;
         float flower_sectoral_shape = abs(sin(flower_angle * .5 * petals_number + _angle_offset)) + _tickniess * petals_thickness;
 
-        vec2 flower_size_range = vec2(5., 15.);
+        vec2 flower_size_range = vec2(4., 18.);
         float flower_radial_shape = length(_point) * (flower_size_range[0] + flower_size_range[1] * u_stop_randomizer[0]);
         float radius_noise = sin(flower_angle * 13. + 15. * random_by_uv);
         flower_radial_shape += _noise * radius_noise;
 
-        float flower_radius_grow = min(5000. * u_stop_time, 1.);
+        float flower_radius_grow = min(20000. * u_stop_time, 1.);
         flower_radius_grow = 1. / flower_radius_grow;
 
         float flower_shape = 1. - smoothstep(0., _size * flower_sectoral_shape, _outline * flower_radius_grow * flower_radial_shape);
@@ -118,7 +118,7 @@
         // - noise power
         // - angle offset
 
-        vec3 flower_color = vec3(.6 + u_stop_randomizer[1], u_stop_randomizer[1] * .7, .8);
+        vec3 flower_color = vec3(.7 + u_stop_randomizer[1], .8 * u_stop_randomizer[1], .9 + u_stop_randomizer[0] * .6);
 
         vec3 flower_new = flower_color * flower_shape(cursor, 1., .96, 1., .15, 0.);
         vec3 flower_mask = 1. - vec3(flower_shape(cursor, 1., 1.02, 1., .15, 0.));
@@ -126,7 +126,7 @@
 
         vec3 color = base * flower_mask + (flower_new + flower_mid + stem);
         color *= u_clean;
-        color = clamp(color, vec3(.0, .0, .1), vec3(1., 1., .4));
+        color = clamp(color, vec3(.0, .0, .15), vec3(1., 1., .4));
 
         gl_FragColor = vec4(color, 1.);
     }
@@ -156,7 +156,7 @@
         moved: false,
         speed: 0,
         vanishMode: false,
-        drawingAllowed: true
+        drawingAllowed: true,
     };
     let renderer, sceneShader, sceneBasic, renderTargets, camera;
     let basicMaterial, shaderMaterial;
@@ -188,18 +188,15 @@
             const dy = 12 * (e.pageY / window.innerHeight - pointer.y);
             pointer.x = e.pageX / window.innerWidth;
             pointer.y = e.pageY / window.innerHeight;
-            pointer.speed = Math.pow(dx, 2) + Math.pow(dy, 2);
+            pointer.speed = Math.min(2, Math.pow(dx, 2) + Math.pow(dy, 2));
         }
     });
-    window.addEventListener("mousedown", (e) => {
+    window.addEventListener("click", (e) => {
         pointer.x = e.pageX / window.innerWidth;
         pointer.y = e.pageY / window.innerHeight;
         pointer.drawingAllowed = !pointer.drawingAllowed;
-    });
-    window.addEventListener("mouseup", (e) => {
         if (pointer.drawingAllowed) {
             pointer.moved = true;
-            pointer.speed = 10;
         }
     });
     window.addEventListener("keyup", (e) => {
@@ -211,17 +208,13 @@
         }
     });
 
-    window.addEventListener("touchstart", (e) => {
-    });
     window.addEventListener("touchmove", (e) => {
         pointer.moved = true;
         const dx = 5 * (e.targetTouches[0].pageX / window.innerWidth - pointer.x);
         const dy = 5 * (e.targetTouches[0].pageY / window.innerHeight - pointer.y);
         pointer.x = e.targetTouches[0].pageX / window.innerWidth;
         pointer.y = e.targetTouches[0].pageY / window.innerHeight;
-        pointer.speed = Math.pow(dx, 2) + Math.pow(dy, 2);
-    });
-    window.addEventListener("touchend", () => {
+        pointer.speed = Math.min(2, Math.pow(dx, 2) + Math.pow(dy, 2));
     });
 
     function createPlane() {
@@ -249,7 +242,7 @@
     }
 
     function render() {
-        shaderMaterial.uniforms.u_clean.value = pointer.vanishMode ? .92 : 1;
+        shaderMaterial.uniforms.u_clean.value = pointer.vanishMode ? .93 : 1;
         shaderMaterial.uniforms.u_point.value = new THREE.Vector2(pointer.x, 1 - pointer.y);
         shaderMaterial.uniforms.u_texture.value = renderTargets[0].texture;
         shaderMaterial.uniforms.u_ratio.value = window.innerWidth / window.innerHeight;
@@ -257,7 +250,9 @@
             shaderMaterial.uniforms.u_moving.value = 1.;
             shaderMaterial.uniforms.u_stop_randomizer.value = new THREE.Vector2(Math.random(), Math.random());
             shaderMaterial.uniforms.u_stop_time.value = 0.;
-            pointer.moved = false;
+            // if (pointer.vanishMode) {
+                pointer.moved = false;
+            // }
         } else {
             shaderMaterial.uniforms.u_moving.value = 0.;
         }
