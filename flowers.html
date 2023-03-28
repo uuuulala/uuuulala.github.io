@@ -36,6 +36,13 @@
             left: 0;
             display: block;
         }
+
+        #screenshot {
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -44,6 +51,7 @@
     <canvas id="canvas"></canvas>
     <div class="title">[ space ] to enter / exit vanishing mode</div>
     <div class="title">click to start / stop drawing</div>
+    <button class="title" id="screenshot" type="button">Save...</button>
 </div>
 
 <script type="x-shader/x-fragment" id="fragmentShader">
@@ -121,8 +129,8 @@
         vec3 flower_color = vec3(.7 + u_stop_randomizer[1], .8 * u_stop_randomizer[1], 2.9 + u_stop_randomizer[0] * .6);
 
         vec3 flower_new = flower_color * flower_shape(cursor, 1., .96, 1., .15, 0.);
-        vec3 flower_mask = 1. - vec3(flower_shape(cursor, 1., 1.02, 1., .15, 0.));
-        vec3 flower_mid = vec3(-.4) * flower_shape(cursor, .15, 1., 2., .1, 1.9);
+        vec3 flower_mask = 1. - vec3(flower_shape(cursor, 1.05, 1.07, 1., .15, 0.));
+        vec3 flower_mid = vec3(-.6) * flower_shape(cursor, .15, 1., 2., .1, 1.9);
 
         vec3 color = base * flower_mask + (flower_new + flower_mid + stem);
         color *= u_clean;
@@ -134,14 +142,12 @@
 </script>
 
 <script type="x-shader/x-vertex" id="vertexShader">
-
     varying vec2 vUv;
 
     void main() {
         vUv = uv;
         gl_Position = vec4(position, 1.);
     }
-
 </script>
 
 <script type="module">
@@ -180,6 +186,11 @@
     window.addEventListener("resize", updateSize);
 
     render();
+
+
+    pointer.moved = true;
+    pointer.x = .7;
+    pointer.y = .5;
 
     window.addEventListener("mousemove", (e) => {
         if (pointer.drawingAllowed) {
@@ -250,9 +261,7 @@
             shaderMaterial.uniforms.u_moving.value = 1.;
             shaderMaterial.uniforms.u_stop_randomizer.value = new THREE.Vector2(Math.random(), Math.random());
             shaderMaterial.uniforms.u_stop_time.value = 0.;
-            // if (pointer.vanishMode) {
-                pointer.moved = false;
-            // }
+            pointer.moved = false;
         } else {
             shaderMaterial.uniforms.u_moving.value = 0.;
         }
@@ -278,6 +287,25 @@
         shaderMaterial.uniforms.u_ratio.value = window.innerWidth / window.innerHeight;
         renderer.setSize(window.innerWidth, window.innerHeight);
     }
+
+
+    const screenshotBtn = document.querySelector('#screenshot');
+    screenshotBtn.addEventListener('click', () => {
+        renderer.render(sceneBasic, camera);
+        canvasEl.toBlob((blob) => {
+            saveBlob(blob, "flowers-ksenia.png");
+        });
+        const saveBlob = (function () {
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.style.display = 'none';
+            return function saveData(blob, fileName) {
+                a.href = window.URL.createObjectURL(blob);
+                a.download = fileName;
+                a.click();
+            };
+        }());
+    });
 
 </script>
 
