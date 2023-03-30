@@ -126,7 +126,12 @@ h2 {
     margin-top: 2em;
 }
 
-
+.mobile-padding {
+    width: calc(100% - 20px);
+}
+.what-I-do .container {
+    padding: 0 10px;
+}
 /*  ----------------------------------- */
 /*  Animations layout  */
 /*  ----------------------------------- */
@@ -484,7 +489,6 @@ a img.icon {
 
 @media (max-width: 888px) {
     .mobile-padding {
-        width: calc(100% - 20px);
         margin: .5em auto;
     }
     h2.mobile-padding {
