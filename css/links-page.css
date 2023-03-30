@@ -21,11 +21,10 @@
 .banner .homepage-link {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 0;
     z-index: 2;
 }
-
-.banner .homepage-link:after {
+.homepage-link:after {
     height: 0;
 }
 
@@ -62,9 +61,6 @@ h2 {
 @media (max-width: 600px) {
     .col {
         flex-basis: 95%;
-    }
-    .col {
-        padding: 0 10px;
     }
 }
 .link-container {
