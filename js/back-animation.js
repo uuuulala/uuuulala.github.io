@@ -13,7 +13,7 @@ function initHeroAnimation(canvas, isFullScreen) {
 
     let drawingColor = () => {
         if (Math.random() > 0.1) {
-            return Math.random() > 0.2 ? hexToRGB('FEAC5E') : hexToRGB('FE005E');
+            return Math.random() > 0.5 ? hexToRGB('FEAC5E') : hexToRGB('FE005E');
         } else {
             return Math.random() > 0.2 ? hexToRGB('C779D0') : hexToRGB('C700D0');
         }
@@ -642,6 +642,14 @@ function initHeroAnimation(canvas, isFullScreen) {
 
     const container = document.querySelector('.banner');
 
+    container.addEventListener("click", function (e) {
+        pointers[0].dx = 5;
+        pointers[0].dy = 5;
+        pointers[0].x = e.pageX;
+        pointers[0].y = e.pageY;
+        pointers[0].moved = true;
+    });
+
     container.addEventListener("mousemove", function (e) {
         pointers[0].moved = pointers[0].down;
         pointers[0].dx = 5 * (e.pageX - pointers[0].x);
@@ -689,4 +697,12 @@ function initHeroAnimation(canvas, isFullScreen) {
             }
         }
     });
+
+    if (!isFullScreen) {
+        splatsLoop();
+        function splatsLoop() {
+            createSplats(1)
+            setTimeout(splatsLoop, 2000 + Math.random() * 3000);
+        }
+    }
 }
