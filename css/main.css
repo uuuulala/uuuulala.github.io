@@ -143,6 +143,11 @@ h2 {
     background-color: #f7f7f7;
 }
 
+.what-I-do .animation .animation-wrapper,
+.what-I-do .animation .gif-wrapper img.preview {
+    -webkit-box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
+}
 .what-I-do .animation .animation-wrapper canvas,
 .what-I-do .animation .animation-wrapper svg,
 .what-I-do .animation .gif-wrapper img.preview {
@@ -394,6 +399,9 @@ h2 {
 }
 .what-I-do .publication .publication-preview {
     width: 200px;
+    /*border: 1px solid black;*/
+    -webkit-box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
 }
 .what-I-do .publication .publication-links a {
     float: left;
