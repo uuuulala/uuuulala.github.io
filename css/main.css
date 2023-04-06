@@ -150,12 +150,14 @@ h2 {
 }
 
 .what-I-do .animation .animation-wrapper,
+.what-I-do .animation .gif-wrapper video.preview,
 .what-I-do .animation .gif-wrapper img.preview {
     -webkit-box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
     box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
 }
 .what-I-do .animation .animation-wrapper canvas,
 .what-I-do .animation .animation-wrapper svg,
+.what-I-do .animation .gif-wrapper video.preview,
 .what-I-do .animation .gif-wrapper img.preview {
     display: block;
     width: 100%;
@@ -216,7 +218,7 @@ h2 {
     position: relative;
 }
 .what-I-do .animation.tornado {
-    width: calc(40% - 5px);
+    width: calc(38% - 5px);
 }
 .what-I-do .animation.gooey {
     width: calc(60% - 5px);
@@ -225,7 +227,7 @@ h2 {
     width: calc(37% - 5px);
 }
 .what-I-do .animation.glass {
-    width: calc(63% - 5px);
+    width: calc(62% - 5px);
 }
 
 

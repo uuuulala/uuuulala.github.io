@@ -99,6 +99,8 @@ gifOverlays.forEach((overlay) => {
             window.open('https://codepen.io/ksenia-k/full/oNpwwrN','_blank');
         } else if (this.getAttribute('data-gif-name') === 'ghost') {
             window.open('https://codepen.io/ksenia-k/full/QWmjgWX','_blank');
+        } else if (this.getAttribute('data-gif-name') === 'flowers-cursor') {
+            window.open('https://codepen.io/ksenia-k/full/poOMpzx','_blank');
         }
     };
 });
