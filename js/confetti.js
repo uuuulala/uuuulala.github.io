@@ -17,13 +17,13 @@ function initConfetti() {
         // min and max size for each rectangle
         size: { x: [5, 20], y: [10, 18] },
         // power of explosion
-        initSpeed: 25,
+        initSpeed: 25 * 2,
         // defines how fast particles go down after blast-off
-        gravity: 0.65,
+        gravity: 0.65 * 2,
         // how wide is explosion
         drag: 0.08,
         // how slow particles are falling
-        terminalVelocity: 6,
+        terminalVelocity: 6 * 3,
         // how fast particles are rotating around themselves
         flipSpeed: 0.017,
     };
