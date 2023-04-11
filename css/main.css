@@ -130,9 +130,6 @@ h2 {
 .mobile-padding {
     width: calc(100% - 20px);
 }
-.what-I-do .container {
-    padding: 0 10px;
-}
 /*  ----------------------------------- */
 /*  Animations layout  */
 /*  ----------------------------------- */
@@ -401,7 +398,8 @@ h2 {
 /*  ----------------------------------- */
 
 .what-I-do .publication {
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 1em;
     display: flex;
     position: relative;
 }
@@ -491,6 +489,9 @@ a img.icon {
 }
 
 @media (max-width: 888px) {
+    .what-I-do .container {
+        padding: 0 10px;
+    }
     .mobile-padding {
         margin: .5em auto;
     }
