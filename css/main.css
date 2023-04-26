@@ -480,6 +480,10 @@ a img.icon {
         margin-top: 0;
         margin-bottom: 0;
     }
+
+    .what-I-do .publication .publication-description {
+        padding-top: 1em;
+    }
 }
 
 @media (min-width: 401px) {
