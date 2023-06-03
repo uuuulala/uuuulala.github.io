@@ -701,8 +701,8 @@ function initHeroAnimation(canvas, isFullScreen) {
     if (!isFullScreen) {
         splatsLoop();
         function splatsLoop() {
-            createSplats(1)
-            setTimeout(splatsLoop, 2000 + Math.random() * 3000);
+            createSplats(2)
+            setTimeout(splatsLoop, 5000 + Math.random() * 3000);
         }
     }
 }

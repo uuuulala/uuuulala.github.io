@@ -1,5 +1,7 @@
 .banner {
     position: relative;
+    /*margin-top: 30px;*/
+    margin-bottom: 3em;
 }
 .banner-back {
     position: absolute;
@@ -8,24 +10,29 @@
 }
 .banner-content {
     position: relative;
-    height: 150px;
+    height: 90px;
+    padding-top: 50px;
     width: 95%;
     max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 20px;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .banner .homepage-link {
-    position: absolute;
-    top: 10px;
-    left: 0;
+    /*position: absolute;*/
+    /*top: 10px;*/
+    /*left: 0;*/
     z-index: 2;
 }
 .homepage-link:after {
-    height: 0;
+    height: 2px;
+}
+.homepage-link .icon {
+    width: 1em;
+    padding-left: 0.5em;
 }
 
 
@@ -67,6 +74,7 @@ h2 {
     height: 1.1em;
     display: inline-block;
     margin-right: .3em;
+    min-width: 7em;
 }
 .link-subtitle {
     font-size: .9em;
