@@ -18,10 +18,10 @@
         }
         .animation-container {
             width: 900px;
+            opacity: 0; /* to show when images are traced*/
         }
         .animation-container canvas {
             width: 100%;
-            /*border: 1px solid brown;*/
         }
     </style>
 </head>
@@ -90,7 +90,7 @@
                 particlesNumber = Math.max(...data.map(arr => arr.length));
                 particlesData = new Array(particlesNumber).fill(0);
                 particlesData = particlesData.map((v, i) => {
-                    const rad = params.radius * (1 + (Math.random() - .5));
+                    const rad = params.radius * (.5 + Math.random());
                     return {
                         color: {
                             r: data[activeIdx][i].color.r,
@@ -111,6 +111,9 @@
                 gsap.ticker.add(t => {
                     drawDots(t);
                 });
+                gsap.set(containerEl, {
+                    opacity: 1
+                })
                 addListeners();
             }
             loadCnt++;
@@ -154,6 +157,7 @@
                 })
             } else {
                 gsap.to(v, {
+                    duration: .5,
                     r: 0,
                 })
                 gsap.to(v.xy, {
@@ -165,8 +169,6 @@
     });
 
     window.addEventListener("resize", () => {
-        // data = [];
-        // imageToParticles(imgEl);
     });
 
 
@@ -282,7 +284,7 @@
                     (d.rand[0] > .5 ? (-1) : 1) * Math.sin(params.floatingSpeed * d.speed * t + d.floatingTimeStart) * d.floatingDist,
                     (d.rand[1] > .5 ? (-1) : 1) * Math.cos(params.floatingSpeed * d.speed * t + d.floatingTimeStart) * d.floatingDist
                 ];
-                floatingOffset = floatingOffset.map(v => activeIdx === 2 ? v * .3 : v)
+                floatingOffset = floatingOffset.map(v => activeIdx === 2 ? v * .5 : v)
 
                 const mouseOffset = [
                     params.mouseMagnet * dX / sqDist,
@@ -295,11 +297,18 @@
                 d.xy.x += (d.target.x - d.xy.x) * params.mouseThreshold;
                 d.xy.y += (d.target.y - d.xy.y) * params.mouseThreshold;
 
+                let radius = d.r;
+                if (activeIdx === 1) {
+                    radius *= .8;
+                } else if (activeIdx === 3) {
+                    radius = (radius * .5) + 1;
+                }
+
                 ctx.beginPath();
                 ctx.arc(
                     d.xy.x,
                     d.xy.y,
-                    d.r * (activeIdx === 1 ? .8 : 1),
+                    radius,
                     0,
                     Math.PI * 2,
                     true
