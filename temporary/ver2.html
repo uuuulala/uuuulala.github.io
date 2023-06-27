@@ -46,19 +46,20 @@
 
     const pics = {
         "logo": "logo.png",
-        "handshake": "handshake.png"
+        "handshake": "handshake.png",
+        "chart": "chart.png"
     }
     
     const resolution = 2;
     const params = {
-        density: 3 * resolution,
-        radius: 6 * resolution,
+        density: 2.5 * resolution,
+        radius: 5 * resolution,
         mouseMagnet: 5000 * resolution,
-        mouseThreshold: .6,
-        padding: [ .1, .1 ],
-        floatingSpeed: 7,
+        mouseThreshold: .5,
+        padding: [.1, .1],
+        floatingSpeed: 10,
         floatingDist: 15,
-        sizeRandomness: .5,
+        sizeRandomness: 1,
 
         pic: pics.logo
     }
@@ -160,7 +161,7 @@
         const endWidth = Math.floor(canvasEl.width - params.radius);
         for (let i = start; i < endHeight; i += step) {
             for (let j = start; j < endWidth; j += step) {
-                const whiteLimit = 200;
+                const whiteLimit = 120;
                 const isBack = (
                     imageData.data[(j + i * canvasEl.width) * 4] > whiteLimit &&
                     imageData.data[(j + i * canvasEl.width) * 4 + 1] > whiteLimit &&
