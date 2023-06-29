@@ -95,7 +95,7 @@ gifOverlays.forEach((overlay) => {
             window.open('https://codepen.io/ksenia-k/full/YzYRPwb','_blank');
         } else if (this.getAttribute('data-gif-name') === 'disco') {
             window.open('https://codepen.io/ksenia-k/full/ZEjJxWQ','_blank');
-        } else if (this.getAttribute('data-gif-name') === 'fire') {
+        } else if (this.getAttribute('data-gif-name') === 'fire-scroll') {
             window.open('https://codepen.io/ksenia-k/full/wvEMqNR','_blank');
         } else if (this.getAttribute('data-gif-name') === 'ghost') {
             window.open('https://codepen.io/ksenia-k/full/QWmjgWX','_blank');

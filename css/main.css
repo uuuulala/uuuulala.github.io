@@ -166,15 +166,14 @@ h2 {
 .what-I-do .animation.plane .animation-wrapper {
     background-color: rgba(110, 81, 161, .9);
 }
-/*.what-I-do .animation.plane,*/
-/*.what-I-do .animation.fire {*/
-/*    width: calc(50% - 5px);*/
-/*}*/
-.what-I-do .animation.rate .animation-wrapper {
-    height: 220px;
+.what-I-do .animation.plane,
+.what-I-do .animation.fire {
+    width: calc(50% - 5px);
 }
-.what-I-do .animation.plane .animation-wrapper,
 .what-I-do .animation.fire .animation-wrapper {
+    height: 150px;
+}
+.what-I-do .animation.plane .animation-wrapper {
     height: 150px;
 }
 
@@ -215,7 +214,7 @@ h2 {
     position: relative;
 }
 .what-I-do .animation.tornado,
-.what-I-do .animation.fire {
+.what-I-do .animation.fire-scroll {
     width: calc(50% - 5px);
 }
 .what-I-do .animation.globe {
@@ -275,26 +274,81 @@ h2 {
 }
 
 
+.what-I-do .animation.rate * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Safari, iOS Safari */
+    -webkit-tap-highlight-color: transparent; /* Old versions of Chrome, Android browser, and some other browsers */
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0); /* Firefox */
+    -ms-tap-highlight-color: transparent; /* IE 10+ */
+    tap-highlight-color: transparent; /* Modern versions of Chrome, Android browser, and some other browsers */
+}
 
+.what-I-do .animation.rate .animation-wrapper {
+    align-items: center;
+    flex-direction: column;
+}
 
+.what-I-do .animation.rate svg {
+    flex: 230px 1 0;
+    pointer-events: none;
+    padding-top: 1em;
+}
 
-.what-I-do .animation.rate .card {
+.what-I-do .animation.rate .slider {
+    transform: translateY(-40%);
+    margin-bottom: -108px;
+}
+
+.what-I-do .animation.rate input,
+.what-I-do .animation.rate .ticks {
+    height: 100px;
     cursor: pointer;
+}
+
+.what-I-do .animation.rate input {
+    width: 100%;
+    opacity: 0;
+}
+
+.what-I-do .animation.rate input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.what-I-do .animation.rate input::-moz-range-thumb,
+.what-I-do .animation.rate input::-ms-thumb {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.what-I-do .animation.rate .ticks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-top: -45px;
+    line-height: 25px;
     user-select: none;
+    pointer-events: none;
+    transform: translateY(-50%);
 }
 
-.what-I-do .animation.rate > text, .what-I-do .animation.rate .card path {
-    fill: #95B0B6;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+.what-I-do .animation.rate .ticks span {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    transition: all .05s ease-in-out;
 }
 
-.what-I-do .animation.rate .card--selected path {
-    fill: #000;
+.what-I-do .animation.rate .ticks span.active {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 30px;
 }
+
+
 
 .what-I-do .animation.d3-groups .animation-wrapper {
     flex-direction: column;
@@ -462,6 +516,13 @@ a img.icon {
     }
 }
 @media (max-width: 350px) {
+
+    .what-I-do .animation.rate .ticks {
+        font-size: 15px;
+    }
+    .what-I-do .animation.rate .ticks span {
+        width: 15px;
+    }
     .what-I-do .publication {
         flex-direction: column;
     }
