@@ -214,11 +214,9 @@ h2 {
 .what-I-do .animation .gif-wrapper {
     position: relative;
 }
-.what-I-do .animation.tornado {
-    width: calc(38% - 5px);
-}
-.what-I-do .animation.gooey {
-    width: calc(60% - 5px);
+.what-I-do .animation.tornado,
+.what-I-do .animation.fire {
+    width: calc(50% - 5px);
 }
 .what-I-do .animation.globe {
     width: calc(37% - 5px);
