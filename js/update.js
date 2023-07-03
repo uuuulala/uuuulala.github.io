@@ -90,7 +90,7 @@ gifOverlays.forEach((overlay) => {
         if (this.getAttribute('data-gif-name') === 'tornado') {
             window.open('https://codepen.io/ksenia-k/full/yLvVzzd','_blank');
         } else if (this.getAttribute('data-gif-name') === 'globe') {
-            window.open('https://codepen.io/ksenia-k/full/QWadgoY','_blank');
+            window.open('https://codepen.io/ksenia-k/full/NWERpmb','_blank');
         } else if (this.getAttribute('data-gif-name') === 'glass') {
             window.open('https://codepen.io/ksenia-k/full/YzYRPwb','_blank');
         } else if (this.getAttribute('data-gif-name') === 'disco') {
