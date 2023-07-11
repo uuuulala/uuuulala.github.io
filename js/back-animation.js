@@ -648,7 +648,7 @@ function initHeroAnimation(canvas, isFullScreen) {
         pointers[0].x = e.pageX;
         pointers[0].y = e.pageY;
         pointers[0].moved = true;
-    });
+    }, {passive: true});
 
     container.addEventListener("mousemove", function (e) {
         pointers[0].moved = pointers[0].down;
@@ -657,7 +657,7 @@ function initHeroAnimation(canvas, isFullScreen) {
         pointers[0].x = e.pageX;
         pointers[0].y = e.pageY;
         pointers[0].moved = Math.abs(pointers[0].dx) > 0 || Math.abs(pointers[0].dy) > 0;
-    });
+    }, {passive: true});
 
     container.addEventListener("touchmove", function (e) {
         for (let n = e.targetTouches, r = 0; r < n.length; r++) {
@@ -668,7 +668,7 @@ function initHeroAnimation(canvas, isFullScreen) {
             t.x = n[r].pageX;
             t.y = n[r].pageY;
         }
-    }, false);
+    }, {passive: true});
 
     container.addEventListener("touchstart", function (e) {
         for (let n = e.targetTouches, r = 0; r < n.length; r++) {
@@ -677,7 +677,7 @@ function initHeroAnimation(canvas, isFullScreen) {
             pointers[r].x = n[r].pageX;
             pointers[r].y = n[r].pageY;
         }
-    });
+    }, {passive: true});
 
     container.addEventListener("touchend", function (e) {
         for (let n = e.changedTouches, r = 0; r < n.length; r++) {
@@ -685,7 +685,7 @@ function initHeroAnimation(canvas, isFullScreen) {
                 n[r].identifier === pointers[t].id && (pointers[t].down = false);
             }
         }
-    });
+    }, {passive: true});
 
     gsap.timeline({
         scrollTrigger: {
