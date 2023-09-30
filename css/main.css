@@ -144,6 +144,7 @@ h2 {
     position: relative;
     width: 100%;
     background-color: #f7f7f7;
+    overflow: hidden;
 }
 
 .what-I-do .animation .animation-wrapper,
@@ -175,6 +176,13 @@ h2 {
 }
 .what-I-do .animation.plane .animation-wrapper {
     height: 150px;
+}
+.what-I-do .animation.walking .animation-wrapper {
+    height: 150px;
+    justify-content: flex-start;
+}
+.what-I-do .animation.walking .animation-wrapper svg {
+    width: auto;
 }
 
 /*  ----------------------------------- */
@@ -401,7 +409,7 @@ h2 {
     opacity: 1;
 }
 
-.what-I-do .animation.confetti .tip {
+.what-I-do .animation .tip {
     position: absolute;
     top: 50%;
     left: 50%;

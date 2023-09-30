@@ -15,3 +15,8 @@ function elementIsInViewport(el) {
         (left + width) > window.pageXOffset
     );
 }
+
+
+window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+});
