@@ -205,6 +205,9 @@
 <!--            </div>-->
             <div class="animation curly-cursor">
                 <div class="animation-wrapper">
+                    <div class="tip">
+                        hover to draw
+                    </div>
                     <canvas id="curly-cursor"></canvas>
                 </div>
                 <a href="https://codepen.io/ksenia-k/pen/rNoBgbV" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
@@ -217,55 +220,6 @@
                     <canvas id="confetti"></canvas>
                 </div>
                 <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
-            </div>
-        </div>
-
-        <h2 class="d3-anchor mobile-padding">D3.js data visualizations</h2>
-        <div class="mobile-padding">
-            If some data is involved, D3.js is quite helpful. The examples below are SVG graphics, but I also use CSS, HTML5 Canvas, Three.js, WebGL, and other tools for data representations.
-        </div>
-        <div class="container">
-            <div class="animation d3-bars">
-                <div class="animation-wrapper">
-                    <svg></svg>
-                </div>
-                <a href="https://codepen.io/ksenia-k/pen/gZaOPP" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
-            </div>
-            <div class="animation d3-scatterplot">
-                <div class="animation-wrapper">
-                    <svg>
-                        <clipPath id="scatterplot-area-clip">
-                        </clipPath>
-                        <symbol id="plus" viewBox="0 0 18 18">
-                            <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                            <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                        </symbol>
-                        <symbol id="minus" viewBox="0 0 18 18" >
-                            <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000" />
-                        </symbol>
-                        <symbol id="reset" viewBox="0 0 18 18">
-                            <path stroke-width="0" fill="#000"  d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
-                        </symbol>
-                    </svg>
-                </div>
-                <a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
-            </div>
-            <div class="animation d3-groups">
-                <div class="animation-wrapper">
-                    <div>
-                        <div class="title">
-                            group #1
-                        </div>
-                        <div class="title">
-                            group #2
-                        </div>
-                    </div>
-                    <svg></svg>
-                    <div class="tip">
-                        click to switch layout
-                    </div>
-                </div>
-                <a href="https://codepen.io/ksenia-k/pen/BayjNQj" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
             </div>
         </div>
 
@@ -332,6 +286,55 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <h2 class="d3-anchor mobile-padding">D3.js data visualizations</h2>
+        <div class="mobile-padding">
+            If some data is involved, D3.js is quite helpful. The examples below are SVG graphics, but I also use CSS, HTML5 Canvas, Three.js, WebGL, and other tools for data representations.
+        </div>
+        <div class="container">
+            <div class="animation d3-bars">
+                <div class="animation-wrapper">
+                    <svg></svg>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/gZaOPP" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+            </div>
+            <div class="animation d3-scatterplot">
+                <div class="animation-wrapper">
+                    <svg>
+                        <clipPath id="scatterplot-area-clip">
+                        </clipPath>
+                        <symbol id="plus" viewBox="0 0 18 18">
+                            <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000"/>
+                            <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000"/>
+                        </symbol>
+                        <symbol id="minus" viewBox="0 0 18 18">
+                            <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000"/>
+                        </symbol>
+                        <symbol id="reset" viewBox="0 0 18 18">
+                            <path stroke-width="0" fill="#000" d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
+                        </symbol>
+                    </svg>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+            </div>
+            <div class="animation d3-groups">
+                <div class="animation-wrapper">
+                    <div>
+                        <div class="title">
+                            group #1
+                        </div>
+                        <div class="title">
+                            group #2
+                        </div>
+                    </div>
+                    <svg></svg>
+                    <div class="tip">
+                        click to switch layout
+                    </div>
+                </div>
+                <a href="https://codepen.io/ksenia-k/pen/BayjNQj" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
             </div>
         </div>
 
