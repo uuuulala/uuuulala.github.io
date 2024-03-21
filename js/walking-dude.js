@@ -1,4 +1,5 @@
 const tipText = document.querySelector(".walking .tip > div");
+const dudeWrapper = document.querySelector(".walking svg");
 const dude = document.querySelector(".dude");
 const head = dude.querySelector(".head");
 const legs = Array.from(dude.querySelectorAll(".leg"));
@@ -113,6 +114,12 @@ gsap.timeline({
         end: "100% 0%",
     }
 })
+    .fromTo(dudeWrapper, {
+        x: 0
+    }, {
+        x: 300,
+        ease: "none"
+    }, 0)
     .fromTo(tipText, {
         x: 100
     }, {
