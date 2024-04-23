@@ -98,7 +98,18 @@ h2 {
     margin-bottom: -2px;
 }
 
-.who-I-am img.photo {
+.who-I-am .photo-container {
+    /*width: 100%;*/
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.who-I-am .photo {
+    padding-left: 1em;
+    flex: 0 0 300px;
+}
+
+.who-I-am .photo img {
     width: 100%;
 }
 
@@ -233,6 +244,10 @@ h2 {
     width: calc(63% - 5px);
 }
 
+
+.resume {
+    padding-top: 3em;
+}
 
 .what-I-do .publication .publication-links a,
 .what-I-do .animation a,
@@ -551,9 +566,17 @@ a img.icon {
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 590px) {
+    .who-I-am .photo-container {
+        flex-direction: column;
+    }
+    .who-I-am .photo,
     .what-I-do .publication {
         flex: 0 0 100%;
+    }
+
+    .who-I-am .photo {
+        padding-left: 0;
     }
 }
 @media (max-width: 400px) {
