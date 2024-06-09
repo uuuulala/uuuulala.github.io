@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ST97HEWZJW"></script>
+    <script>
+        if (!(document.location.hostname.search("localhost") !== -1)) {
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'G-ST97HEWZJW');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name=”description” content="Hi, I'm Ksenia. I make visuals for web">
+
+    <meta property="og:title" content="Ksenia Kondrashova">
+    <meta property="og:description" content="Hi, I'm Ksenia. I make visuals for web">
+    <meta property="og:image" content="https://ksenia-k.com/img/ksenia-kondrashova-logo-big.png">
+    <meta property="og:url" content="http://ksenia-k.com">
+    <meta property="og:site_name" content="Ksenia Kondrashova">
+    <meta name="twitter:title" content="Ksenia Kondrashova">
+    <meta name="twitter:description" content="Hi, I'm Ksenia. I make visuals for web">
+    <meta name="twitter:image" content="https://ksenia-k.com/img/ksenia-kondrashova-logo-big.png">
+    <meta name="twitter:creator" content="@uuuuuulala">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="./favicon/favicon-96x96.png">
+
+    <title>Ksenia Kondrashova | Creative Front-End Developer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+<div class="banner">
+    <div class="banner-color"></div>
+    <canvas class="banner-back"></canvas>
+    <div class="banner-content">
+        <h2>
+            Hi, I'm
+            <div class="btn who-I-am-link">Ksenia</div>
+            .
+            <span>I make <div class="btn what-I-do-link">visuals&nbsp;and&nbsp;animations</div> for&nbsp;web.</span>
+        </h2>
+    </div>
+</div>
+
+<div class="what-I-do page">
+    <h2 class="svg-anchor mobile-padding">SVG / JS animations</h2>
+    <div class="mobile-padding">
+        Vector logos, icons and illustrations animated with JavaScript, most likely using <a class="btn" href="https://greensock.com/gsap/">GSAP</a> library.
+    </div>
+
+    <div class="container">
+        <div class="fire animation">
+            <div class="animation-wrapper">
+                <svg viewBox="0 -80 120 330">
+                    <defs>
+                        <linearGradient id="fire-gradient-basic" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop stop-color="#ffb200" offset="0.2"/>
+                            <stop stop-color="#dc0000" offset="1"/>
+                        </linearGradient>
+                        <linearGradient id="fire-gradient-red" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop stop-color="#ffb200" offset="0"/>
+                            <stop stop-color="#dc0000" offset="0.9"/>
+                        </linearGradient>
+                        <linearGradient id="fire-gradient-yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop stop-color="#ffb200" offset="0.3"/>
+                            <stop stop-color="#dc0000" offset="1"/>
+                        </linearGradient>
+                    </defs>
+                    <g stroke-width="0.5" stroke-opacity="0.5">
+                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M13 90c-8,-10 -6,-14 -5,-21 3,-3 0,-7 -2,-19 8,11 18,12 7,40l0 0z"></path>
+                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M36 45c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
+                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M63 48c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
+                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M83 80c-8,-10 -6,-14 -5,-21 3,-3 0,-7 -2,-19 8,11 18,12 7,40l0 0z"></path>
+                        <path class="spark" fill="#ffd700" stroke="#ff0" d="M94 126c8,-10 6,-14 5,-21 -3,-3 0,-7 2,-19 -8,11 -18,12 -7,40l0 0z"></path>
+                        <path class="flame" fill="url(#fire-gradient-basic)" stroke="#ff0" d="M46 50c1,13 -15,26 -13,44 0,11 -4,-17 -2,-26 -1,-8 -3,-16 -9,-21 8,42 -28,33 -5,88 -4,-2 -8,-4 -12,-7 4,13 9,21 15,28 9,9 21,13 39,16 13,4 28,2 38,-6 10,-7 15,-19 12,-34 -3,6 -7,10 -13,12 3,-17 -14,-25 -7,-42 10,-20 3,-45 0,-32 -4,12 -11,21 -20,29 22,-70 -10,-53 -11,-88 -9,12 -14,23 -12,39z"></path>
+                        <path class="flame" fill="url(#fire-gradient-yellow)" stroke="#ff0" d="M51 168c-55,-58 30,-62 -11,-121 11,39 -13,64 -21,76 -5,-15 -1,-21 5,-39 -38,42 -9,63 27,84l0 0z"></path>
+                        <path class="flame" fill="url(#fire-gradient-yellow)" stroke-width="0.5" stroke="#ff0" d="M55 168c-1,-14 -3,-25 15,-38 31,-22 16,-34 -3,-57 5,22 -4,40 -12,52 -5,8 -23,23 0,43z"></path>
+                        <path class="flame" fill="url(#fire-gradient-red)" stroke="#ff0" d="M63 172c9,-5 11,-20 12,-37 2,-17 7,-33 34,-36 -11,9 -20,20 -16,41 -1,31 -24,29 -30,32l0 0z"></path>
+                    </g>
+                </svg>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/moYyMw" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+        <div class="plane animation">
+            <div class="animation-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="850 200 1000 800">
+                    <g fill="none" stroke="#674C99" stroke-width="15" stroke-linecap="round">
+                        <line class="line" stroke-dashoffset="5208.54" stroke-dasharray="0 500 150 1150 200 604.27" x1="2723" y1="-83" x2="816.3" y2="1690.9"/>
+                        <line class="line" stroke-dashoffset="5372.94" stroke-dasharray="300 1000 200 1186.4" x1="2448.3" y1="-94.4" x2="408.9" y2="1654.3"/>
+                        <line class="line" stroke-dashoffset="5628.66" stroke-dasharray="200 1214.33 300 1100" x1="2187.4" y1="-87.6" x2="-38.7" y2="1634.3"/>
+                        <line class="line" stroke-dashoffset="5843.54" stroke-dasharray="10 490 100 1321.77 400 600" x1="1978.6" y1="-87.8" x2="-379.6" y2="1637.2"/>
+                    </g>
+                    <path class="shadow" fill="#674C99" d="M1528,665l-221.8,141c-2,1-2,5,0,7l120,60c2,1,4.6,0,5-1l101-201.2C1536.1,667,1531.7,663.1,1528,665z"/>
+                    <g class="plane-body">
+                        <path fill="#56C2FF" d="M1131,516.3l297-38c3,0,5.6,4,2,6l-133,97c0,0-2,0.9-3,0l-163-58C1127,522,1127,516,1131,516.3z"/>
+                        <path fill="#6B6BD9" d="M1689,302l-349,423c-2,2.9-7,1-8-1l-40-138c0-1,0-3,1-5l390-284C1687,291,1692,297,1689,302z"/>
+                        <path fill="#9A9AE3" d="M1336,603.7l-2,119c0,2,3,4,5,1l349-423c2-2-1-6.7-4-4l-347,303C1336.6,602,1336,602,1336,603.7z"/>
+                        <path fill="#8FECFF" d="M1132,514l564-234c2,0,3,2,1,3l-266,195.8c0,0-0.6,0,0,0l-297,38C1130,518,1130,515,1132,514z"/>
+                        <path fill="#CDB3FF" d="M1705,279l-241,211.9c-1,0-1,2-0.7,3l116,239c1,2,4,2,5,0l124-451C1710,279,1707,277.8,1705,279z"/>
+                        <path fill="#AD81FF" d="M1341,597l120-104c1-1,3,0,4,0l115.8,238c1,2-1,4-3,3l-236-133c-4.8,2-4.8,0-3.8-2L1341,597z"/>
+                    </g>
+                </svg>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/eroaGg" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+        <div class="animation rate">
+            <div class="animation-wrapper">
+                <svg viewBox="0 0 458 293">
+                    <path fill="#4BC0C8" d="M276.4,242.9c35.8-5.5,62.9-15.8,43-102.3C313,112.9,304.1,56.7,260,25.7C225.2,1.2,167.9,9.9,129.6,48.4c-39.2,39.3-63.5,139.2-17.7,195.5C143.5,282.6,206.8,253.7,276.4,242.9z"/>
+                    <g>
+                        <path class="eye--left" d="M174.6,48.4c5.3.6,9,8.1,8.2,16.8S177,80.6,171.7,80s-9-8.1-8.2-16.8S169.3,47.9,174.6,48.4Z"/>
+                        <path class="eye--right" d="M249,74.9c-5,.2-9.3-6.2-9.6-14s3.5-14.4,8.5-14.5,9.3,6.2,9.6,14S254,74.8,249,74.9Z"/>
+                        <path class="mouth" d="M224.5,96.7c11.1,7,18.9,16.9,15,27.4s-16.3,11.1-29.4,10.6c-16.7-.7-18.9-16.9-15-27.4S210.8,88.1,224.5,96.7Z"/>
+                    </g>
+                    <g fill="none" stroke="black" stroke-width="7" stroke-linecap="round">
+                        <path class="hand--left" d="M119.4,191.9c9.8-19.9,34.3-57.2,26.7-77.5 M165.2,122c-19.1,17.8-26.7,7.6-35.6,6.4"/>
+                        <path class="hand--right" d="M332,199.8c-2.8-24-60.4-89.3-63.7-110.8 M292.9,95.5c-12.4,20-24,13.7-33,15.1"/>
+                    </g>
+                </svg>
+                <div class="slider">
+                    <input type="range" min="0" max="9" value="2" step="1">
+                    <div class="ticks">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                    </div>
+                </div>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/JjjyBoL" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+
+        <div class="animation walking">
+            <div class="animation-wrapper">
+                <svg viewBox="0 -160 315 500">
+                    <g class="dude" stroke="black" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <g class="leg">
+                            <path class="leg-bottom" d="M182,317l-10.4-2.8c-2.7-0.7-4.5-3.2-4.4-6c1.7-13,3-27,3.7-42.1c0.8-16.5,0.7-32,0.1-46.1"/>
+                            <path d="M171,220l6-60"/>
+                        </g>
+                        <g class="leg">
+                            <path class="leg-bottom" d="M182,317l-10.2-2.7c-2.8-0.8-4.7-3.4-4.6-6.3c-0.8-13.9-1-29.2-0.2-45.8c0.7-15.2,2.1-29.4,4-42.2"/>
+                            <path d="M171,222c0.3-10,4.3-42,5.3-48"/>
+                        </g>
+
+                        <g class="arm">
+                            <path d="M175,75c-0.6,8.7-0.6,18.9,0.8,30.1c0.6,4.6,1.3,8.9,2.2,12.9"/>
+                            <path class="arm-bottom" d="M186,175c-0.2-3.1-0.4-6.2-0.7-9.3c-1.5-16.9-4.1-32.9-7.3-47.7"/>
+                        </g>
+                        <g class="arm">
+                            <path d="M178.8,82.2c-1.9,13.1-1.8,25.2-0.8,35.8"/>
+                            <path class="arm-bottom" d="M186,175c-2.4-7.6-4.7-16.8-6.3-27.2c-1.6-11.3-2-21.3-1.7-29.8"/>
+                        </g>
+                        <path class="head" d="M195,14.8c-10.8-5.7-23.9,1.3-28.2,12.4c-4.9,13,6.3,28.4,17.8,29.1c13.2,0.8,22.2-16.1,19.5-26.7c-1.6-6.5-5.2-7.1-5.2-7.1"/>
+                    </g>
+                </svg>
+                <div class="tip">
+                    <div>on-scroll animations yaaah</div>
+                </div>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/wvQeOVg" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+    </div>
+
+    <h2 class="mobile-padding">Single file SVG animations</h2>
+    <div class="mobile-padding">
+        Some animations can be done as a single .svg file - without any external styles or JS dependencies. The animations below are only 2kb and 1kb size.
+    </div>
+    <div class="container">
+        <div class="animation wavy-back">
+            <div class="animation-wrapper">
+                <img src="./img/wave.svg">
+            </div>
+            <a href="./img/wave.svg" download="wave-animation---ksenia-k">download .svg file (2kb)<img class="icon" src="./img/icons/save.svg"></a>
+        </div>
+        <div class="animation heart">
+            <div class="animation-wrapper">
+                <img src="./img/heart.svg">
+            </div>
+            <a href="./img/heart.svg" download="heart-animation---ksenia-k">download .svg file (1kb)<img class="icon" src="./img/icons/save.svg"></a>
+        </div>
+    </div>
+
+    <h2 class="canvas-anchor mobile-padding">HTML5 Canvas</h2>
+    <div class="mobile-padding">
+        Same as with SVG, I do some 2D and pseudo-3D visuals on &lt;canvas&gt; without any special JS libs. Just vanilla JS, light and simple.
+    </div>
+    <div class="container">
+        <!--            <div class="animation bubbles-repel">-->
+        <!--                <div class="animation-wrapper">-->
+        <!--                    <canvas id="bubbles-repel"></canvas>-->
+        <!--                </div>-->
+        <!--                <a href="https://codepen.io/ksenia-k/pen/jOprKwY" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>-->
+        <!--            </div>-->
+        <div class="animation curly-cursor">
+            <div class="animation-wrapper">
+                <div class="tip">
+                    hover to draw
+                </div>
+                <canvas id="curly-cursor"></canvas>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/rNoBgbV" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+        <div class="animation confetti">
+            <div class="animation-wrapper">
+                <div class="tip">
+                    click for confetti
+                </div>
+                <canvas id="confetti"></canvas>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/YzqzdxE" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+    </div>
+
+    <h2 class="webgl-anchor mobile-padding">Three.js and WebGL</h2>
+    <div class="mobile-padding">
+        I love WebGL and particularly interested in collaborations related to Three.js / WebGL — pretty much anything from 3D modeling to writing custom GLSL shaders.
+    </div>
+
+    <div class="container">
+        <div class="animation flowers-cursor">
+            <div class="gif-wrapper">
+                <video class="preview" autoplay loop muted playsinline src="./img/demos-preview/wide-flowers.mp4"></video>
+                <div class="gif-overlay" data-gif-name="flowers-cursor">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/full/poOMpzx" target="_blank">here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animation glass">
+            <div class="gif-wrapper">
+                <video class="preview" autoplay loop muted playsinline src="./img/demos-preview/glass_748.mp4"></video>
+                <div class="gif-overlay" data-gif-name="glass">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation globe">
+            <div class="gif-wrapper">
+                <video class="preview" autoplay loop muted playsinline src="./img/demos-preview/globe_500_cropped.mp4"></video>
+                <div class="gif-overlay" data-gif-name="globe">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/full/NWERpmb" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation ghost">
+            <div class="gif-wrapper">
+                <img class="preview" src="./img/demos-preview/ghost.gif">
+                <div class="gif-overlay" data-gif-name="ghost">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/full/QWmjgWX" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation fire">
+            <div class="gif-wrapper">
+                <video class="preview" autoplay loop muted playsinline src="./img/demos-preview/fire_400px.mp4"></video>
+                <div class="gif-overlay" data-gif-name="fire">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/full/wvEMqNR" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation tornado">
+            <div class="gif-wrapper">
+                <video class="preview" autoplay loop muted playsinline src="./img/demos-preview/tornado_400px.mp4"></video>
+                <div class="gif-overlay" data-gif-name="tornado">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/pen/yLvVzzd" target="_blank">here</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation disco">
+            <div class="gif-wrapper">
+                <img class="preview" src="./img/demos-preview/discoballs.gif">
+                <div class="gif-overlay" data-gif-name="disco">
+                    <div>This is just a preview. See the live demo <a href="https://codepen.io/ksenia-k/pen/ZEjJxWQ" target="_blank">here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="d3-anchor mobile-padding">D3.js data visualizations</h2>
+    <div class="mobile-padding">
+        If some data is involved, D3.js is quite helpful. The examples below are SVG graphics, but I also use CSS, HTML5 Canvas, Three.js, WebGL, and other tools for data representations.
+    </div>
+    <div class="container">
+        <div class="animation d3-bars">
+            <div class="animation-wrapper">
+                <svg></svg>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/gZaOPP" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+        <div class="animation d3-scatterplot">
+            <div class="animation-wrapper">
+                <svg>
+                    <clipPath id="scatterplot-area-clip">
+                    </clipPath>
+                    <symbol id="plus" viewBox="0 0 18 18">
+                        <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000"/>
+                        <path d="M9,3 v 12" stroke-width="1.2" stroke-linecap="round" stroke="#000"/>
+                    </symbol>
+                    <symbol id="minus" viewBox="0 0 18 18">
+                        <path d="M3,9 h 12" stroke-width="1.2" stroke-linecap="round" stroke="#000"/>
+                    </symbol>
+                    <symbol id="reset" viewBox="0 0 18 18">
+                        <path stroke-width="0" fill="#000" d="M9 13.5c-2.49 0-4.5-2.01-4.5-4.5S6.51 4.5 9 4.5c1.24 0 2.36.52 3.17 1.33L10 8h5V3l-1.76 1.76C12.15 3.68 10.66 3 9 3 5.69 3 3.01 5.69 3.01 9S5.69 15 9 15c2.97 0 5.43-2.16 5.9-5h-1.52c-.46 2-2.24 3.5-4.38 3.5z"/>
+                    </symbol>
+                </svg>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/LYERZmo" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+        <div class="animation d3-groups">
+            <div class="animation-wrapper">
+                <div>
+                    <div class="title">
+                        group #1
+                    </div>
+                    <div class="title">
+                        group #2
+                    </div>
+                </div>
+                <svg></svg>
+                <div class="tip">
+                    click to switch layout
+                </div>
+            </div>
+            <a href="https://codepen.io/ksenia-k/pen/BayjNQj" target="_blank">open codepen<img class="icon" src="./img/icons/link.svg"></a>
+        </div>
+    </div>
+
+    <h2 class="publications-anchor mobile-padding">Publications</h2>
+    <div class="publications-container">
+        <div class="publication">
+            <a href="https://dev.to/uuuuuulala/coding-an-interactive-and-damn-satisfying-cursor-7-simple-steps-2kb-of-code-1c8b" target="_blank">
+                <video class="publication-preview" autoplay loop muted playsinline src="./img/demos-preview/curve-small-preview.mp4"></video>
+            </a>
+            <div class="publication-description">
+                <div>
+                    Coding an interactive (and damn satisfying) cursor: 7 simple steps + 2kb of code
+                </div>
+                <div class="publication-links">
+                    <a href="https://dev.to/uuuuuulala/coding-an-interactive-and-damn-satisfying-cursor-7-simple-steps-2kb-of-code-1c8b" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://codepen.io/ksenia-k/full/rNoBgbV" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="publication">
+            <a href="https://dev.to/uuuuuulala/gradient-along-svg-path-with-gsap-kl4/" target="_blank">
+                <img class="publication-preview" src="./img/demos-preview/gradient-path-prev.png">
+            </a>
+            <div class="publication-description">
+                <div>
+                    Solving the SVG gradient-along-path issue using GSAP
+                </div>
+                <div class="publication-links">
+                    <a href="https://dev.to/uuuuuulala/gradient-along-svg-path-with-gsap-kl4" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://codepen.io/ksenia-k/pen/mdzYKmm" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="publication">
+            <a href="https://dev.to/uuuuuulala/making-background-blob-animation-in-just-15kb-step-by-step-guide-2482" target="_blank">
+                <video class="publication-preview" autoplay loop muted playsinline src="./img/demos-preview/blobs-small-preview.mp4"></video>
+            </a>
+            <div class="publication-description">
+                <div>
+                    Making a background blob animation with just 1.5KB: Step-by-step guide
+                </div>
+                <div class="publication-links">
+                    <a href="https://dev.to/uuuuuulala/making-background-blob-animation-in-just-15kb-step-by-step-guide-2482" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://codepen.io/ksenia-k/pen/jXbWaJ" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="publication">
+            <a href="https://tympanus.net/codrops/2023/03/28/turning-3d-models-to-voxel-art-with-three-js//" target="_blank">
+                <img class="publication-preview" src="./img/demos-preview/voxels-prev.png">
+            </a>
+            <div class="publication-description">
+                <div>
+                    Turning glTF models into animated voxel art with Three.js
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2023/03/28/turning-3d-models-to-voxel-art-with-three-js/" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://tympanus.net/Tutorials/Voxelizer/" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="publication">
+            <a href="https://tympanus.net/codrops/2023/01/25/crafting-a-dice-roller-with-three-js-and-cannon-es/" target="_blank">
+                <img class="publication-preview" src="./img/demos-preview/dice-prev.gif">
+            </a>
+            <div class="publication-description">
+                <div>
+                    Creating an interactive 3D dice roller with Three.js and cannon-es
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2023/01/25/crafting-a-dice-roller-with-three-js-and-cannon-es/" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://codepen.io/ksenia-k/full/QWZVvxm" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="publication">
+            <a href="https://tympanus.net/codrops/2022/11/08/3d-typing-effects-with-three-js/" target="_blank">
+                <video class="publication-preview" autoplay loop muted playsinline src="./img/demos-preview/flowers-typer.mp4"></video>
+            </a>
+            <div class="publication-description">
+                <div>
+                    Exploring typing effects with Three.js and WebGL
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2022/11/08/3d-typing-effects-with-three-js/" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>.
+                    <a href="https://codepen.io/ksenia-k/full/WNyxXpO" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="publication">
+            <a href="https://tympanus.net/codrops/2022/12/13/how-to-code-an-on-scroll-folding-3d-cardboard-box-animation-with-three-js-and-gsap/" target="_blank">
+                <img class="publication-preview" src="./img/demos-preview/carton-box.gif">
+            </a>
+            <div class="publication-description">
+                <div>
+                    Creating a 3D packaging box that folds and unfolds on scroll using Three.js and GSAP
+                </div>
+                <div class="publication-links">
+                    <a href="https://tympanus.net/codrops/2022/12/13/how-to-code-an-on-scroll-folding-3d-cardboard-box-animation-with-three-js-and-gsap" target="_blank">article<img class="icon" src="./img/icons/link.svg"></a>
+                    <a href="https://codepen.io/ksenia-k/full/dyjWPdp" target="_blank">live demo<img class="icon" src="./img/icons/link.svg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="who-I-am page">
+    <h2 class="mobile-padding">Who I am</h2>
+
+    <div class="photo-container mobile-padding">
+        <div>
+            <div class="">
+                My name is Ksenia Kondrashova.
+                I'm an independent contractor and front-end developer focused on motion design, animations, and visualizations.
+                Creative Front-End Developer if you wish :)
+            </div>
+            <div class="">
+                </br>
+                I’m experienced with both coding and design tools. I can assist with
+                <ul>
+                    <li>3D web experiences</li>
+                    <li>2D animations</li>
+                    <li>Interactive maps & infographics</li>
+                    <li>Data visualizations</li>
+                    <li>Browser games</li>
+                </ul>
+            </div>
+        </div>
+        <div class="photo">
+            <img class="mobile-padding" src="img/ksenia-kondrashova.jpeg">
+        </div>
+    </div>
+
+    <div class="mobile-padding">
+        I have an MA degree in embedded electronics (I still love hardware!) but turned to web
+        development a few years after graduation. Since then, I have worked on various projects for clients worldwide.
+    </div>
+    </br>
+    <div class="mobile-padding">
+        Check out my <a class="btn" href="https://www.upwork.com/freelancers/~01d7272896b74a4413" target="_blank">Upwork&nbsp;profile</a> to see reviews from 200+ of my clients.
+        Follow me on <a class="btn" href="https://x.com/uuuuuulala" target="_blank">Twitter (X)</a>, <a class="btn" href="https://codepen.io/ksenia-k/" target="_blank">CodePen</a> and <a class="btn" href="https://www.linkedin.com/in/ksenia-kondrashova/" target="_blank">linkedIn</a> to see the last open-source demos.
+    </div>
+
+    <div class="resume mobile-padding">
+        <a href="./docs/Kondrashova-Ksenia--CV.pdf" download="Kondrashova-Ksenia--CV">download resume as PDF<img class="icon" src="./img/icons/save.svg"></a>
+    </div>
+</div>
+
+<div class="contacts">
+    <div class="social-container">
+        <a class="btn" href="https://www.linkedin.com/in/ksenia-kondrashova/">
+            <img class="linkedin" src="./img/icons/linkedin.svg">
+        </a>
+    </div>
+    <div class="social-container">
+        <a class="btn" href="https://www.upwork.com/o/profiles/users/_~01d7272896b74a4413/">
+            <img class="upwork" src="./img/icons/upwork.svg">
+        </a>
+    </div>
+    <div class="social-container">
+        <a class="btn" href="https://codepen.io/ksenia-k/">
+            <img class="codepen" src="./img/icons/codepen.svg">
+        </a>
+    </div>
+    <div class="social-container">
+        <a class="btn" href="https://x.com/uuuuuulala">
+            <img class="twitter" src="./img/icons/twitter.svg">
+        </a>
+    </div>
+    <div class="social-container">
+        <a class="btn" href="https://www.instagram.com/ksenia_showcase/">
+            <img class="instagram" src="./img/icons/instagram.svg">
+        </a>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+
+<script src="js/gsap/CustomEase.min.js"></script>
+<script src="js/gsap/EasePack.min.js"></script>
+<script src="js/gsap/MotionPathPlugin.min.js"></script>
+<script src="js/gsap/MorphSVGPlugin.min.js"></script>
+<script src="js/gsap/ScrollToPlugin.min.js"></script>
+<script src="js/gsap/ScrollTrigger.min.js"></script>
+<script src="js/gsap/Draggable.min.js"></script>
+<script src="js/gsap/InertiaPlugin.min.js"></script>
+<script src="js/gsap/gsap.min.js"></script>
+<script src="js/back-animation.js"></script>
+<script src="js/common.js"></script>
+
+<script src="js/fire.js"></script>
+<script src="js/plane.js"></script>
+<script src="js/walking-dude.js"></script>
+<script src="js/rate.js"></script>
+<script src="js/d3-groups.js"></script>
+<script src="js/d3-bars.js"></script>
+<script src="js/d3-scatterplot.js"></script>
+<script src="js/curly-cursor.js"></script>
+<!--    <script src="js/stars.js"></script>-->
+<!--    <script src="js/bubbles-repel.js"></script>-->
+<script src="js/confetti.js"></script>
+
+<script src="js/update.js"></script>
+
+</body>
+</html>

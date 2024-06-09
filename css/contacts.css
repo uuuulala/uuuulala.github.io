@@ -1,0 +1,25 @@
+.contacts {
+    position: fixed;
+    bottom: 40px;
+    right: 16px;
+}
+
+.contacts .btn {
+    width: 2em;
+    height: 2em;
+}
+
+.contacts .social-container img {
+    height: 80%;
+    width: auto;
+}
+
+.contacts .social-container .btn:after {
+    height: 0;
+}
+
+@media (max-width: 915px) {
+    .contacts {
+        display: none;
+    }
+}

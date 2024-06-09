@@ -1,4 +1,4 @@
-function initHeroAnimation(canvas, isFullScreen) {
+function initHeroAnimation(canvas) {
     resizeCanvas();
 
     let config = {
@@ -8,17 +8,17 @@ function initHeroAnimation(canvas, isFullScreen) {
         VELOCITY_DISSIPATION: 0.8,
         PRESSURE: 0.5,
         PRESSURE_ITERATIONS: 40,
-        SPLAT_RADIUS: isFullScreen ? .01 : (.025 * window.innerHeight / 150),
+        SPLAT_RADIUS: .01
     };
 
     let drawingColor = () => {
         if (Math.random() > 0.1) {
-            return Math.random() > 0.5 ? hexToRGB('FEAC5E') : hexToRGB('FE005E');
+            return Math.random() > 0.5 ? hexToRGB("FEAC5E") : hexToRGB("FE005E");
         } else {
-            return Math.random() > 0.2 ? hexToRGB('C779D0') : hexToRGB('C700D0');
+            return Math.random() > 0.2 ? hexToRGB("C779D0") : hexToRGB("C700D0");
         }
     };
-    const backgroundColor = hexToRGB('4BC0C8');
+    const backgroundColor = hexToRGB("4BC0C8");
 
 
     function hexToRGB(hex) {
@@ -44,12 +44,12 @@ function initHeroAnimation(canvas, isFullScreen) {
     function getWebGLContext(canvas) {
         const params = {alpha: true, depth: false, stencil: false, antialias: false, preserveDrawingBuffer: false};
 
-        let gl = canvas.getContext('webgl', params);
+        let gl = canvas.getContext("webgl", params);
 
         let halfFloat;
         let supportLinearFiltering;
-        halfFloat = gl.getExtension('OES_texture_half_float');
-        supportLinearFiltering = gl.getExtension('OES_texture_half_float_linear');
+        halfFloat = gl.getExtension("OES_texture_half_float");
+        supportLinearFiltering = gl.getExtension("OES_texture_half_float_linear");
 
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
@@ -526,7 +526,7 @@ function initHeroAnimation(canvas, isFullScreen) {
 
     function resizeCanvas() {
         let newWidth = window.innerWidth;
-        let newHeight = isFullScreen ? window.innerHeight : 150;
+        let newHeight = window.innerHeight;
         if (Math.abs(canvas.width - newWidth) > 1 || Math.abs(canvas.height - newHeight) > 150) {
             canvas.width = newWidth;
             canvas.height = newHeight;
@@ -621,8 +621,8 @@ function initHeroAnimation(canvas, isFullScreen) {
         dye.swap();
     }
 
-    gsap.set('.banner-color', {
-        display: 'none'
+    gsap.set(".banner-color", {
+        display: "none"
     });
     createSplats(6);
 
@@ -640,7 +640,7 @@ function initHeroAnimation(canvas, isFullScreen) {
     }
 
 
-    const container = document.querySelector('.banner');
+    const container = document.querySelector(".banner");
 
     container.addEventListener("click", function (e) {
         pointers[0].dx = 5;
@@ -690,19 +690,12 @@ function initHeroAnimation(canvas, isFullScreen) {
     gsap.timeline({
         scrollTrigger: {
             trigger: canvas,
-            start: '0% 0%',
-            end: '100% 0%',
+            start: "0% 0%",
+            end: "100% 0%",
             onEnterBack: () => {
                 createSplats(3);
             }
         }
     });
 
-    if (!isFullScreen) {
-        splatsLoop();
-        function splatsLoop() {
-            createSplats(2)
-            setTimeout(splatsLoop, 5000 + Math.random() * 3000);
-        }
-    }
 }

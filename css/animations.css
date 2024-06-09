@@ -1,0 +1,161 @@
+.page {
+    padding-top: 30px;
+}
+
+.animation a {
+    padding: 2px 8px;
+    background-color: #4BC0C8;
+}
+
+.animations-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.animation {
+    position: relative;
+    display: flex;
+    flex: 48% 0 1;
+    padding: 1%;
+    aspect-ratio: 1 / 1;
+}
+.animation.animation-full-width {
+    flex: 100% 0 1;
+}
+
+
+.animation * {
+    max-width: 100%;
+}
+
+.animation a.tutorial-corner-link,
+.animation a.codepen-corner-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(100%);
+    font-size: 1.1em;
+}
+
+.animation a.tutorial-corner-link {
+    transform: translateY(220%);
+}
+
+.animation .animation-wrapper {
+    width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.animation .animation-wrapper,
+.animation svg,
+.animation .preview {
+    box-shadow: 3px 3px 24px -9px rgba(0, 0, 0, 0.75);
+}
+
+.animation .tip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+}
+
+.animation .preview-overlay {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    opacity: 0;
+}
+
+.animation .preview-overlay > div {
+    max-width: 75%;
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.animation .preview-overlay * {
+    pointer-events: none;
+}
+
+.animation:hover .preview-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 500px) {
+    .animation {
+        flex: 100% 0 1;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+
+    .animation video {
+        width: 100%;
+    }
+
+    .animation .preview-overlay {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .animations-container {
+        width: 100%;
+    }
+
+    .animation .animation-wrapper,
+    .animation svg,
+    .animation .preview {
+        box-shadow: none;
+    }
+}
+
+
+/*  ----------------------------------- */
+/*  Animations specifics   */
+/*  ----------------------------------- */
+
+.animation.curly-cursor,
+.animation.animation-dude {
+    aspect-ratio: unset;
+}
+.animation-dude svg {
+    height: 200px;
+    border: none;
+    box-shadow: none;
+}
+
+.mobile .curly-cursor {
+    display: none;
+}
+
+
+/*  ----------------------------------- */
+/*  Publications section   */
+/*  ----------------------------------- */
+.publications-anchor {
+    margin-top: 2em;
+}
+.publication-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.publication {
+    margin-bottom: 1em;
+}
+.publication span {
+    padding-right: .7em;
+    padding-bottom: .3em;
+}

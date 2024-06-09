@@ -1,0 +1,46 @@
+.page.who-I-am {
+    margin-bottom: 130px;
+}
+
+.who-I-am .photo-container {
+    /*width: 100%;*/
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.who-I-am .photo {
+    padding-left: 1em;
+    flex: 0 0 330px;
+}
+
+.who-I-am .photo img {
+    width: 100%;
+}
+
+.resume {
+    padding-top: 3em;
+}
+
+.resume a {
+    float: right;
+    display: inline-block;
+    font-size: 1em;
+    padding: 2px 8px;
+    background-color: #4BC0C8;
+}
+
+@media (max-width: 590px) {
+    .who-I-am .photo-container {
+        flex-direction: column;
+    }
+
+    .who-I-am .photo {
+        flex: 0 0 100%;
+        padding-top: 1em;
+    }
+
+    .who-I-am .photo {
+        padding-left: 0;
+    }
+}
