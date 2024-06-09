@@ -41,6 +41,7 @@
 }
 
 .animation .animation-wrapper {
+    position: relative;
     width: 100%;
     background-color: #ffffff;
     overflow: hidden;
