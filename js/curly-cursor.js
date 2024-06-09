@@ -15,7 +15,7 @@ function setupCurlyCursorAnimation() {
     }
     let params = {
         pointsNumber: 25,
-        widthFactor: .4,
+        widthFactor: .9,
         mouseThreshold: .9,
         spring: .4,
         friction: .5
