@@ -3,7 +3,7 @@
 }
 
 .animation a {
-    padding: 2px 8px;
+    padding: .3em 1em;
     background-color: #4BC0C8;
 }
 
@@ -34,6 +34,7 @@
     top: 0;
     transform: translateY(100%);
     font-size: 1.1em;
+    font-weight: bold;
 }
 
 .animation a.tutorial-corner-link {
@@ -70,6 +71,7 @@
     width: 96%;
     height: 96%;
     display: flex;
+    text-align: left;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, .8);

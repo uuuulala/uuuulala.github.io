@@ -32,7 +32,7 @@ a:hover {
 .btn:before {
     position: absolute;
     content: "";
-    width: calc(100% + 30px);
+    width: calc(100% + 1em);
     height: 100%;
     top: 0;
     left: -5px;
