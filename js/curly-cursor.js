@@ -1,9 +1,8 @@
-
 function setupCurlyCursorAnimation() {
     const curlyCursorCanvasEl = document.querySelector("#curly-cursor");
     const ctx = curlyCursorCanvasEl.getContext('2d');
 
-    // for intro motion
+    let isActive = false;
     let mouseMoved = false;
 
     let canvasBox = curlyCursorCanvasEl.getBoundingClientRect();
@@ -50,7 +49,6 @@ function setupCurlyCursorAnimation() {
     }
 
     setupCanvas();
-    updateCurve(0);
     window.addEventListener('resize', () => {
         setupCanvas();
     });
@@ -58,7 +56,7 @@ function setupCurlyCursorAnimation() {
 
     function updateCurve(t) {
 
-        // for intro motion
+
         if (!mouseMoved) {
             mouse.tX = (.5 + .3 * Math.cos(.002 * t) * (Math.sin(.005 * t))) * canvasBox.width;
             mouse.tY = (.5 + .2 * (Math.cos(.005 * t)) + .1 * Math.cos(.01 * t)) * canvasBox.height;
@@ -96,8 +94,10 @@ function setupCurlyCursorAnimation() {
 
         mouse.x += (mouse.tX - mouse.x) * params.mouseThreshold;
         mouse.y += (mouse.tY - mouse.y) * params.mouseThreshold;
-
-        window.requestAnimationFrame(updateCurve);
+        
+        if (isActive) {
+            window.requestAnimationFrame(updateCurve);
+        }
     }
 
     function setupCanvas() {
@@ -109,14 +109,24 @@ function setupCurlyCursorAnimation() {
     gsap.timeline({
         scrollTrigger: {
             trigger: curlyCursorCanvasEl,
-            start: '0% 0%',
-            end: '100% 100%',
+            start: '0% 100%',
+            end: '100% 0%',
             // markers: true,
             onEnter: () => {
                 mouseMoved = false;
+                isActive = true;
+                window.requestAnimationFrame(updateCurve);
             },
             onEnterBack: () => {
                 mouseMoved = false;
+                isActive = true;
+                window.requestAnimationFrame(updateCurve);
+            },
+            onLeave: () => {
+                isActive = false;
+            },
+            onLeaveBack: () => {
+                isActive = false;
             }
         }
     });

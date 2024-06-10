@@ -78,14 +78,14 @@
     <div class="animations-container page">
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/glass-sq-500.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/glass-sq-500.mp4"></video>
             <div class="preview-overlay">
                 <div>Product configurator with multiple shape & material controls. Made with Three.js.</div>
             </div>
             <a class="codepen-corner-link" href="https://codepen.io/ksenia-k/full/YzYRPwb" target="_blank">codepen</a>
         </div>
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/ghost-sq-600.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/ghost-sq-600.mp4"></video>
             <div class="preview-overlay">
                 <div>Interactive cursor made with vanilla JS + GLSL Shader. Total code size is under 10kb</div>
             </div>
@@ -93,7 +93,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/disco-sq-600.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/disco-sq-600.mp4"></video>
             <div class="preview-overlay">
                 <div>Made with Three.js</div>
             </div>
@@ -188,7 +188,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/flowers.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/flowers.mp4"></video>
             <div class="preview-overlay">
                 <div>Made with Three.js</div>
             </div>
@@ -206,7 +206,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/d3-viz-600.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/d3-viz-600.mp4"></video>
             <div class="preview-overlay">
                 <div>SVG data vizualization made with d3.js</div>
             </div>
@@ -225,7 +225,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/clouds.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/clouds.mp4"></video>
             <div class="preview-overlay">
                 <div>Multiple 3D typing effects. Made with Three.js and GSAP</div>
             </div>
@@ -234,7 +234,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/voxels-sq.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/voxels-sq.mp4"></video>
             <div class="preview-overlay">
                 <div>Made with Three.js and GSAP</div>
             </div>
@@ -243,7 +243,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/gooey.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/gooey.mp4"></video>
             <div class="preview-overlay">
                 <div>Vanilla JS + GLSL shader, driven by GSAP ScrollTrigger</div>
             </div>
@@ -251,7 +251,7 @@
         </div>
 
         <div class="animation">
-            <video class="preview" preload="none" autoplay loop muted playsinline src="./img/sq-video-previews/globe.mp4"></video>
+            <video class="preview" loop muted playsinline src="./img/sq-video-previews/globe.mp4"></video>
             <div class="preview-overlay">
                 <div>Made with Three.js and GSAP</div>
             </div>
@@ -405,11 +405,6 @@
 <script>
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
-
-
-    window.addEventListener("resize", () => {
-        ScrollTrigger.refresh();
-    });
 </script>
 
 
@@ -419,6 +414,30 @@
 <script src="js/neuro.js"></script>
 
 <script>
+    
+    const videos = Array.from(document.querySelectorAll("video.preview"));
+    videos.forEach(vid => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: vid,
+                start: '0% 100%',
+                end: '100% 0%',
+                // markers: true,
+                onEnter: () => {
+                    vid.play();
+                },
+                onEnterBack: () => {
+                    vid.play();
+                },
+                onLeave: () => {
+                    vid.pause();
+                },
+                onLeaveBack: () => {
+                    vid.pause();
+                }
+            }
+        });
+    })
 
     setupEyesPatternAnimation();
     setupCurlyCursorAnimation();
@@ -448,7 +467,9 @@
         height: window.innerHeight
     });
     let oldWindowHeight = 0;
+    
     window.addEventListener('resize', () => {
+        ScrollTrigger.refresh();
         if (Math.abs(oldWindowHeight - window.innerHeight) > 200) {
             oldWindowHeight = window.innerHeight;
             gsap.set(heroContent, {
