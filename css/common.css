@@ -13,13 +13,19 @@ a {
     text-decoration: none;
 }
 
+.who-I-am a:active,
+.who-I-am a:hover,
 .publication a:active span,
-.publication a:hover span,
+.publication a:hover span {
+    background: linear-gradient(90deg, rgba(249, 248, 113, 1) 90%, rgba(249, 248, 113, 0) 100%);
+}
+.resume a:active,
+.resume a:hover,
 .animation a:active,
 .animation a:hover,
 a:active,
 a:hover {
-    background-color: #F9F871;
+    background: #F9F871;
 }
 
 .btn {
@@ -37,7 +43,8 @@ a:hover {
     top: 0;
     left: -5px;
     /*background: #F9F871;*/
-    background: rgba(255, 254, 113, .8);
+    background: rgb(249, 248, 113);
+    background: linear-gradient(90deg, rgba(249, 248, 113, 1) 70%, rgba(249, 248, 113, 0) 100%);
     z-index: -1;
     opacity: 0;
 }
