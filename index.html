@@ -10,8 +10,8 @@
                 dataLayer.push(arguments);
             }
 
-            gtag('js', new Date());
-            gtag('config', 'G-ST97HEWZJW');
+            gtag("js", new Date());
+            gtag("config", "G-ST97HEWZJW");
         }
     </script>
 
@@ -50,7 +50,7 @@
     <canvas class="banner-back"></canvas>
     <div class="banner-content">
         <h2>
-            Hi, I'm
+            Hi, I"m
             <div class="btn who-I-am-link">Ksenia</div>. <span>I make <div class="btn what-I-do-link">graphics&nbsp;and&nbsp;motion</div> for&nbsp;web</span>
         </h2>
     </div>
@@ -73,7 +73,7 @@
         </ul>
     </div>
     <div>
-        In terms of tech, my main tools are WebGL (Three.js and GLSL Shaders), SVG, HTML5 Canvas, and javascript libraries like GSAP, d3.js, cannon-es, etc. I'm also experienced with design tools like Illustrator, Figma and Blender.
+        In terms of tech, my main tools are WebGL (Three.js and GLSL Shaders), SVG, HTML5 Canvas, and javascript libraries like GSAP, d3.js, cannon-es, etc. I"m also experienced with design tools like Illustrator, Figma and Blender.
     </div>
 
     <div class="animations-container page">
@@ -341,13 +341,13 @@
     <div class="photo-container">
         <div>
             <div class="">
-                I'm Ksenia Kondrashova, freelance front-end developer focused on motion design, animations, and visualizations.
+                I"m Ksenia Kondrashova, freelance front-end developer focused on motion design, animations, and visualizations.
                 Creative Front-End Developer if you wish :)
             </div>
             <div class="">
                 </br>
                 My clients are agencies, product companies, as well as with individual developers, designers and entrepreneurs.
-                I'm working with rough concepts, detailed designs, and everything in between.
+                I"m working with rough concepts, detailed designs, and everything in between.
             </div>
             <div>
                 </br>
@@ -421,8 +421,8 @@
         gsap.timeline({
             scrollTrigger: {
                 trigger: vid,
-                start: '0% 100%',
-                end: '100% 0%',
+                start: "0% 100%",
+                end: "100% 0%",
                 // markers: true,
                 onEnter: () => {
                     vid.play();
@@ -431,10 +431,12 @@
                     vid.play();
                 },
                 onLeave: () => {
-                    vid.pause();
+                    if (vid.readyState > 2)
+                        vid.pause();
                 },
                 onLeaveBack: () => {
-                    vid.pause();
+                    if (vid.readyState > 2)
+                        vid.pause();
                 }
             }
         });
@@ -445,31 +447,31 @@
     setupWalkingDudeAnimation();
     setupNeuroAnimation();
 
-    const whatIdoLink = document.querySelector('.what-I-do-link');
-    const whoIamLink = document.querySelector('.who-I-am-link');
-    const whatIdo = document.querySelector('.what-I-do');
-    const whoIam = document.querySelector('.who-I-am');
+    const whatIdoLink = document.querySelector(".what-I-do-link");
+    const whoIamLink = document.querySelector(".who-I-am-link");
+    const whatIdo = document.querySelector(".what-I-do");
+    const whoIam = document.querySelector(".who-I-am");
 
-    whatIdoLink.addEventListener('click', () => {
+    whatIdoLink.addEventListener("click", () => {
         gsap.to(window, {
             duration: .3,
             scrollTo: whatIdo
         })
     });
-    whoIamLink.addEventListener('click', () => {
+    whoIamLink.addEventListener("click", () => {
         gsap.to(window, {
             duration: .3,
             scrollTo: whoIam
         })
     });
 
-    const heroContent = document.querySelector('.banner-content');
+    const heroContent = document.querySelector(".banner-content");
     gsap.set(heroContent, {
         height: window.innerHeight
     });
     let oldWindowHeight = 0;
     
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
         ScrollTrigger.refresh();
         if (Math.abs(oldWindowHeight - window.innerHeight) > 200) {
             oldWindowHeight = window.innerHeight;
@@ -479,11 +481,11 @@
         }
     });
 
-    const heroAnimation = document.querySelector('.banner-back');
+    const heroAnimation = document.querySelector(".banner-back");
     initHeroAnimation(heroAnimation);
 
-    window.addEventListener('touchstart', () => {
-        whatIdo.classList.add('mobile');
+    window.addEventListener("touchstart", () => {
+        whatIdo.classList.add("mobile");
     });
 
 </script>
