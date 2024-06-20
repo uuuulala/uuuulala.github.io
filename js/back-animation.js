@@ -23,21 +23,19 @@ function initHeroAnimation(canvas) {
 
     function hexToRGB(hex) {
         return {
-            r: parseInt(hex.substring(0,2), 16) / 255,
-            g: parseInt(hex.substring(2,4), 16) / 255,
-            b: parseInt(hex.substring(4,6), 16) / 255,
+            r: parseInt(hex.substring(0, 2), 16) / 255,
+            g: parseInt(hex.substring(2, 4), 16) / 255,
+            b: parseInt(hex.substring(4, 6), 16) / 255,
         }
     }
 
-    let pointers = [{
-        id: -1,
+    let pointer = {
         x: 0,
         y: 0,
         dx: 0,
         dy: 0,
         moved: false,
-        down: true
-    }];
+    };
 
     const {gl, ext} = getWebGLContext(canvas);
 
@@ -536,12 +534,10 @@ function initHeroAnimation(canvas) {
     }
 
     function step() {
-        pointers.forEach(p => {
-            if (p.moved) {
-                p.moved = false;
-                splat(p.x, p.y, p.dx, p.dy, drawingColor());
-            }
-        });
+        if (pointer.moved) {
+            pointer.moved = false;
+            splat(pointer.x, pointer.y, pointer.dx, pointer.dy, drawingColor());
+        }
 
         gl.disable(gl.BLEND);
 
@@ -642,50 +638,23 @@ function initHeroAnimation(canvas) {
 
     const container = document.querySelector(".banner");
 
-    container.addEventListener("click", function (e) {
-        pointers[0].dx = 5;
-        pointers[0].dy = 5;
-        pointers[0].x = e.pageX;
-        pointers[0].y = e.pageY;
-        pointers[0].moved = true;
-    }, {passive: true});
 
-    container.addEventListener("mousemove", function (e) {
-        pointers[0].moved = pointers[0].down;
-        pointers[0].dx = 5 * (e.pageX - pointers[0].x);
-        pointers[0].dy = 5 * (e.pageY - pointers[0].y);
-        pointers[0].x = e.pageX;
-        pointers[0].y = e.pageY;
-        pointers[0].moved = Math.abs(pointers[0].dx) > 0 || Math.abs(pointers[0].dy) > 0;
-    }, {passive: true});
+    container.addEventListener("pointermove", function (e) {
+        pointer.dx = 5 * (e.pageX - pointer.x);
+        pointer.dy = 5 * (e.pageY - pointer.y);
+        pointer.x = e.pageX;
+        pointer.y = e.pageY;
+        pointer.moved = true;
+    });
 
     container.addEventListener("touchmove", function (e) {
-        for (let n = e.targetTouches, r = 0; r < n.length; r++) {
-            let t = pointers[r];
-            t.moved = t.down;
-            t.dx = 8 * (n[r].pageX - t.x);
-            t.dy = 8 * (n[r].pageY - t.y);
-            t.x = n[r].pageX;
-            t.y = n[r].pageY;
-        }
-    }, {passive: true});
+        pointer.dx = 8 * (e.targetTouches[0].pageX - pointer.x);
+        pointer.dy = 8 * (e.targetTouches[0].pageY - pointer.y);
+        pointer.x = e.targetTouches[0].pageX;
+        pointer.y = e.targetTouches[0].pageY;
+        pointer.moved = true;
+    });
 
-    container.addEventListener("touchstart", function (e) {
-        for (let n = e.targetTouches, r = 0; r < n.length; r++) {
-            pointers[r].id = n[r].identifier;
-            pointers[r].down = true;
-            pointers[r].x = n[r].pageX;
-            pointers[r].y = n[r].pageY;
-        }
-    }, {passive: true});
-
-    container.addEventListener("touchend", function (e) {
-        for (let n = e.changedTouches, r = 0; r < n.length; r++) {
-            for (let t = 0; t < pointers.length; t++) {
-                n[r].identifier === pointers[t].id && (pointers[t].down = false);
-            }
-        }
-    }, {passive: true});
 
     gsap.timeline({
         scrollTrigger: {

@@ -460,7 +460,7 @@
     });
     whoIamLink.addEventListener("click", () => {
         gsap.to(window, {
-            duration: .3,
+            duration: 7 * window.innerHeight / document.documentElement.scrollHeight,
             scrollTo: whoIam
         })
     });
