@@ -416,28 +416,7 @@
     
     const videos = Array.from(document.querySelectorAll("video.preview"));
     videos.forEach(vid => {
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: vid,
-                start: "0% 100%",
-                end: "100% 0%",
-                // markers: true,
-                onEnter: () => {
-                    vid.play();
-                },
-                onEnterBack: () => {
-                    vid.play();
-                },
-                onLeave: () => {
-                    if (vid.readyState > 2)
-                        vid.pause();
-                },
-                onLeaveBack: () => {
-                    if (vid.readyState > 2)
-                        vid.pause();
-                }
-            }
-        });
+        vid.play();
     })
 
     setupEyesPatternAnimation();
